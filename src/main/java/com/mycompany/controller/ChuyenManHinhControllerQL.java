@@ -96,7 +96,7 @@ public class ChuyenManHinhControllerQL {
                 case "PhieuMuon":
                     node = new PhieuMuonJPanel();
                     break;
-                case "QuanLyNhanVien":
+                case "NhanVien":
                     node = new QuanLyNhanVienJPanel();
                     break;
                 case "PhieuNhap":

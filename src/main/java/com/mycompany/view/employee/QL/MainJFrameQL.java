@@ -20,6 +20,9 @@ public class MainJFrameQL extends javax.swing.JFrame {
      */
     public MainJFrameQL() {
         initComponents();
+        TrinhDieuKhien();
+    }
+    private void TrinhDieuKhien(){
         ChuyenManHinhControllerQL controller = new ChuyenManHinhControllerQL(jpnView);
         //controller.setView(jpnQuanLyMuon, jlbQuanLyMuon);
         
@@ -35,7 +38,7 @@ public class MainJFrameQL extends javax.swing.JFrame {
         listItem.add(new DanhMucBean("PhieuMuon",jpnPhieuMuon,jlbPhieuMuon));
         listItem.add(new DanhMucBean("PhieuNhap",jpnPhieuNhap,jlbPhieuNhap));
         listItem.add(new DanhMucBean("NhanVien",jpnNhanVien,jlbNhanVien));
-        
+        listItem.add(new DanhMucBean("DocGia",jpnDocGia,jlbDocGia));
         
         controller.setEvent(listItem);
     }
@@ -88,7 +91,7 @@ public class MainJFrameQL extends javax.swing.JFrame {
         jpnView.setLayout(jpnViewLayout);
         jpnViewLayout.setHorizontalGroup(
             jpnViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 677, Short.MAX_VALUE)
+            .addGap(0, 683, Short.MAX_VALUE)
         );
         jpnViewLayout.setVerticalGroup(
             jpnViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,7 +156,7 @@ public class MainJFrameQL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jlbDocGia.setText("Độc giả");
+        jlbDocGia.setText("Đọc giả");
 
         javax.swing.GroupLayout jpnDocGiaLayout = new javax.swing.GroupLayout(jpnDocGia);
         jpnDocGia.setLayout(jpnDocGiaLayout);
@@ -401,8 +404,7 @@ public class MainJFrameQL extends javax.swing.JFrame {
             .addGroup(jpnRootLayout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jpnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnRootLayout.setVerticalGroup(
             jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

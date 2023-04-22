@@ -6,6 +6,7 @@ package com.mycompany.librarymanagement;
 
 import com.mycompany.view.KH.MainJFrameKH;
 import com.mycompany.view.MainJFrame;
+import com.mycompany.view.employee.QL.MainJFrameQL;
 
 /**
  *
@@ -14,6 +15,7 @@ import com.mycompany.view.MainJFrame;
 public class LibraryManagement {
 
     public static void main(String[] args) {
-        new MainJFrameKH().setVisible(true);
+        //new MainJFrameKH().setVisible(true);
+        new MainJFrameQL().setVisible(true);
     }
 }
