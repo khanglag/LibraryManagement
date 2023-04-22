@@ -30,6 +30,18 @@ public class ChuyenManHinhControllerKH {
     public ChuyenManHinhControllerKH(JPanel jpnRoot) {
         this.root = jpnRoot;
     }
+    
+    public void setDashboard(JPanel jpnItem, JLabel jlbItem) {
+       kindSelected = "TrangChinh";
+       jpnItem.setBackground(new Color(96, 100, 191));
+       jlbItem.setBackground(new Color(96, 100, 191));
+       JPanel node = new TrangChinhJPanel();
+       root.removeAll();
+       root.setLayout(new BorderLayout());
+       root.add(node);
+       root.validate();
+       root.repaint();
+}
 
     public void setView(JPanel jpnItem, JLabel jlbItem){
         kindSelected = "TrangChu";
@@ -88,7 +100,7 @@ public class ChuyenManHinhControllerKH {
            root.add(node);
            root.validate();
            root.repaint();
-          
+            setChangeBackGround(kind);
             
         }
 

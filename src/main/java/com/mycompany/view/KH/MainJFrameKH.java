@@ -21,12 +21,14 @@ public class MainJFrameKH extends javax.swing.JFrame {
     public MainJFrameKH() {
         initComponents();
         ChuyenManHinhControllerKH controller = new ChuyenManHinhControllerKH(jpnView);
-        controller.setView(jpnQuanLyMuon, jlbQuanLyMuon);
+        //controller.setView(jpnQuanLyMuon, jlbQuanLyMuon);
+        
         List<DanhMucBean> listItem = new ArrayList<>();
         listItem.add(new DanhMucBean("TrangChinh",jpnTrangChinh,jlbTrangChinh));
         listItem.add(new DanhMucBean("QuanLyMuon",jpnQuanLyMuon,jlbQuanLyMuon));
         listItem.add(new DanhMucBean("QuanLyTra",jpnQuanLyTra,jlbQuanLyTra));
         listItem.add(new DanhMucBean("ThongTinTaiKhoan",jpnThongTinTaiKhoan,jlbThongTinTaiKhoan));
+        
         controller.setEvent(listItem);
         
     }
