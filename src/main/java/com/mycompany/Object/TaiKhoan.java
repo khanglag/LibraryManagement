@@ -8,6 +8,8 @@ package com.mycompany.Object;
  *
  * @author pc
  */
+// thêm thuộc tính quyền để phân quyền truy cập
+//có thể xoá class TKDocGia + TKNhanVien. tất cả tài khoản nằm trong class tài khoản
 public class TaiKhoan {
     private String tenDangNhap, matKhau,quyen;
     

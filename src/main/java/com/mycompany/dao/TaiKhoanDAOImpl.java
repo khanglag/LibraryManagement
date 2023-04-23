@@ -7,17 +7,14 @@ package com.mycompany.dao;
 import ConnectDB.ConnectDB;
 import com.mycompany.Object.TaiKhoan;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author khang
  */
+//chức năng login
 public class TaiKhoanDAOImpl implements TaiKhoanDAO {
 
     @Override
