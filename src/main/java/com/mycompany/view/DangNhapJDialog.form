@@ -48,9 +48,9 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jtfMatKhau" alignment="1" max="32767" attributes="0"/>
                       <Component id="jtfTenDangNhap" alignment="1" pref="332" max="32767" attributes="0"/>
                       <Component id="jlbMsg" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jtfMatKhau" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -68,9 +68,9 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   <Component id="jtfTenDangNhap" min="-2" pref="34" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jtfMatKhau" min="-2" pref="34" max="-2" attributes="0"/>
-                  <EmptySpace pref="168" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="jtfMatKhau" min="-2" pref="36" max="-2" attributes="0"/>
+                  <EmptySpace pref="144" max="32767" attributes="0"/>
                   <Component id="jlbMsg" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
               </Group>
@@ -101,12 +101,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jtfTenDangNhap">
         </Component>
-        <Component class="javax.swing.JTextField" name="jtfMatKhau">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtfMatKhauActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JLabel" name="jlbMsg">
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="jtfMatKhau">
         </Component>
       </SubComponents>
     </Container>

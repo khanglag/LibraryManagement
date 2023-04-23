@@ -33,7 +33,7 @@ public class ConnectDB {
     
     public ConnectDB() {
         //DB = "QLTV";
-        DB= "test";
+        DB= "testDB";
         user = "root";
         //password = "200303410";
         password="";
@@ -119,8 +119,8 @@ public class ConnectDB {
         Connection cons = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            cons = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/test", "root", "");
+            String url ="jdbc:mysql://localhost:3306/testDB";
+            cons = DriverManager.getConnection(url, "root", "");
         } catch (Exception e) {
             e.printStackTrace();
         }

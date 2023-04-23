@@ -9,16 +9,26 @@ package com.mycompany.Object;
  * @author pc
  */
 public class TaiKhoan {
-    private String tenDangNhap, matKhau;
+    private String tenDangNhap, matKhau,quyen;
+    
     private boolean tonTai;
 
     //Constructor
-    public TaiKhoan(String tenDangNhap, String matKhau, boolean tonTai) {
+    public TaiKhoan(String tenDangNhap, String matKhau,String quyen, boolean tonTai) {
         this.tenDangNhap = tenDangNhap;
         this.matKhau = matKhau;
+        this.quyen=quyen;
         this.tonTai = tonTai;
     }
     public TaiKhoan() {
+    }
+
+    public String getQuyen() {
+        return quyen;
+    }
+
+    public void setQuyen(String quyen) {
+        this.quyen = quyen;
     }
 
     //Setter & getter

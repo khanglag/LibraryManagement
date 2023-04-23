@@ -35,8 +35,8 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         jpnRoot = new javax.swing.JPanel();
         btnSubmit = new javax.swing.JButton();
         jtfTenDangNhap = new javax.swing.JTextField();
-        jtfMatKhau = new javax.swing.JTextField();
         jlbMsg = new javax.swing.JLabel();
+        jtfMatKhau = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -49,12 +49,6 @@ public class DangNhapJDialog extends javax.swing.JDialog {
             }
         });
 
-        jtfMatKhau.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtfMatKhauActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jpnRootLayout = new javax.swing.GroupLayout(jpnRoot);
         jpnRoot.setLayout(jpnRootLayout);
         jpnRootLayout.setHorizontalGroup(
@@ -62,9 +56,9 @@ public class DangNhapJDialog extends javax.swing.JDialog {
             .addGroup(jpnRootLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jtfMatKhau, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jtfTenDangNhap, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
-                    .addComponent(jlbMsg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jlbMsg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jtfMatKhau))
                 .addContainerGap())
             .addGroup(jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jpnRootLayout.createSequentialGroup()
@@ -77,9 +71,9 @@ public class DangNhapJDialog extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnRootLayout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addComponent(jtfTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jtfMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168, Short.MAX_VALUE)
+                .addGap(40, 40, 40)
+                .addComponent(jtfMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
                 .addComponent(jlbMsg)
                 .addGap(135, 135, 135))
             .addGroup(jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,10 +105,6 @@ public class DangNhapJDialog extends javax.swing.JDialog {
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSubmitActionPerformed
-
-    private void jtfMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfMatKhauActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtfMatKhauActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,7 +152,7 @@ public class DangNhapJDialog extends javax.swing.JDialog {
     private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel jlbMsg;
     private javax.swing.JPanel jpnRoot;
-    private javax.swing.JTextField jtfMatKhau;
+    private javax.swing.JPasswordField jtfMatKhau;
     private javax.swing.JTextField jtfTenDangNhap;
     // End of variables declaration//GEN-END:variables
 }
