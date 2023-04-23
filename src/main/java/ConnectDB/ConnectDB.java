@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
  *
  * @author béo
  */
+//đổi db ở phương thức static cuối cùng khi chạy
 public class ConnectDB {
     String DB = null;
     String user = null;
@@ -31,7 +32,8 @@ public class ConnectDB {
     String ipAddress = "localhost:3306";
     
     public ConnectDB() {
-        DB = "QLTV";
+        //DB = "QLTV";
+        DB= "test";
         user = "root";
         //password = "200303410";
         password="";
@@ -111,5 +113,17 @@ public class ConnectDB {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "-- ERROR! Không thể đóng kết nối tới " + DB + "\n" + ex.getLocalizedMessage());
         }
+    }
+    //class static
+    public static Connection getConnection() {
+        Connection cons = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            cons = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/test", "root", "");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return cons;
     }
 }
