@@ -97,17 +97,26 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jpnTrangChu" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jpnSach" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jpnDocGia" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jpnTacGia" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jpnNhaXuatBan" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jpnPhieuMuon" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jpnPhieuNhap" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jpnThongKe" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jpnThongTinTaiKhoan" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jpnQuanLyMuon" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jpnNhaCungCap" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jpnTrangChu" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jpnSach" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jpnDocGia" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jpnTacGia" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jpnNhaXuatBan" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jpnQuanLyMuon" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jpnPhieuMuon" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jpnNhaCungCap" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jpnPhieuNhap" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="jpnThongKe" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jpnThongTinTaiKhoan" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -133,8 +142,10 @@
                           <Component id="jpnPhieuNhap" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jpnThongKe" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                           <Component id="jpnThongTinTaiKhoan" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -452,7 +463,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jlbThongKe" pref="48" max="32767" attributes="0"/>
+                              <Component id="jlbThongKe" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -483,8 +494,7 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jlbThongTinTaiKhoan" pref="228" max="32767" attributes="0"/>
+                              <Component id="jlbThongTinTaiKhoan" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -493,8 +503,8 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jlbThongTinTaiKhoan" pref="48" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jlbThongTinTaiKhoan" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -575,7 +585,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jlbNhaCungCap" pref="48" max="32767" attributes="0"/>
+                              <Component id="jlbNhaCungCap" pref="50" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -592,6 +602,48 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Nha cung c&#x1ea5;p"/>
                       </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="jPanel1">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="66" green="66" red="66" type="rgb"/>
+                    </Property>
+                  </Properties>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnDangXuat" alignment="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnDangXuat" alignment="0" pref="64" max="32767" attributes="0"/>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JButton" name="btnDangXuat">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="33" green="33" red="33" type="rgb"/>
+                        </Property>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="18" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="&#x110;&#x102;NG XU&#x1ea4;T"/>
+                        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                          <Dimension value="[250, 50]"/>
+                        </Property>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDangXuatActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>

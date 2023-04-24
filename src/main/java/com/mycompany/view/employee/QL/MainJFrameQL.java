@@ -6,6 +6,7 @@ package com.mycompany.view.employee.QL;
 
 import com.mycompany.bean.DanhMucBean;
 import com.mycompany.controller.ChuyenManHinhControllerQL;
+import com.mycompany.view.DangNhapJDialog;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
@@ -493,7 +494,8 @@ public class MainJFrameQL extends javax.swing.JFrame {
 
     private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed
         // TODO add your handling code here:
-       
+        this.dispose();
+        DangNhapJDialog.login();
     }//GEN-LAST:event_btnDangXuatActionPerformed
 
     /**
