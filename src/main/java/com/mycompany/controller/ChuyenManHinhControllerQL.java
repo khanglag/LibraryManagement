@@ -8,6 +8,7 @@ import com.mycompany.bean.DanhMucBean;
 import com.mycompany.view.employee.NhaXuatBanJPanel;
 import com.mycompany.view.employee.NhapHangJPanel;
 import com.mycompany.view.employee.PhieuMuonJPanel;
+import com.mycompany.view.employee.QL.MainJFrameQL;
 import com.mycompany.view.employee.QL.QuanLyNhanVienJPanel;
 import com.mycompany.view.employee.QuanLyDocGiaJPanel;
 import com.mycompany.view.employee.QuanLyMuonJPanel;
@@ -24,6 +25,7 @@ import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import com.mycompany.view.employee.TrangChinhJPanel;
+import javax.swing.JFrame;
 
 /**
  *
@@ -111,6 +113,9 @@ public class ChuyenManHinhControllerQL {
                 case "NhaCungCap":
                     node = new QuanLyNhaCungCapJPanel();
                     break;
+//                case "DangXuat":
+//                    node = MainJFrameQL.dispose();
+//                    break;
                 // more
                 default:
                     break;
@@ -127,8 +132,8 @@ public class ChuyenManHinhControllerQL {
         @Override
       public void mousePressed(MouseEvent e) {
            kindSelected = kind;
-           jpnItem.setBackground(new Color(96, 100, 191));
-           jlbItem.setBackground(new Color(96, 100, 191));
+           jpnItem.setBackground(new Color(0,0,0));
+           jlbItem.setBackground(new Color(0,0,0));
       }
 
       @Override
@@ -138,15 +143,15 @@ public class ChuyenManHinhControllerQL {
 
       @Override
       public void mouseEntered(MouseEvent e) {
-          jpnItem.setBackground(new Color(96, 100, 191));
-          jlbItem.setBackground(new Color(96, 100, 191));
+          jpnItem.setBackground(new Color(0,0,0));
+          jlbItem.setBackground(new Color(0,0,0));
       }
 
       @Override
       public void mouseExited(MouseEvent e) {
           if (!kindSelected.equalsIgnoreCase(kind)) {
-                jpnItem.setBackground(new Color(76, 175, 80));
-                jlbItem.setBackground(new Color(76, 175, 80));
+                jpnItem.setBackground(new Color(51,51,51));
+                jlbItem.setBackground(new Color(51,51,51));
           }
       }
         
@@ -154,11 +159,11 @@ public class ChuyenManHinhControllerQL {
     private void setChangeBackGround(String kind){
         for(DanhMucBean item: listItem){
             if(item.getKind().equalsIgnoreCase(kind)){
-                item.getJpn().setBackground(new Color(96,100,191));
-                item.getJlb().setBackground(new Color(96,100,191));
+                item.getJpn().setBackground(new Color(0,0,0));
+                item.getJlb().setBackground(new Color(0,0,0));
             } else{
-                item.getJpn().setBackground(new Color(76,175,80));
-                item.getJlb().setBackground(new Color(76,175,80));
+                item.getJpn().setBackground(new Color(51,51,51));
+                item.getJlb().setBackground(new Color(51,51,51));
             }
             
         }

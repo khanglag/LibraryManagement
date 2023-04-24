@@ -20,7 +20,7 @@ public class MainJFrameTT extends javax.swing.JFrame {
      */
     public MainJFrameTT() {
         initComponents();
-    TrinhDieuKhien();
+        TrinhDieuKhien();
     }
     private void TrinhDieuKhien(){
         ChuyenManHinhControllerTT controller = new ChuyenManHinhControllerTT(jpnView);

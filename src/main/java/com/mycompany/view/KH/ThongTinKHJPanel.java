@@ -4,7 +4,12 @@
  */
 package com.mycompany.view.KH;
 
+import com.mycompany.Object.TaiKhoan;
+import com.mycompany.controller.TaiKhoanController;
+import com.mycompany.librarymanagement.LibraryManagement;
+import com.mycompany.view.DangNhapJDialog;
 import com.mycompany.view.doimatkhau;
+import javax.swing.JFrame;
 
 /**
  *
@@ -58,6 +63,11 @@ public class ThongTinKHJPanel extends javax.swing.JPanel {
         });
 
         jButton2.setText("Đăng xuất");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Số điện thoại");
 
@@ -158,6 +168,14 @@ public class ThongTinKHJPanel extends javax.swing.JPanel {
         new doimatkhau().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSuaTTTK;
@@ -176,4 +194,5 @@ public class ThongTinKHJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField tfMaKhachHang;
     private javax.swing.JTextField tfSDT;
     // End of variables declaration//GEN-END:variables
+    
 }

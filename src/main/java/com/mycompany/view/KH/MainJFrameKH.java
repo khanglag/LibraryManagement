@@ -56,10 +56,13 @@ public class MainJFrameKH extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jpnRoot.setBackground(new java.awt.Color(0, 0, 0));
+        jpnRoot.setBackground(new java.awt.Color(51, 51, 51));
 
-        jpnMenu.setBackground(new java.awt.Color(102, 102, 102));
+        jpnMenu.setBackground(new java.awt.Color(51, 51, 51));
 
+        jpnTrangChinh.setBackground(new java.awt.Color(51, 51, 51));
+
+        jlbTrangChinh.setForeground(new java.awt.Color(255, 255, 255));
         jlbTrangChinh.setText("jLabel1");
 
         javax.swing.GroupLayout jpnTrangChinhLayout = new javax.swing.GroupLayout(jpnTrangChinh);
@@ -79,6 +82,10 @@ public class MainJFrameKH extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jpnQuanLyMuon.setBackground(new java.awt.Color(51, 51, 51));
+
+        jlbQuanLyMuon.setBackground(new java.awt.Color(255, 255, 255));
+        jlbQuanLyMuon.setForeground(new java.awt.Color(255, 255, 255));
         jlbQuanLyMuon.setText("Quản lý mượn");
 
         javax.swing.GroupLayout jpnQuanLyMuonLayout = new javax.swing.GroupLayout(jpnQuanLyMuon);
@@ -98,6 +105,9 @@ public class MainJFrameKH extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jpnQuanLyTra.setBackground(new java.awt.Color(51, 51, 51));
+
+        jlbQuanLyTra.setForeground(new java.awt.Color(255, 255, 255));
         jlbQuanLyTra.setText("Quản lý trả");
 
         javax.swing.GroupLayout jpnQuanLyTraLayout = new javax.swing.GroupLayout(jpnQuanLyTra);
@@ -117,6 +127,9 @@ public class MainJFrameKH extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jpnThongTinTaiKhoan.setBackground(new java.awt.Color(51, 51, 51));
+
+        jlbThongTinTaiKhoan.setForeground(new java.awt.Color(255, 255, 255));
         jlbThongTinTaiKhoan.setText("Thông tin tài khoản");
 
         javax.swing.GroupLayout jpnThongTinTaiKhoanLayout = new javax.swing.GroupLayout(jpnThongTinTaiKhoan);
@@ -158,7 +171,7 @@ public class MainJFrameKH extends javax.swing.JFrame {
                 .addGap(0, 308, Short.MAX_VALUE))
         );
 
-        jpnView.setBackground(new java.awt.Color(204, 255, 204));
+        jpnView.setBackground(new java.awt.Color(51, 51, 51));
 
         javax.swing.GroupLayout jpnViewLayout = new javax.swing.GroupLayout(jpnView);
         jpnView.setLayout(jpnViewLayout);

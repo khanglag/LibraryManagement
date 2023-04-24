@@ -10,6 +10,7 @@ import com.mycompany.Object.TaiKhoan;
  *
  * @author khang
  */
+//chức năng login
 public interface TaiKhoanService {
     public TaiKhoan login(String tenDangNhap, String matKhau);
 }

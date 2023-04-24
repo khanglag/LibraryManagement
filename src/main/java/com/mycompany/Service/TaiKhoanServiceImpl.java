@@ -12,6 +12,7 @@ import com.mycompany.dao.TaiKhoanDAOImpl;
  *
  * @author khang
  */
+//chức năng login
 public class TaiKhoanServiceImpl implements TaiKhoanService{
 
     private TaiKhoanDAO taiKhoanDAO = null;

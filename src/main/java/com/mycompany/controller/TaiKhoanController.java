@@ -23,6 +23,7 @@ import javax.swing.JTextField;
  *
  * @author khang
  */
+//chức năng login
 public class TaiKhoanController {
     
     private Dialog dialog;
@@ -45,6 +46,12 @@ public class TaiKhoanController {
         
         taiKhoanService = new TaiKhoanServiceImpl();
     }
+
+    public TaiKhoanController(JTextField jtfTenDangNhap) {
+        this.jtfTenDangNhap=null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+        taiKhoanService = new TaiKhoanServiceImpl();
+    }
     
     public void setEvent(){
         btnSubmit.addMouseListener(new MouseAdapter(){
@@ -65,20 +72,20 @@ public class TaiKhoanController {
                                 dialog.dispose();
                                 MainJFrameQL frameQL= new MainJFrameQL();
                                 frameQL.setTitle("Quản lý thư viện");
-                                frameQL.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                                frameQL.setExtendedState(JFrame.ABORT);
                                 frameQL.setVisible(true);
                                 
                             }else if("1".equals(taiKhoan.getQuyen())){
                                 dialog.dispose();
                                 MainJFrameTT frameTT= new MainJFrameTT();
                                 frameTT.setTitle("Quản lý thư viện");
-                                frameTT.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                                frameTT.setExtendedState(JFrame.ABORT);
                                 frameTT.setVisible(true);
                             }else{
                                 dialog.dispose();
                                 MainJFrameKH frameKH= new MainJFrameKH();
                                 frameKH.setTitle("Quản lý thư viện");
-                                frameKH.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                                frameKH.setExtendedState(JFrame.ABORT);
                                 frameKH.setVisible(true);
                             }
                             

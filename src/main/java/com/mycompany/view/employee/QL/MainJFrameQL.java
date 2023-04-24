@@ -85,7 +85,9 @@ public class MainJFrameQL extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jpnRoot.setBackground(new java.awt.Color(0, 0, 0));
+        jpnRoot.setBackground(new java.awt.Color(51, 51, 51));
+
+        jpnView.setBackground(new java.awt.Color(51, 51, 51));
 
         javax.swing.GroupLayout jpnViewLayout = new javax.swing.GroupLayout(jpnView);
         jpnView.setLayout(jpnViewLayout);
@@ -97,6 +99,8 @@ public class MainJFrameQL extends javax.swing.JFrame {
             jpnViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
 
         jpnMenu.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -118,6 +122,10 @@ public class MainJFrameQL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jpnTrangChu.setBackground(new java.awt.Color(51, 51, 51));
+
+        jlbTrangChu.setBackground(new java.awt.Color(51, 51, 51));
+        jlbTrangChu.setForeground(new java.awt.Color(255, 255, 255));
         jlbTrangChu.setText("Trang chủ");
 
         javax.swing.GroupLayout jpnTrangChuLayout = new javax.swing.GroupLayout(jpnTrangChu);
@@ -137,6 +145,9 @@ public class MainJFrameQL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jpnSach.setBackground(new java.awt.Color(51, 51, 51));
+
+        jlbSach.setForeground(new java.awt.Color(255, 255, 255));
         jlbSach.setText("Sách");
 
         javax.swing.GroupLayout jpnSachLayout = new javax.swing.GroupLayout(jpnSach);
@@ -156,6 +167,9 @@ public class MainJFrameQL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jpnDocGia.setBackground(new java.awt.Color(51, 51, 51));
+
+        jlbDocGia.setForeground(new java.awt.Color(255, 255, 255));
         jlbDocGia.setText("Đọc giả");
 
         javax.swing.GroupLayout jpnDocGiaLayout = new javax.swing.GroupLayout(jpnDocGia);
@@ -175,6 +189,9 @@ public class MainJFrameQL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jpnTacGia.setBackground(new java.awt.Color(51, 51, 51));
+
+        jlbTacGia.setForeground(new java.awt.Color(255, 255, 255));
         jlbTacGia.setText("Tác giả");
 
         javax.swing.GroupLayout jpnTacGiaLayout = new javax.swing.GroupLayout(jpnTacGia);
@@ -194,6 +211,9 @@ public class MainJFrameQL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jpnNhaXuatBan.setBackground(new java.awt.Color(51, 51, 51));
+
+        jlbNhaXuaBan.setForeground(new java.awt.Color(255, 255, 255));
         jlbNhaXuaBan.setText("Nhà xuất bản");
 
         javax.swing.GroupLayout jpnNhaXuatBanLayout = new javax.swing.GroupLayout(jpnNhaXuatBan);
@@ -213,6 +233,9 @@ public class MainJFrameQL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jpnPhieuMuon.setBackground(new java.awt.Color(51, 51, 51));
+
+        jlbPhieuMuon.setForeground(new java.awt.Color(255, 255, 255));
         jlbPhieuMuon.setText("Phiếu mượn");
 
         javax.swing.GroupLayout jpnPhieuMuonLayout = new javax.swing.GroupLayout(jpnPhieuMuon);
@@ -232,6 +255,9 @@ public class MainJFrameQL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jpnPhieuNhap.setBackground(new java.awt.Color(51, 51, 51));
+
+        jlbPhieuNhap.setForeground(new java.awt.Color(255, 255, 255));
         jlbPhieuNhap.setText("Phiếu nhập");
 
         javax.swing.GroupLayout jpnPhieuNhapLayout = new javax.swing.GroupLayout(jpnPhieuNhap);
@@ -251,6 +277,9 @@ public class MainJFrameQL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jpnThongKe.setBackground(new java.awt.Color(51, 51, 51));
+
+        jlbThongKe.setForeground(new java.awt.Color(255, 255, 255));
         jlbThongKe.setText("Thống kê");
 
         javax.swing.GroupLayout jpnThongKeLayout = new javax.swing.GroupLayout(jpnThongKe);
@@ -270,6 +299,9 @@ public class MainJFrameQL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jpnNhanVien.setBackground(new java.awt.Color(51, 51, 51));
+
+        jlbNhanVien.setForeground(new java.awt.Color(255, 255, 255));
         jlbNhanVien.setText("Nhân viên");
 
         javax.swing.GroupLayout jpnNhanVienLayout = new javax.swing.GroupLayout(jpnNhanVien);
@@ -289,6 +321,9 @@ public class MainJFrameQL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jpnThongTinTaiKhoan.setBackground(new java.awt.Color(51, 51, 51));
+
+        jlbThongTinTaiKhoan.setForeground(new java.awt.Color(255, 255, 255));
         jlbThongTinTaiKhoan.setText("Thông tin tài khoản");
 
         javax.swing.GroupLayout jpnThongTinTaiKhoanLayout = new javax.swing.GroupLayout(jpnThongTinTaiKhoan);
@@ -308,6 +343,9 @@ public class MainJFrameQL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jpnQuanLyMuon.setBackground(new java.awt.Color(51, 51, 51));
+
+        jlbQuanLyMuon.setForeground(new java.awt.Color(255, 255, 255));
         jlbQuanLyMuon.setText("Quản Lý Mượn");
 
         javax.swing.GroupLayout jpnQuanLyMuonLayout = new javax.swing.GroupLayout(jpnQuanLyMuon);
@@ -327,6 +365,9 @@ public class MainJFrameQL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jpnNhaCungCap.setBackground(new java.awt.Color(51, 51, 51));
+
+        jlbNhaCungCap.setForeground(new java.awt.Color(255, 255, 255));
         jlbNhaCungCap.setText("Nha cung cấp");
 
         javax.swing.GroupLayout jpnNhaCungCapLayout = new javax.swing.GroupLayout(jpnNhaCungCap);

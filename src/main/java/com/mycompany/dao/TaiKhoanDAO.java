@@ -10,6 +10,7 @@ import com.mycompany.Object.TaiKhoan;
  *
  * @author khang
  */
+//chức năng login
 public interface TaiKhoanDAO {
 
     /**
