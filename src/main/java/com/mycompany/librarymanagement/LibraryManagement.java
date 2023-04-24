@@ -13,12 +13,6 @@ import com.mycompany.view.DangNhapJDialog;
 public class LibraryManagement {
 
     public static void main(String[] args) {
-        // new MainJFrameKH().setVisible(true);
-        // new MainJFrameQL().setVisible(true);
-        DangNhapJDialog jDialog = new DangNhapJDialog(null, true);
-        jDialog.setTitle("Đăng nhập hệ thống");
-        jDialog.setResizable(false);
-        jDialog.setLocationRelativeTo(null);
-        jDialog.setVisible(true);
+        DangNhapJDialog.login();
     }
 }

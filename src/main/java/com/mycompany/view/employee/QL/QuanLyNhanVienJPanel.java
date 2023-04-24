@@ -44,6 +44,7 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
         jScrollPane10 = new javax.swing.JScrollPane();
         jTable8 = new javax.swing.JTable();
 
+        btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Add.png"))); // NOI18N
         btnThem.setText("Thêm");
         btnThem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,16 +52,19 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/icons8_cancel_30px_1.png"))); // NOI18N
         btnXoa.setText("Xoá");
         btnXoa.setMaximumSize(new java.awt.Dimension(99, 57));
         btnXoa.setMinimumSize(new java.awt.Dimension(99, 57));
         btnXoa.setPreferredSize(new java.awt.Dimension(99, 57));
 
+        btnSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Edit.png"))); // NOI18N
         btnSua.setText("Sửa");
         btnSua.setMaximumSize(new java.awt.Dimension(89, 55));
         btnSua.setMinimumSize(new java.awt.Dimension(89, 55));
         btnSua.setPreferredSize(new java.awt.Dimension(99, 57));
 
+        btnLoad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Refresh.png"))); // NOI18N
         btnLoad.setText("Làm mới");
         btnLoad.setPreferredSize(new java.awt.Dimension(99, 57));
         btnLoad.addActionListener(new java.awt.event.ActionListener() {
@@ -87,13 +91,13 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(134, 134, 134)
-                        .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnThem)
+                        .addGap(35, 35, 35)
+                        .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(53, 53, 53)
                         .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
-                        .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnThem)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                        .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel39)
@@ -108,7 +112,7 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
                             .addComponent(tfQLMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfQLTenNV, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfQLDC, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGap(31, 31, 31))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,9 +143,9 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
                 .addGap(62, 62, 62)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnThem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 

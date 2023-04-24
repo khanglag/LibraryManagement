@@ -59,7 +59,7 @@
                           <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
                           <Component id="jLabel6" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="btnSuaTTTK" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSua" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -67,9 +67,9 @@
                       <Component id="tfSDT" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDoiMatKhau" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDangXuat" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jTextField3" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
                           <Component id="jTextField2" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
@@ -110,9 +110,9 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnSuaTTTK" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDoiMatKhau" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDangXuat" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSua" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               </Group>
@@ -141,20 +141,20 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField3">
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="btnDoiMatKhau">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x110;&#x1ed5;i m&#x1ead;t kh&#x1ea9;u"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDoiMatKhauActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="btnDangXuat">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng xu&#x1ea5;t"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDangXuatActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
@@ -171,7 +171,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="tfEmail">
         </Component>
-        <Component class="javax.swing.JButton" name="btnSuaTTTK">
+        <Component class="javax.swing.JButton" name="btnSua">
           <Properties>
             <Property name="text" type="java.lang.String" value="S&#x1eed;a"/>
           </Properties>

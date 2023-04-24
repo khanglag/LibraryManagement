@@ -161,6 +161,13 @@ public class DangNhapJDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSubmitActionPerformed
 
+    public static void login(){
+        DangNhapJDialog jDialog = new DangNhapJDialog(null, true);
+        jDialog.setTitle("Đăng nhập hệ thống");
+        jDialog.setResizable(false);
+        jDialog.setLocationRelativeTo(null);
+        jDialog.setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */

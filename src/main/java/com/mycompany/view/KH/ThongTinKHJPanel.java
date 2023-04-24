@@ -9,7 +9,11 @@ import com.mycompany.controller.TaiKhoanController;
 import com.mycompany.librarymanagement.LibraryManagement;
 import com.mycompany.view.DangNhapJDialog;
 import com.mycompany.view.doimatkhau;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+
 
 /**
  *
@@ -40,13 +44,13 @@ public class ThongTinKHJPanel extends javax.swing.JPanel {
         tfMaKhachHang = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnDoiMatKhau = new javax.swing.JButton();
+        btnDangXuat = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         tfSDT = new javax.swing.JTextField();
         tfEmail = new javax.swing.JTextField();
-        btnSuaTTTK = new javax.swing.JButton();
+        btnSua = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
         jLabel2.setText("Mã khách hàng");
@@ -55,17 +59,17 @@ public class ThongTinKHJPanel extends javax.swing.JPanel {
 
         jLabel4.setText("Năm sinh");
 
-        jButton1.setText("Đổi mật khẩu");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnDoiMatKhau.setText("Đổi mật khẩu");
+        btnDoiMatKhau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnDoiMatKhauActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Đăng xuất");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnDangXuat.setText("Đăng xuất");
+        btnDangXuat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnDangXuatActionPerformed(evt);
             }
         });
 
@@ -73,7 +77,7 @@ public class ThongTinKHJPanel extends javax.swing.JPanel {
 
         jLabel6.setText("Email");
 
-        btnSuaTTTK.setText("Sửa");
+        btnSua.setText("Sửa");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -88,16 +92,16 @@ public class ThongTinKHJPanel extends javax.swing.JPanel {
                         .addComponent(jLabel4)
                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnSuaTTTK))
+                    .addComponent(btnSua))
                 .addGap(41, 41, 41)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tfSDT, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(jButton1)
+                            .addComponent(btnDoiMatKhau)
                             .addGap(26, 26, 26)
-                            .addComponent(jButton2))
+                            .addComponent(btnDangXuat))
                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(tfMaKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -128,9 +132,9 @@ public class ThongTinKHJPanel extends javax.swing.JPanel {
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(btnSuaTTTK))
+                    .addComponent(btnDoiMatKhau)
+                    .addComponent(btnDangXuat)
+                    .addComponent(btnSua))
                 .addGap(46, 46, 46))
         );
 
@@ -163,24 +167,23 @@ public class ThongTinKHJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnDoiMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiMatKhauActionPerformed
         // TODO add your handling code here:
         new doimatkhau().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnDoiMatKhauActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+    private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed
+        
+       
         
         
-        
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnDangXuatActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSuaTTTK;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnDangXuat;
+    private javax.swing.JButton btnDoiMatKhau;
+    private javax.swing.JButton btnSua;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -194,5 +197,7 @@ public class ThongTinKHJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField tfMaKhachHang;
     private javax.swing.JTextField tfSDT;
     // End of variables declaration//GEN-END:variables
+
+   
     
 }

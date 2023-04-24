@@ -15,6 +15,14 @@ public class TaiKhoan {
     
     private boolean tonTai;
 
+    public TaiKhoan(String tenDangNhap, String matKhau, boolean tonTai) {
+        this.tenDangNhap = tenDangNhap;
+        this.matKhau = matKhau;
+        this.tonTai = tonTai;
+    }
+    
+    
+
     //Constructor
     public TaiKhoan(String tenDangNhap, String matKhau,String quyen, boolean tonTai) {
         this.tenDangNhap = tenDangNhap;

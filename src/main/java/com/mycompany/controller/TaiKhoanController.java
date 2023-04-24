@@ -31,10 +31,10 @@ public class TaiKhoanController {
     private JTextField jtfTenDangNhap;
     private JPasswordField jtfMatKhau;
     private JLabel jlbMsg;
-   
     
+    
+    private JFrame frame=null;
     private TaiKhoanService taiKhoanService=null;
-    
 
     public TaiKhoanController(Dialog dialog, JButton btnSubmit, JTextField jtfTenDangNhap, JPasswordField jtfMatKhau, JLabel jlbMsg) {
         this.dialog = dialog;
@@ -47,11 +47,7 @@ public class TaiKhoanController {
         taiKhoanService = new TaiKhoanServiceImpl();
     }
 
-    public TaiKhoanController(JTextField jtfTenDangNhap) {
-        this.jtfTenDangNhap=null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     
-        taiKhoanService = new TaiKhoanServiceImpl();
-    }
     
     public void setEvent(){
         btnSubmit.addMouseListener(new MouseAdapter(){
@@ -68,25 +64,26 @@ public class TaiKhoanController {
                             jlbMsg.setText("Tài khoản bị khoá");
                         }else{
                             
+                            
                             if("0".equals(taiKhoan.getQuyen())){
                                 dialog.dispose();
-                                MainJFrameQL frameQL= new MainJFrameQL();
-                                frameQL.setTitle("Quản lý thư viện");
-                                frameQL.setExtendedState(JFrame.ABORT);
-                                frameQL.setVisible(true);
+                                frame= new MainJFrameQL();
+                                frame.setTitle("Quản lý thư viện");
+                                frame.setExtendedState(JFrame.ABORT);
+                                frame.setVisible(true);    
                                 
                             }else if("1".equals(taiKhoan.getQuyen())){
                                 dialog.dispose();
-                                MainJFrameTT frameTT= new MainJFrameTT();
-                                frameTT.setTitle("Quản lý thư viện");
-                                frameTT.setExtendedState(JFrame.ABORT);
-                                frameTT.setVisible(true);
+                                frame= new MainJFrameTT();
+                                frame.setTitle("Quản lý thư viện");
+                                frame.setExtendedState(JFrame.ABORT);
+                                frame.setVisible(true);
                             }else{
                                 dialog.dispose();
-                                MainJFrameKH frameKH= new MainJFrameKH();
-                                frameKH.setTitle("Quản lý thư viện");
-                                frameKH.setExtendedState(JFrame.ABORT);
-                                frameKH.setVisible(true);
+                                frame = new MainJFrameKH();
+                                frame.setTitle("Quản lý thư viện");
+                                frame.setExtendedState(JFrame.ABORT);
+                                frame.setVisible(true);
                             }
                             
                         }
