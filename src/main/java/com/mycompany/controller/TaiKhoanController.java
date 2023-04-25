@@ -65,14 +65,14 @@ public class TaiKhoanController {
                         }else{
                             
                             
-                            if("0".equals(taiKhoan.getQuyen())){
+                            if(taiKhoan.getQuyen().contains("QL")){
                                 dialog.dispose();
                                 frame= new MainJFrameQL();
                                 frame.setTitle("Quản lý thư viện");
                                 frame.setExtendedState(JFrame.ABORT);
                                 frame.setVisible(true);    
                                 
-                            }else if("1".equals(taiKhoan.getQuyen())){
+                            }else if(taiKhoan.getQuyen().contains("TT")){
                                 dialog.dispose();
                                 frame= new MainJFrameTT();
                                 frame.setTitle("Quản lý thư viện");

@@ -10,6 +10,7 @@ import com.mycompany.view.DangNhapJDialog;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -494,10 +495,23 @@ public class MainJFrameQL extends javax.swing.JFrame {
 
     private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed
         // TODO add your handling code here:
-        this.dispose();
-        DangNhapJDialog.login();
+        logout();
     }//GEN-LAST:event_btnDangXuatActionPerformed
 
+    
+        
+                                            
+
+    private void logout() {
+        int reply = JOptionPane.showConfirmDialog(getRootPane(),
+                "Bạn có chắc muốn đăng xuất ?" , "Chú ý",
+                JOptionPane.YES_NO_OPTION);
+
+        if (reply == JOptionPane.YES_OPTION) {
+            this.dispose();
+            DangNhapJDialog.login();
+        }
+    }
     /**
      * @param args the command line arguments
      */

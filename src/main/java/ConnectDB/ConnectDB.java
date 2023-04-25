@@ -32,8 +32,8 @@ public class ConnectDB {
     String ipAddress = "localhost:3306";
     
     public ConnectDB() {
-        //DB = "QLTV";
-        DB= "testDB";
+        DB = "QLTV";
+        //DB= "testDB";
         user = "root";
         //password = "200303410";
         password="";
@@ -119,7 +119,7 @@ public class ConnectDB {
         Connection cons = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String url ="jdbc:mysql://localhost:3306/testDB";
+            String url ="jdbc:mysql://localhost:3306/qltv";
             cons = DriverManager.getConnection(url, "root", "");
         } catch (Exception e) {
             e.printStackTrace();

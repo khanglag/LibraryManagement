@@ -21,7 +21,7 @@ public class TaiKhoanDAOImpl implements TaiKhoanDAO {
     public TaiKhoan login(String tenDangNhap, String matKhau) {
         ConnectDB conn = new ConnectDB();
         Connection cons = ConnectDB.getConnection();
-        String sql = "SELECT * FROM taikhoan WHERE id LIKE ? AND password LIKE ?";
+        String sql = "SELECT * FROM taikhoan WHERE TENDN LIKE ? AND MATKHAU LIKE ?";
         TaiKhoan taiKhoan = null;
         try {
             PreparedStatement ps = (PreparedStatement) cons.prepareStatement(sql);
@@ -31,10 +31,10 @@ public class TaiKhoanDAOImpl implements TaiKhoanDAO {
             if (rs.next()) {
                 taiKhoan = new TaiKhoan();
                 
-                taiKhoan.setTenDangNhap(rs.getString("id"));
-                taiKhoan.setMatKhau(rs.getString("password"));
-                taiKhoan.setQuyen(rs.getString("quyen"));
-                taiKhoan.setTonTai(rs.getBoolean("tonTai"));
+                taiKhoan.setTenDangNhap(rs.getString("TENDN"));
+                taiKhoan.setMatKhau(rs.getString("MATKHAU"));
+                taiKhoan.setQuyen(rs.getString("MAPQ"));
+                taiKhoan.setTonTai(rs.getBoolean("TONTAI"));
                 
             }
             ps.close();
