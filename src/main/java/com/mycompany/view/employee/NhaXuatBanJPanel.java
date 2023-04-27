@@ -281,4 +281,5 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField tfTimKiem1;
     // End of variables declaration//GEN-END:variables
+    
 }

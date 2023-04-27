@@ -9,14 +9,14 @@ package com.mycompany.Object;
  * @author pc
  */
 public class Sach {
-    private String maSach, tenSach, tinhTrang, maTheLoai, maTacGia, maNXB;
+    private String maSach, tenSach, tinhTrang, maTheLoai, maTacGia, maNXB,anh;
     private int soTrang, lanXuatBan, soLuong;
     private float gia;
     private boolean tonTai;
 
     //Constructor
     public Sach(String maSach, String tenSach, String tinhTrang, String maTheLoai, String maTacGia, String maNXB,
-            int soTrang, int lanXuatBan, int soLuong, float gia, boolean tonTai) {
+            int soTrang, int lanXuatBan, int soLuong, float gia, boolean tonTai,String anh) {
         this.maSach = maSach;
         this.tenSach = tenSach;
         this.tinhTrang = tinhTrang;
@@ -28,10 +28,35 @@ public class Sach {
         this.soLuong = soLuong;
         this.gia = gia;
         this.tonTai = tonTai;
+        this.anh=anh;
     }
 
+    public Sach(String maSach, String tenSach, String tinhTrang, String maTheLoai, String maTacGia, String maNXB, int soTrang, int lanXuatBan, int soLuong, float gia, String anh) {
+        this.maSach = maSach;
+        this.tenSach = tenSach;
+        this.tinhTrang = tinhTrang;
+        this.maTheLoai = maTheLoai;
+        this.maTacGia = maTacGia;
+        this.maNXB = maNXB;
+        this.soTrang = soTrang;
+        this.lanXuatBan = lanXuatBan;
+        this.soLuong = soLuong;
+        this.gia = gia;
+        this.anh = anh;
+    }
+
+    
     public Sach() {
     }
+
+    public String getAnh() {
+        return anh;
+    }
+
+    public void setAnh(String anh) {
+        this.anh = anh;
+    }
+    
 
     //Setter & getter
     public String getMaSach() {
