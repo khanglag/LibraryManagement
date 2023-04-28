@@ -77,21 +77,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel46" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel45" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel47" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="tfMaPhieuNhap" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jComboBoxMaNCC" alignment="0" pref="195" max="32767" attributes="0"/>
-                                      <Component id="jComboBoxMaNV" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="tfNgayNhap" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
+                              <Component id="jLabel44" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel45" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel47" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="tfMaPhieuNhap" max="32767" attributes="0"/>
+                              <Component id="jComboBoxMaNV" alignment="0" pref="139" max="32767" attributes="0"/>
+                              <Component id="tfNgayNhap" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -122,12 +116,7 @@
                       <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jComboBoxMaNV" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBoxMaNCC" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel47" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tfNgayNhap" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -155,11 +144,6 @@
             <Property name="text" type="java.lang.String" value="M&#xe3; NV"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel46">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="M&#xe3; NCC"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel47">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ng&#xe0;y nh&#x1ead;p"/>
@@ -169,21 +153,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfMaPhieuNhapActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBoxMaNCC">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JComboBox" name="jComboBoxMaNV">
           <Properties>

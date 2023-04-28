@@ -29,10 +29,8 @@ public class NhapHangJPanel extends javax.swing.JPanel {
         jPanel23 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
-        jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         tfMaPhieuNhap = new javax.swing.JTextField();
-        jComboBoxMaNCC = new javax.swing.JComboBox<>();
         jComboBoxMaNV = new javax.swing.JComboBox<>();
         btnThemPhieuNhap = new javax.swing.JButton();
         btnSuaPhieuNhap = new javax.swing.JButton();
@@ -69,8 +67,6 @@ public class NhapHangJPanel extends javax.swing.JPanel {
 
         jLabel45.setText("Mã NV");
 
-        jLabel46.setText("Mã NCC");
-
         jLabel47.setText("Ngày nhập");
 
         tfMaPhieuNhap.addActionListener(new java.awt.event.ActionListener() {
@@ -78,8 +74,6 @@ public class NhapHangJPanel extends javax.swing.JPanel {
                 tfMaPhieuNhapActionPerformed(evt);
             }
         });
-
-        jComboBoxMaNCC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jComboBoxMaNV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -111,18 +105,14 @@ public class NhapHangJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel23Layout.createSequentialGroup()
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel46)
-                            .addGroup(jPanel23Layout.createSequentialGroup()
-                                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel44)
-                                    .addComponent(jLabel45)
-                                    .addComponent(jLabel47))
-                                .addGap(52, 52, 52)
-                                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tfMaPhieuNhap)
-                                    .addComponent(jComboBoxMaNCC, 0, 195, Short.MAX_VALUE)
-                                    .addComponent(jComboBoxMaNV, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(tfNgayNhap))))
+                            .addComponent(jLabel44)
+                            .addComponent(jLabel45)
+                            .addComponent(jLabel47))
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tfMaPhieuNhap)
+                            .addComponent(jComboBoxMaNV, 0, 139, Short.MAX_VALUE)
+                            .addComponent(tfNgayNhap))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel23Layout.createSequentialGroup()
                         .addComponent(btnThemPhieuNhap)
@@ -145,11 +135,7 @@ public class NhapHangJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel45)
                     .addComponent(jComboBoxMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel46)
-                    .addComponent(jComboBoxMaNCC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel47)
                     .addComponent(tfNgayNhap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -417,11 +403,9 @@ public class NhapHangJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnXoaChiTietPhieuNhap;
     private javax.swing.JButton btnXoaPhieuNhap;
     private javax.swing.JButton btnXuatExcel;
-    private javax.swing.JComboBox<String> jComboBoxMaNCC;
     private javax.swing.JComboBox<String> jComboBoxMaNV;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
