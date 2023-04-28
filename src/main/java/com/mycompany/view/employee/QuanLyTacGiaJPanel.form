@@ -62,10 +62,10 @@
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="tfTGQueQuan" alignment="0" min="-2" pref="203" max="-2" attributes="0"/>
-                      <Component id="tfTGTen" min="-2" pref="203" max="-2" attributes="0"/>
-                      <Component id="tfTGNamSinh" min="-2" pref="203" max="-2" attributes="0"/>
-                      <Component id="tfTGMa" min="-2" pref="203" max="-2" attributes="0"/>
+                      <Component id="tfNgaySinh" alignment="0" min="-2" pref="203" max="-2" attributes="0"/>
+                      <Component id="tfTen" min="-2" pref="203" max="-2" attributes="0"/>
+                      <Component id="tfPhai" min="-2" pref="203" max="-2" attributes="0"/>
+                      <Component id="tfMa" min="-2" pref="203" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                           <Component id="btnXoa2" min="-2" max="-2" attributes="0"/>
@@ -85,21 +85,21 @@
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfTGMa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfMa" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="tfTGTen" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfTen" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfTGNamSinh" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfPhai" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="tfTGQueQuan" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfNgaySinh" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
@@ -127,32 +127,32 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel27">
           <Properties>
-            <Property name="text" type="java.lang.String" value="N&#x103;m sinh"/>
+            <Property name="text" type="java.lang.String" value="Phai"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfTGMa">
+        <Component class="javax.swing.JTextField" name="tfMa">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfTGMaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfMaActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfTGTen">
+        <Component class="javax.swing.JTextField" name="tfTen">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfTGTenActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfTenActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfTGNamSinh">
+        <Component class="javax.swing.JTextField" name="tfPhai">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfTGNamSinhActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfPhaiActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel28">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Qu&#xea; qu&#xe1;n"/>
+            <Property name="text" type="java.lang.String" value="Ngay sinh"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfTGQueQuan">
+        <Component class="javax.swing.JTextField" name="tfNgaySinh">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfTGQueQuanActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfNgaySinhActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnThem2">
@@ -214,12 +214,45 @@
         <Component class="javax.swing.JTable" name="jTable4">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="4">
-                <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                <Column editable="true" title="Title 4" type="java.lang.Object"/>
+              <Table columnCount="5" rowCount="4">
+                <Column editable="false" title="STT" type="java.lang.Object"/>
+                <Column editable="false" title="M&#xe3;" type="java.lang.Object"/>
+                <Column editable="false" title="T&#xea;n" type="java.lang.Object"/>
+                <Column editable="true" title="Phai" type="java.lang.Object"/>
+                <Column editable="true" title="Ngay sinh" type="java.lang.Object"/>
               </Table>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
+            </Property>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
         </Component>

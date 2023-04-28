@@ -25,17 +25,16 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel12 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        tfTGMa = new javax.swing.JTextField();
-        tfTGTen = new javax.swing.JTextField();
-        tfTGNamSinh = new javax.swing.JTextField();
+        tfMa = new javax.swing.JTextField();
+        tfTen = new javax.swing.JTextField();
+        tfPhai = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
-        tfTGQueQuan = new javax.swing.JTextField();
+        tfNgaySinh = new javax.swing.JTextField();
         btnThem2 = new javax.swing.JButton();
         btnXoa2 = new javax.swing.JButton();
         btnSua2 = new javax.swing.JButton();
@@ -47,31 +46,31 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
 
         jLabel26.setText("Tên");
 
-        jLabel27.setText("Năm sinh");
+        jLabel27.setText("Phai");
 
-        tfTGMa.addActionListener(new java.awt.event.ActionListener() {
+        tfMa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfTGMaActionPerformed(evt);
+                tfMaActionPerformed(evt);
             }
         });
 
-        tfTGTen.addActionListener(new java.awt.event.ActionListener() {
+        tfTen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfTGTenActionPerformed(evt);
+                tfTenActionPerformed(evt);
             }
         });
 
-        tfTGNamSinh.addActionListener(new java.awt.event.ActionListener() {
+        tfPhai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfTGNamSinhActionPerformed(evt);
+                tfPhaiActionPerformed(evt);
             }
         });
 
-        jLabel28.setText("Quê quán");
+        jLabel28.setText("Ngay sinh");
 
-        tfTGQueQuan.addActionListener(new java.awt.event.ActionListener() {
+        tfNgaySinh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfTGQueQuanActionPerformed(evt);
+                tfNgaySinhActionPerformed(evt);
             }
         });
 
@@ -118,10 +117,10 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
                         .addComponent(btnThem2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfTGQueQuan, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfTGTen, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfTGNamSinh, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfTGMa, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfTen, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfPhai, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfMa, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(btnXoa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -137,18 +136,18 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
                 .addGap(19, 19, 19)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
-                    .addComponent(tfTGMa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfMa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfTGTen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfTen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26))
                 .addGap(13, 13, 13)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel27)
-                    .addComponent(tfTGNamSinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfPhai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfTGQueQuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel28))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -161,15 +160,23 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "STT", "Mã", "Tên", "Phai", "Ngay sinh"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane6.setViewportView(jTable4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -194,21 +201,21 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfTGMaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTGMaActionPerformed
+    private void tfMaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfMaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfTGMaActionPerformed
+    }//GEN-LAST:event_tfMaActionPerformed
 
-    private void tfTGTenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTGTenActionPerformed
+    private void tfTenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfTGTenActionPerformed
+    }//GEN-LAST:event_tfTenActionPerformed
 
-    private void tfTGNamSinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTGNamSinhActionPerformed
+    private void tfPhaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPhaiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfTGNamSinhActionPerformed
+    }//GEN-LAST:event_tfPhaiActionPerformed
 
-    private void tfTGQueQuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTGQueQuanActionPerformed
+    private void tfNgaySinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNgaySinhActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfTGQueQuanActionPerformed
+    }//GEN-LAST:event_tfNgaySinhActionPerformed
 
     private void btnXoa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoa2ActionPerformed
         // TODO add your handling code here:
@@ -231,9 +238,9 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable jTable4;
-    private javax.swing.JTextField tfTGMa;
-    private javax.swing.JTextField tfTGNamSinh;
-    private javax.swing.JTextField tfTGQueQuan;
-    private javax.swing.JTextField tfTGTen;
+    private javax.swing.JTextField tfMa;
+    private javax.swing.JTextField tfNgaySinh;
+    private javax.swing.JTextField tfPhai;
+    private javax.swing.JTextField tfTen;
     // End of variables declaration//GEN-END:variables
 }

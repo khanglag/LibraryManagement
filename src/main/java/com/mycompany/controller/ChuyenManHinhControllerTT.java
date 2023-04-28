@@ -10,7 +10,6 @@ import com.mycompany.view.employee.NhapHangJPanel;
 import com.mycompany.view.employee.PhieuMuonJPanel;
 import com.mycompany.view.employee.QuanLyDocGiaJPanel;
 import com.mycompany.view.employee.QuanLyMuonJPanel;
-import com.mycompany.view.employee.QuanLyNhaCungCapJPanel;
 import com.mycompany.view.employee.QuanLySachJPanel;
 import com.mycompany.view.employee.QuanLyTacGiaJPanel;
 import com.mycompany.view.employee.ThongKeJPanel;
@@ -104,9 +103,9 @@ public class ChuyenManHinhControllerTT {
                 case "ThongTinTaiKhoan":
                     node = new ThongTinTaiKhoanJPanel();
                     break;
-                case "NhaCungCap":
-                    node = new QuanLyNhaCungCapJPanel();
-                    break;
+//                case "NhaCungCap":
+//                    node = new QuanLyNhaCungCapJPanel();
+//                    break;
                 // more
                 default:
                     break;

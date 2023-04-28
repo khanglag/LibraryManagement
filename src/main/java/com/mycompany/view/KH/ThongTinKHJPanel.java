@@ -45,7 +45,6 @@ public class ThongTinKHJPanel extends javax.swing.JPanel {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         btnDoiMatKhau = new javax.swing.JButton();
-        btnDangXuat = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         tfSDT = new javax.swing.JTextField();
@@ -63,13 +62,6 @@ public class ThongTinKHJPanel extends javax.swing.JPanel {
         btnDoiMatKhau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDoiMatKhauActionPerformed(evt);
-            }
-        });
-
-        btnDangXuat.setText("Đăng xuất");
-        btnDangXuat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDangXuatActionPerformed(evt);
             }
         });
 
@@ -100,8 +92,7 @@ public class ThongTinKHJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                             .addComponent(btnDoiMatKhau)
-                            .addGap(26, 26, 26)
-                            .addComponent(btnDangXuat))
+                            .addGap(110, 110, 110))
                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(tfMaKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -133,7 +124,6 @@ public class ThongTinKHJPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDoiMatKhau)
-                    .addComponent(btnDangXuat)
                     .addComponent(btnSua))
                 .addGap(46, 46, 46))
         );
@@ -172,16 +162,8 @@ public class ThongTinKHJPanel extends javax.swing.JPanel {
         new doimatkhau().setVisible(true);
     }//GEN-LAST:event_btnDoiMatKhauActionPerformed
 
-    private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed
-        
-       
-        
-        
-    }//GEN-LAST:event_btnDangXuatActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDangXuat;
     private javax.swing.JButton btnDoiMatKhau;
     private javax.swing.JButton btnSua;
     private javax.swing.JLabel jLabel2;

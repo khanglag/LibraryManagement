@@ -36,7 +36,6 @@ public class ThongTinTaiKhoanJPanel extends javax.swing.JPanel {
         tfTenQuanLy = new javax.swing.JTextField();
         tfNamSinh = new javax.swing.JTextField();
         btnDoiMatKhau = new javax.swing.JButton();
-        btnDangXuat = new javax.swing.JButton();
         jLabel54 = new javax.swing.JLabel();
         tfEmail = new javax.swing.JTextField();
         jLabel55 = new javax.swing.JLabel();
@@ -55,8 +54,6 @@ public class ThongTinTaiKhoanJPanel extends javax.swing.JPanel {
                 btnDoiMatKhauActionPerformed(evt);
             }
         });
-
-        btnDangXuat.setText("Đăng xuất");
 
         jLabel54.setText("Email");
 
@@ -93,11 +90,8 @@ public class ThongTinTaiKhoanJPanel extends javax.swing.JPanel {
                                 .addComponent(tfSDT, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel28Layout.createSequentialGroup()
-                                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel28Layout.createSequentialGroup()
-                                        .addComponent(btnDoiMatKhau)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnDangXuat))
+                                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnDoiMatKhau)
                                     .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))))))
         );
@@ -127,8 +121,7 @@ public class ThongTinTaiKhoanJPanel extends javax.swing.JPanel {
                 .addGap(39, 39, 39)
                 .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSua)
-                    .addComponent(btnDoiMatKhau)
-                    .addComponent(btnDangXuat))
+                    .addComponent(btnDoiMatKhau))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
 
@@ -156,7 +149,6 @@ public class ThongTinTaiKhoanJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnDangXuat;
     private javax.swing.JButton btnDoiMatKhau;
     private javax.swing.JButton btnSua;
     private javax.swing.JLabel jLabel51;

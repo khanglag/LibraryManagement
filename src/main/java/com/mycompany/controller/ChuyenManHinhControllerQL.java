@@ -12,7 +12,6 @@ import com.mycompany.view.employee.QL.MainJFrameQL;
 import com.mycompany.view.employee.QL.QuanLyNhanVienJPanel;
 import com.mycompany.view.employee.QuanLyDocGiaJPanel;
 import com.mycompany.view.employee.QuanLyMuonJPanel;
-import com.mycompany.view.employee.QuanLyNhaCungCapJPanel;
 import com.mycompany.view.employee.QuanLySachJPanel;
 import com.mycompany.view.employee.QuanLyTacGiaJPanel;
 import com.mycompany.view.employee.ThongKeJPanel;
@@ -110,9 +109,9 @@ public class ChuyenManHinhControllerQL {
                 case "ThongTinTaiKhoan":
                     node = new ThongTinTaiKhoanJPanel();
                     break;
-                case "NhaCungCap":
-                    node = new QuanLyNhaCungCapJPanel();
-                    break;
+//                case "NhaCungCap":
+//                    node = new QuanLyNhaCungCapJPanel();
+//                    break;
 //                case "DangXuat":
 //                    node = MainJFrameQL.dispose();
 //                    break;
