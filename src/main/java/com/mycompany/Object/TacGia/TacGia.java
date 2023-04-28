@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.Object;
+package com.mycompany.Object.TacGia;
 
 /**
  *
@@ -13,15 +13,15 @@ import java.time.LocalDate;
 public class TacGia {
     private String maTacGia, tenTacGia, gioiTinh;
     private LocalDate ngaySinh;
-    private boolean tontai;
+    private boolean tonTai;
 
     //Constructor
-    public TacGia(String maTacGia, String tenTacGia, String gioiTinh, LocalDate ngaySinh, boolean tontai) {
+    public TacGia(String maTacGia, String tenTacGia, String gioiTinh, LocalDate ngaySinh, boolean tonTai) {
         this.maTacGia = maTacGia;
         this.tenTacGia = tenTacGia;
         this.gioiTinh = gioiTinh;
         this.ngaySinh = ngaySinh;
-        this.tontai = tontai;
+        this.tonTai = tonTai;
     }
 
     public TacGia() {
@@ -52,10 +52,10 @@ public class TacGia {
     public void setNgaySinh(LocalDate ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
-    public boolean isTontai() {
-        return tontai;
+    public boolean isTonTai() {
+        return tonTai;
     }
-    public void setTontai(boolean tontai) {
-        this.tontai = tontai;
+    public void setTonTai(boolean tonTai) {
+        this.tonTai = tonTai;
     }
 }
