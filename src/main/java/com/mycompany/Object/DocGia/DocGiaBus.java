@@ -16,7 +16,17 @@ public class DocGiaBus {
     public DocGiaBus(){
         dsdg=dgaoAO.readDB();
     }
+    //Lay danh sach doc gia con ton tai
     public ArrayList<DocGia> getDocGiads(){
-        return dsdg;
+        ArrayList<DocGia> dgtempArrayList=new ArrayList<DocGia>();
+        for(DocGia itemDocGia:dsdg)
+        {
+            if(itemDocGia.isTonTai()) dgtempArrayList.add(itemDocGia);
+        }
+        return dgtempArrayList;
+    }
+    public void add(String maDG)
+    {
+        
     }
 }

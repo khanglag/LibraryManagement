@@ -105,6 +105,7 @@ public class DocGiaDAO {
         } catch (SQLException e) {
              JOptionPane.showMessageDialog(null,"Không có đối tượng cần tìm");
         }
+        connectDB.closeConnect();
         return ketqua;
 }
      
