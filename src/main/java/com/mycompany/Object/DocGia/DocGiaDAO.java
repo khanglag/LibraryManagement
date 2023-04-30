@@ -27,7 +27,7 @@ public class DocGiaDAO {
                while(rset.next()){
                    DocGia dg= new DocGia(rset.getNString("MADG"),
                            rset.getNString("TENDG"),rset.getNString("PHAI"),
-                           rset.getNString("SDT"),rset.getNString("DIACHI")
+                           rset.getNString("SDT"),rset.getNString("DIACHI"),rset.getNString("MAPQ")
                            ,rset.getDate("NGAYSINH").toLocalDate(),rset.getBoolean("TONTAI"));
                    dsDG.add(dg);
                }
@@ -40,12 +40,13 @@ public class DocGiaDAO {
     }
     public Boolean add(DocGia dg){
         connectDB= new ConnectDB();
-        boolean success= connectDB.sqlUpdate("insert into DOCGIA(MADG,TENDG,PHAI,NGAYSINH,SDT,DIACHI,TONTAI) values('"
+        boolean success= connectDB.sqlUpdate("insert into DOCGIA(MADG,TENDG,PHAI,NGAYSINH,SDT,DIACHI,MAPQ,TONTAI) values('"
                 +dg.getMaDocGia()+"','"
                 +dg.getTenDocGia()+"','"
                 +dg.getGioiTinh()+"','"
                 +java.sql.Date.valueOf(dg.getNgaySinh())+"','"
                 +dg.getSoDienThoai()
+                +"','"+dg.getDiaChi()
                 +"','"+dg.getDiaChi()
                 +"','"+dg.isTonTai()+"')");
         connectDB.closeConnect();

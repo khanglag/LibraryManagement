@@ -16,7 +16,7 @@ public class Main {
     public static void main(String[] args) {
         LocalDate localDate = LocalDate.of(2020, 06, 04);    //Tạo 1 cái LocalDate
         DocGiaDAO dgdao=new DocGiaDAO();
-        DocGia dg= new DocGia("000003","Nguyen Thi Anh Thu","NU","03516361","Nguyen Thi Tan",localDate,TRUE);
+        DocGia dg= new DocGia("000003","Nguyen Thi Anh Thu","NU","03516361","Nguyen Thi Tan","DG0406",localDate,TRUE);
         ArrayList<DocGia> ds= new ArrayList<>();
         dgdao.update(dg);
         

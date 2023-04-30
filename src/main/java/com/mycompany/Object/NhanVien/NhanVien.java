@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.Object;
+package com.mycompany.Object.NhanVien;
 
 /**
  *
@@ -11,19 +11,20 @@ package com.mycompany.Object;
 import java.time.LocalDate;
 
 public class NhanVien {
-    private String maNhanVien, tenNhanVien, gioiTinh, chungMinhThu, diaChi, soDienThoai;
+    private String maNhanVien, tenNhanVien, gioiTinh, chungMinhThu, diaChi, soDienThoai, maPQ;
     private LocalDate ngaySinh;
     private boolean tonTai;
 
     //Constructor
     public NhanVien(String maNhanVien, String tenNhanVien, String gioiTinh, String chungMinhThu, String diaChi,
-            String soDienThoai, LocalDate ngaySinh, boolean tonTai) {
+            String soDienThoai, String maPQ, LocalDate ngaySinh, boolean tonTai) {
         this.maNhanVien = maNhanVien;
         this.tenNhanVien = tenNhanVien;
         this.gioiTinh = gioiTinh;
         this.chungMinhThu = chungMinhThu;
         this.diaChi = diaChi;
         this.soDienThoai = soDienThoai;
+        this.maPQ = maPQ;
         this.ngaySinh = ngaySinh;
         this.tonTai = tonTai;
     }
@@ -67,6 +68,12 @@ public class NhanVien {
     }
     public void setSoDienThoai(String soDienThoai) {
         this.soDienThoai = soDienThoai;
+    }
+    public String getMaPQ() {
+        return maPQ;
+    }
+    public void setMaPQ(String maPQ) {
+        this.maPQ = maPQ;
     }
     public LocalDate getNgaySinh() {
         return ngaySinh;
