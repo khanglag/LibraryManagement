@@ -49,7 +49,7 @@ public class DocGiaDAO {
                 +java.sql.Date.valueOf(dg.getNgaySinh())+"','"
                 +dg.getSoDienThoai()
                 +"','"+dg.getDiaChi()
-                +"','"+dg.getDiaChi()
+                +"','"+dg.getMaPQ()
                 +"','"+dg.isTonTai()+"')");
         connectDB.closeConnect();
         return success;
@@ -57,7 +57,7 @@ public class DocGiaDAO {
     public boolean delete(DocGia dg){
         connectDB = new ConnectDB();
         boolean success= connectDB.sqlUpdate("UPDATE DOCGIA SET TONTAI = 'FALSE' WHERE MADG ='"+dg.getMaDocGia()+"'");
-                System.out.println("UPDATE DOCGIA SET TONTAI = 'FALSE' WHERE MADOCGIA ='"+dg.getMaDocGia()+"'");
+                System.out.println("UPDATE DOCGIA SET TONTAI = 'FALSE' WHERE MADG ='"+dg.getMaDocGia()+"'");
         connectDB.closeConnect();
         return success;
     }
@@ -73,7 +73,7 @@ public class DocGiaDAO {
         connectDB.closeConnect();
         return success;
     }
-    public ArrayList<DocGia> timDocGias(String maDocGia, String tenDocGia, String gioiTinh, String soDienThoai, String diaChi,
+    public ArrayList<DocGia> timDocGias(String maDocGia, String tenDocGia, String gioiTinh, String soDienThoai, String diaChi, String maPQ,
             LocalDate ngaySinh,
             boolean tonTai){
         connectDB = new ConnectDB();
@@ -98,7 +98,7 @@ public class DocGiaDAO {
                   while(rset.next()){
                    DocGia dg= new DocGia(rset.getNString("MADG"),
                            rset.getNString("TENDG"),rset.getNString("PHAI"),
-                           rset.getNString("SDT"),rset.getNString("DIACHI")
+                           rset.getNString("SDT"),rset.getNString("DIACHI"),rset.getNString("MAPQ")
                            ,rset.getDate("NGAYSINH").toLocalDate(),rset.getBoolean("TONTAI"));
                    ketqua.add(dg);
                }

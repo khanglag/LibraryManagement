@@ -15,9 +15,9 @@ import java.util.Date;
  */
 public class Main {
         public static void main(String[] args) {
-                LocalDate localDate = LocalDate.of(2020, 06, 04); // Tạo 1 cái LocalDate
+                LocalDate localDate = LocalDate.of(2003, 04, 10); // Tạo 1 cái LocalDate
                 DocGiaDAO dgdao = new DocGiaDAO();
-                for (DocGia itemDocGia : dgdao.timDocGias(null, null, null, null, null, localDate, true))
+                for (DocGia itemDocGia : dgdao.timDocGias(null, null, null, null, null, null, localDate, true))
                         System.out.println(itemDocGia);
         }
 }

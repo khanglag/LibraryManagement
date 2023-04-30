@@ -88,6 +88,7 @@ public class DocGia {
             ", gioiTinh='" + getGioiTinh() + "'" +
             ", soDienThoai='" + getSoDienThoai() + "'" +
             ", diaChi='" + getDiaChi() + "'" +
+            ", maPQ='" + getMaPQ() + "'" +
             ", ngaySinh='" + getNgaySinh() + "'" +
             ", tonTai='" + isTonTai() + "'" +
             "}";
