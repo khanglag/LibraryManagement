@@ -11,12 +11,12 @@ package com.mycompany.Object.DocGia;
 import java.time.LocalDate;
 
 public class DocGia {
-    private String maDocGia, tenDocGia, gioiTinh, soDienThoai, diaChi;
+    private String maDocGia, tenDocGia, gioiTinh, soDienThoai, diaChi, maPQ;
     private LocalDate ngaySinh;
     private boolean tonTai;
 
     //Constructor
-    public DocGia(String maDocGia, String tenDocGia, String gioiTinh, String soDienThoai, String diaChi,
+    public DocGia(String maDocGia, String tenDocGia, String gioiTinh, String soDienThoai, String diaChi, String maPQ,
             LocalDate ngaySinh,
             boolean tonTai) {
         this.maDocGia = maDocGia;
@@ -24,6 +24,7 @@ public class DocGia {
         this.gioiTinh = gioiTinh;
         this.soDienThoai = soDienThoai;
         this.diaChi = diaChi;
+        this.maPQ = maPQ;
         this.ngaySinh = ngaySinh;
         this.tonTai = tonTai;
     }
@@ -61,6 +62,12 @@ public class DocGia {
     }
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
+    }
+    public String getMaPQ() {
+        return maPQ;
+    }
+    public void setMaPQ(String maPQ) {
+        this.maPQ = maPQ;
     }
     public LocalDate getNgaySinh() {
         return ngaySinh;

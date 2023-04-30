@@ -4,7 +4,6 @@
  */
 package com.mycompany.view.employee;
 
-import com.mycompany.Object.Sach;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
@@ -12,6 +11,8 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
+
+import com.mycompany.Object.Sach.Sach;
 
 /**
  *
