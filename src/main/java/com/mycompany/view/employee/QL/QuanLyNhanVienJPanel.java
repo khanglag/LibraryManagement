@@ -35,7 +35,7 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
     public void LoadData() {
         list = nVienBUS.getDSNhanVien();
         int i = 0;
-        while (i < list.size() - 1) {
+        while (i <= list.size() - 1) {
             NhanVien nv = list.get(i);
             model.addRow(new Object[] {
                     ++i, nv.getMaNhanVien(), nv.getTenNhanVien(), nv.getGioiTinh(), nv.getNgaySinh(),
