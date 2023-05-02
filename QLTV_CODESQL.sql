@@ -33,6 +33,7 @@ create table SACH(
 	SA_MALOAI char(6),
 	MATG char(6),
 	MANXB char(6),
+	LXB smallint,
     MA_ANH char(5),
     primary key (MASA, MA_ANH),
 	constraint kn_ml FOREIGN KEY (SA_MALOAI) REFERENCES  LOAISACH(MALOAI),
@@ -49,8 +50,8 @@ create table SACH(
 	CCCD char(12),
 	SDT char(10),
 	DIACHI varchar(50),
-    MAPQ char(6),
-    foreign key(MAPQ) references PHANQUYEN(MAPQ),
+        MAPQ char(6),
+        foreign key(MAPQ) references PHANQUYEN(MAPQ),
 	TONTAI boolean
 );
 create table NHANVIEN(
@@ -123,7 +124,6 @@ create table ANH_NV(
     foreign key(MANV) references nhanvien(MANV),
     primary key(MA_ANH,MANV)
 );
-/*
 create table ANH_SA(
     MASA char(6) not null,
     MA_ANH char(5) not null,
@@ -131,7 +131,7 @@ create table ANH_SA(
     foreign key(MASA) references SACH(MASA)
     -- foreign key(MA_ANH) references SACH(MA_ANH)
    
-);*/
+);
 insert into PHANQUYEN(MAPQ,TENQUYEN,TONTAI) values
 ('QL0000','QUẢN LÝ 1',1),
 ('TT0000','THỦ THƯ 1',1),
@@ -167,17 +167,17 @@ insert into NHAXUATBAN (MANXB,TENNXB,TONTAI) values
 ('NXB005','GIÁO DỤC VIỆT NAM',1),
 ('NXB006','TRI THỨC',1),
 ('NXB007','TRẺ',1);
-insert into SACH(MASA,TENSA,TT,SOTRANG,SOLUONG,gia,SA_MALOAI,MATG,MANXB,MA_ANH,TONTAI) values              
-('XSTK01','XÁC XUẤT THỐNG KÊ','con nguyen',200,10,65.000,'GT0001','TGGT01','NXB005','00000',1),
-('SGKT12','SÁCH GIÁO KHOA TOÁN 12','con nguyen',190,20,30.000,'SGK001','TGGK01','NXB005','00001',1),
-('LDTHPT','SÁCH LUYỆN ĐỀ THPT','nguyen',300,30,200.000,'SLD001','TGLD01','NXB005','00002',1),
-('KHNGCL','SÁCH NGUỒN GỐC CÁC LOÀI','NGUYEN',200,20,200.000,'SKH001','TGKH01','NXB006','00003',1),
-('DVSKTT','ĐẠI VIỆT SỬ KÍ TOÀN THƯ','NGUYEN',1300,10,300.000,'LS0001',null,'NXB006','00004',1),
-('HAPO01','HARRY POTTER VÀ HÒN ĐÁ PHÙ THỦY','NGUYEN',636,10,150.000,'TT0001','TGTT01','NXB007','00005',1),
-('TCNT01','TẠP CHÍ VĂN HÓA NGHỆ THUẬT','NGUYEN',60,5,20.000,'BTC001',NULL,'NXB003','00006',1),
-('DNT001','ĐẮC NHÂN TÂM','NGUYEN',291,10,100.000,'SA0001','TGSA01','NXB007','00007',1),
-('SD0001','SỐ ĐỎ','NGUYEN',307,10,60.000,'VH0001','TGVH01','NXB004','00008',1),
-('LTM001','LUẬT THƯƠNG MẠI','NGUYEN',166,5,50.000,'CT0001',NULL,'NXB002','00009',1);
+insert into SACH(MASA,TENSA,TT,SOTRANG,SOLUONG,gia,SA_MALOAI,MATG,MANXB,LXB,MA_ANH,TONTAI) values              
+('XSTK01','XÁC XUẤT THỐNG KÊ','con nguyen',200,10,65.000,'GT0001','TGGT01','NXB005',12,'00000',1),
+('SGKT12','SÁCH GIÁO KHOA TOÁN 12','con nguyen',190,20,30.000,'SGK001','TGGK01','NXB005',12,'00001',1),
+('LDTHPT','SÁCH LUYỆN ĐỀ THPT','nguyen',300,30,200.000,'SLD001','TGLD01','NXB005',null,'00002',1),
+('KHNGCL','SÁCH NGUỒN GỐC CÁC LOÀI','NGUYEN',200,20,200.000,'SKH001','TGKH01','NXB006',null,'00003',1),
+('DVSKTT','ĐẠI VIỆT SỬ KÍ TOÀN THƯ','NGUYEN',1300,10,300.000,'LS0001',null,'NXB006',null,'00004',1),
+('HAPO01','HARRY POTTER VÀ HÒN ĐÁ PHÙ THỦY','NGUYEN',636,10,150.000,'TT0001','TGTT01','NXB007',null,'00005',1),
+('TCNT01','TẠP CHÍ VĂN HÓA NGHỆ THUẬT','NGUYEN',60,5,20.000,'BTC001',NULL,'NXB003',100,'00006',1),
+('DNT001','ĐẮC NHÂN TÂM','NGUYEN',291,10,100.000,'SA0001','TGSA01','NXB007',null,'00007',1),
+('SD0001','SỐ ĐỎ','NGUYEN',307,10,60.000,'VH0001','TGVH01','NXB004',null,'00008',1),
+('LTM001','LUẬT THƯƠNG MẠI','NGUYEN',166,5,50.000,'CT0001',NULL,'NXB002',5,'00009',1);
 
 insert into DOCGIA(MADG,TENDG,PHAI,NGAYSINH,CCCD,SDT,DIACHI,MAPQ,TONTAI) values
 ('000001','LE DUY KHANG','NAM','2003-04-10','123456789123','0358808913','277 AU DUONG LAN','DG0000',1);
@@ -299,5 +299,5 @@ where (DATEDIFF(ngaytra,HANTRA) <= 0);
 
 
 SELECT * FROM PHIEUTRA;
-SELECT * FROM PHIEUmuon;
+SELECT * FROM PHIEUMUON;
 SELECT * FROM SACH;
