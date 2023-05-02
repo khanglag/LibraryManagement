@@ -46,6 +46,7 @@ create table SACH(
 	TENDG varchar(50) not null,
 	PHAI varchar(10) not null CHECK (PHAI IN('NAM','NU')),
 	NGAYSINH date,
+	CCCD char(12),
 	SDT char(10),
 	DIACHI varchar(50),
     MAPQ char(6),
@@ -122,6 +123,7 @@ create table ANH_NV(
     foreign key(MANV) references nhanvien(MANV),
     primary key(MA_ANH,MANV)
 );
+/*
 create table ANH_SA(
     MASA char(6) not null,
     MA_ANH char(5) not null,
@@ -129,7 +131,7 @@ create table ANH_SA(
     foreign key(MASA) references SACH(MASA)
     -- foreign key(MA_ANH) references SACH(MA_ANH)
    
-);
+);*/
 insert into PHANQUYEN(MAPQ,TENQUYEN,TONTAI) values
 ('QL0000','QUẢN LÝ 1',1),
 ('TT0000','THỦ THƯ 1',1),
@@ -177,8 +179,8 @@ insert into SACH(MASA,TENSA,TT,SOTRANG,SOLUONG,gia,SA_MALOAI,MATG,MANXB,MA_ANH,T
 ('SD0001','SỐ ĐỎ','NGUYEN',307,10,60.000,'VH0001','TGVH01','NXB004','00008',1),
 ('LTM001','LUẬT THƯƠNG MẠI','NGUYEN',166,5,50.000,'CT0001',NULL,'NXB002','00009',1);
 
-insert into DOCGIA(MADG,TENDG,PHAI,NGAYSINH,SDT,DIACHI,MAPQ,TONTAI) values
-('000001','LE DUY KHANG','NAM','2003-04-10','0358808913','277 AU DUONG LAN','DG0000',1);
+insert into DOCGIA(MADG,TENDG,PHAI,NGAYSINH,CCCD,SDT,DIACHI,MAPQ,TONTAI) values
+('000001','LE DUY KHANG','NAM','2003-04-10','123456789123','0358808913','277 AU DUONG LAN','DG0000',1);
 insert into NHANVIEN(MANV,TENNV,PHAI,NGAYSINH,CCCD,SDT,DIACHI,MAPQ,TONTAI) values 
 ('NV0011','LE DUY KHANG','NAM','2003-10-04','120732921123','0368779041','277 au duong lan','QL0000',1),
 ('NV0027','NGUYEN THI ANH THU','NỮ','2003-08-15','068303002628','0368779041','101 nguyen thi tan','TT0000',1),
@@ -209,7 +211,7 @@ insert into THETHUVIEN(MATHE,NGAYCAP,HSD,MADG,MANV,TONTAI) values
 insert into ANH_DG(ma_anh,madg) values
 ('00000','000001'),
 ('00001','000001');
-insert into ANH_SA(ma_anh,masa) values
+/*insert into ANH_SA(ma_anh,masa) values
 ('00000','XSTK01'),
 ('00001','SGKT12'),
 ('00002','LDTHPT'),
@@ -219,7 +221,7 @@ insert into ANH_SA(ma_anh,masa) values
 ('00006','TCNT01'),
 ('00007','DNT001'),
 ('00008','SD0001'),
-('00009','LTM001');
+('00009','LTM001');*/
 insert into ANH_NV(ma_anh,maNV) values
 ('00000','NV0027'),
 ('00001','NV0027'),
