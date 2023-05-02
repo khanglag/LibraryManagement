@@ -86,7 +86,6 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         btnChonAnhSach = new javax.swing.JButton();
         btnXoa = new javax.swing.JButton();
         btnSua = new javax.swing.JButton();
-        btnLoad = new javax.swing.JButton();
         btnThem = new javax.swing.JButton();
         lableAnhSach = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -95,7 +94,8 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         tfMaTheLoai = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         tfSoTrang = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
+        btnClear = new javax.swing.JButton();
+        btnTim = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableSach = new javax.swing.JTable();
 
@@ -154,14 +154,6 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnLoad.setText("Làm mới");
-        btnLoad.setPreferredSize(new java.awt.Dimension(99, 57));
-        btnLoad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoadActionPerformed(evt);
-            }
-        });
-
         btnThem.setText("Thêm");
         btnThem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,6 +183,15 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         });
 
         jLabel11.setText("Số Trang");
+
+        btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+
+        btnTim.setText("Tim");
 
         javax.swing.GroupLayout panelRootLayout = new javax.swing.GroupLayout(panelRoot);
         panelRoot.setLayout(panelRootLayout);
@@ -240,26 +241,28 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel11)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(tfSoTrang, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(30, 30, 30)
                 .addComponent(lableAnhSach, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(panelRootLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(btnThem)
-                .addGap(95, 95, 95)
-                .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addGap(18, 18, 18)
+                .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
+                .addComponent(btnClear)
+                .addGap(39, 39, 39)
+                .addComponent(btnTim)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelRootLayout.setVerticalGroup(
             panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRootLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelRootLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelRootLayout.createSequentialGroup()
                                 .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -283,43 +286,43 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9)
-                                    .addComponent(tfGia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel6)
-                                    .addComponent(btnChonAnhSach)))
+                                    .addComponent(tfGia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(panelRootLayout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(jLabel3)
-                                .addGap(24, 24, 24)
-                                .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(tfTenSach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2))
-                                .addGap(15, 15, 15)
-                                .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(tfTinhTrang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1))
-                                .addGap(18, 18, 18)
-                                .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(tfMaTheLoai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel5)
-                                    .addComponent(tfMaTacGia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(panelRootLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(lableAnhSach, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRootLayout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(lableAnhSach, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())))
+                            .addComponent(jLabel6)
+                            .addComponent(btnChonAnhSach)))
+                    .addGroup(panelRootLayout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel3)
+                        .addGap(24, 24, 24)
+                        .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfTenSach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(15, 15, 15)
+                        .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfTinhTrang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(18, 18, 18)
+                        .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfMaTheLoai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(tfMaTacGia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnClear, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnTim, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         tableSach.setModel(new javax.swing.table.DefaultTableModel(
@@ -356,40 +359,23 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
             tableSach.getColumnModel().getColumn(0).setPreferredWidth(25);
         }
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelRoot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(14, 14, 14))
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(panelRoot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -400,10 +386,6 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
     private void tfTenSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTenSachActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfTenSachActionPerformed
-
-    private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnLoadActionPerformed
 
     private void btnChonAnhSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChonAnhSachActionPerformed
         // TODO add your handling code here:
@@ -450,6 +432,35 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnThemActionPerformed
 
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
+        // TODO add your handling code here:
+        int i = tableSach.getSelectedRow();
+        if (i >= 0) {
+            model.removeRow(i);
+            tableSach.setModel(model);
+        }
+    }//GEN-LAST:event_btnXoaActionPerformed
+
+    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+        // TODO add your handling code here:
+        
+        int i = tableSach.getSelectedRow();
+        if (i >= 0) {
+            model.setValueAt(tfMaSach.getText(), i, 1);
+            model.setValueAt(tfTenSach.getText(), i, 2);
+            model.setValueAt(tfTinhTrang.getText(), i, 3);
+            model.setValueAt(tfMaTheLoai.getText(), i, 4);
+            model.setValueAt(tfMaTacGia.getText(), i, 5);
+            model.setValueAt(tfMaNhaXuatBan.getText(), i, 6);
+            model.setValueAt(tfSoTrang.getText(), i, 7);
+            model.setValueAt(tfLanXuatBan.getText(), i, 8);
+            model.setValueAt(tfSoLuong.getText(), i, 9);
+            model.setValueAt(tfGia.getText(), i, 10);
+            model.setValueAt(getPathFile(), i, 11);
+        }
+        tableSach.setModel(model);
+    }//GEN-LAST:event_btnSuaActionPerformed
+
     private void tableSachComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_tableSachComponentShown
         // TODO add your handling code here:
         int i = 1;
@@ -482,7 +493,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
             setPathFile(tableSach.getModel().getValueAt(i,11).toString());
             BufferedImage b;
             try{
-                
+
                 File file = new File(getPathFile());
                 System.out.println(getPathFile());
                 b = ImageIO.read(file);
@@ -494,41 +505,27 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_tableSachMouseClicked
 
-    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
-        int i = tableSach.getSelectedRow();
-        if (i >= 0) {
-            model.removeRow(i);
-            tableSach.setModel(model);
-        }
-    }//GEN-LAST:event_btnXoaActionPerformed
-
-    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-        // TODO add your handling code here:
-        
-        int i = tableSach.getSelectedRow();
-        if (i >= 0) {
-            model.setValueAt(tfMaSach.getText(), i, 1);
-            model.setValueAt(tfTenSach.getText(), i, 2);
-            model.setValueAt(tfTinhTrang.getText(), i, 3);
-            model.setValueAt(tfMaTheLoai.getText(), i, 4);
-            model.setValueAt(tfMaTacGia.getText(), i, 5);
-            model.setValueAt(tfMaNhaXuatBan.getText(), i, 6);
-            model.setValueAt(tfSoTrang.getText(), i, 7);
-            model.setValueAt(tfLanXuatBan.getText(), i, 8);
-            model.setValueAt(tfSoLuong.getText(), i, 9);
-            model.setValueAt(tfGia.getText(), i, 10);
-            model.setValueAt(getPathFile(), i, 11);
-        }
-        tableSach.setModel(model);
-    }//GEN-LAST:event_btnSuaActionPerformed
+        tfGia.setText("");
+        tfLanXuatBan.setText("");
+        tfMaNhaXuatBan.setText("");
+        tfMaSach.setText("");
+        tfMaTacGia.setText("");
+        tfMaTheLoai.setText("");
+        tfSoLuong.setText("");
+        tfSoTrang.setText("");
+        tfTenSach.setText("");
+        tfTinhTrang.setText("");
+    }//GEN-LAST:event_btnClearActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChonAnhSach;
-    private javax.swing.JButton btnLoad;
+    private javax.swing.JButton btnClear;
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnThem;
+    private javax.swing.JButton btnTim;
     private javax.swing.JButton btnXoa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -541,7 +538,6 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lableAnhSach;
     private javax.swing.JPanel panelRoot;

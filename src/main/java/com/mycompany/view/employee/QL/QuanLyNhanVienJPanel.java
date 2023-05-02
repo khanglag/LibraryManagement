@@ -37,20 +37,22 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
         btnSua = new javax.swing.JButton();
         btnLoad = new javax.swing.JButton();
         jLabel39 = new javax.swing.JLabel();
-        tfQLMaNV = new javax.swing.JTextField();
+        tfMaNV = new javax.swing.JTextField();
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
-        tfQLSDT = new javax.swing.JTextField();
-        tfQLTenNV = new javax.swing.JTextField();
-        tfQLDC = new javax.swing.JTextField();
-        tfQLNS = new javax.swing.JTextField();
+        tfSDT = new javax.swing.JTextField();
+        tfTenNV = new javax.swing.JTextField();
+        tfDiaChi = new javax.swing.JTextField();
+        tfNgaySinh = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jRadioButtonNam = new javax.swing.JRadioButton();
         jRadioButtonNu = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
         tfCCCD = new javax.swing.JTextField();
+        btnTim = new javax.swing.JButton();
+        btnLoad2 = new javax.swing.JButton();
         jScrollPane10 = new javax.swing.JScrollPane();
         jTable8 = new javax.swing.JTable();
 
@@ -111,6 +113,16 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
 
         jLabel2.setText("CCCD");
 
+        btnTim.setText("Tim");
+
+        btnLoad2.setText("Clear");
+        btnLoad2.setPreferredSize(new java.awt.Dimension(99, 57));
+        btnLoad2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoad2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -121,40 +133,40 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(btnThem)
-                                .addGap(35, 35, 35)
-                                .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(53, 53, 53)
-                                .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
-                                .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel39)
                                     .addComponent(jLabel40)
                                     .addComponent(jLabel42))
                                 .addGap(93, 93, 93)
                                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tfQLMaNV, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                    .addComponent(tfQLTenNV, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                    .addComponent(tfQLDC, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                    .addComponent(tfQLSDT, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                    .addComponent(tfQLNS, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(tfMaNV, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(tfTenNV, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(tfDiaChi, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(tfSDT, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                    .addComponent(tfNgaySinh, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                                     .addGroup(jPanel7Layout.createSequentialGroup()
                                         .addComponent(jRadioButtonNam)
                                         .addGap(31, 31, 31)
                                         .addComponent(jRadioButtonNu))
-                                    .addComponent(tfCCCD))))
-                        .addGap(31, 31, 31))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel43)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tfCCCD)))
+                            .addComponent(jLabel43)
                             .addComponent(jLabel2)
                             .addComponent(jLabel1)
                             .addComponent(jLabel41))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(71, 71, 71)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnTim)
+                            .addComponent(btnLoad2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(btnThem)
+                        .addGap(35, 35, 35)
+                        .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53)
+                        .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                        .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,20 +174,22 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
                 .addGap(11, 11, 11)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel39)
-                    .addComponent(tfQLMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTim))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfQLTenNV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfTenNV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel40))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jRadioButtonNam)
-                    .addComponent(jRadioButtonNu))
+                    .addComponent(jRadioButtonNu)
+                    .addComponent(btnLoad2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43)
-                    .addComponent(tfQLNS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -183,11 +197,11 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
                 .addGap(12, 12, 12)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel41)
-                    .addComponent(tfQLSDT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfSDT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel42)
-                    .addComponent(tfQLDC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfDiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnThem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -252,14 +266,26 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
         new themtaikhoanQL().setVisible(true);
     }//GEN-LAST:event_jMenuItemNVMouseClicked
 
+    private void btnLoad2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoad2ActionPerformed
+        // TODO add your handling code here:
+       tfCCCD.setText("");
+       tfDiaChi.setText("");
+       tfMaNV.setText("");
+       tfNgaySinh.setText("");
+       tfSDT.setText("");
+       tfTenNV.setText("");
+    }//GEN-LAST:event_btnLoad2ActionPerformed
+
     
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Phai;
     private javax.swing.JButton btnLoad;
+    private javax.swing.JButton btnLoad2;
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnThem;
+    private javax.swing.JButton btnTim;
     private javax.swing.JButton btnXoa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -276,10 +302,10 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JTable jTable8;
     private javax.swing.JTextField tfCCCD;
-    private javax.swing.JTextField tfQLDC;
-    private javax.swing.JTextField tfQLMaNV;
-    private javax.swing.JTextField tfQLNS;
-    private javax.swing.JTextField tfQLSDT;
-    private javax.swing.JTextField tfQLTenNV;
+    private javax.swing.JTextField tfDiaChi;
+    private javax.swing.JTextField tfMaNV;
+    private javax.swing.JTextField tfNgaySinh;
+    private javax.swing.JTextField tfSDT;
+    private javax.swing.JTextField tfTenNV;
     // End of variables declaration//GEN-END:variables
 }

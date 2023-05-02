@@ -39,6 +39,7 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         btnXoa2 = new javax.swing.JButton();
         btnSua2 = new javax.swing.JButton();
         btnLoad2 = new javax.swing.JButton();
+        btnTim = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
 
@@ -91,13 +92,15 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         btnSua2.setMinimumSize(new java.awt.Dimension(89, 55));
         btnSua2.setPreferredSize(new java.awt.Dimension(99, 57));
 
-        btnLoad2.setText("Làm mới");
+        btnLoad2.setText("Clear");
         btnLoad2.setPreferredSize(new java.awt.Dimension(99, 57));
         btnLoad2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoad2ActionPerformed(evt);
             }
         });
+
+        btnTim.setText("Tim");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -114,21 +117,22 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
                 .addGap(19, 19, 19)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfNgaySinh)
+                            .addComponent(tfTen)
+                            .addComponent(tfPhai)
+                            .addComponent(tfMa))
+                        .addGap(284, 284, 284))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(btnXoa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
                         .addComponent(btnSua2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
                         .addComponent(btnLoad2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 11, Short.MAX_VALUE))
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tfNgaySinh)
-                            .addComponent(tfTen)
-                            .addComponent(tfPhai)
-                            .addComponent(tfMa))
-                        .addGap(185, 185, 185)))
-                .addGap(38, 38, 38))
+                        .addGap(44, 44, 44)
+                        .addComponent(btnTim)
+                        .addGap(0, 40, Short.MAX_VALUE))))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,7 +158,8 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
                     .addComponent(btnThem2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnXoa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSua2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLoad2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnLoad2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTim))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
@@ -183,14 +188,10 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane6)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(68, 68, 68))
-                    .addComponent(jScrollPane6))
-                .addContainerGap())
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,6 +226,10 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
 
     private void btnLoad2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoad2ActionPerformed
         // TODO add your handling code here:
+        tfMa.setText("");
+        tfNgaySinh.setText("");
+        tfPhai.setText("");
+        tfTen.setText("");
     }//GEN-LAST:event_btnLoad2ActionPerformed
 
 
@@ -232,6 +237,7 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnLoad2;
     private javax.swing.JButton btnSua2;
     private javax.swing.JButton btnThem2;
+    private javax.swing.JButton btnTim;
     private javax.swing.JButton btnXoa2;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;

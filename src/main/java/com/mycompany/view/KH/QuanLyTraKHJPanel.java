@@ -37,6 +37,8 @@ public class QuanLyTraKHJPanel extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         tfMaTacGia = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
+        btnXoaHet = new javax.swing.JButton();
+        btnTim = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
 
@@ -59,6 +61,15 @@ public class QuanLyTraKHJPanel extends javax.swing.JPanel {
         jLabel10.setText("Mã tác giả");
 
         jLabel15.setText("jLabel15");
+
+        btnXoaHet.setText("Xoá hết");
+        btnXoaHet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXoaHetActionPerformed(evt);
+            }
+        });
+
+        btnTim.setText("Tìm");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -87,6 +98,12 @@ public class QuanLyTraKHJPanel extends javax.swing.JPanel {
                 .addGap(50, 50, 50)
                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnXoaHet)
+                .addGap(18, 18, 18)
+                .addComponent(btnTim)
+                .addGap(30, 30, 30))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,7 +135,11 @@ public class QuanLyTraKHJPanel extends javax.swing.JPanel {
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
                                 .addComponent(jLabel10)))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnTim)
+                    .addComponent(btnXoaHet))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -159,8 +180,8 @@ public class QuanLyTraKHJPanel extends javax.swing.JPanel {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -170,8 +191,19 @@ public class QuanLyTraKHJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfMaNhaXuatBanActionPerformed
 
+    private void btnXoaHetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaHetActionPerformed
+        // TODO add your handling code here:
+        tfTenSach.setText("");
+        tfMaSach.setText("");
+        tfMaNhaXuatBan.setText("");
+        tfMaTacGia.setText("");
+
+    }//GEN-LAST:event_btnXoaHetActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnTim;
+    private javax.swing.JButton btnXoaHet;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel4;
