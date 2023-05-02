@@ -12,11 +12,11 @@ public class Sach {
     private String maSach, tenSach, tinhTrang, maTheLoai, maTacGia, maNXB,anh;
     private int soTrang, lanXuatBan, soLuong;
     private float gia;
-    private boolean tonTai;
+    private int tonTai;
 
     //Constructor
     public Sach(String maSach, String tenSach, String tinhTrang, String maTheLoai, String maTacGia, String maNXB,
-            int soTrang, int lanXuatBan, int soLuong, float gia, boolean tonTai,String anh) {
+            int soTrang, int lanXuatBan, int soLuong, float gia, int tonTai,String anh) {
         this.maSach = maSach;
         this.tenSach = tenSach;
         this.tinhTrang = tinhTrang;
@@ -119,10 +119,26 @@ public class Sach {
     public void setGia(float gia) {
         this.gia = gia;
     }
-    public boolean isTonTai() {
+    public int isTonTai() {
         return tonTai;
     }
-    public void setTonTai(boolean tonTai) {
+    public void setTonTai(int tonTai) {
         this.tonTai = tonTai;
+    }
+    public String toString() {
+        return "{" +
+            " maSach='" + getMaSach() + "'" +
+            ", tenSach='" + getTenSach() + "'" +
+            ", tinhTrang='" + getTinhTrang() + "'" +
+            ", maTheLoai='" + getMaTheLoai() + "'" +
+            ", maTacGia='" + getMaTacGia() + "'" +
+            ", maNXB='" + getMaNXB() + "'" +
+            ", anh='" + getAnh() + "'" +
+            ", soTrang='" + getSoTrang() + "'" +
+            ", lanXuatBan='" + getLanXuatBan() + "'" +
+            ", soLuong='" + getSoLuong() + "'" +
+            ", gia='" + getGia() + "'" +
+            ", tonTai='" + isTonTai()+ "'" +
+            "}";
     }
 }
