@@ -186,7 +186,7 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
                         "STT", "Mã NXB", "Tên NXB"
                 }) {
             boolean[] canEdit = new boolean[] {
-                    false, true, true
+                    false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

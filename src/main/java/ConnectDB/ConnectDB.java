@@ -36,7 +36,7 @@ public class ConnectDB {
         //DB= "testDB";
         user = "root";
         //password = "200303410";
-        password="";
+        password="5731";
         setupConnect();
     }
     public ConnectDB(String DB) {
