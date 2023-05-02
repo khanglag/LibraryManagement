@@ -3,18 +3,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package com.mycompany.view.employee;
+import com.mycompany.Object.NhaXuatBan.*;
+import java.util.ArrayList;
+import javax.swing.table.*;
 
 /**
  *
  * @author khang
  */
 public class NhaXuatBanJPanel extends javax.swing.JPanel {
+    NhaXuatBanBUS NXBBUS = new NhaXuatBanBUS();
+    DefaultTableModel model;
 
     /**
      * Creates new form NhaXuatBanJPanel
      */
     public NhaXuatBanJPanel() {
         initComponents();
+        model = (DefaultTableModel) tableNXB.getModel();
+        getNXBList();
     }
 
     /**
@@ -150,10 +157,7 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
 
         tableNXB.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                
             },
             new String [] {
                 "STT", "Mã NXB", "Tên NXB"
@@ -212,6 +216,19 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    public void getNXBList() {
+        ArrayList<NhaXuatBan> arr = new ArrayList<NhaXuatBan>();
+        arr = NXBBUS.getDSNXB();
+        int i = 0;
+        while (i <= arr.size() - 1) {
+            NhaXuatBan nxb = arr.get(i);
+            model.addRow(new Object[]{
+            ++i,nxb.getMaNXB(),nxb.getTenNXB()
+        });
+        }
+        tableNXB.setModel(model);
+    }
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
         // TODO add your handling code here:
