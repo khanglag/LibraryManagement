@@ -35,7 +35,8 @@ public class ConnectDB {
         DB = "QLTV";
         //DB= "testDB";
         user = "root";
-        password = "200303410";
+        //password = "200303410";
+        password="";
         setupConnect();
     }
     public ConnectDB(String DB) {

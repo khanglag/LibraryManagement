@@ -26,6 +26,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroupTinhTrang = new javax.swing.ButtonGroup();
         jPanel15 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
@@ -67,6 +68,11 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         jLabel32.setText("Mã đọc giả");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jLabel33.setText("Mã nhân viên");
 
@@ -76,6 +82,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
 
         jLabel35.setText("Tình trạng");
 
+        buttonGroupTinhTrang.add(jRadioButton1);
         jRadioButton1.setText("Đang mượn");
 
         btnThem.setText("Thêm");
@@ -93,6 +100,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         btnLoad.setText("Làm mới");
         btnLoad.setPreferredSize(new java.awt.Dimension(99, 57));
 
+        buttonGroupTinhTrang.add(jRadioButton2);
         jRadioButton2.setText("Đã trả");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,7 +170,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel35)
                             .addComponent(jRadioButton1))
-                        .addGap(24, 24, 24)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jRadioButton2))
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -331,6 +339,10 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSuaActionPerformed
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLoad;
@@ -341,6 +353,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnThem4;
     private javax.swing.JButton btnXoa;
     private javax.swing.JButton btnXoa1;
+    private javax.swing.ButtonGroup buttonGroupTinhTrang;
     private javax.swing.JButton jButton13;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
