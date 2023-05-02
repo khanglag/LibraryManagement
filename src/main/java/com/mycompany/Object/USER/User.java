@@ -12,19 +12,22 @@ import java.time.LocalDate;
  */
 public class User {
 
-    private String maUser, tenUser, gioiTinh, chungMinhThu, diaChi, soDienThoai, maPQ;
+    private String maUser, tenUser, gioiTinh, chungMinhThu, diaChi, soDienThoai;
     private LocalDate ngaySinh;
 
-    public User(String maUser, String tenUser, String gioiTinh, String chungMinhThu, String diaChi, String soDienThoai, String maPQ, LocalDate ngaySinh) {
+    public User(String maUser, String tenUser, String gioiTinh, LocalDate ngaySinh, String chungMinhThu, String diaChi, String soDienThoai) {
         this.maUser = maUser;
         this.tenUser = tenUser;
         this.gioiTinh = gioiTinh;
-        this.chungMinhThu = chungMinhThu;
-        this.diaChi = diaChi;
-        this.soDienThoai = soDienThoai;
-        this.maPQ = maPQ;
         this.ngaySinh = ngaySinh;
+        this.chungMinhThu = chungMinhThu;
+        this.soDienThoai = soDienThoai;
+        this.diaChi = diaChi;
+        
+        
     }
+
+    
 
     public String getMaUser() {
         return maUser;
@@ -74,13 +77,7 @@ public class User {
         this.soDienThoai = soDienThoai;
     }
 
-    public String getMaPQ() {
-        return maPQ;
-    }
 
-    public void setMaPQ(String maPQ) {
-        this.maPQ = maPQ;
-    }
 
     public LocalDate getNgaySinh() {
         return ngaySinh;

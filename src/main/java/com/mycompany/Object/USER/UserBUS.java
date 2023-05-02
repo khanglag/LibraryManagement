@@ -11,13 +11,13 @@ import java.util.ArrayList;
  * @author khang
  */
 public class UserBUS {
-    ArrayList<User> ds =new ArrayList<User>();
-    NhanVienDAO nhanVienDAO=new NhanVienDAO();
-    public NhanVienBUS(){
-        dsNhanVien=nhanVienDAO.readDB();
+   ArrayList<User> dsUser =new ArrayList<>();
+    UserDAO userDAO=new UserDAO();
+    public UserBUS(){
+        dsUser=userDAO.readDB();
     }
-    public ArrayList<User> getDSNhanVien(){
-        return dsNhanVien;
+    public ArrayList<User> getDSTacGia(){
+        return dsUser;
     }
     
 }

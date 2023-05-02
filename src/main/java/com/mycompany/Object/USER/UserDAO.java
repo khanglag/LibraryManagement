@@ -5,6 +5,8 @@
 package com.mycompany.Object.USER;
 
 import ConnectDB.ConnectDB;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -15,26 +17,29 @@ public class UserDAO {
 
     public UserDAO() {
     }
-    
+
     ConnectDB connectDB;
-    ArrayList<user> dsTacGia= new ArrayList<user>();
-    public ArrayList<user> readDB(){
-        connectDB= new ConnectDB();
+    User user;
+
+    ArrayList<User> listUser = new ArrayList<>();
+    public ArrayList<User> readDB() {
+        connectDB = new ConnectDB();
         try {
-            String qry="SELECT *FROM TACGIA";
-            ResultSet rset= connectDB.sqlQuery(qry);
-           if(rset!=null){
-               while(rset.next()){
-                   TacGia tacGia= new TacGia(rset.getNString("MATG"),
-                           rset.getNString("TENTG"),rset.getNString("PHAI"),
-                           rset.getDate("NGAYSINH").toLocalDate(),rset.getBoolean("TONTAI"));
-                   dsTacGia.add(tacGia);
-               }
-           }
+            final String qry = "SELECT manv,tennv,phai,NGAYSINH,CCCD,sdt,DIACHI from nhanvien,phanquyen,taikhoan WHERE nhanvien.MAPQ=phanquyen.MAPQ and phanquyen.MAPQ=taikhoan.MAPQ and taikhoan.TENDN=";
+            ResultSet rset = connectDB.sqlQuery(qry);
+            if (rset != null) {
+                while (rset.next()) {
+                    user = new User(rset.getNString("MANV"),
+                            rset.getNString("TENNV"), rset.getNString("PHAI"),
+                            rset.getDate("NGAYSINH").toLocalDate(), rset.getString("CCCD"),
+                            rset.getString("SDT"), rset.getString("DIACHI"));
+                    listUser.add(user);
+                }
+            }
         } catch (SQLException e) {
             System.out.println("Loi");
         }
         connectDB.closeConnect();
-        return dsTacGia;
+        return listUser;
     }
 }
