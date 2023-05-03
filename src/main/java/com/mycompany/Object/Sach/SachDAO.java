@@ -7,6 +7,7 @@ import ConnectDB.ConnectDB;
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 /**
  *
  * @author pc
@@ -75,41 +76,38 @@ public class SachDAO {
         connectDB.closeConnect();
         return success;
     }
-//    public ArrayList<DocGia> timDocGias(String maDocGia, String tenDocGia, String gioiTinh, String soDienThoai, String diaChi, String maPQ,
-//            LocalDate ngaySinh,
-//            boolean tonTai){
-//        connectDB = new ConnectDB();
-//        ArrayList<DocGia> ketqua =new ArrayList<DocGia>();
-//        String qry="SELECT *FROM DOCGIA WHERE ";
-//        if(maDocGia!=null) 
-//            qry+=("MADG= '"+maDocGia+ "'");
-//        if(tenDocGia!=null) 
-//            qry+=("TENDG= '"+tenDocGia+ "'");
-//        if(gioiTinh!=null) 
-//            qry+=("PHAI= '"+gioiTinh+ "'");
-//        if(soDienThoai!=null) 
-//            qry+=("SDT= '"+soDienThoai+ "'");
-//        if(diaChi!=null) 
-//            qry+=("DIACHI= '"+diaChi+ "'");
-//        if(ngaySinh!=null) 
-//            qry+=("NGAYSINH= '"+ngaySinh+ "'");
-//        System.out.println(qry);
-//        ResultSet rset= connectDB.sqlQuery(qry);
-//        try {
-//            if (rset!=null) {
-//                  while(rset.next()){
-//                   DocGia dg= new DocGia(rset.getNString("MADG"),
-//                           rset.getNString("TENDG"),rset.getNString("PHAI"),
-//                           rset.getNString("SDT"),rset.getNString("DIACHI"),rset.getNString("MAPQ")
-//                           ,rset.getDate("NGAYSINH").toLocalDate(),rset.getBoolean("TONTAI"));
-//                   ketqua.add(dg);
-//               }
-//            }
-//        } catch (SQLException e) {
-//             JOptionPane.showMessageDialog(null,"Không có đối tượng cần tìm");
-//        }
-//        connectDB.closeConnect();
-//        return ketqua;
-//}
+    public ArrayList<Sach> timSachs(String maSach, String tenSach, String tinhTrang, String maTheLoai, String maTacGia, String maNXB,
+            int soTrang, int lanXuatBan, int soLuong, float gia, int tonTai,String anh){
+        connectDB = new ConnectDB();
+        ArrayList<Sach> ketqua =new ArrayList<Sach>();
+        String qry="SELECT *FROM SACH WHERE ";
+        if(maSach!=null) 
+            qry+=("MASA= '"+maSach+ "'");
+        if(tenSach!=null) 
+            qry+=("TENSA= '"+tenSach+ "'");
+        if(tinhTrang!=null) 
+            qry+=("TT= '"+tinhTrang+ "'");
+        if(maTheLoai!=null) 
+            qry+=("SA_MALOAI= '"+maTheLoai+ "'");
+        if(maNXB!=null) 
+            qry+=("MANXB= '"+maNXB+ "'");
+        if(maTacGia!=null) 
+            qry+=("MATG= '"+maTacGia+ "'");
+        System.out.println(qry);
+        ResultSet rset= connectDB.sqlQuery(qry);
+        try {
+            if(rset!=null){
+               while(rset.next()){
+                   Sach sa= new Sach(rset.getNString("MASA"),rset.getNString("TENSA"),rset.getNString("TT"),rset.getNString("SA_MALOAI"), rset.getNString("MATG"), rset.getNString("MANXB"),
+            rset.getInt("SOTRANG") , 0, rset.getInt("SOTRANG"), rset.getFloat("gia"), rset.getInt("TONTAI"),rset.getNString("MA_ANH"));
+                   ketqua.add(sa);
+               }
+           }
+        } catch (SQLException e) {
+             JOptionPane.showMessageDialog(null,"Không có đối tượng cần tìm");
+        }
+        connectDB.closeConnect();
+        return ketqua;
+}
     
 }
