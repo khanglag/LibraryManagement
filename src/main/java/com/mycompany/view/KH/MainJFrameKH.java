@@ -67,7 +67,7 @@ public class MainJFrameKH extends javax.swing.JFrame {
         jpnTrangChinh.setBackground(new java.awt.Color(51, 51, 51));
 
         jlbTrangChinh.setForeground(new java.awt.Color(255, 255, 255));
-        jlbTrangChinh.setText("jLabel1");
+        jlbTrangChinh.setText("Trang chủ");
 
         javax.swing.GroupLayout jpnTrangChinhLayout = new javax.swing.GroupLayout(jpnTrangChinh);
         jpnTrangChinh.setLayout(jpnTrangChinhLayout);

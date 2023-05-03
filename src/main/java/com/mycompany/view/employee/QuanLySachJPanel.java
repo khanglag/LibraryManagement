@@ -417,10 +417,10 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
-        
-        SachList.add(new Sach(tfMaSach.getText(),tfTenSach.getText(),tfTinhTrang.getText(),tfMaTheLoai.getText(),
+        Sach a = new Sach(tfMaSach.getText(),tfTenSach.getText(),tfTinhTrang.getText(),tfMaTheLoai.getText(),
         tfMaTacGia.getText(),tfMaNhaXuatBan.getText(),Integer.parseInt(tfSoTrang.getText()),Integer.parseInt(tfLanXuatBan.getText()),
-                Integer.parseInt(tfSoLuong.getText()),Float.parseFloat(tfGia.getText()),getPathFile()));
+                Integer.parseInt(tfSoLuong.getText()),Float.parseFloat(tfGia.getText()),getPathFile());
+        SachList.add(a);
         int i = SachList.size()-1;
         Sach sach= SachList.get(i);
         model.addRow(new Object[]{
