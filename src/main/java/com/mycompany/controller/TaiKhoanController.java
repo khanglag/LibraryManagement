@@ -4,6 +4,7 @@
  */
 package com.mycompany.controller;
 
+import com.itextpdf.text.pdf.PdfName;
 import com.mycompany.Object.TaiKhoan;
 import com.mycompany.Service.TaiKhoanService;
 import com.mycompany.Service.TaiKhoanServiceImpl;
@@ -32,6 +33,7 @@ public class TaiKhoanController {
     private JPasswordField jtfMatKhau;
     private JLabel jlbMsg;
     
+    static String tendnString=null;
     
     private JFrame frame=null;
     private TaiKhoanService taiKhoanService=null;
@@ -45,6 +47,10 @@ public class TaiKhoanController {
         
         
         taiKhoanService = new TaiKhoanServiceImpl();
+    }
+
+    public static String getTendnString() {
+        return tendnString;
     }
 
     
@@ -63,7 +69,7 @@ public class TaiKhoanController {
                         if(!taiKhoan.isTonTai()){
                             jlbMsg.setText("Tài khoản bị khoá");
                         }else{
-                            
+                            tendnString=jtfTenDangNhap.getText();
                             
                             if(taiKhoan.getQuyen().contains("QL")){
                                 dialog.dispose();
