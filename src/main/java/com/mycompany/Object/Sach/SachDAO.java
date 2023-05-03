@@ -35,39 +35,46 @@ public class SachDAO {
         connectDB.closeConnect();
         return dss;
     }
-//    public Boolean add(DocGia dg){
-//        connectDB= new ConnectDB();
-//        boolean success= connectDB.sqlUpdate("insert into DOCGIA(MADG,TENDG,PHAI,NGAYSINH,SDT,DIACHI,MAPQ,TONTAI) values('"
-//                +dg.getMaDocGia()+"','"
-//                +dg.getTenDocGia()+"','"
-//                +dg.getGioiTinh()+"','"
-//                +java.sql.Date.valueOf(dg.getNgaySinh())+"','"
-//                +dg.getSoDienThoai()
-//                +"','"+dg.getDiaChi()
-//                +"','"+dg.getMaPQ()
-//                +"','"+dg.isTonTai()+"')");
-//        connectDB.closeConnect();
-//        return success;
-//    }
-//    public boolean delete(DocGia dg){
-//        connectDB = new ConnectDB();
-//        boolean success= connectDB.sqlUpdate("UPDATE DOCGIA SET TONTAI = 'FALSE' WHERE MADG ='"+dg.getMaDocGia()+"'");
-//                System.out.println("UPDATE DOCGIA SET TONTAI = 'FALSE' WHERE MADG ='"+dg.getMaDocGia()+"'");
-//        connectDB.closeConnect();
-//        return success;
-//    }
-//    public boolean update(DocGia dg){
-//        connectDB = new ConnectDB();
-//        boolean success= true;
-//        connectDB.sqlUpdate("UPDATE DOCGIA SET TENDG='"+dg.getTenDocGia()
-//                +"', PHAI='"+dg.getGioiTinh()
-//                +"', NGAYSINH='"+java.sql.Date.valueOf(dg.getNgaySinh())
-//                +"', SDT='"+dg.getSoDienThoai()
-//                +"', TONTAI='"+dg.isTonTai()
-//                +"' WHERE MADG ='"+dg.getMaDocGia()+"'");
-//        connectDB.closeConnect();
-//        return success;
-//    }
+    public Boolean add(Sach sa){
+        connectDB= new ConnectDB();
+        boolean success= connectDB.sqlUpdate("insert into SACH(MASA,TENSA,TT,SOTRANG,SOLUONG,gia,SA_MALOAI,MATG,MANXB,MA_ANH,TONTAI) values('"
+                +sa.getMaSach()+"','"
+                +sa.getTenSach()+"','"
+                +sa.getTinhTrang()+"','"
+                +sa.getSoTrang()+"','"
+                +sa.getSoLuong()+"','"
+                +sa.getGia()+"','"
+                +sa.getMaTheLoai()+"','" 
+                +sa.getMaTacGia()+"','"
+                +sa.getMaNXB()+"','"
+                +sa.getAnh()+"','"
+                +sa.isTonTai()+"')");
+        connectDB.closeConnect();
+        return success;
+    }
+    public boolean delete(Sach sa){
+        connectDB = new ConnectDB();
+        boolean success= connectDB.sqlUpdate("UPDATE SACH SET TONTAI = '1' WHERE MASA ='"+sa.getMaSach()+"'");
+        connectDB.closeConnect();
+        return success;
+    }
+    public boolean update(Sach sa){
+        connectDB = new ConnectDB();
+        boolean success= true;
+        connectDB.sqlUpdate("UPDATE DOCGIA SET TENSA+'"+sa.getTenSach()
+                +"', TT='"+sa.getTinhTrang()
+                +"', SOTRANG='"+sa.getSoTrang()
+                +"', SOLUONG='"+sa.getSoLuong()
+                +"', gia='"+sa.getGia()
+                +"', SA_MALOAI='"+sa.getMaTheLoai()
+                 +"', MATG='"+sa.getMaTacGia()
+                 +"', MANXB='"+sa.getMaTheLoai()
+                 +"', MA_ANH='"+sa.getAnh()
+                +"', TONTAI='"+sa.isTonTai()
+                +"' WHERE MADG ='"+sa.getMaSach()+"'");
+        connectDB.closeConnect();
+        return success;
+    }
 //    public ArrayList<DocGia> timDocGias(String maDocGia, String tenDocGia, String gioiTinh, String soDienThoai, String diaChi, String maPQ,
 //            LocalDate ngaySinh,
 //            boolean tonTai){
