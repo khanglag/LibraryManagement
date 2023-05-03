@@ -28,7 +28,7 @@ public class MainJFrameQL extends javax.swing.JFrame {
     }
     private void TrinhDieuKhien(){
         ChuyenManHinhControllerQL controller = new ChuyenManHinhControllerQL(jpnView);
-        //controller.setView(jpnQuanLyMuon, jlbQuanLyMuon);
+        controller.setView(jpnTrangChu, jlbTrangChu);
         
         List<DanhMucBean> listItem = new ArrayList<>();
         listItem.add(new DanhMucBean("TrangChinh",jpnTrangChu,jlbTrangChu));

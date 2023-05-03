@@ -50,8 +50,8 @@
                           <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="tfNamSinh" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
-                              <Component id="tfTenQuanLy" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
-                              <Component id="tfMaQuanLy" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
+                              <Component id="tfTenNhanVien" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
+                              <Component id="tfMaNV" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="158" max="32767" attributes="0"/>
                       </Group>
@@ -61,18 +61,19 @@
                               <Component id="jLabel54" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
                               <Component id="btnSua" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="tfSDT" min="-2" pref="255" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="btnDoiMatKhau" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="325" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="53" pref="53" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="btnDoiMatKhau" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tfEmail" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
+                                      <Component id="tfDiaChi" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
+                                      <Component id="tfSDT" alignment="0" min="-2" pref="255" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -85,12 +86,12 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="tfMaQuanLy" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfMaNV" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel51" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="tfTenQuanLy" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfTenNhanVien" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel52" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -106,7 +107,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel54" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tfDiaChi" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -121,12 +122,12 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel51">
           <Properties>
-            <Property name="text" type="java.lang.String" value="M&#xe3; qu&#x1ea3;n l&#xfd;"/>
+            <Property name="text" type="java.lang.String" value="M&#xe3; nh&#xe2;n vi&#xea;n"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel52">
           <Properties>
-            <Property name="text" type="java.lang.String" value="T&#xea;n qu&#x1ea3;n l&#xfd;"/>
+            <Property name="text" type="java.lang.String" value="T&#xea;n nh&#xe2;n vi&#xea;n"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel53">
@@ -134,9 +135,9 @@
             <Property name="text" type="java.lang.String" value="N&#x103;m sinh"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfMaQuanLy">
+        <Component class="javax.swing.JTextField" name="tfMaNV">
         </Component>
-        <Component class="javax.swing.JTextField" name="tfTenQuanLy">
+        <Component class="javax.swing.JTextField" name="tfTenNhanVien">
         </Component>
         <Component class="javax.swing.JTextField" name="tfNamSinh">
         </Component>
@@ -150,10 +151,10 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel54">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Email"/>
+            <Property name="text" type="java.lang.String" value="&#x110;&#x1ecb;a ch&#x1ec9;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfEmail">
+        <Component class="javax.swing.JTextField" name="tfDiaChi">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel55">
           <Properties>

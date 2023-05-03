@@ -12,9 +12,22 @@ import java.time.LocalDate;
  */
 public class User {
 
-    private String maUser, tenUser, gioiTinh, chungMinhThu, diaChi, soDienThoai;
+    private String maUser, tenUser, gioiTinh, chungMinhThu, diaChi, soDienThoai,tendn;
     private LocalDate ngaySinh;
 
+    public String getTendn() {
+        return tendn;
+    }
+
+    public void setTendn(String tendn) {
+        this.tendn = tendn;
+    }
+
+    public User(String tendn) {
+        this.tendn = tendn;
+    }
+
+    
     public User(String maUser, String tenUser, String gioiTinh, LocalDate ngaySinh, String chungMinhThu, String diaChi, String soDienThoai) {
         this.maUser = maUser;
         this.tenUser = tenUser;

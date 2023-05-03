@@ -34,6 +34,7 @@ public class TaiKhoanController {
     private JLabel jlbMsg;
     
     static String tendnString=null;
+    static int ngdn;
     
     private JFrame frame=null;
     private TaiKhoanService taiKhoanService=null;
@@ -49,8 +50,16 @@ public class TaiKhoanController {
         taiKhoanService = new TaiKhoanServiceImpl();
     }
 
+    public static void setNgdn(int ngdn) {
+        TaiKhoanController.ngdn = ngdn;
+    }
+
     public static String getTendnString() {
         return tendnString;
+    }
+
+    public static int getNgdn() {
+        return ngdn;
     }
 
     
@@ -72,6 +81,7 @@ public class TaiKhoanController {
                             tendnString=jtfTenDangNhap.getText();
                             
                             if(taiKhoan.getQuyen().contains("QL")){
+                                setNgdn(0);
                                 dialog.dispose();
                                 frame= new MainJFrameQL();
                                 frame.setTitle("Quản lý thư viện");
@@ -79,12 +89,14 @@ public class TaiKhoanController {
                                 frame.setVisible(true);    
                                 
                             }else if(taiKhoan.getQuyen().contains("TT")){
+                                setNgdn(0);
                                 dialog.dispose();
                                 frame= new MainJFrameTT();
                                 frame.setTitle("Quản lý thư viện");
                                 frame.setExtendedState(JFrame.ABORT);
                                 frame.setVisible(true);
                             }else{
+                                setNgdn(1);
                                 dialog.dispose();
                                 frame = new MainJFrameKH();
                                 frame.setTitle("Quản lý thư viện");
