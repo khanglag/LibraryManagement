@@ -12,7 +12,16 @@ import java.time.LocalDate;
  */
 public class User {
 
-    private String maUser, tenUser, gioiTinh, chungMinhThu, diaChi, soDienThoai,tendn;
+    private String maUser, tenUser, gioiTinh, chungMinhThu, diaChi, soDienThoai, tendn, matkhau;
+
+    public String getMatkhau() {
+        return matkhau;
+    }
+
+    public void setMatkhau(String matkhau) {
+        this.matkhau = matkhau;
+    }
+
     private LocalDate ngaySinh;
 
     public String getTendn() {
@@ -27,8 +36,10 @@ public class User {
         this.tendn = tendn;
     }
 
-    
-    public User(String maUser, String tenUser, String gioiTinh, LocalDate ngaySinh, String chungMinhThu, String diaChi, String soDienThoai) {
+    public User(String tendn, String matkhau, String maUser, String tenUser, String gioiTinh, LocalDate ngaySinh,
+            String chungMinhThu, String diaChi, String soDienThoai) {
+        this.tendn = tendn;
+        this.matkhau = matkhau;
         this.maUser = maUser;
         this.tenUser = tenUser;
         this.gioiTinh = gioiTinh;
@@ -36,11 +47,8 @@ public class User {
         this.chungMinhThu = chungMinhThu;
         this.soDienThoai = soDienThoai;
         this.diaChi = diaChi;
-        
-        
-    }
 
-    
+    }
 
     public String getMaUser() {
         return maUser;
@@ -90,8 +98,6 @@ public class User {
         this.soDienThoai = soDienThoai;
     }
 
-
-
     public LocalDate getNgaySinh() {
         return ngaySinh;
     }
@@ -99,6 +105,5 @@ public class User {
     public void setNgaySinh(LocalDate ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
-    
 
 }

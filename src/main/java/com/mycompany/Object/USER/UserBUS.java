@@ -22,4 +22,20 @@ public class UserBUS {
         return dsUser;
     }
 
+    public String updateUser(User user) {
+        if (userDAO.updateUser(user)) {
+            return "Sửa thành công";
+
+        }
+        return "Thất bại";
+    }
+
+    public String changePasswordUser(User user) {
+        if (userDAO.changePassword(user)) {
+            return "Sửa thành công";
+
+        }
+        return "Thất bại";
+    }
+
 }

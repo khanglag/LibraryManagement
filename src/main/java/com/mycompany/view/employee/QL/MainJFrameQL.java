@@ -23,6 +23,9 @@ public class MainJFrameQL extends javax.swing.JFrame {
      */
     public MainJFrameQL() {
         initComponents();
+        // setIconImage(Toolkit.getDefaultToolkit().getImage(
+        //         "D:\\OneDrive - IT software\\GitHub\\LibraryManagement\\src\\main\\java\\com\\mycompany\\icons\\273052293_1313356409086912_2906954423817983738_n.jpg"));
+        
         TrinhDieuKhien();
         
     }
