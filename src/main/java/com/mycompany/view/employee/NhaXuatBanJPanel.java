@@ -7,6 +7,8 @@ package com.mycompany.view.employee;
 import com.mycompany.Object.NhaXuatBan.*;
 import java.util.ArrayList;
 import javax.swing.table.*;
+import javax.swing.*;
+
 
 /**
  *
@@ -22,7 +24,7 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
     public NhaXuatBanJPanel() {
         initComponents();
         model = (DefaultTableModel) tableNXB.getModel();
-        getNXBList();
+        loadData();
     }
 
     /**
@@ -242,9 +244,9 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
     }// </editor-fold>//GEN-END:initComponents
 
-    public void getNXBList() {
+    public void loadData() {
         ArrayList<NhaXuatBan> arr = new ArrayList<NhaXuatBan>();
-        arr = NXBBUS.getDSNXB();
+        arr = NXBBUS.LoadData();
         int i = 0;
         while (i <= arr.size() - 1) {
             NhaXuatBan nxb = arr.get(i);
@@ -253,11 +255,30 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
             });
             tableNXB.setModel(model);
         }
+    }
 
+    public void refreshData() {
+        NXBBUS = new NhaXuatBanBUS();
+        loadData();
     }
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnXoaActionPerformed
         // TODO add your handling code here:
+        ArrayList<NhaXuatBan> arr = new ArrayList<NhaXuatBan>();
+        arr = NXBBUS.LoadData();
+        int reply = JOptionPane.showConfirmDialog(getRootPane(),
+        "Bạn có chắc muốn xoá "+tfTenNXB.getText()+" không ?" , "Chú ý",
+        JOptionPane.YES_NO_OPTION);
+
+        if (reply == JOptionPane.YES_OPTION) {
+                for(NhaXuatBan nxb: arr){
+                        if(nxb.getMaNXB().equals(tfMaNXB.getText().trim())){
+                                NXBBUS.deleteNXB(nxb);
+                                break;
+                        }
+                }  
+        }
+        refreshData();
     }// GEN-LAST:event_btnXoaActionPerformed
 
     private void tfMaNXBActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_tfMaNXBActionPerformed
@@ -274,6 +295,22 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
+        try{
+                if(tfMaNXB.getText().trim().equals("")||tfTenNXB.getText().trim().equals("")){
+                    JOptionPane.showMessageDialog(this, "Vui lòng nhập thông tin");
+                }
+                else{
+                    NhaXuatBan nxb= new NhaXuatBan();
+                    nxb.setMaNXB(tfMaNXB.getText());
+                    nxb.setTenNXB(tfTenNXB.getText());
+                    nxb.setTonTai(true);
+                    JOptionPane.showMessageDialog(this, NXBBUS.addNXB(nxb) );
+                    tableNXB.repaint();
+                    refreshData();
+                }
+            }catch(Exception ex){
+                System.out.println(ex);
+            }
     }// GEN-LAST:event_btnThemActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnClearActionPerformed

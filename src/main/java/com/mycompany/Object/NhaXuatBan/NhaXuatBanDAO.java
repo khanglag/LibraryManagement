@@ -22,7 +22,7 @@ public class NhaXuatBanDAO {
     public ArrayList<NhaXuatBan> readDB(){
         connectDB= new ConnectDB();
         try {
-            String qry="SELECT *FROM NHAXUATBAN";
+            String qry="SELECT *FROM NHAXUATBAN WHERE TONTAI = 1";
             ResultSet rset= connectDB.sqlQuery(qry);
            if(rset!=null){
                while(rset.next()){
@@ -48,8 +48,8 @@ public class NhaXuatBanDAO {
     }
     public boolean delete(NhaXuatBan NXB){
         connectDB = new ConnectDB();
-        boolean success= connectDB.sqlUpdate("UPDATE NHAXUATBAN SET TONTAI = 'FALSE' WHERE MANXB ='"+NXB.getMaNXB()+"'");
-                System.out.println("UPDATE NHAXUATBAN SET TONTAI = 'FALSE' WHERE MANXB ='"+NXB.getMaNXB()+"'");
+        boolean success= connectDB.sqlUpdate("UPDATE NHAXUATBAN SET TONTAI = 0 WHERE MANXB ='"+NXB.getMaNXB()+"'");
+                System.out.println("UPDATE NHAXUATBAN SET TONTAI = 0 WHERE MANXB ='"+NXB.getMaNXB()+"'");
         connectDB.closeConnect();
         return success;
     }
@@ -61,5 +61,18 @@ public class NhaXuatBanDAO {
                 +"' WHERE MANXB ='"+NXB.getMaNXB()+"'");
         connectDB.closeConnect();
         return success;
+    }
+    public boolean hasNXBID(String id) {
+        boolean result = false;
+        connectDB = new ConnectDB();
+        try {
+            String qry = "Select * from nhaxuatban where manxb='" + id + "'";
+            ResultSet rset = connectDB.sqlQuery(qry);
+            result = rset.next();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return result;
+
     }
 }
