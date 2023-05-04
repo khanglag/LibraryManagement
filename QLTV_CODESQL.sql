@@ -76,7 +76,7 @@ create table PHIEUMUON(
 	foreign key(MADG) references DOCGIA(MADG),
 	foreign key(MASA) references SACH(MASA),
 	foreign key(MANV) references NHANVIEN(MANV),
-    PRIMARY KEY (MADG,MASA,MANV,HANTRA),
+    PRIMARY KEY (MAPHIEU,MADG,MASA,MANV,HANTRA),
 	SOLUONG smallint,
 	TONTAI boolean
 );
