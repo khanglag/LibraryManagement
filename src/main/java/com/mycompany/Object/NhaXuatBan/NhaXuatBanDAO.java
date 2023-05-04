@@ -55,8 +55,7 @@ public class NhaXuatBanDAO {
     }
     public boolean update(NhaXuatBan NXB){
         connectDB = new ConnectDB();
-        boolean success= true;
-        connectDB.sqlUpdate("UPDATE NHAXUATBAN SET TENNXB='"+NXB.getTenNXB()
+        boolean success = connectDB.sqlUpdate("UPDATE NHAXUATBAN SET TENNXB='"+NXB.getTenNXB()
                 +"', TONTAI='"+NXB.isTonTai()
                 +"' WHERE MANXB ='"+NXB.getMaNXB()+"'");
         connectDB.closeConnect();

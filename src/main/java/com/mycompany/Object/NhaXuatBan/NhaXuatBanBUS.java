@@ -32,4 +32,11 @@ public class NhaXuatBanBUS {
             return "Thêm thành công";
         return "Thêm thất bại";
     }
+
+    public String updateNXB(NhaXuatBan nxb){
+        if(NXBDAO.update(nxb)){
+            return "Sửa thành công";
+        }
+        return "Thất bại";
+    }
 }
