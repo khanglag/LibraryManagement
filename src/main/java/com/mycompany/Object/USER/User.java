@@ -4,6 +4,7 @@
  */
 package com.mycompany.Object.USER;
 
+import com.mycompany.controller.TaiKhoanController;
 import java.time.LocalDate;
 
 /*
@@ -36,9 +37,9 @@ public class User {
         this.tendn = tendn;
     }
 
-    public User(String tendn, String matkhau, String maUser, String tenUser, String gioiTinh, LocalDate ngaySinh,
+    public User(String matkhau, String maUser, String tenUser, String gioiTinh, LocalDate ngaySinh,
             String chungMinhThu, String diaChi, String soDienThoai) {
-        this.tendn = tendn;
+        //this.tendn = TaiKhoanController.getTendnString();
         this.matkhau = matkhau;
         this.maUser = maUser;
         this.tenUser = tenUser;

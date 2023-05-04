@@ -31,14 +31,14 @@ public class UserDAO {
 
         try {
             if (TaiKhoanController.getNgdn() == 0) {
-                String qry = "SELECT tendn,matkhau,manv,tennv,phai,NGAYSINH,CCCD,sdt,DIACHI,matkhau from nhanvien,phanquyen,taikhoan WHERE nhanvien.MAPQ=phanquyen.MAPQ and phanquyen.MAPQ=taikhoan.MAPQ and taikhoan.TENDN="
+                String qry = "SELECT matkhau,manv,tennv,phai,NGAYSINH,CCCD,sdt,DIACHI,matkhau from nhanvien,phanquyen,taikhoan WHERE nhanvien.MAPQ=phanquyen.MAPQ and phanquyen.MAPQ=taikhoan.MAPQ and taikhoan.TENDN="
                         + "'" + TaiKhoanController.getTendnString() + "'";
                 ResultSet rset = connectDB.sqlQuery(qry);
                 if (rset != null) {
                     while (rset.next()) {
                         user = new User(
-                                rset.getNString("tendn"),
-                                rset.getNString("MATKAHU"),
+                                
+                                rset.getNString("MATKhau"),
                                 rset.getNString("MANV"),
                                 rset.getNString("TENNV"), rset.getNString("PHAI"),
                                 rset.getDate("NGAYSINH").toLocalDate(), rset.getString("CCCD"),
@@ -47,13 +47,13 @@ public class UserDAO {
                     }
                 }
             } else {
-                String qry = "SELECT tendn,matkhau,madg,tendg,phai,NGAYSINH,CCCD,sdt,DIACHI from docgia,phanquyen,taikhoan WHERE docgia.MAPQ=phanquyen.MAPQ and phanquyen.MAPQ=taikhoan.MAPQ and taikhoan.TENDN="
+                String qry = "SELECT matkhau,madg,tendg,phai,NGAYSINH,CCCD,sdt,DIACHI from docgia,phanquyen,taikhoan WHERE docgia.MAPQ=phanquyen.MAPQ and phanquyen.MAPQ=taikhoan.MAPQ and taikhoan.TENDN="
                         + "'" + TaiKhoanController.getTendnString() + "'";
                 ResultSet rset = connectDB.sqlQuery(qry);
                 if (rset != null) {
                     while (rset.next()) {
                         user = new User(
-                                rset.getNString("tendn"),
+                                
                                 rset.getNString("MATKHAU"),
                                 rset.getNString("MADG"),
                                 rset.getNString("TENDG"), rset.getNString("PHAI"),
