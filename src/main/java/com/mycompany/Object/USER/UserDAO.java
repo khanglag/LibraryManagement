@@ -31,18 +31,18 @@ public class UserDAO {
 
         try {
             if (TaiKhoanController.getNgdn() == 0) {
-                String qry = "SELECT matkhau,manv,tennv,phai,NGAYSINH,CCCD,sdt,DIACHI,matkhau from nhanvien,phanquyen,taikhoan WHERE nhanvien.MAPQ=phanquyen.MAPQ and phanquyen.MAPQ=taikhoan.MAPQ and taikhoan.TENDN="
+                String qry = "SELECT matkhau,manv,tennv,phai,NGAYSINH,CCCD,sdt,DIACHI from nhanvien,phanquyen,taikhoan WHERE nhanvien.MAPQ=phanquyen.MAPQ and phanquyen.MAPQ=taikhoan.MAPQ and taikhoan.TENDN="
                         + "'" + TaiKhoanController.getTendnString() + "'";
                 ResultSet rset = connectDB.sqlQuery(qry);
                 if (rset != null) {
                     while (rset.next()) {
                         user = new User(
-                                
-                                rset.getNString("MATKhau"),
+                                rset.getNString("MATKHAU"),
                                 rset.getNString("MANV"),
                                 rset.getNString("TENNV"), rset.getNString("PHAI"),
                                 rset.getDate("NGAYSINH").toLocalDate(), rset.getString("CCCD"),
-                                rset.getString("DIACHI"), rset.getString("SDT"));
+                                rset.getString("SDT"),
+                                rset.getString("DIACHI"));
                         listUser.add(user);
                     }
                 }
@@ -53,7 +53,6 @@ public class UserDAO {
                 if (rset != null) {
                     while (rset.next()) {
                         user = new User(
-                                
                                 rset.getNString("MATKHAU"),
                                 rset.getNString("MADG"),
                                 rset.getNString("TENDG"), rset.getNString("PHAI"),
@@ -73,14 +72,14 @@ public class UserDAO {
 
     public boolean updateUser(User user) {
         connectDB = new ConnectDB();
-        boolean success = false;
+        boolean success = true;
         if (TaiKhoanController.getNgdn() == 0) {
             connectDB.sqlUpdate("UPDATE NHANVIEN SET TENNV='" + user.getTenUser()
-                    + "',PHAI='" + user.getGioiTinh()
-                    + "',SDT='" + user.getSoDienThoai()
-                    + "',NGAYSINH='" + java.sql.Date.valueOf(user.getNgaySinh())
-                    + "',DIACHI='" + user.getDiaChi()
-                    + "',WHERE MANV='" + user.getMaUser() + "'");
+                + "', PHAI='" + user.getGioiTinh()
+                + "', NGAYSINH='" + java.sql.Date.valueOf(user.getNgaySinh())
+                + "', SDT='" + user.getSoDienThoai()
+                //+ "', TONTAI='" + nhanVien.isTonTai()
+                + "' WHERE MANV ='" + user.getMaUser() + "'");
             success = true;
         } else {
             connectDB.sqlUpdate("UPDATE DOCGIA SET TENDG='" + user.getTenUser()
@@ -88,7 +87,7 @@ public class UserDAO {
                     + "',SDT='" + user.getSoDienThoai()
                     + "',NGAYSINH='" + java.sql.Date.valueOf(user.getNgaySinh())
                     + "',DIACHI='" + user.getDiaChi()
-                    + "',WHERE MADG='" + user.getMaUser() + "'");
+                    + "'WHERE MADG='" + user.getMaUser() + "'");
             success = true;
         }
 
@@ -96,10 +95,10 @@ public class UserDAO {
         return success;
     }
 
-    public boolean changePassword(User user){
+    public boolean changePassword(User user) {
         connectDB = new ConnectDB();
         boolean success = true;
-        connectDB.sqlUpdate("UPDATE TAIKHOAN SET MATKHAU='"+ user.getMatkhau() + "'");
+        connectDB.sqlUpdate("UPDATE TAIKHOAN SET MATKHAU='" + user.getMatkhau() + "'"+"WHERE TENDN='" + TaiKhoanController.getTendnString()+"'");
         return success;
     }
 }

@@ -38,8 +38,8 @@ public class User {
     }
 
     public User(String matkhau, String maUser, String tenUser, String gioiTinh, LocalDate ngaySinh,
-            String chungMinhThu, String diaChi, String soDienThoai) {
-        //this.tendn = TaiKhoanController.getTendnString();
+            String chungMinhThu, String soDienThoai, String diaChi) {
+        this.tendn = TaiKhoanController.getTendnString();
         this.matkhau = matkhau;
         this.maUser = maUser;
         this.tenUser = tenUser;
