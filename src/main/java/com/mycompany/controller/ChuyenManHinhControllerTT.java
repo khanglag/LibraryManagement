@@ -8,6 +8,7 @@ import com.mycompany.bean.DanhMucBean;
 import com.mycompany.view.employee.NhaXuatBanJPanel;
 import com.mycompany.view.employee.NhapHangJPanel;
 import com.mycompany.view.employee.PhieuMuonJPanel;
+import com.mycompany.view.employee.PhieuTraJPanel;
 import com.mycompany.view.employee.QuanLyDocGiaJPanel;
 import com.mycompany.view.employee.QuanLyMuonJPanel;
 import com.mycompany.view.employee.QuanLySachJPanel;
@@ -103,6 +104,10 @@ public class ChuyenManHinhControllerTT {
                 case "ThongTinTaiKhoan":
                     node = new ThongTinTaiKhoanJPanel();
                     break;
+                case "PhieuTra":
+                    node = new PhieuTraJPanel();
+                    break;   
+                 
 //                case "NhaCungCap":
 //                    node = new QuanLyNhaCungCapJPanel();
 //                    break;
