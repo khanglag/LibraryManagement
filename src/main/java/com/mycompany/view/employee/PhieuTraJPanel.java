@@ -297,6 +297,7 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
+        tfMaPhieu.setEditable(true);
     }//GEN-LAST:event_btnClearActionPerformed
 
 
