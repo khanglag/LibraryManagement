@@ -37,7 +37,7 @@ public class QuanLyMuonJPanel extends javax.swing.JPanel {
         btnXoa = new javax.swing.JButton();
         btnSua = new javax.swing.JButton();
         btnTim = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         tfMaPhieu = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -100,14 +100,20 @@ public class QuanLyMuonJPanel extends javax.swing.JPanel {
 
         btnTim.setText("Tìm");
 
-        jButton2.setText("Clear");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnClearActionPerformed(evt);
             }
         });
 
         jLabel1.setText("Mã phiếu");
+
+        tfMaPhieu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfMaPhieuActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Mã nhân viên");
 
@@ -163,7 +169,7 @@ public class QuanLyMuonJPanel extends javax.swing.JPanel {
                                 .addComponent(tfNgayTra)
                                 .addComponent(tfSoLuong))
                             .addGap(46, 46, 46)
-                            .addComponent(jButton2)))
+                            .addComponent(btnClear)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42)
@@ -187,7 +193,7 @@ public class QuanLyMuonJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(jButton2))
+                        .addComponent(btnClear))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,13 +253,14 @@ public class QuanLyMuonJPanel extends javax.swing.JPanel {
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSuaActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
         tfMaDocGia.setText("");
         tfMaNhanVien.setText("");
@@ -263,7 +270,7 @@ public class QuanLyMuonJPanel extends javax.swing.JPanel {
         tfNgayTra.setText("");
         tfSoLuong.setText("");
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnClearActionPerformed
 
     private void tfNgayTraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNgayTraActionPerformed
         // TODO add your handling code here:
@@ -273,13 +280,17 @@ public class QuanLyMuonJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfSoLuongActionPerformed
 
+    private void tfMaPhieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfMaPhieuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfMaPhieuActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClear;
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnThem;
     private javax.swing.JButton btnTim;
     private javax.swing.JButton btnXoa;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
