@@ -411,7 +411,7 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
                 nv.setTenNhanVien(tfTenNV.getText());
                 nv.setDiaChi(tfDiaChi.getText());
                 nv.setGioiTinh(phai);
-                nv.setNgaySinh(Menu.FormatDate.convert(tfNgaySinh.getText()));
+                nv.setNgaySinh(Menu.MenuHand.convert(tfNgaySinh.getText()));
                 nv.setSoDienThoai(tfSDT.getText());
                 nVienBUS.updateNhanVien(nv);
                 break;
@@ -457,7 +457,7 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
                 nv.setTonTai(true);
                 nv.setChungMinhThu(tfCCCD.getText());
                 nv.setDiaChi(tfDiaChi.getText());
-                nv.setNgaySinh(Menu.FormatDate.convert(tfNgaySinh.getText()));
+                nv.setNgaySinh(Menu.MenuHand.convert(tfNgaySinh.getText()));
                 nv.setSoDienThoai(tfSDT.getText());
                 System.out.println(tfMaNV.getText());
                 JOptionPane.showMessageDialog(this, nVienBUS.addNhanVien(nv));

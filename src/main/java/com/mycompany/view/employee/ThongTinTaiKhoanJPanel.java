@@ -279,7 +279,7 @@ public class ThongTinTaiKhoanJPanel extends javax.swing.JPanel {
                 for (User user : listusers) {
                         if (user.getTendn().equals(TaiKhoanController.getTendnString())) {
                                 user.setTenUser(tfTenNhanVien.getText());
-                                user.setNgaySinh(Menu.FormatDate.convert(tfNamSinh.getText()));
+                                user.setNgaySinh(Menu.MenuHand.convert(tfNamSinh.getText()));
                                 user.setSoDienThoai(tfSDT.getText());
                                 user.setDiaChi(tfDiaChi.getText());
                                 userBUS.updateUser(user);

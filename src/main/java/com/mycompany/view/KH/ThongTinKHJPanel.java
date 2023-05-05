@@ -208,7 +208,7 @@ public class ThongTinKHJPanel extends javax.swing.JPanel {
         for (User user : listusers) {
             if (user.getTendn().equals(TaiKhoanController.getTendnString())) {
                 user.setTenUser(tfTen.getText());
-                user.setNgaySinh(Menu.FormatDate.convert(tfNamSinh.getText()));
+                user.setNgaySinh(Menu.MenuHand.convert(tfNamSinh.getText()));
                 user.setSoDienThoai(tfSDT.getText());
                 user.setDiaChi(tfDiaChi.getText());
                 
