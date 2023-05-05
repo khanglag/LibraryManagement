@@ -42,7 +42,7 @@ public class NhaXuatBanDAO {
         boolean success= connectDB.sqlUpdate("insert into NHAXUATBAN(MANXB,TENNXB,TONTAI) values('"
                 +NXB.getMaNXB()+"','"
                 +NXB.getTenNXB()+"','"
-                +NXB.isTonTai()+"')");
+                + 1 + "')");
         connectDB.closeConnect();
         return success;
     }
@@ -56,7 +56,6 @@ public class NhaXuatBanDAO {
     public boolean update(NhaXuatBan NXB){
         connectDB = new ConnectDB();
         boolean success = connectDB.sqlUpdate("UPDATE NHAXUATBAN SET TENNXB='"+NXB.getTenNXB()
-                +"', TONTAI='"+NXB.isTonTai()
                 +"' WHERE MANXB ='"+NXB.getMaNXB()+"'");
         connectDB.closeConnect();
         return success;

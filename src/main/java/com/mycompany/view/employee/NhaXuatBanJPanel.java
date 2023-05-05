@@ -171,10 +171,7 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
 
         tableNXB.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+    
             },
             new String [] {
                 "STT", "Mã NXB", "Tên NXB"
@@ -241,6 +238,7 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
         // TODO add your handling code here:
         ArrayList<NhaXuatBan> arr = new ArrayList<NhaXuatBan>();
+        arr = NXBBUS.LoadData();
   
         for(NhaXuatBan nxb : arr){
             if(nxb.getMaNXB().equals(tfMaNXB.getText().trim())){
@@ -249,6 +247,7 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
                 break;
             }
         }
+        model.setRowCount(0);
         refreshData();
     }//GEN-LAST:event_btnSuaActionPerformed
 
@@ -286,6 +285,7 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
                         }
                 }  
         }
+        model.setRowCount(0);
         refreshData();
     }// GEN-LAST:event_btnXoaActionPerformed
 
@@ -313,7 +313,7 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
                     nxb.setTenNXB(tfTenNXB.getText());
                     nxb.setTonTai(true);
                     JOptionPane.showMessageDialog(this, NXBBUS.addNXB(nxb) );
-                    tableNXB.repaint();
+                    model.setRowCount(0);
                     refreshData();
                 }
             }catch(Exception ex){
