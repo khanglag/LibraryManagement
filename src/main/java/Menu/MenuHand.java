@@ -28,12 +28,14 @@ public class MenuHand {
         return localDate;
     }
     public static String FormatString(String str){
+        if(str.equals(""))
+            str = "0";
         int n = Integer.parseInt(str);
         n= n+1;
         str = String.format("%06d", n);    
         return str;
     }
     public static void main(String[] args) {
-        System.out.println(FormatString("10"));
+        System.out.println(FormatString(""));
     }
 }
