@@ -11,16 +11,17 @@ package com.mycompany.Object.DocGia;
 import java.time.LocalDate;
 
 public class DocGia {
-    private String maDocGia, tenDocGia, gioiTinh, soDienThoai, diaChi, maPQ;
+    private String maDocGia, tenDocGia, CCCD, gioiTinh, soDienThoai, diaChi, maPQ;
     private LocalDate ngaySinh;
     private boolean tonTai;
 
     //Constructor
-    public DocGia(String maDocGia, String tenDocGia, String gioiTinh, String soDienThoai, String diaChi, String maPQ,
+    public DocGia(String maDocGia, String tenDocGia, String CCCD, String gioiTinh, String soDienThoai, String diaChi, String maPQ,
             LocalDate ngaySinh,
             boolean tonTai) {
         this.maDocGia = maDocGia;
         this.tenDocGia = tenDocGia;
+        this.CCCD = CCCD;
         this.gioiTinh = gioiTinh;
         this.soDienThoai = soDienThoai;
         this.diaChi = diaChi;
@@ -92,6 +93,14 @@ public class DocGia {
             ", ngaySinh='" + getNgaySinh() + "'" +
             ", tonTai='" + isTonTai() + "'" +
             "}";
+    }
+
+    public String getCCCD() {
+        return CCCD;
+    }
+
+    public void setCCCD(String cCCD) {
+        CCCD = cCCD;
     }
 }
 

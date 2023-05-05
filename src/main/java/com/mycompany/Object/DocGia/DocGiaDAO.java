@@ -19,16 +19,16 @@ public class DocGiaDAO {
     }
     
     ConnectDB connectDB;
-    ArrayList<DocGia> dsDG= new ArrayList<>();
-    public ArrayList readDB(){
+    ArrayList<DocGia> dsDG= new ArrayList<DocGia>();
+    public ArrayList<DocGia> readDB(){
         connectDB= new ConnectDB();
         try {
-            String qry="SELECT *FROM DOCGIA";
+            String qry="SELECT * FROM DOCGIA WHERE TONTAI = 1";
             ResultSet rset= connectDB.sqlQuery(qry);
            if(rset!=null){
                while(rset.next()){
                    DocGia dg= new DocGia(rset.getNString("MADG"),
-                           rset.getNString("TENDG"),rset.getNString("PHAI"),
+                           rset.getNString("TENDG"), rset.getNString("CCCD"),rset.getNString("PHAI"),
                            rset.getNString("SDT"),rset.getNString("DIACHI"),rset.getNString("MAPQ")
                            ,rset.getDate("NGAYSINH").toLocalDate(),rset.getBoolean("TONTAI"));
                    dsDG.add(dg);
@@ -96,11 +96,11 @@ public class DocGiaDAO {
         try {
             if (rset!=null) {
                   while(rset.next()){
-                   DocGia dg= new DocGia(rset.getNString("MADG"),
-                           rset.getNString("TENDG"),rset.getNString("PHAI"),
+                   DocGia docGia= new DocGia(rset.getNString("MADG"),
+                           rset.getNString("TENDG"),rset.getNString("CCCD"),rset.getNString("PHAI"),
                            rset.getNString("SDT"),rset.getNString("DIACHI"),rset.getNString("MAPQ")
                            ,rset.getDate("NGAYSINH").toLocalDate(),rset.getBoolean("TONTAI"));
-                   ketqua.add(dg);
+                   ketqua.add(docGia);
                }
             }
         } catch (SQLException e) {

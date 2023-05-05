@@ -6,6 +6,7 @@ com.mycompany.Object
 com.mycompany.Object.DocGia
 com.mycompany.Object.NhanVien
 com.mycompany.Object.NhaXuatBan
+com.mycompany.Object.PhieuMuon
 com.mycompany.Object.Sach
 com.mycompany.Object.TacGia
 com.mycompany.Object.TheLoai

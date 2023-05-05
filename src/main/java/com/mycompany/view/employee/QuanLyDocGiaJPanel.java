@@ -5,18 +5,26 @@
 package com.mycompany.view.employee;
 
 import com.mycompany.view.themtaikhoanKH;
+import com.mycompany.Object.DocGia.*;
+import java.util.ArrayList;
+import javax.swing.table.*;
+import javax.swing.*;
 
 /**
  *
  * @author khang
  */
 public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
+    DocGiaBUS docGiaBUS = new DocGiaBUS();
+    DefaultTableModel model;
 
     /**
      * Creates new form QuanLyDocGiaJPanel
      */
     public QuanLyDocGiaJPanel() {
         initComponents();
+        model = (DefaultTableModel) tableTTDG.getModel();
+        loadData();
     }
 
     /**
@@ -231,17 +239,14 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
 
         tableTTDG.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                
             },
             new String [] {
-                "STT", "CCCD", "MaDG", "Tên", "Phai", "Ngay sinh", "Số điện thoại", "Địa chỉ"
+                "STT", "CCCD", "Mã DG", "Tên", "Phái", "Ngay sinh", "Số điện thoại", "Địa chỉ"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, true, false, true
+                false, false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -274,6 +279,19 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    public void loadData() {
+        ArrayList<DocGia> arr = new ArrayList<DocGia>();
+        arr = docGiaBUS.loadData();
+        int i = 0;
+        while (i <= arr.size() - 1) {
+            DocGia docGia = arr.get(i);
+            model.addRow(new Object[] {
+                    ++i, docGia.getCCCD(), docGia.getMaDocGia(), docGia.getTenDocGia(), docGia.getGioiTinh(), docGia.getNgaySinh(), docGia.getSoDienThoai(), docGia.getDiaChi()
+            });
+            tableTTDG.setModel(model);
+        }
+    }
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
         // TODO add your handling code here:
