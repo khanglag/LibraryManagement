@@ -25,8 +25,18 @@ public class DocGiaBus {
         }
         return dgtempArrayList;
     }
-    public void add(String maDG)
+    public void add(DocGia dg)
     {
-        
+        dgaoAO.add(dg);
+    }
+    public void delete(DocGia dg)
+    {
+        dgaoAO.delete(dg);
+    }
+    public ArrayList<DocGia> tiArrayList(String maDocGia, String tenDocGia, String gioiTinh, String soDienThoai, String diaChi, String maPQ,
+            LocalDate ngaySinh,
+            boolean tonTai)
+    {
+        return dgaoAO.timDocGias(maDocGia, tenDocGia, gioiTinh, soDienThoai, diaChi, maPQ, ngaySinh, tonTai);
     }
 }
