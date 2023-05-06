@@ -340,6 +340,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         PhieuMuon pm= new PhieuMuon();
         PhieuMuonBUS pmbus=new PhieuMuonBUS();
+        
         pm.setMaPhieu(tfMaPhieu.getText());
         pm.setMaDocGia(jComboBoxMaDocGia. getSelectedItem().toString());
         pm.setMaNhanVien(jComboBoxMaNhanVien.getSelectedItem().toString());

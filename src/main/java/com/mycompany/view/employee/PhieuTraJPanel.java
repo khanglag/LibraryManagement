@@ -4,6 +4,8 @@
  */
 package com.mycompany.view.employee;
 
+import com.mycompany.Object.PhieuMuon.PhieuMuon;
+import com.mycompany.Object.PhieuMuon.PhieuMuonBUS;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -22,7 +24,10 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
     PhieuTraBUS phieuTraBUS = new PhieuTraBUS();
     DefaultTableModel model;
     ArrayList<PhieuTra> list = new ArrayList<PhieuTra>();
+    PhieuMuonBUS phieuMuonBus = new PhieuMuonBUS();
+    ArrayList<PhieuMuon> listPhieuMuon = new ArrayList<PhieuMuon>();
 
+    //listPhieuMuon = phieuMuonBus.getDs
     /**
      * Creates new form PhieuTraJPanel
      */
@@ -462,6 +467,7 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnLoadActionPerformed
         // TODO add your handling code here:
+        tfMaPhieu.setText(TOOL_TIP_TEXT_KEY);
 
     }// GEN-LAST:event_btnLoadActionPerformed
 

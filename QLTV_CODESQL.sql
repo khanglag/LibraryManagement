@@ -107,11 +107,6 @@ create table PHIEUTRA(
     SOLUONG smallint,
 	TINHTRANG varchar(50),
 	SONGAYQUAHAN smallint,
-<<<<<<< HEAD
-	
-=======
-
->>>>>>> 1beb3b9173227af0b966383be4381fe1c29d3dc8
 	foreign key(MAPHIEUMUON) references phieumuon(MAPHIEUMUON),
 	TONTAI boolean
 );
@@ -173,16 +168,16 @@ insert into NHAXUATBAN (MANXB,TENNXB,TONTAI) values
 ('NXB006','TRI THỨC',1),
 ('NXB007','TRẺ',1);
 insert into SACH(MASA,TENSA,TT,SOTRANG,SOLUONG,gia,SA_MALOAI,MATG,MANXB,LXB,MA_ANH,TONTAI) values              
-('XSTK01','XÁC XUẤT THỐNG KÊ','con nguyen',200,10,65.000,'GT0001','TGGT01','NXB005',12,'gtxstk-scaled.jpg',1),
-('SGKT12','SÁCH GIÁO KHOA TOÁN 12','con nguyen',190,20,30.000,'SGK001','TGGK01','NXB005',12,'sach-giao-khoa-giai-tich-12.jpg',1),
-('LDTHPT','SÁCH LUYỆN ĐỀ THPT','nguyen',300,30,200.000,'SLD001','TGLD01','NXB005',1,'a61a29a977e3db9fd1b310561e2b7d6a.jpg',1),
-('KHNGCL','SÁCH NGUỒN GỐC CÁC LOÀI','NGUYEN',200,20,200.000,'SKH001','TGKH01','NXB006',1,'image-20230320110843411.jpg',1),
-('DVSKTT','ĐẠI VIỆT SỬ KÍ TOÀN THƯ','NGUYEN',1300,10,300.000,'LS0001',null,'NXB006',1,'dai_viet_su_ky_toan_thu.jpg',1),
-('HAPO01','HARRY POTTER VÀ HÒN ĐÁ PHÙ THỦY','NGUYEN',636,10,150.000,'TT0001','TGTT01','NXB007',1,'harry_potter_va_hon_da_phu_thuy__j_k_rowling.jpg',1),
-('TCNT01','TẠP CHÍ VĂN HÓA NGHỆ THUẬT','NGUYEN',60,5,20.000,'BTC001',NULL,'NXB003',530,'Bia_1_so_4_2023_1.jpg',1),
-('DNT001','ĐẮC NHÂN TÂM','NGUYEN',291,10,100.000,'SA0001','TGSA01','NXB007',1,'d340edda2b0eacb7ddc47537cddb5e08.jpg',1),
-('SD0001','SỐ ĐỎ','NGUYEN',307,10,60.000,'VH0001','TGVH01','NXB004',1,'c9f64ac822bb68464009fb57ad84fc32.jpg',1),
-('LTM001','LUẬT THƯƠNG MẠI','NGUYEN',166,5,50.000,'CT0001',NULL,'NXB002',5,'4cdc8572992ac31925a3a64af1c7ce48.jpg',1);
+('XSTK01','XÁC XUẤT THỐNG KÊ','con nguyen',200,10,65.000,'GT0001','TGGT01','NXB005',12,'/com/mycompany/images/gtxstk-scaled.jpg',1),
+('SGKT12','SÁCH GIÁO KHOA TOÁN 12','con nguyen',190,20,30.000,'SGK001','TGGK01','NXB005',12,'/com/mycompany/images/sach-giao-khoa-giai-tich-12.jpg',1),
+('LDTHPT','SÁCH LUYỆN ĐỀ THPT','nguyen',300,30,200.000,'SLD001','TGLD01','NXB005',1,'/com/mycompany/images/a61a29a977e3db9fd1b310561e2b7d6a.jpg',1),
+('KHNGCL','SÁCH NGUỒN GỐC CÁC LOÀI','NGUYEN',200,20,200.000,'SKH001','TGKH01','NXB006',1,'/com/mycompany/images/image-20230320110843411.jpg',1),
+('DVSKTT','ĐẠI VIỆT SỬ KÍ TOÀN THƯ','NGUYEN',1300,10,300.000,'LS0001',null,'NXB006',1,'/com/mycompany/images/dai_viet_su_ky_toan_thu.jpg',1),
+('HAPO01','HARRY POTTER VÀ HÒN ĐÁ PHÙ THỦY','NGUYEN',636,10,150.000,'TT0001','TGTT01','NXB007',1,'/com/mycompany/images/harry_potter_va_hon_da_phu_thuy__j_k_rowling.jpg',1),
+('TCNT01','TẠP CHÍ VĂN HÓA NGHỆ THUẬT','NGUYEN',60,5,20.000,'BTC001',NULL,'NXB003',530,'/com/mycompany/images/Bia_1_so_4_2023_1.jpg',1),
+('DNT001','ĐẮC NHÂN TÂM','NGUYEN',291,10,100.000,'SA0001','TGSA01','NXB007',1,'/com/mycompany/images/d340edda2b0eacb7ddc47537cddb5e08.jpg',1),
+('SD0001','SỐ ĐỎ','NGUYEN',307,10,60.000,'VH0001','TGVH01','NXB004',1,'/com/mycompany/images/c9f64ac822bb68464009fb57ad84fc32.jpg',1),
+('LTM001','LUẬT THƯƠNG MẠI','NGUYEN',166,5,50.000,'CT0001',NULL,'NXB002',5,'/com/mycompany/images/4cdc8572992ac31925a3a64af1c7ce48.jpg',1);
 
 insert into DOCGIA(MADG,TENDG,PHAI,NGAYSINH,CCCD,SDT,DIACHI,MAPQ,TONTAI) values
 ('000001','LE DUY KHANG','NAM','2003-04-10','123456789123','0358808913','277 AU DUONG LAN','DG000000',1);
