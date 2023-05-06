@@ -36,4 +36,7 @@ public class PhieuMuonBUS {
        else return "Ma phieu muon trung";
        return "ThemDuoc ";
    }
+   public void them(PhieuMuon pm){
+       pmdao.add(pm);
+   }
 }

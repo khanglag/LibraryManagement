@@ -49,11 +49,11 @@ public class PhieuMuonDAO {
         return dsDG;
     }
     public int getsophieumuon(){
-        return 2+dsDG.size();
+        return 1+dsDG.size();
     }
     public Boolean add(PhieuMuon sa){
         connectDB= new ConnectDB();
-        boolean success= connectDB.sqlUpdate("insert into PHIEUMUON(MAPHIEU,MADG,MASA,MANV,NGAYMUON,NGAYTRA,HANTRA,SOLUONG,TONTAI) values('"
+        boolean success= connectDB.sqlUpdate("insert into PHIEUMUON(MAPHIEUMUON,MADG,MASA,MANV,NGAYMUON,HANTRA,SOLUONG,TONTAI) values('"
                 +sa.getMaPhieu()+"','"
                 +sa.getMaDocGia()+"','"
                 +sa.getMaSach()+"','"
@@ -67,8 +67,8 @@ public class PhieuMuonDAO {
     }
     public boolean delete(PhieuMuon sa){
         connectDB = new ConnectDB();
-        boolean success= connectDB.sqlUpdate("UPDATE PHIEUMUON SET TONTAI = 'FALSE' WHERE MADG ='"+sa.getMaPhieu()+"'");
-                System.out.println("UPDATE PHIEUMUON SET TONTAI = 'FALSE' WHERE MADG ='"+sa.getMaPhieu()+"'");
+        boolean success= connectDB.sqlUpdate("UPDATE PHIEUMUON SET TONTAI = 'FALSE' WHERE MAPHIEUMUON ='"+sa.getMaPhieu()+"'");
+                System.out.println("UPDATE PHIEUMUON SET TONTAI = 'FALSE' WHERE MAPHIEUMUON ='"+sa.getMaPhieu()+"'");
         connectDB.closeConnect();
         return success;
     }

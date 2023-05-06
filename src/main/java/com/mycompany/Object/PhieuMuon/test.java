@@ -4,6 +4,8 @@
  */
 package com.mycompany.Object.PhieuMuon;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author pc
@@ -16,8 +18,10 @@ public class test {
     public static void main(String args[]) {
        PhieuMuonDAO pmd= new PhieuMuonDAO();
        PhieuMuonBUS pmbus=new PhieuMuonBUS();
-       System.out.println(pmbus.MUONSACH("000001","DNT001"));
+       PhieuMuon nMuon=new PhieuMuon("3", "000001", "DNT001", "NV0001", 1, LocalDate.parse("2020-04-10"),LocalDate.parse("2020-04-15"), 1);
 //        System.out.println(pmbus.getMaphieumuon());
-       
+       pmbus.them(nMuon);
+        System.out.println(pmbus.getMaphieumuon());
+        
     }
 }

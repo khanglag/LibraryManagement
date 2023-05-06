@@ -4,6 +4,17 @@
  */
 package com.mycompany.view.employee;
 
+import com.mycompany.Object.DocGia.DocGia;
+import com.mycompany.Object.DocGia.DocGiaBUS;
+import com.mycompany.Object.NhanVien.NhanVien;
+import com.mycompany.Object.NhanVien.NhanVienBUS;
+import com.mycompany.Object.PhieuMuon.PhieuMuon;
+import com.mycompany.Object.PhieuMuon.PhieuMuonBUS;
+import com.mycompany.Object.Sach.Sach;
+import com.mycompany.Object.Sach.SachBUS;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 /**
  *
  * @author khang
@@ -15,6 +26,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
      */
     public PhieuMuonJPanel() {
         initComponents();
+        showcombodataDT();
     }
 
     /**
@@ -62,8 +74,13 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         jLabel32.setText("Mã đọc giả");
 
         tfMaPhieu.setEditable(false);
+        tfMaPhieu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfMaPhieuActionPerformed(evt);
+            }
+        });
 
-        jComboBoxMaDocGia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxMaDocGia.setModel(new javax.swing.DefaultComboBoxModel<>());
         jComboBoxMaDocGia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxMaDocGiaActionPerformed(evt);
@@ -72,9 +89,15 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
 
         jLabel33.setText("Mã nhân viên");
 
-        jComboBoxMaNhanVien.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxMaNhanVien.setModel(new javax.swing.DefaultComboBoxModel<>());
 
         jLabel34.setText("Ngày mượn");
+
+        tfNgayMuon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNgayMuonActionPerformed(evt);
+            }
+        });
 
         jLabel35.setText("Tình trạng");
 
@@ -119,7 +142,12 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         jLabel36.setText("Mã sách");
         jLabel36.setPreferredSize(new java.awt.Dimension(97, 16));
 
-        jComboBoxMaSach.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxMaSach.setModel(new javax.swing.DefaultComboBoxModel<>());
+        jComboBoxMaSach.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxMaSachActionPerformed(evt);
+            }
+        });
 
         jLabel37.setText("Ngày trả");
 
@@ -177,7 +205,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel15Layout.createSequentialGroup()
-                                .addComponent(jRadioButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                                .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, Short.MAX_VALUE)
                                 .addGap(82, 82, 82))
                             .addComponent(tfNgayTra)
                             .addComponent(tfSoLuong)
@@ -206,9 +234,9 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel31)
                             .addComponent(tfMaPhieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel32)
-                            .addComponent(jComboBoxMaDocGia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jComboBoxMaDocGia, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jComboBoxMaSach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -302,7 +330,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSuaActionPerformed
 
     private void jComboBoxMaDocGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxMaDocGiaActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jComboBoxMaDocGiaActionPerformed
 
     private void tfNgayTraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNgayTraActionPerformed
@@ -310,7 +338,18 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_tfNgayTraActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        // TODO add your handling code here:
+        PhieuMuon pm= new PhieuMuon();
+        PhieuMuonBUS pmbus=new PhieuMuonBUS();
+        pm.setMaPhieu(tfMaPhieu.getText());
+        pm.setMaDocGia(jComboBoxMaDocGia. getSelectedItem().toString());
+        pm.setMaNhanVien(jComboBoxMaNhanVien.getSelectedItem().toString());
+        pm.setMaSach(jComboBoxMaSach.getSelectedItem().toString());
+        pm.setNgayMuon(LocalDate.parse(tfNgayMuon.getText()));
+        pm.setNgayTra(LocalDate.parse(tfNgayTra.getText()));
+        pm.setSoLuong(Integer.parseInt(tfSoLuong.getText()));
+        pm.setTonTai(1);
+        System.out.println(pm.toString());
+        pmbus.them(pm);
         //Mã phiếu tạo tự động, lấy mã phiếu mượn của phiếu mượn cuối cùng đưa vào
         //tfMaPhieu.setText(Menu.MenuHand.FormatString(Mượn));
     }//GEN-LAST:event_btnThemActionPerformed
@@ -327,6 +366,18 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         tfMaPhieu.setEditable(true);
     }//GEN-LAST:event_btnClearActionPerformed
+
+    private void jComboBoxMaSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxMaSachActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxMaSachActionPerformed
+
+    private void tfMaPhieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfMaPhieuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfMaPhieuActionPerformed
+
+    private void tfNgayMuonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNgayMuonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNgayMuonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -357,4 +408,21 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField tfNgayTra;
     private javax.swing.JTextField tfSoLuong;
     // End of variables declaration//GEN-END:variables
+    public void showcombodataDT(){
+        PhieuMuonBUS pm= new PhieuMuonBUS();
+        tfMaPhieu.setText(pm.getMaphieumuon());
+        DocGiaBUS dgbus = new DocGiaBUS();
+                
+                for(DocGia itempDocGia: dgbus.loadData()){
+                     jComboBoxMaDocGia.addItem(itempDocGia.getMaDocGia());
+                }
+        SachBUS sabus = new SachBUS();
+                for(Sach itemsa: sabus.getSachs()){
+                    jComboBoxMaSach.addItem(itemsa.getMaSach());
+                }
+        NhanVienBUS nvbus =new NhanVienBUS();
+                for(NhanVien itemnv: nvbus.getDSNhanVien()){
+                    jComboBoxMaNhanVien.addItem(itemnv.getMaNhanVien());
+                }
+    }
 }
