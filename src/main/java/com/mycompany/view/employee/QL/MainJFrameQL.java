@@ -7,6 +7,7 @@ package com.mycompany.view.employee.QL;
 import com.mycompany.bean.DanhMucBean;
 import com.mycompany.controller.ChuyenManHinhControllerQL;
 import com.mycompany.view.DangNhapJDialog;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
@@ -23,6 +24,8 @@ public class MainJFrameQL extends javax.swing.JFrame {
      */
     public MainJFrameQL() {
         initComponents();
+        
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/com/mycompany/icons/273052293_1313356409086912_2906954423817983738_n.jpg")));
         // setIconImage(Toolkit.getDefaultToolkit().getImage(
         //         "D:\\OneDrive - IT software\\GitHub\\LibraryManagement\\src\\main\\java\\com\\mycompany\\icons\\273052293_1313356409086912_2906954423817983738_n.jpg"));
         
@@ -475,7 +478,7 @@ public class MainJFrameQL extends javax.swing.JFrame {
         jpnRootLayout.setVerticalGroup(
             jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 402, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
