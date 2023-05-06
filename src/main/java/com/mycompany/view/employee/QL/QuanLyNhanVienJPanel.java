@@ -174,6 +174,11 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
         jLabel2.setText("CCCD");
 
         btnTim.setText("Tim");
+        btnTim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTimActionPerformed(evt);
+            }
+        });
 
         btnClear.setText("Clear");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
@@ -326,6 +331,10 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
         new themtaikhoanQL(str).setVisible(true);
         
     }//GEN-LAST:event_jMenuItemNVActionPerformed
+
+    private void btnTimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnTimActionPerformed
 
     private void jRadioButtonNamActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jRadioButtonNamActionPerformed
         // TODO add your handling code here:
