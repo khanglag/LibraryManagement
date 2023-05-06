@@ -49,7 +49,7 @@ public class PhieuMuonDAO {
         return dsDG;
     }
     public int getsophieumuon(){
-        return 1+dsDG.size();
+        return readDB().size();
     }
     public Boolean add(PhieuMuon sa){
         connectDB= new ConnectDB();
@@ -61,7 +61,7 @@ public class PhieuMuonDAO {
                 +java.sql.Date.valueOf(sa.getNgayMuon())+"','"
                 +java.sql.Date.valueOf(sa.getNgayTra())+"','"
                 +sa.getSoLuong()+"','"
-                +"','"+sa.isTonTai()+"')");
+                +sa.isTonTai()+"')");
         connectDB.closeConnect();
         return success;
     }

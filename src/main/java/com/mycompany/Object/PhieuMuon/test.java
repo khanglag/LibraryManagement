@@ -18,7 +18,10 @@ public class test {
     public static void main(String args[]) {
        PhieuMuonDAO pmd= new PhieuMuonDAO();
        PhieuMuonBUS pmbus=new PhieuMuonBUS();
-       PhieuMuon nMuon=new PhieuMuon("3", "000001", "DNT001", "NV0001", 1, LocalDate.parse("2020-04-10"),LocalDate.parse("2020-04-15"), 1);
+       PhieuMuon nMuon=new PhieuMuon(pmbus.getMaphieumuon(), "000002", "DNT001", "NV0001", 1, LocalDate.parse("2020-04-10"),LocalDate.parse("2020-04-15"), 1);
+//        System.out.println(pmbus.getMaphieumuon());
+       pmbus.them(nMuon);
+       nMuon=new PhieuMuon(pmbus.getMaphieumuon(), "000001", "DNT001", "NV0001", 1, LocalDate.parse("2020-04-10"),LocalDate.parse("2020-04-15"), 1);
 //        System.out.println(pmbus.getMaphieumuon());
        pmbus.them(nMuon);
         System.out.println(pmbus.getMaphieumuon());

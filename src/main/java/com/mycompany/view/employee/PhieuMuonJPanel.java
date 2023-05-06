@@ -14,19 +14,22 @@ import com.mycompany.Object.Sach.Sach;
 import com.mycompany.Object.Sach.SachBUS;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author khang
  */
 public class PhieuMuonJPanel extends javax.swing.JPanel {
-
+    DefaultTableModel model;
     /**
      * Creates new form PhieuMuonJPanel
      */
     public PhieuMuonJPanel() {
         initComponents();
         showcombodataDT();
+        model= (DefaultTableModel) tablePhieuMuon.getModel();
+        showtable();
     }
 
     /**
@@ -341,7 +344,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         PhieuMuon pm= new PhieuMuon();
         PhieuMuonBUS pmbus=new PhieuMuonBUS();
         
-        pm.setMaPhieu(tfMaPhieu.getText());
+        pm.setMaPhieu(pmbus.getMaphieumuon());
         pm.setMaDocGia(jComboBoxMaDocGia. getSelectedItem().toString());
         pm.setMaNhanVien(jComboBoxMaNhanVien.getSelectedItem().toString());
         pm.setMaSach(jComboBoxMaSach.getSelectedItem().toString());
@@ -351,6 +354,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         pm.setTonTai(1);
         System.out.println(pm.toString());
         pmbus.them(pm);
+        tfMaPhieu.resetKeyboardActions();
         //Mã phiếu tạo tự động, lấy mã phiếu mượn của phiếu mượn cuối cùng đưa vào
         //tfMaPhieu.setText(Menu.MenuHand.FormatString(Mượn));
     }//GEN-LAST:event_btnThemActionPerformed
@@ -418,12 +422,21 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
                      jComboBoxMaDocGia.addItem(itempDocGia.getMaDocGia());
                 }
         SachBUS sabus = new SachBUS();
-                for(Sach itemsa: sabus.getSachs()){
+                for(Sach itemsa: sabus.loadData()){
                     jComboBoxMaSach.addItem(itemsa.getMaSach());
                 }
         NhanVienBUS nvbus =new NhanVienBUS();
                 for(NhanVien itemnv: nvbus.getDSNhanVien()){
                     jComboBoxMaNhanVien.addItem(itemnv.getMaNhanVien());
                 }
+    }
+    public void showtable(){
+        PhieuMuonBUS pmbus= new PhieuMuonBUS();
+        
+    
+
+        for(PhieuMuon itMuon:pmbus.loadData()){
+            Object[] 
+        }
     }
 }
