@@ -59,6 +59,18 @@ public class SachDAO {
         connectDB.closeConnect();
         return success;
     }
+    public boolean hasID(String id) {
+        boolean result = false;
+        connectDB = new ConnectDB();
+        try {
+            String qry = "Select * from sach where masa='" + id + "'";
+            ResultSet rset = connectDB.sqlQuery(qry);
+            result = rset.next();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return result;
+    }
     public boolean update(Sach sa){
         connectDB = new ConnectDB();
         boolean success= true;
@@ -67,17 +79,14 @@ public class SachDAO {
                 +"', SOTRANG='"+sa.getSoTrang()
                 +"', SOLUONG='"+sa.getSoLuong()
                 +"', gia='"+sa.getGia()
-                +"', SA_MALOAI='"+sa.getMaTheLoai()
-                 +"', MATG='"+sa.getMaTacGia()
-                 +"', MANXB='"+sa.getMaTheLoai()
+                
                  +"', MA_ANH='"+sa.getAnh()
-                +"', TONTAI='"+sa.isTonTai()
+                
                 +"' WHERE MADG ='"+sa.getMaSach()+"'");
         connectDB.closeConnect();
         return success;
     }
-    public ArrayList<Sach> timSachs(String maSach, String tenSach, String tinhTrang, String maTheLoai, String maTacGia, String maNXB
-          ){
+    public ArrayList<Sach> search(String maSach, String tenSach, String tinhTrang, String maTheLoai, String maTacGia, String maNXB, String anh, String soTrang, String lanXuatBan, String soLuong, String gia){
         connectDB = new ConnectDB();
         ArrayList<Sach> ketqua =new ArrayList<Sach>();
         String qry="SELECT *FROM SACH WHERE TONTAI=1 ";

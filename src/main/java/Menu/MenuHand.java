@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import javax.swing.JOptionPane;
 
@@ -52,5 +53,10 @@ public class MenuHand {
         else
             d = date.toInstant().atZone(defaultZoneId).toLocalDate();
         return d;
+    }
+    public static int TruDate(LocalDate date1, LocalDate date2) {
+        long diffDays = ChronoUnit.DAYS.between(date1, date2);
+        int diffDaysInt = (int) diffDays;
+        return diffDaysInt;
     }
 }
