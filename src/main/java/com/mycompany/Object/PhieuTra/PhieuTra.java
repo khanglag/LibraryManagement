@@ -38,7 +38,22 @@ public class PhieuTra {
         this.tonTai = tonTai;
     }
 
-    
+     public PhieuTra(String maPhieu, String maPhieuMuon,
+            String maDocGia, String maSach, String maNhanVien,
+            LocalDate hanTra, LocalDate ngayTra, int soLuong, String tinhTrang,
+            int soNgayQuaHan) {
+        this.maPhieu = maPhieu;
+        this.maPhieuMuon = maPhieuMuon;
+        this.maDocGia = maDocGia;
+        this.maSach = maSach;
+        this.maNhanVien = maNhanVien;
+        this.hanTra = hanTra;
+        this.ngayTra = ngayTra;
+        this.soLuong = soLuong;
+        this.tinhTrang = tinhTrang;
+        this.soNgayQuaHan = soNgayQuaHan;
+        
+    }
 
     public LocalDate getHanTra() {
         return hanTra;
