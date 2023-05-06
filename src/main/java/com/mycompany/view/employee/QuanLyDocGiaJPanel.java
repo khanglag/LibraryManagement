@@ -9,7 +9,7 @@ import com.mycompany.Object.DocGia.*;
 import java.util.ArrayList;
 import javax.swing.table.*;
 import javax.swing.*;
-
+import java.time.LocalDate;
 /**
  *
  * @author khang
@@ -60,8 +60,8 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jRadioButtonNam = new javax.swing.JRadioButton();
         jRadioButtonNu = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnTim = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         tableTTDG = new javax.swing.JTable();
 
@@ -93,11 +93,21 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
         btnXoa.setMaximumSize(new java.awt.Dimension(99, 57));
         btnXoa.setMinimumSize(new java.awt.Dimension(99, 57));
         btnXoa.setPreferredSize(new java.awt.Dimension(99, 57));
+        btnXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXoaActionPerformed(evt);
+            }
+        });
 
         btnSua.setText("Sửa");
         btnSua.setMaximumSize(new java.awt.Dimension(89, 55));
         btnSua.setMinimumSize(new java.awt.Dimension(89, 55));
         btnSua.setPreferredSize(new java.awt.Dimension(99, 57));
+        btnSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuaActionPerformed(evt);
+            }
+        });
 
         btnLoad.setText("Làm mới");
         btnLoad.setPreferredSize(new java.awt.Dimension(99, 57));
@@ -111,10 +121,15 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
         btnThem.setMaximumSize(new java.awt.Dimension(99, 57));
         btnThem.setMinimumSize(new java.awt.Dimension(99, 57));
         btnThem.setPreferredSize(new java.awt.Dimension(99, 57));
+        btnThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThemActionPerformed(evt);
+            }
+        });
 
         jLabel43.setText("Ngày sinh");
 
-        jLabel2.setText("Phai");
+        jLabel2.setText("Phái");
 
         buttonGroupPhai.add(jRadioButtonNam);
         jRadioButtonNam.setText("Nam");
@@ -122,17 +137,17 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
         buttonGroupPhai.add(jRadioButtonNu);
         jRadioButtonNu.setText("Nữ");
 
-        jButton1.setText("Tim");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnTim.setText("Tìm");
+        btnTim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnTimActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Clear");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnClearActionPerformed(evt);
             }
         });
 
@@ -157,11 +172,11 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addComponent(tfMaDocGia, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jButton2))
+                                            .addComponent(btnClear))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addComponent(tfCCCD, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(80, 80, 80)
-                                            .addComponent(jButton1)))))
+                                            .addComponent(btnTim)))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel19)
@@ -195,12 +210,12 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(tfCCCD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(btnTim))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(tfMaDocGia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
+                    .addComponent(btnClear))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
@@ -239,14 +254,14 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
 
         tableTTDG.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                
+
             },
             new String [] {
-                "STT", "CCCD", "Mã DG", "Tên", "Phái", "Ngay sinh", "Số điện thoại", "Địa chỉ"
+                "STT", "CCCD", "Mã ĐG", "Tên", "Phái", "Ngày sinh", "Số điện thoại", "Địa chỉ"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, true
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -280,6 +295,10 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public void refreshData() {
+        docGiaBUS = new DocGiaBUS();
+        loadData();
+    }
     public void loadData() {
         ArrayList<DocGia> arr = new ArrayList<DocGia>();
         arr = docGiaBUS.loadData();
@@ -295,10 +314,26 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
         // TODO add your handling code here:
+        refreshData();
     }//GEN-LAST:event_btnLoadActionPerformed
 
     private void tableTTDGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableTTDGMouseClicked
         // TODO add your handling code here:
+        int i = tableTTDG.getSelectedRow();
+        if (i >= 0) {
+            tfCCCD.setText(tableTTDG.getModel().getValueAt(i, 1).toString());
+            tfMaDocGia.setText(tableTTDG.getModel().getValueAt(i, 2).toString());
+            tfTenDocGia.setText(tableTTDG.getModel().getValueAt(i, 3).toString());
+            if (tableTTDG.getModel().getValueAt(i, 4).toString().toUpperCase().equals("NAM")) {
+                jRadioButtonNam.setSelected(true);
+            } else {
+                jRadioButtonNu.setSelected(true);
+            }
+            tfNgaySinh.setText(tableTTDG.getModel().getValueAt(i, 5).toString());
+            
+            tfSoDienThoai.setText(tableTTDG.getModel().getValueAt(i, 6).toString());
+            tfDiaChi.setText(tableTTDG.getModel().getValueAt(i, 7).toString());
+        }
     }//GEN-LAST:event_tableTTDGMouseClicked
 
     private void jMenuItemThemTaiKhoanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItemThemTaiKhoanMouseClicked
@@ -306,34 +341,139 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
         new themtaikhoanKH().setVisible(true);
     }//GEN-LAST:event_jMenuItemThemTaiKhoanMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnTimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimActionPerformed
         // TODO add your handling code here:
-        tfCCCD.setText("");
-        tfDiaChi.setText("");
-        tfMaDocGia.setText("");
-        tfTenDocGia.setText("");
-        tfSoDienThoai.setText("");
-        tfNgaySinh.setText("");
-    }//GEN-LAST:event_jButton1ActionPerformed
+        try{
+            ArrayList<DocGia> arr = new ArrayList<DocGia>();
+            String maDocGia = tfMaDocGia.getText();
+            String tenDocGia = tfTenDocGia.getText();
+            String CCCD = tfCCCD.getText();
+            String diaChi = tfDiaChi.getText();
+            String ngaySinh = tfNgaySinh.getText();
+            String SDT = tfSoDienThoai.getText();
+            String gioiTinh = "";
+            if(jRadioButtonNam.isSelected())
+                gioiTinh += "NAM";
+            else gioiTinh += "NỮ";
+
+            arr = docGiaBUS.search(maDocGia, tenDocGia,  CCCD,  gioiTinh,  ngaySinh,  SDT,  diaChi);
+            if (arr.size() != 0) {
+                JOptionPane.showMessageDialog(this, "Hoàn tất tìm kiếm!");
+                model.setRowCount(0);
+                int i = 0;
+                while (i <= arr.size() - 1) {
+                    DocGia docGia = arr.get(i);
+                    model.addRow(new Object[] {
+                            ++i, docGia.getCCCD(), docGia.getMaDocGia(), docGia.getTenDocGia(), docGia.getGioiTinh(), docGia.getNgaySinh(), docGia.getSoDienThoai(), docGia.getDiaChi()
+                    });
+                }
+            } else JOptionPane.showMessageDialog(this, "Không có dữ liệu cần tìm!");
+        } catch(Exception ex) {
+            System.out.print(ex);
+        } 
+    }//GEN-LAST:event_btnTimActionPerformed
 
     private void tfCCCDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCCCDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfCCCDActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        tfCCCD.setText("");
+        tfMaDocGia.setText("");
+        tfTenDocGia.setText("");
+        tfDiaChi.setText("");
+        tfSoDienThoai.setText("");
+        tfNgaySinh.setText("");
+        buttonGroupPhai.clearSelection();
+        
+    }//GEN-LAST:event_btnClearActionPerformed
+
+    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        // TODO add your handling code here:
+        try {
+            if (tfMaDocGia.getText().trim().equals("") || tfCCCD.getText().trim().equals("")
+                    || tfDiaChi.getText().trim().equals("") ||
+                    tfTenDocGia.getText().trim().equals("") || tfSoDienThoai.getText().trim().equals("")
+                    || tfNgaySinh.getText().trim().equals("")
+                    ||jRadioButtonNam.isSelected() == false && jRadioButtonNu.isSelected() == false) {
+                JOptionPane.showMessageDialog(this, "Vui lòng nhập đủ thông tin");
+                
+            } else {
+                DocGia docGia = new DocGia();
+                docGia.setMaDocGia(tfMaDocGia.getText());
+                docGia.setTenDocGia(tfTenDocGia.getText());
+                if(jRadioButtonNam.isSelected())
+                    docGia.setGioiTinh("NAM");
+                else docGia.setGioiTinh("NỮ");
+                docGia.setTonTai(true);
+                docGia.setCCCD(tfCCCD.getText());
+                docGia.setDiaChi(tfDiaChi.getText());
+                docGia.setNgaySinh(LocalDate.parse(tfNgaySinh.getText()));
+                docGia.setSoDienThoai(tfSoDienThoai.getText());
+                docGia.setMaPQ(null);
+               
+                JOptionPane.showMessageDialog(this, docGiaBUS.add(docGia));
+                model.setRowCount(0);
+                refreshData();
+            }
+        } catch (Exception ex) {
+
+        }
+    }//GEN-LAST:event_btnThemActionPerformed
+
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
+        // TODO add your handling code here:
+        int reply = JOptionPane.showConfirmDialog(getRootPane(),
+                "Bạn có chắc muốn xoá " + tfTenDocGia.getText() + " không ?", "Chú ý",
+                JOptionPane.YES_NO_OPTION);
+        
+        ArrayList<DocGia> arr = new ArrayList<DocGia>();
+        arr = docGiaBUS.loadData();
+
+        if (reply == JOptionPane.YES_OPTION) {
+            for (DocGia docGia : arr) {
+                if (docGia.getMaDocGia().equals(tfMaDocGia.getText().trim())) {
+                    JOptionPane.showMessageDialog(this, docGiaBUS.delete(docGia));                  
+                    break;
+                }
+            }
+        }
+        model.setRowCount(0);
+        refreshData();
+    }//GEN-LAST:event_btnXoaActionPerformed
+
+    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+        // TODO add your handling code here:
+        ArrayList<DocGia> arr = new ArrayList<DocGia>();
+        arr = docGiaBUS.loadData();
+        for (DocGia docGia : arr) {
+            if (docGia.getMaDocGia().equals(tfMaDocGia.getText().trim())) {
+                docGia.setTenDocGia(tfTenDocGia.getText());
+                docGia.setDiaChi(tfDiaChi.getText());
+                if(jRadioButtonNam.isSelected())
+                    docGia.setGioiTinh("NAM");
+                else docGia.setGioiTinh("NỮ");
+                docGia.setNgaySinh(LocalDate.parse(tfNgaySinh.getText()));
+                docGia.setSoDienThoai(tfSoDienThoai.getText());
+                JOptionPane.showMessageDialog(this, docGiaBUS.update(docGia));
+                break;
+            }
+        }
+        model.setRowCount(0);
+        refreshData();
+    }//GEN-LAST:event_btnSuaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClear;
     private javax.swing.JButton btnLoad;
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnThem;
+    private javax.swing.JButton btnTim;
     private javax.swing.JButton btnXoa;
     private javax.swing.ButtonGroup buttonGroupPhai;
     private javax.swing.ButtonGroup buttonGroupTTTK;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

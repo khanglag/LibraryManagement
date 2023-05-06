@@ -13,7 +13,7 @@ public class themtaikhoanKH extends javax.swing.JFrame {
     /**
      * Creates new form themtaikhoan
      */
-    public themtaikhoanKH(String str) {
+    public themtaikhoanKH() {
         initComponents();
     }
 
