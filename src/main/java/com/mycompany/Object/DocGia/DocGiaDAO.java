@@ -7,9 +7,6 @@ import ConnectDB.ConnectDB;
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
-import javax.swing.JOptionPane;
-import java.sql.Date;
 /**
  *
  * @author pc

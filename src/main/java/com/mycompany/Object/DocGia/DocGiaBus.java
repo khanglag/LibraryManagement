@@ -4,7 +4,6 @@
  */
 package com.mycompany.Object.DocGia; 
 import java.util.ArrayList;
-import java.sql.SQLException;
 /**
  *
  * @author pc

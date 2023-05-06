@@ -4,7 +4,6 @@
  */
 package com.mycompany.Object.NhaXuatBan; 
 import java.util.ArrayList;
-import java.sql.SQLException;
 /**
  *
  * @author pc
