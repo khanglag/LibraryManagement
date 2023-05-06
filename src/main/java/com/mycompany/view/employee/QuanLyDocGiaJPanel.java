@@ -314,6 +314,7 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
         // TODO add your handling code here:
+        model.setRowCount(0);
         refreshData();
     }//GEN-LAST:event_btnLoadActionPerformed
 
@@ -418,7 +419,7 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
                 refreshData();
             }
         } catch (Exception ex) {
-
+            System.out.print(ex);
         }
     }//GEN-LAST:event_btnThemActionPerformed
 
