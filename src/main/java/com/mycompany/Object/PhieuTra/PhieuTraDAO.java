@@ -1,0 +1,102 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.Object.PhieuTra;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import ConnectDB.ConnectDB;
+
+/**
+ *
+ * @author khang
+ */
+public class PhieuTraDAO {
+
+    public PhieuTraDAO() {
+
+    }
+
+    ConnectDB connectDB;
+    ArrayList<PhieuTra> dsPhieuTra = new ArrayList<>();
+
+    public ArrayList<PhieuTra> readDB() {
+        connectDB = new ConnectDB();
+        try {
+            String qry = "SELECT *FROM NHANVIEN WHERE TONTAI=1";
+            ResultSet rset = connectDB.sqlQuery(qry);
+            if (rset != null) {
+                while (rset.next()) {
+                    PhieuTra phieuTra = new PhieuTra(
+                            rset.getNString("MAPHIEUTRA"),
+                            rset.getNString("MAPHIEUMUON"),
+                            rset.getNString("MADG"),
+                            rset.getNString("MASA"),
+                            rset.getNString("MANV"),
+                            rset.getDate("HANTRA").toLocalDate(),
+                            rset.getDate("NGAYTRA").toLocalDate(),
+                            rset.getInt("SOLUONG"),
+                            rset.getNString("TINHTRANG"),
+                            rset.getInt("SONGAYQUAHAN"));
+
+                    dsPhieuTra.add(phieuTra);
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Loi");
+        }
+        connectDB.closeConnect();
+        return dsPhieuTra;
+    }
+
+    public Boolean add(PhieuTra phieuTra) {
+        connectDB = new ConnectDB();
+        boolean success = connectDB
+                .sqlUpdate(
+                        "insert into NHANVIEN(MAPHIEUTRA,MAPHIEUMUON,MADG,MASA,MANV,HANTRA,NGAYTRA,SOLUONG,TINHTRANG,SONGAYQUAHAN,TONTAI	) values('"
+                                + phieuTra.getMaPhieu() + "','"
+                                + phieuTra.getMaPhieuMuon() + "','"
+                                + phieuTra.getMaDocGia() + "','"
+                                + phieuTra.getMaSach() + "','"
+                                + phieuTra.getMaNhanVien() + "','"
+                                + java.sql.Date.valueOf(phieuTra.getHanTra()) + "','"
+                                + java.sql.Date.valueOf(phieuTra.getNgayTra()) + "','"
+                                + phieuTra.getSoLuong() + "','"
+                                + phieuTra.getTinhTrang() + "','"
+                                + phieuTra.getSoNgayQuaHan() + "',"
+                                + 1 + "')");
+        connectDB.closeConnect();
+        return success;
+    }
+
+    public boolean delete(PhieuTra phieuTra) {
+        connectDB = new ConnectDB();
+        boolean success = connectDB
+                .sqlUpdate("UPDATE PHIEUTRA SET TONTAI = 0 WHERE MANV ='" + phieuTra.getMaPhieu() + "'");
+        System.out.println("UPDATE NHANVIEN SET TONTAI = 0 WHERE MANHANVIEN ='" + phieuTra.getMaPhieu() + "'");
+        connectDB.closeConnect();
+        return success;
+    }
+
+    // public boolean update(PhieuTra phieuTra) {
+    // connectDB = new ConnectDB();
+    // boolean success = true;
+    // connectDB.sqlUpdate("UPDATE PHIEUTRA SET TENNV='" + nhanVien.getTenNhanVien()
+    // + "', PHAI='" + nhanVien.getGioiTinh()
+    // + "', NGAYSINH='" + java.sql.Date.valueOf(nhanVien.getNgaySinh())
+    // + "', SDT='" + nhanVien.getSoDienThoai()
+    // //+ "', TONTAI='" + nhanVien.isTonTai()
+    // + "' WHERE MANV ='" + phieuTra.getMaPhieu() + "'");
+    // connectDB.closeConnect();
+    // return success;
+    // }
+    public boolean loadDatafromPhieuMuon(String maphieumuon) {
+        connectDB = new ConnectDB();
+        boolean success = false;
+        return success;
+    }
+
+}

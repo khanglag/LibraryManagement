@@ -98,6 +98,7 @@ create table THETHUVIEN(
 );
 create table PHIEUTRA(
 	MAPHIEUTRA char(6) PRIMARY KEY not null,
+	MAPHIEUMUON char(6),
 	MADG char(6),
 	MASA char(6),
 	MANV char(6),
@@ -106,7 +107,7 @@ create table PHIEUTRA(
     SOLUONG smallint,
 	TINHTRANG varchar(50),
 	SONGAYQUAHAN smallint,
-	MAPHIEUMUON char(6),
+	
 	foreign key(MAPHIEUMUON) references phieumuon(MAPHIEUMUON),
 	TONTAI boolean
 );
