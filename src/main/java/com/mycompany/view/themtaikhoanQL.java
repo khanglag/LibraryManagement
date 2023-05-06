@@ -4,6 +4,10 @@
  */
 package com.mycompany.view;
 
+import com.mycompany.Object.NhanVien.NhanVien;
+import com.mycompany.Object.NhanVien.NhanVienBUS;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author khang
@@ -13,8 +17,13 @@ public class themtaikhoanQL extends javax.swing.JFrame {
     /**
      * Creates new form themtaikhoan
      */
-    public themtaikhoanQL() {
+    String str1;
+    String chucvu;
+    NhanVienBUS nVienBUS = new NhanVienBUS();
+    
+    public themtaikhoanQL(String str) {
         initComponents();
+        str1=str;
     }
 
     /**
@@ -25,7 +34,6 @@ public class themtaikhoanQL extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         btnGrTTK = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
@@ -34,117 +42,122 @@ public class themtaikhoanQL extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         tfTTKTenDangNhap = new javax.swing.JTextField();
         tfTTKMatKhau = new javax.swing.JTextField();
-        rbtnTTKKH = new javax.swing.JRadioButton();
         rbtnTTKTT = new javax.swing.JRadioButton();
         rbtnTTKQL = new javax.swing.JRadioButton();
         btnTTKThem = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 51, 51));
         jLabel1.setText("THÊM TÀI KHOẢN");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(23, 8, 0, 0);
-        getContentPane().add(jLabel1, gridBagConstraints);
 
         jLabel2.setText("Tên đăng nhập");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 18;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 28, 0, 0);
-        getContentPane().add(jLabel2, gridBagConstraints);
 
         jLabel3.setText("Mật khẩu");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 48;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 34, 0, 0);
-        getContentPane().add(jLabel3, gridBagConstraints);
 
         jLabel5.setText("Quyền");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.ipadx = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 28, 0, 0);
-        getContentPane().add(jLabel5, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 158;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 12, 0, 0);
-        getContentPane().add(tfTTKTenDangNhap, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 158;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 12, 0, 0);
-        getContentPane().add(tfTTKMatKhau, gridBagConstraints);
-
-        btnGrTTK.add(rbtnTTKKH);
-        rbtnTTKKH.setText("Khách hàng");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 13;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 12, 0, 0);
-        getContentPane().add(rbtnTTKKH, gridBagConstraints);
 
         btnGrTTK.add(rbtnTTKTT);
         rbtnTTKTT.setText("Thủ thư");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 9;
-        gridBagConstraints.ipadx = 35;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 12, 0, 0);
-        getContentPane().add(rbtnTTKTT, gridBagConstraints);
+        rbtnTTKTT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnTTKTTActionPerformed(evt);
+            }
+        });
 
         btnGrTTK.add(rbtnTTKQL);
         rbtnTTKQL.setText("Quản lý");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.ipadx = 35;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 12, 0, 0);
-        getContentPane().add(rbtnTTKQL, gridBagConstraints);
+        rbtnTTKQL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnTTKQLActionPerformed(evt);
+            }
+        });
 
         btnTTKThem.setText("Thêm");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 11;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 18;
-        gridBagConstraints.ipady = 13;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 23, 29, 36);
-        getContentPane().add(btnTTKThem, gridBagConstraints);
+        btnTTKThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTTKThemActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addComponent(jLabel1))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(tfTTKTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(tfTTKMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77)
+                .addComponent(rbtnTTKTT, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(rbtnTTKQL, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(252, 252, 252)
+                .addComponent(btnTTKThem, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfTTKTenDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfTTKMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbtnTTKTT)
+                    .addComponent(jLabel5))
+                .addGap(6, 6, 6)
+                .addComponent(rbtnTTKQL)
+                .addGap(27, 27, 27)
+                .addComponent(btnTTKThem, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnTTKThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTTKThemActionPerformed
+        // TODO add your handling code here:
+        String s = chucvu+str1;
+        System.out.println(str1);
+        NhanVien nv = new NhanVien(str1,s,chucvu,tfTTKTenDangNhap.getText(),tfTTKMatKhau.getText());
+        String mess = nVienBUS.addTaiKhoan(nv);
+        JOptionPane.showMessageDialog(null, mess);
+        if( mess.equals("Thêm thành công")){
+            this.dispose();
+        }
+    }//GEN-LAST:event_btnTTKThemActionPerformed
+
+    private void rbtnTTKTTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnTTKTTActionPerformed
+        // TODO add your handling code here:
+        chucvu = "TT";
+    }//GEN-LAST:event_rbtnTTKTTActionPerformed
+
+    private void rbtnTTKQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnTTKQLActionPerformed
+        // TODO add your handling code here:
+        chucvu= "QL";
+    }//GEN-LAST:event_rbtnTTKQLActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,7 +171,6 @@ public class themtaikhoanQL extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JRadioButton rbtnTTKKH;
     private javax.swing.JRadioButton rbtnTTKQL;
     private javax.swing.JRadioButton rbtnTTKTT;
     private javax.swing.JTextField tfTTKMatKhau;

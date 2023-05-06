@@ -101,4 +101,5 @@ public class UserDAO {
         connectDB.sqlUpdate("UPDATE TAIKHOAN SET MATKHAU='" + user.getMatkhau() + "'"+"WHERE TENDN='" + TaiKhoanController.getTendnString()+"'");
         return success;
     }
+    
 }
