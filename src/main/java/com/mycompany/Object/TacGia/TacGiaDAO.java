@@ -7,6 +7,7 @@ import ConnectDB.ConnectDB;
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 /**
  *
  * @author pc
@@ -27,7 +28,7 @@ public class TacGiaDAO {
                while(rset.next()){
                    TacGia tacGia= new TacGia(rset.getNString("MATG"),
                            rset.getNString("TENTG"),rset.getNString("PHAI"),
-                           Menu.MenuHand.convert(rset.getDate("NGAYSINH")),rset.getBoolean("TONTAI"));
+                           rset.getDate("NGAYSINH").toLocalDate(),rset.getBoolean("TONTAI"));
                    dsTacGia.add(tacGia);
                }
            }

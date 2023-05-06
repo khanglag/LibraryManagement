@@ -91,19 +91,19 @@ public class DocGiaDAO {
         connectDB = new ConnectDB();
         ArrayList<DocGia> ketqua =new ArrayList<DocGia>();
         String qry="SELECT * FROM DOCGIA WHERE TONTAI = 1";
-        if(maDocGia.equals("") == false) 
-            qry+=(" AND MADG= '"+maDocGia+ "'");
-        if(tenDocGia.equals("") == false) 
-            qry+=(" AND TENDG= '"+tenDocGia+ "'");
-        if(CCCD.equals("") == false) 
-            qry+=(" AND CCCD= '"+CCCD+ "'");
-        if(gioiTinh.equals("") == false) 
+        if(maDocGia!=null) 
+            qry+=(" AND  MADG= '"+maDocGia+ "'");
+        if(tenDocGia!=null) 
+            qry+=(" AND  TENDG= '"+tenDocGia+ "'");
+        if(CCCD!=null) 
+            qry+=(" AND  CCCD= '"+CCCD+ "'");
+        if(gioiTinh!=null) 
             qry+=(" AND PHAI= '"+gioiTinh+ "'");
-        if(soDienThoai.equals("") == false) 
+        if(soDienThoai!=null) 
             qry+=(" AND SDT= '"+soDienThoai+ "'");
-        if(diaChi.equals("") == false) 
+        if(diaChi!=null) 
             qry+=(" AND DIACHI= '"+diaChi+ "'");
-        if(ngaySinh.equals("") == false) 
+        if(ngaySinh!=null) 
             qry+=(" AND NGAYSINH= '"+ngaySinh+ "'");
         System.out.println(qry);
         ResultSet rset= connectDB.sqlQuery(qry);
@@ -118,7 +118,7 @@ public class DocGiaDAO {
                }
             }
         } catch (SQLException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         connectDB.closeConnect();
         return ketqua;

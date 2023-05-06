@@ -462,6 +462,7 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnLoadActionPerformed
         // TODO add your handling code here:
+
     }// GEN-LAST:event_btnLoadActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnClearActionPerformed

@@ -3,10 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.view;
-
-import com.mycompany.view.employee.QuanLyDocGiaJPanel;
-import com.mycompany.view.employee.NhaXuatBanJPanel;
-import com.mycompany.view.employee.QuanLyTacGiaJPanel;
+import com.mycompany.view.employee.*;
 import java.awt.BorderLayout;
 
 /**
@@ -81,8 +78,8 @@ public class test extends javax.swing.JFrame {
                 test a = new test();
                 a.setVisible(true);
                 a.setLayout(new BorderLayout());
-                //a.add(new QuanLyTacGiaJPanel(),BorderLayout.CENTER);
                 a.add(new QuanLyTacGiaJPanel(),BorderLayout.CENTER);
+                //a.add(new QuanLySachJPanel(),BorderLayout.CENTER);
             }
         });
     }
