@@ -6,6 +6,7 @@ package Menu;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Date;
@@ -23,19 +24,33 @@ public class MenuHand {
             localDate = LocalDate.parse(dateString, formatter);
         } catch (DateTimeParseException e) {
             // Xử lý ngoại lệ nếu chuỗi không hợp lệ
-            JOptionPane.showMessageDialog(null,"Không thể chuyển đổi chuổi thành LoacalDate"+ e.getMessage()+"\n Chuỗi phải ở dạng: yyyy-MM-dd");
+            JOptionPane.showMessageDialog(null, "Không thể chuyển đổi chuổi thành LoacalDate" + e.getMessage()
+                    + "\n Chuỗi phải ở dạng: yyyy-MM-dd");
         }
         return localDate;
     }
-    public static String FormatString(String str){
-        if(str.equals(""))
+
+    public static String FormatString(String str) {
+        if (str.equals(""))
             str = "0";
         int n = Integer.parseInt(str);
-        n= n+1;
-        str = String.format("%06d", n);    
+        n = n + 1;
+        str = String.format("%06d", n);
         return str;
     }
+
     public static void main(String[] args) {
         System.out.println(FormatString(""));
+    }
+
+    public static LocalDate convert(java.sql.Date date) {
+        LocalDate d;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        ZoneId defaultZoneId = ZoneId.systemDefault();
+        if (date == null)
+            return LocalDate.parse("1970-01-01", formatter);
+        else
+            d = date.toInstant().atZone(defaultZoneId).toLocalDate();
+        return d;
     }
 }

@@ -27,7 +27,7 @@ public class TacGiaDAO {
                while(rset.next()){
                    TacGia tacGia= new TacGia(rset.getNString("MATG"),
                            rset.getNString("TENTG"),rset.getNString("PHAI"),
-                           rset.getDate("NGAYSINH").toLocalDate(),rset.getBoolean("TONTAI"));
+                           Menu.MenuHand.convert(rset.getDate("NGAYSINH")),rset.getBoolean("TONTAI"));
                    dsTacGia.add(tacGia);
                }
            }

@@ -7,6 +7,7 @@ package com.mycompany.view.employee.TT;
 import com.mycompany.bean.DanhMucBean;
 import com.mycompany.controller.ChuyenManHinhControllerTT;
 import com.mycompany.view.DangNhapJDialog;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -22,6 +23,8 @@ public class MainJFrameTT extends javax.swing.JFrame {
      */
     public MainJFrameTT() {
         initComponents();
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/com/mycompany/icons/273052293_1313356409086912_2906954423817983738_n.jpg")));
+        
         // setIconImage(Toolkit.getDefaultToolkit().getImage(
         // "D:\\OneDrive - IT
         // software\\GitHub\\LibraryManagement\\src\\main\\java\\com\\mycompany\\icons\\273052293_1313356409086912_2906954423817983738_n.jpg"));
