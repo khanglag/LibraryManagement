@@ -38,7 +38,7 @@ public class SachBUS {
         return "Thất bại";
     }
 
-    public ArrayList<Sach> search(String maSach, String tenSach, String tinhTrang, String theLoai, String maTacGia, String maNXB, String anh, int soTrang, int lanXuatBan, int soLuong, float gia){
+    public ArrayList<Sach> search(String maSach, String tenSach, String tinhTrang, String theLoai, String maTacGia, String maNXB, String anh, String soTrang, String lanXuatBan, String soLuong, String gia){
         dsSach = sachDAO.search(maSach, tenSach, tinhTrang, theLoai, maTacGia,  maNXB, anh, soTrang, lanXuatBan, soLuong, gia);
         return dsSach;
     }

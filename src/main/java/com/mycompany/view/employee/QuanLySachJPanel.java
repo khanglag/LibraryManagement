@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
 
-import com.mycompany.Object.Sach.Sach;
+import com.mycompany.Object.Sach.*;
 
 /**
  *
@@ -20,7 +20,7 @@ import com.mycompany.Object.Sach.Sach;
  */
 public class QuanLySachJPanel extends javax.swing.JPanel {
     
-    ArrayList<Sach> SachList = new ArrayList<>();
+    SachBUS sachBUS = new SachBUS();
     DefaultTableModel model;
     String pathFile; 
 
@@ -30,23 +30,8 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
      */
     public QuanLySachJPanel() {
         initComponents();
-        model = (DefaultTableModel) tableSach.getModel();
-        
-        LoadData();
-    }
-
-    public void LoadData() {
-        int i = 0;
-        while (i <= SachList.size() - 1) {
-            Sach sach = SachList.get(i);
-            model.addRow(new Object[]{
-            ++i,sach.getMaSach(),sach.getTenSach(),sach.getTinhTrang(),
-            sach.getMaTheLoai(),sach.getMaTacGia(),sach.getMaNXB(),sach.getSoTrang(),sach.getLanXuatBan(),
-            sach.getSoLuong(),sach.getGia(),sach.getAnh()
-        });
-        }
-
-        tableSach.setModel(model);
+        model = (DefaultTableModel) tableSach.getModel();     
+        loadData();
     }
     
     public String getPathFile() {
@@ -115,17 +100,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
 
         jLabel9.setText("Giá");
 
-        tfTenSach.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfTenSachActionPerformed(evt);
-            }
-        });
-
-        tfMaNhaXuatBan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfMaNhaXuatBanActionPerformed(evt);
-            }
-        });
+    
 
         btnChonAnhSach.setText("Chọn");
         btnChonAnhSach.addActionListener(new java.awt.event.ActionListener() {
@@ -161,26 +136,14 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
             }
         });
 
-        lableAnhSach.setText("Anh sach");
-        lableAnhSach.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                lableAnhSachAncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
+        lableAnhSach.setText("Ảnh");
+        
 
         jLabel1.setText("Tình trạng");
 
         jLabel10.setText("Mã thể loại");
 
-        tfMaTheLoai.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfMaTheLoaiActionPerformed(evt);
-            }
-        });
+       
 
         jLabel11.setText("Số Trang");
 
@@ -191,7 +154,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnTim.setText("Tim");
+        btnTim.setText("Tìm");
 
         javax.swing.GroupLayout panelRootLayout = new javax.swing.GroupLayout(panelRoot);
         panelRoot.setLayout(panelRootLayout);
@@ -346,14 +309,6 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
                 tableSachMouseClicked(evt);
             }
         });
-        tableSach.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentHidden(java.awt.event.ComponentEvent evt) {
-                tableSachComponentHidden(evt);
-            }
-            public void componentShown(java.awt.event.ComponentEvent evt) {
-                tableSachComponentShown(evt);
-            }
-        });
         jScrollPane1.setViewportView(tableSach);
         if (tableSach.getColumnModel().getColumnCount() > 0) {
             tableSach.getColumnModel().getColumn(0).setPreferredWidth(25);
@@ -379,13 +334,20 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfMaNhaXuatBanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfMaNhaXuatBanActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfMaNhaXuatBanActionPerformed
-
-    private void tfTenSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTenSachActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfTenSachActionPerformed
+    public void loadData() {
+        ArrayList<Sach> arr = new ArrayList<Sach>();
+        arr = sachBUS.loadData();
+        int i = 0;
+        while (i <= arr.size() - 1) {
+            Sach sach = arr.get(i);
+            model.addRow(new Object[] {
+                    ++i, sach.getMaSach(), sach.getTenSach(), sach.getTinhTrang(), sach.getMaTheLoai(),
+                    sach.getMaTacGia(), sach.getMaNXB(), sach.getSoTrang(), sach.getLanXuatBan(),
+                    sach.getSoLuong(), sach.getGia(), sach.getAnh()
+            });
+            tableSach.setModel(model);
+        }
+    }
 
     private void btnChonAnhSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChonAnhSachActionPerformed
         // TODO add your handling code here:
@@ -407,16 +369,10 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnChonAnhSachActionPerformed
 
-    private void tfMaTheLoaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfMaTheLoaiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfMaTheLoaiActionPerformed
-
-    private void lableAnhSachAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_lableAnhSachAncestorAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lableAnhSachAncestorAdded
-
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
+        ArrayList<Sach> SachList = new ArrayList<Sach>();
+        SachList = sachBUS.loadData();
         Sach a = new Sach(tfMaSach.getText(),tfTenSach.getText(),tfTinhTrang.getText(),tfMaTheLoai.getText(),
         tfMaTacGia.getText(),tfMaNhaXuatBan.getText(),Integer.parseInt(tfSoTrang.getText()),Integer.parseInt(tfLanXuatBan.getText()),
                 Integer.parseInt(tfSoLuong.getText()),Float.parseFloat(tfGia.getText()),getPathFile());
@@ -460,21 +416,6 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         }
         tableSach.setModel(model);
     }//GEN-LAST:event_btnSuaActionPerformed
-
-    private void tableSachComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_tableSachComponentShown
-        // TODO add your handling code here:
-        int i = 1;
-        while(i< SachList.size()-1){
-            Sach sach = SachList.get(i);
-            model.addRow(new Object[]{i,sach.getMaSach(),sach.getTenSach(),sach.getTinhTrang(),
-                sach.getMaTheLoai(),sach.getMaTacGia(),sach.getMaNXB(),sach.getSoTrang(),sach.getLanXuatBan(),
-                sach.getSoLuong(),sach.getGia(),sach.getAnh()});
-        }
-    }//GEN-LAST:event_tableSachComponentShown
-
-    private void tableSachComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_tableSachComponentHidden
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tableSachComponentHidden
 
     private void tableSachMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableSachMouseClicked
         // TODO add your handling code here:
