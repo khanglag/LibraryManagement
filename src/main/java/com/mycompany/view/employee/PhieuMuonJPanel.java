@@ -432,11 +432,9 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     }
     public void showtable(){
         PhieuMuonBUS pmbus= new PhieuMuonBUS();
-        
-    
-
         for(PhieuMuon itMuon:pmbus.loadData()){
-            Object[] 
+            Object[] rowData={itMuon.getMaPhieu(),itMuon.getMaDocGia(),itMuon.getMaSach(),itMuon.getMaNhanVien(),itMuon.getNgayMuon(),itMuon.getNgayTra(),itMuon.getSoLuong(),itMuon.isTonTai()};
+            model.addRow(rowData);
         }
     }
 }
