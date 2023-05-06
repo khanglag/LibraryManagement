@@ -28,7 +28,7 @@ public class PhieuMuonBUS {
                 return "Chua ton tai doc gia";
            else pm.setMaDocGia(maDocGia);
            SachBUS sa =new SachBUS();
-           if(sa.timSachs(maSach, null, null, null, null, null).isEmpty())
+           if(sa.search(maSach, null, null, null, null, null,null,null,null,null,null).isEmpty())
                return "Khong ton tai sach ";
            else pm.setMaSach(maSach);
            System.out.println("MPM"+pm.getMaPhieu()+" MDG"+pm.getMaDocGia()+" MS"+ pm.getMaSach());
