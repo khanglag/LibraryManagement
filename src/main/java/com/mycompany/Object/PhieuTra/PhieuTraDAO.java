@@ -26,10 +26,11 @@ public class PhieuTraDAO {
     public ArrayList<PhieuTra> readDB() {
         connectDB = new ConnectDB();
         try {
-            String qry = "SELECT *FROM NHANVIEN WHERE TONTAI=1";
+            String qry = "SELECT *FROM NHANVIEN ";
             ResultSet rset = connectDB.sqlQuery(qry);
             if (rset != null) {
                 while (rset.next()) {
+
                     PhieuTra phieuTra = new PhieuTra(
                             rset.getNString("MAPHIEUTRA"),
                             rset.getNString("MAPHIEUMUON"),
@@ -40,7 +41,10 @@ public class PhieuTraDAO {
                             rset.getDate("NGAYTRA").toLocalDate(),
                             rset.getInt("SOLUONG"),
                             rset.getNString("TINHTRANG"),
-                            rset.getInt("SONGAYQUAHAN"));
+                            rset.getInt("SONGAYQUAHAN"),
+                            rset.getInt("TONTAI")
+
+                    );
 
                     dsPhieuTra.add(phieuTra);
                 }
@@ -50,6 +54,10 @@ public class PhieuTraDAO {
         }
         connectDB.closeConnect();
         return dsPhieuTra;
+    }
+
+    public int getsophieumuon() {
+        return 1 + dsPhieuTra.size();
     }
 
     public Boolean add(PhieuTra phieuTra) {

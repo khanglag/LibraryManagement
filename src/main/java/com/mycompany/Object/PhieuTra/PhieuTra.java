@@ -15,14 +15,16 @@ public class PhieuTra {
     private LocalDate ngayTra, hanTra;
     private int soNgayQuaHan, soLuong;
 
-    private boolean tonTai;
+    private int tonTai;
 
     // Constructor
     public PhieuTra() {
     }
 
-    public PhieuTra(String maPhieu, String maPhieuMuon, String maDocGia, String maSach, String maNhanVien,
-            LocalDate hanTra, LocalDate ngayTra, int soLuong, String tinhTrang, int soNgayQuaHan) {
+    public PhieuTra(String maPhieu, String maPhieuMuon,
+            String maDocGia, String maSach, String maNhanVien,
+            LocalDate hanTra, LocalDate ngayTra, int soLuong, String tinhTrang,
+            int soNgayQuaHan, int tonTai) {
         this.maPhieu = maPhieu;
         this.maPhieuMuon = maPhieuMuon;
         this.maDocGia = maDocGia;
@@ -33,7 +35,10 @@ public class PhieuTra {
         this.soLuong = soLuong;
         this.tinhTrang = tinhTrang;
         this.soNgayQuaHan = soNgayQuaHan;
+        this.tonTai = tonTai;
     }
+
+    
 
     public LocalDate getHanTra() {
         return hanTra;
@@ -115,11 +120,11 @@ public class PhieuTra {
         this.soNgayQuaHan = soNgayQuaHan;
     }
 
-    public boolean isTonTai() {
+    public int setTonTai() {
         return tonTai;
     }
 
-    public void setTonTai(boolean tonTai) {
+    public void setTonTai(int tonTai) {
         this.tonTai = tonTai;
     }
 
