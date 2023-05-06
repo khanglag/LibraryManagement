@@ -1,34 +1,45 @@
-package com.mycompany.Object.Sach;
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.Object.Sach; 
 import java.util.ArrayList;
-
+/**
+ *
+ * @author pc
+ */
 public class SachBUS {
-   private SachDAO sdao= new SachDAO();
-   private ArrayList<Sach> sa=new ArrayList<>();
-   public SachBUS(){
-       sa=sdao.readDB();
-   }
-   public ArrayList<Sach> getSachs(){
-       ArrayList<Sach> stemp =new ArrayList<>();
-       for(Sach sach:sa)
-       {
-           if(sach.isTonTai()==1)
-               stemp.add(sach);
-       }
-       return stemp;
-   }
-   public void add(Sach sa)
-   {
-       sdao.add(sa);
-   }
-   public void delete(Sach sa)
-   {
-       sdao.delete(sa);
-   }
-   public ArrayList<Sach> timSachs(String maSach, String tenSach, String tinhTrang, String maTheLoai, String maTacGia, String maNXB,
-            int soTrang, int lanXuatBan, int soLuong, float gia, int tonTai,String anh)
-   {
-       return sdao.timSachs(maSach, tenSach, tinhTrang, maTheLoai, maTacGia, maNXB, soTrang, lanXuatBan, soLuong, gia, tonTai, anh);
-   }
-    
+    ArrayList<Sach> dsSach = new ArrayList<Sach>();
+    SachDAO sachDAO = new SachDAO();
+    public SachBUS(){
+        dsSach=sachDAO.readDB();
+    }
+    public ArrayList<Sach> loadData(){
+        return dsSach;
+    }
+
+    public String delete(Sach sach){
+        if(sachDAO.delete(sach))
+            return "Đã xoá";
+        return "Không thể xoá";
+    }
+
+    public String add(Sach sach) {
+        if (sachDAO.hasID(sach.getMaSach()))
+            return "Mã sách đã tồn tại";
+        if (sachDAO.add(sach))
+            return "Thêm thành công";
+        return "Thêm thất bại";
+    }
+
+    public String update(Sach sach){
+        if(sachDAO.update(sach))
+            return "Sửa thành công";
+        return "Thất bại";
+    }
+
+    public ArrayList<Sach> search(String maSach, String tenSach, String tinhTrang, String theLoai, String maTacGia, String maNXB, String anh, int soTrang, int lanXuatBan, int soLuong, float gia){
+        dsSach = sachDAO.search(maSach, tenSach, tinhTrang, theLoai, maTacGia,  maNXB, anh, soTrang, lanXuatBan, soLuong, gia);
+        return dsSach;
+    }
 }
