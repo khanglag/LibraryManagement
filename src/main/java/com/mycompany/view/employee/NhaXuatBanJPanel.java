@@ -233,6 +233,18 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
 
     private void btnTimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimActionPerformed
         // TODO add your handling code here:
+        ArrayList<NhaXuatBan> arr = new ArrayList<NhaXuatBan>();
+        String maNXB = tfMaNXB.getText();
+        String tenNXB = tfTenNXB.getText();
+        arr = NXBBUS.search(maNXB, tenNXB);
+        model.setRowCount(0);
+        int i = 0;
+         while (i <= arr.size() - 1) {
+            NhaXuatBan nxb = arr.get(i);
+            model.addRow(new Object[] {
+                    ++i, nxb.getMaNXB(), nxb.getTenNXB()
+            });
+        }
     }//GEN-LAST:event_btnTimActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed

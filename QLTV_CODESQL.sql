@@ -2,7 +2,7 @@ DROP DATABASE QLTV;
 CREATE DATABASE QLTV;
 use qltv;
 create table PHANQUYEN(
-	MAPQ char(6) primary key not null,
+	MAPQ char(8) primary key not null,
     TENQUYEN varchar(20),
     TONTAI boolean
 );
@@ -50,7 +50,7 @@ create table SACH(
 	CCCD char(12),
 	SDT char(10),
 	DIACHI varchar(50),
-        MAPQ char(6),
+        MAPQ char(8),
         foreign key(MAPQ) references PHANQUYEN(MAPQ),
 	TONTAI boolean
 );
@@ -62,7 +62,7 @@ create table NHANVIEN(
 	CCCD char(12),
 	SDT char(10),
 	DIACHI varchar(50),
-    MAPQ char(6),
+    MAPQ char(8),
     foreign key(MAPQ) references PHANQUYEN(MAPQ),
 	TONTAI boolean
 );
@@ -82,7 +82,7 @@ create table PHIEUMUON(
 create table TAIKHOAN(
 	TENDN varchar(20) primary key not null,
 	MATKHAU varchar(20) not null,
-    MAPQ char(6),
+    MAPQ char(8),
     foreign key (MAPQ) references PHANQUYEN(MAPQ),
 	TONTAI boolean
 );
@@ -133,12 +133,12 @@ create table ANH_SA(
    
 );
 insert into PHANQUYEN(MAPQ,TENQUYEN,TONTAI) values
-('QL0000','QUẢN LÝ 1',1),
-('TT0000','THỦ THƯ 1',1),
-('TT0001','THỦ THƯ 2',1),
-('TT0002','THỦ THƯ 3',1),
-('TT0003','THỦ THƯ 4',1),
-('DG0000','ĐỘC GIẢ 1',1);
+('QL000000','QUẢN LÝ 1',1),
+('TT000000','THỦ THƯ 1',1),
+('TT000001','THỦ THƯ 2',1),
+('TT000002','THỦ THƯ 3',1),
+('TT000003','THỦ THƯ 4',1),
+('DG000000','ĐỘC GIẢ 1',1);
 insert into LOAISACH(MALOAI,TENLOAI,TONTAI) values
 ('GT0001','GIAO TRINH',1),
 ('SGK001','SÁCH GIÁO KHOA',1),
@@ -180,22 +180,22 @@ insert into SACH(MASA,TENSA,TT,SOTRANG,SOLUONG,gia,SA_MALOAI,MATG,MANXB,LXB,MA_A
 ('LTM001','LUẬT THƯƠNG MẠI','NGUYEN',166,5,50.000,'CT0001',NULL,'NXB002',5,'4cdc8572992ac31925a3a64af1c7ce48.jpg',1);
 
 insert into DOCGIA(MADG,TENDG,PHAI,NGAYSINH,CCCD,SDT,DIACHI,MAPQ,TONTAI) values
-('000001','LE DUY KHANG','NAM','2003-04-10','123456789123','0358808913','277 AU DUONG LAN','DG0000',1);
+('000001','LE DUY KHANG','NAM','2003-04-10','123456789123','0358808913','277 AU DUONG LAN','DG000000',1);
 insert into NHANVIEN(MANV,TENNV,PHAI,NGAYSINH,CCCD,SDT,DIACHI,MAPQ,TONTAI) values 
-('NV0011','LE DUY KHANG','NAM','2003-10-04','120732921123','0368779041','277 au duong lan','QL0000',1),
-('NV0027','NGUYEN THI ANH THU','NỮ','2003-08-15','068303002628','0368779041','101 nguyen thi tan','TT0000',1),
-('NV0003','NGUYEN KE CUONG','NAM','2003-11-07','120732921123','0368779041','477 ','TT0001',1),
-('NV0010','DO MINH KHANG','NAM','2003-04-14','123456789123','0368779041','LONG AN','TT0002',1),
-('NV0001','PHAM MINH TRUNG','NAM','2003-01-01','120732921123','0368779041','1000 nguyen thai son','TT0003',1);
+('NV0011','LE DUY KHANG','NAM','2003-10-04','120732921123','0368779041','277 au duong lan','QL000000',1),
+('NV0027','NGUYEN THI ANH THU','NỮ','2003-08-15','068303002628','0368779041','101 nguyen thi tan','TT000000',1),
+('NV0003','NGUYEN KE CUONG','NAM','2003-11-07','120732921123','0368779041','477 ','TT000001',1),
+('NV0010','DO MINH KHANG','NAM','2003-04-14','123456789123','0368779041','LONG AN','TT000002',1),
+('NV0001','PHAM MINH TRUNG','NAM','2003-01-01','120732921123','0368779041','1000 nguyen thai son','TT000003',1);
 
 
 insert into TAIKHOAN(TENDN,MATKHAU,MAPQ,TONTAI) values
-('nguyenanhthu03','13062013','TT0000',1),
-('dk20031004','04102003','QL0000',1),
-('kc07010512','07010512','TT0001',1),
-('mk14042003','14042003','TT0002',1),
-('mt000000','000000','TT0003',1),
-('ldk2003','04102003','DG0000',1);
+('nguyenanhthu03','13062013','TT000000',1),
+('dk20031004','04102003','QL000000',1),
+('kc07010512','07010512','TT000001',1),
+('mk14042003','14042003','TT000002',1),
+('mt000000','000000','TT000003',1),
+('ldk2003','04102003','DG000000',1);
 /*insert into TK_DG(TENDN,MADG,TONTAI)values
 ('ldk2003','000001',1);
 insert into TK_NV (TENDN,MANV,TONTAI) values

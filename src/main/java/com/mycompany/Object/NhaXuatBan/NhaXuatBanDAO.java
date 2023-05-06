@@ -8,6 +8,7 @@ import ConnectDB.ConnectDB;
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.*;
 /**
  *
  * @author pc
@@ -73,4 +74,36 @@ public class NhaXuatBanDAO {
         return result;
 
     }
+
+    public ArrayList<NhaXuatBan> search(String maNXB, String tenNXB){
+        connectDB = new ConnectDB();
+        ArrayList<NhaXuatBan> result = new ArrayList<NhaXuatBan>();
+        String qry="SELECT * FROM NHAXUATBAN WHERE ";
+        if(maNXB.equals("") == false && tenNXB.equals("") == false) {
+            qry += "MANXB = '" + maNXB + "', TENNXB = '" + tenNXB + "'";
+        }
+        else {
+            if (maNXB.equals("") == false) {
+                qry += "MANXB = '" + maNXB + "'";
+            }
+            if (tenNXB.equals("") == false) {
+                qry += "TENNXB = '" + tenNXB + "'";
+            }
+        }
+        System.out.println(qry);
+        ResultSet rset= connectDB.sqlQuery(qry);
+        try {
+            if(rset!=null){
+               while(rset.next()){
+                   NhaXuatBan nxb= new NhaXuatBan(rset.getNString("MANXB"),rset.getNString("TENNXB"), rset.getBoolean("TONTAI"));
+                   result.add(nxb);
+               }
+           }
+        } catch (SQLException e) {
+             JOptionPane.showMessageDialog(null,"Không có đối tượng cần tìm");
+        }
+        connectDB.closeConnect();
+        return result;
+}
+
 }

@@ -10,33 +10,21 @@ import java.sql.SQLException;
  *
  * @author pc
  */
-public class DocGiaBus {
-    ArrayList<DocGia> dsdg =new ArrayList<>();
-    DocGiaDAO dgaoAO=new DocGiaDAO();
-    public DocGiaBus(){
-        dsdg=dgaoAO.readDB();
+public class DocGiaBUS {
+    ArrayList<DocGia> dsDocGia =new ArrayList<>();
+    DocGiaDAO docGiaDAO = new DocGiaDAO();
+    public DocGiaBUS(){
+        dsDocGia = docGiaDAO.readDB();
     }
     //Lay danh sach doc gia con ton tai
-    public ArrayList<DocGia> getDocGiads(){
-        ArrayList<DocGia> dgtempArrayList=new ArrayList<DocGia>();
-        for(DocGia itemDocGia:dsdg)
+    public ArrayList<DocGia> loadData(){
+        ArrayList<DocGia> arr = new ArrayList<DocGia>();
+        for(DocGia docGia : dsDocGia)
         {
-            if(itemDocGia.isTonTai()) dgtempArrayList.add(itemDocGia);
+            arr.add(docGia);
         }
-        return dgtempArrayList;
+        return arr;
     }
-    public void add(DocGia dg)
-    {
-        dgaoAO.add(dg);
-    }
-    public void delete(DocGia dg)
-    {
-        dgaoAO.delete(dg);
-    }
-    public ArrayList<DocGia> tiArrayList(String maDocGia, String tenDocGia, String gioiTinh, String soDienThoai, String diaChi, String maPQ,
-            LocalDate ngaySinh,
-            boolean tonTai)
-    {
-        return dgaoAO.timDocGias(maDocGia, tenDocGia, gioiTinh, soDienThoai, diaChi, maPQ, ngaySinh, tonTai);
-    }
+
+    
 }

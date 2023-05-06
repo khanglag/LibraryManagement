@@ -39,4 +39,9 @@ public class NhaXuatBanBUS {
         }
         return "Thất bại";
     }
+
+    public ArrayList<NhaXuatBan> search(String maNXB, String tenNXB){
+        dsNXB = NXBDAO.search(maNXB, tenNXB);
+        return dsNXB;
+    }
 }
