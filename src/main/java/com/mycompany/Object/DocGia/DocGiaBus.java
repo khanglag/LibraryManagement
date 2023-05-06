@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.Object.DocGia; 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.sql.SQLException;
 /**
@@ -11,20 +10,38 @@ import java.sql.SQLException;
  * @author pc
  */
 public class DocGiaBUS {
-    ArrayList<DocGia> dsDocGia =new ArrayList<>();
+    ArrayList<DocGia> dsDocGia = new ArrayList<DocGia>();
     DocGiaDAO docGiaDAO = new DocGiaDAO();
     public DocGiaBUS(){
-        dsDocGia = docGiaDAO.readDB();
+        dsDocGia=docGiaDAO.readDB();
     }
-    //Lay danh sach doc gia con ton tai
     public ArrayList<DocGia> loadData(){
-        ArrayList<DocGia> arr = new ArrayList<DocGia>();
-        for(DocGia docGia : dsDocGia)
-        {
-            arr.add(docGia);
-        }
-        return arr;
+        return dsDocGia;
     }
 
-    
+    public String delete(DocGia docGia){
+        if(docGiaDAO.delete(docGia))
+            return "Đã xoá";
+        return "Không thể xoá";
+    }
+
+    public String add(DocGia docGia) {
+        if (docGiaDAO.hasID(docGia.getMaDocGia()))
+            return "Mã đọc giả đã tồn tại";
+        if (docGiaDAO.add(docGia))
+            return "Thêm thành công";
+        return "Thêm thất bại";
+    }
+
+    public String update(DocGia docGia){
+        if(docGiaDAO.update(docGia)){
+            return "Sửa thành công";
+        }
+        return "Thất bại";
+    }
+
+    public ArrayList<DocGia> search(String maDocGia, String tenDocGia, String CCCD, String gioiTinh, String ngaySinh, String SDT, String diaChi){
+        dsDocGia = docGiaDAO.search(maDocGia, tenDocGia, CCCD, gioiTinh, ngaySinh, SDT, diaChi);
+        return dsDocGia;
+    }
 }
