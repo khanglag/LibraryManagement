@@ -12,16 +12,18 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Random;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author pc
  */
 
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt
+ * to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit
+ * this template
  */
-
 
 public class PhieuMuonDAO {
 
@@ -34,7 +36,7 @@ public class PhieuMuonDAO {
     public ArrayList<PhieuMuon> readDB() {
         connectDB = new ConnectDB();
         try {
-            String qry = "SELECT *FROM PHIEUMUON";
+            String qry = "SELECT *FROM PHIEUMUON WHERE TONTAI = 1";
             ResultSet rset = connectDB.sqlQuery(qry);
             if (rset != null) {
                 while (rset.next()) {
@@ -47,18 +49,15 @@ public class PhieuMuonDAO {
                 }
             }
         } catch (SQLException e) {
+
             e.printStackTrace();
         }
         connectDB.closeConnect();
         return dsDG;
     }
 
-    public int getsophieumuon() {
-        return readDB().size();
-    }
-
     public Boolean add(PhieuMuon sa) {
-        connectDB = new ConnectDB();
+
         boolean success = connectDB
                 .sqlUpdate("insert into PHIEUMUON(MAPHIEUMUON,MADG,MASA,MANV,NGAYMUON,HANTRA,SOLUONG,TONTAI) values('"
                         + sa.getMaPhieu() + "','"
@@ -123,6 +122,10 @@ public class PhieuMuonDAO {
         }
         connectDB.closeConnect();
         return ketqua;
+    }
+
+    public int getsophieumuon() {
+        return readDB().size();
     }
 
 }

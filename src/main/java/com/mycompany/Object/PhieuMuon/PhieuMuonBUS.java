@@ -8,6 +8,7 @@ import com.mycompany.Object.DocGia.DocGiaBUS;
 import com.mycompany.Object.Sach.SachBUS;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,8 +30,8 @@ public class PhieuMuonBUS {
        SachBUS sbus= new SachBUS();
        if (sbus.Muon(pm.getMaSach(),pm.getSoLuong())) {
            pmdao.add(pm);
-           System.out.println("Muon duoc");
+           JOptionPane.showMessageDialog(null,"Mượn thành công");
        }
-       else System.out.println("Khong muon duoc");
+       else JOptionPane.showMessageDialog(null,"Không mượn được");
    }
 }

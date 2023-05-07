@@ -76,7 +76,7 @@ public class PhieuTraDAO {
                                 + phieuTra.getTinhTrang() + "',"
                                 + phieuTra.getSoNgayQuaHan() + ","
                                 + 1 + ")");
-        String s="INSERT into phieutra (MAPHIEUTRA,MAPHIEUMUON,MADG,MASA,MANV,HANTRA,NGAYTRA,SOLUONG,TINHTRANG,SONGAYQUAHAN,TONTAI) VALUES ( '000001','2','000001','DNT001',null,null,null,2,null,null,1 );";
+        String s = "INSERT into phieutra (MAPHIEUTRA,MAPHIEUMUON,MADG,MASA,MANV,HANTRA,NGAYTRA,SOLUONG,TINHTRANG,SONGAYQUAHAN,TONTAI) VALUES ( '000001','2','000001','DNT001',null,null,null,2,null,null,1 );";
         connectDB.closeConnect();
         return success;
     }
@@ -93,9 +93,11 @@ public class PhieuTraDAO {
     // public boolean update(PhieuTra phieuTra) {
     // connectDB = new ConnectDB();
     // boolean success = true;
-    // connectDB.sqlUpdate("UPDATE PHIEUTRA SET TENNV='" + nhanVien.getTenNhanVien()
-    // + "', PHAI='" + nhanVien.getGioiTinh()
-    // + "', NGAYSINH='" + java.sql.Date.valueOf(nhanVien.getNgaySinh())
+    // connectDB.sqlUpdate("UPDATE PHIEUTRA SET MANV='" + phieuTra.getMaNhanVien()
+    // + "', MADG='" + phieuTra.getMaDocGia()
+    // + "', MASA='" + phieuTra.getMaSach()
+    // +
+    // java.sql.Date.valueOf(nhanVien.getNgaySinh())
     // + "', SDT='" + nhanVien.getSoDienThoai()
     // //+ "', TONTAI='" + nhanVien.isTonTai()
     // + "' WHERE MANV ='" + phieuTra.getMaPhieu() + "'");
