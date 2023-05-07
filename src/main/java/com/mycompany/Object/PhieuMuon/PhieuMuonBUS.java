@@ -19,14 +19,13 @@ public class PhieuMuonBUS {
    PhieuMuonDAO pmdao= new PhieuMuonDAO();
    int sophieumuon=pmdao.getsophieumuon();
    public ArrayList<PhieuMuon> loadData(){
-       return pmdao.readDB();
+       return pmdao.dsDG;
    }
    public String getMaphieumuon(){
        return sophieumuon+"";
    }
    
    public void them(PhieuMuon pm){
-       sophieumuon+=1;
        SachBUS sbus= new SachBUS();
        if (sbus.Muon(pm.getMaSach(),pm.getSoLuong())) {
            pmdao.add(pm);
