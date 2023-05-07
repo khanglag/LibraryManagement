@@ -101,19 +101,19 @@ public class DocGiaDAO {
         connectDB = new ConnectDB();
         ArrayList<DocGia> ketqua = new ArrayList<DocGia>();
         String qry = "SELECT * FROM DOCGIA WHERE TONTAI = 1";
-        if (maDocGia != null)
+        if (maDocGia.equals("") == false)
             qry += (" AND  MADG= '" + maDocGia + "'");
-        if (tenDocGia != null)
+        if (tenDocGia.equals("") == false)
             qry += (" AND  TENDG= '" + tenDocGia + "'");
-        if (CCCD != null)
+        if (CCCD.equals("") == false)
             qry += (" AND  CCCD= '" + CCCD + "'");
-        if (gioiTinh != null)
+        if (gioiTinh.equals("") == false)
             qry += (" AND PHAI= '" + gioiTinh + "'");
-        if (soDienThoai != null)
+        if (soDienThoai.equals("") == false)
             qry += (" AND SDT= '" + soDienThoai + "'");
-        if (diaChi != null)
+        if (diaChi.equals("") == false)
             qry += (" AND DIACHI= '" + diaChi + "'");
-        if (ngaySinh != null)
+        if (ngaySinh.equals("") == false)
             qry += (" AND NGAYSINH= '" + ngaySinh + "'");
         System.out.println(qry);
         ResultSet rset = connectDB.sqlQuery(qry);
