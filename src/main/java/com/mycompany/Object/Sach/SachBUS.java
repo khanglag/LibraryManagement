@@ -37,6 +37,11 @@ public class SachBUS {
             return "Sửa thành công";
         return "Thất bại";
     }
+    public String TraSach(Sach sach){
+        if(sachDAO.TraSach(sach))
+            return "Sửa thành công";
+        return "Thất bại";
+    }
 
     public ArrayList<Sach> search(String maSach, String tenSach, String tinhTrang, String theLoai, String maTacGia, String maNXB, String anh, String soTrang, String lanXuatBan, String soLuong, String gia){
         dsSach = sachDAO.search(maSach, tenSach, tinhTrang, theLoai, maTacGia,  maNXB, anh, soTrang, lanXuatBan, soLuong, gia);

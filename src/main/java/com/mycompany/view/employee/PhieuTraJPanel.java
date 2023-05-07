@@ -13,6 +13,8 @@ import javax.swing.table.DefaultTableModel;
 
 import com.mycompany.Object.PhieuTra.PhieuTra;
 import com.mycompany.Object.PhieuTra.PhieuTraBUS;
+import com.mycompany.Object.Sach.Sach;
+import com.mycompany.Object.Sach.SachBUS;
 import com.mycompany.Object.USER.User;
 import com.mycompany.Object.USER.UserBUS;
 import com.mycompany.controller.TaiKhoanController;
@@ -28,11 +30,15 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
     PhieuTraBUS phieuTraBUS = new PhieuTraBUS();
     DefaultTableModel model;
     ArrayList<PhieuTra> list = new ArrayList<PhieuTra>();
+
     PhieuMuonBUS phieuMuonBus = new PhieuMuonBUS();
     ArrayList<PhieuMuon> listPhieuMuon = new ArrayList<PhieuMuon>();
 
     UserBUS userBUS = new UserBUS();
     ArrayList<User> listusers = new ArrayList<User>();
+
+    ArrayList<Sach> arr = new ArrayList<Sach>();
+    SachBUS sachBUS = new SachBUS();
 
     /**
      * Creates new form PhieuTraJPanel
@@ -279,19 +285,21 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel7)
                             .addComponent(tfSoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(tfTinhTrang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(tfMaSach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel10)))
+                                .addComponent(jLabel10))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel8)
+                                .addComponent(tfTinhTrang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(tfSoNgayQuaHan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel4)
-                                .addComponent(tfMaNhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(tfMaNhanVien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel9)
+                                .addComponent(tfSoNgayQuaHan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
 
@@ -359,12 +367,32 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
                 phieuTra.setMaPhieuMuon(tfMaPhieuMuon.getText());
                 phieuTra.setMaDocGia(tfMaDG.getText());
                 phieuTra.setMaNhanVien(tfMaNhanVien.getText());
+                phieuTra.setMaSach(tfMaSach.getText());
                 phieuTra.setHanTra(Menu.MenuHand.convert(tfHanTra.getText()));
                 phieuTra.setNgayTra(Menu.MenuHand.convert(tfNgayTra.getText()));
                 phieuTra.setSoLuong(Integer.parseInt(tfSoLuong.getText()));
                 phieuTra.setTinhTrang(tfTinhTrang.getText());
                 phieuTra.setSoNgayQuaHan(Integer.parseInt(tfSoNgayQuaHan.getText()));
-                JOptionPane.showMessageDialog(this, phieuTraBUS.addPhieuTra(phieuTra));
+                if (phieuTraBUS.addPhieuTra(phieuTra).equals("Thêm thành công")) {
+                    try {
+                        ArrayList<Sach> arr = new ArrayList<Sach>();
+                        arr = sachBUS.loadData();
+                        SachBUS sachBUS = new SachBUS();
+                        for (Sach sach : arr) {
+                            if (sach.getMaSach().equals(tfMaSach.getText())) {
+                                Sach sa = new Sach();
+                                sa.setMaSach(sach.getMaSach());
+                                sa.setSoLuong(sach.getSoLuong());
+                                sa.setSoLuongSau(Integer.parseInt(tfSoLuong.getText()));
+                                JOptionPane.showMessageDialog(this,sachBUS.TraSach(sa));        
+                                break;
+                            }
+                        }
+                    } catch (Exception e) {
+                    }
+                }
+
+                
                 jTablePhieuTra.repaint();
                 refreshData();
             }
@@ -372,6 +400,7 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
         } catch (Exception ex) {
 
         }
+
     }// GEN-LAST:event_btnThemActionPerformed
 
     public void refreshData() {
@@ -459,8 +488,15 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
 
                 }
             }
-            listPhieuMuon = phieuMuonBus.loadData();
-            PhieuMuon phieu = listPhieuMuon.get(listPhieuMuon.size() - 1);
+            list = phieuTraBUS.getDSPhieuTra();
+            PhieuTra phieu = new PhieuTra();
+
+            if (list.size() - 1 < 0) {
+                phieu.setMaPhieu("0000");
+            } else {
+                phieu = list.get(list.size() - 1);
+            }
+
             tfMaPhieu.setText(Menu.MenuHand.FormatString(phieu.getMaPhieu()));
 
         }

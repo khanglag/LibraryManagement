@@ -76,6 +76,7 @@ public class PhieuTraDAO {
                                 + phieuTra.getTinhTrang() + "',"
                                 + phieuTra.getSoNgayQuaHan() + ","
                                 + 1 + ")");
+        String s="INSERT into phieutra (MAPHIEUTRA,MAPHIEUMUON,MADG,MASA,MANV,HANTRA,NGAYTRA,SOLUONG,TINHTRANG,SONGAYQUAHAN,TONTAI) VALUES ( '000001','2','000001','DNT001',null,null,null,2,null,null,1 );";
         connectDB.closeConnect();
         return success;
     }
