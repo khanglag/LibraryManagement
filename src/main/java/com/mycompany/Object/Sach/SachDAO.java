@@ -74,15 +74,25 @@ public class SachDAO {
     public boolean update(Sach sa){
         connectDB = new ConnectDB();
         boolean success= true;
-        connectDB.sqlUpdate("UPDATE DOCGIA SET TENSA+'"+sa.getTenSach()
-                +"', TT='"+sa.getTinhTrang()
-                +"', SOTRANG='"+sa.getSoTrang()
-                +"', SOLUONG='"+sa.getSoLuong()
-                +"', gia='"+sa.getGia()
-                
-                 +"', MA_ANH='"+sa.getAnh()
-                
-                +"' WHERE MADG ='"+sa.getMaSach()+"'");
+        String qry=("UPDATE SACH SET TENSA='"+sa.getTenSach()
+                +"' AND TT='"+sa.getTinhTrang()
+                +"' AND SOTRANG='"+sa.getSoTrang()
+                +"' AND SOLUONG='"+sa.getSoLuong()
+                +"' AND gia='"+sa.getGia()
+                +"'AND MA_ANH='"+sa.getAnh()
+                +"' WHERE MASA ='"+sa.getMaSach()+"'");
+        System.out.println(qry);
+        connectDB.sqlUpdate(qry);
+        connectDB.closeConnect();
+        return success;
+    }
+    public boolean update(String maSachString,int soluong){
+        connectDB = new ConnectDB();
+        boolean success= true;
+        String qry=("UPDATE SACH SET SOLUONG='"+soluong
+                +"' WHERE MASA ='"+maSachString+"'");
+        System.out.println(qry);
+        connectDB.sqlUpdate(qry);
         connectDB.closeConnect();
         return success;
     }
@@ -118,5 +128,21 @@ public class SachDAO {
         connectDB.closeConnect();
         return ketqua;
 }
-    
+    public boolean Muon(String msach,int soluong){
+        ArrayList<Sach> sa=search(msach, null,null, null, null, null, null, null, null, null,null);
+        
+        for(Sach itemSach:sa){
+            System.out.println(sa.toString());
+            if(itemSach.isTonTai()==1){
+                if(itemSach.getSoLuong()<soluong)
+                    return false;
+                else {
+                    update(itemSach.getMaSach(),itemSach.getSoLuong()-soluong);
+                    return true;
+                }
+            }   
+            else return false;
+        }
+        return false;
+     }
 }

@@ -42,4 +42,7 @@ public class SachBUS {
         dsSach = sachDAO.search(maSach, tenSach, tinhTrang, theLoai, maTacGia,  maNXB, anh, soTrang, lanXuatBan, soLuong, gia);
         return dsSach;
     }
+    public boolean Muon(String maSachString,int soluong){
+        return sachDAO.Muon(maSachString, soluong);
+    }
 }

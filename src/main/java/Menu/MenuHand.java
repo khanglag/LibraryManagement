@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  */
 public class MenuHand {
     public static LocalDate convert(String dateString) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate localDate = null;
         try {
             localDate = LocalDate.parse(dateString, formatter);

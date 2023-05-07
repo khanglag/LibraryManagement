@@ -4,6 +4,7 @@
  */
 package com.mycompany.view.employee;
 
+import Menu.MenuHand;
 import com.mycompany.Object.DocGia.DocGia;
 import com.mycompany.Object.DocGia.DocGiaBUS;
 import com.mycompany.Object.NhanVien.NhanVien;
@@ -30,6 +31,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         showcombodataDT();
         model= (DefaultTableModel) tablePhieuMuon.getModel();
         showtable();
+       
     }
 
     /**
@@ -348,13 +350,12 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         pm.setMaDocGia(jComboBoxMaDocGia. getSelectedItem().toString());
         pm.setMaNhanVien(jComboBoxMaNhanVien.getSelectedItem().toString());
         pm.setMaSach(jComboBoxMaSach.getSelectedItem().toString());
-        pm.setNgayMuon(LocalDate.parse(tfNgayMuon.getText()));
-        pm.setNgayTra(LocalDate.parse(tfNgayTra.getText()));
+        pm.setNgayMuon(MenuHand.convert((tfNgayMuon.getText())));
+        pm.setNgayTra(MenuHand.convert(tfNgayTra.getText()));
         pm.setSoLuong(Integer.parseInt(tfSoLuong.getText()));
         pm.setTonTai(1);
         System.out.println(pm.toString());
         pmbus.them(pm);
-        tfMaPhieu.resetKeyboardActions();
         //Mã phiếu tạo tự động, lấy mã phiếu mượn của phiếu mượn cuối cùng đưa vào
         //tfMaPhieu.setText(Menu.MenuHand.FormatString(Mượn));
     }//GEN-LAST:event_btnThemActionPerformed
@@ -433,7 +434,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     public void showtable(){
         PhieuMuonBUS pmbus= new PhieuMuonBUS();
         for(PhieuMuon itMuon:pmbus.loadData()){
-            Object[] rowData={itMuon.getMaPhieu(),itMuon.getMaDocGia(),itMuon.getMaSach(),itMuon.getMaNhanVien(),itMuon.getNgayMuon(),itMuon.getNgayTra(),itMuon.getSoLuong(),itMuon.isTonTai()};
+            Object[] rowData={itMuon.getMaPhieu(),itMuon.getMaSach(),itMuon.getMaDocGia(),itMuon.getMaNhanVien(),itMuon.getNgayMuon(),itMuon.getNgayTra(),itMuon.getSoLuong(),itMuon.isTonTai()};
             model.addRow(rowData);
         }
     }

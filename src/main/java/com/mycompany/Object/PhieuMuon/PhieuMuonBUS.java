@@ -26,7 +26,12 @@ public class PhieuMuonBUS {
    }
    
    public void them(PhieuMuon pm){
-       pmdao.add(pm);
        sophieumuon+=1;
+       SachBUS sbus= new SachBUS();
+       if (sbus.Muon(pm.getMaSach(),pm.getSoLuong())) {
+           pmdao.add(pm);
+           System.out.println("Muon duoc");
+       }
+       else System.out.println("Khong muon duoc");
    }
 }
