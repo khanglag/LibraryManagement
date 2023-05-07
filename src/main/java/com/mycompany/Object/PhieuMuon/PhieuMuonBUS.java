@@ -14,23 +14,26 @@ import java.util.ArrayList;
  * @author pc
  */
 public class PhieuMuonBUS {
-   public PhieuMuonBUS(){ 
-   }
-   PhieuMuonDAO pmdao= new PhieuMuonDAO();
-   int sophieumuon=pmdao.getsophieumuon();
-   public ArrayList<PhieuMuon> loadData(){
-       return pmdao.dsDG;
-   }
-   public String getMaphieumuon(){
-       return sophieumuon+"";
-   }
+    ArrayList<PhieuMuon> dsPhieuMuon = new ArrayList<PhieuMuon>();
+    PhieuMuonDAO phieuMuonDAO = new PhieuMuonDAO();
+
+    public PhieuMuonBUS() {
+        dsPhieuMuon = phieuMuonDAO.readDB();
+    }
    
-   public void them(PhieuMuon pm){
-       SachBUS sbus= new SachBUS();
-       if (sbus.Muon(pm.getMaSach(),pm.getSoLuong())) {
-           pmdao.add(pm);
-           System.out.println("Muon duoc");
-       }
-       else System.out.println("Khong muon duoc");
-   }
+    public void add(PhieuMuon phieuMuon){
+        SachBUS sachBUS= new SachBUS();
+        if (sachBUS.Muon(phieuMuon.getMaSach(),phieuMuon.getSoLuong())) {
+            phieuMuonDAO.add(phieuMuon);
+            System.out.println("Mượn được");
+        }
+        else System.out.println("Không mượn được");
+    }
+
+    public String update(PhieuMuon phieuMuon) {
+        if(phieuMuonDAO.update(phieuMuon)) {
+            return "Đã sửa!";
+        } else return "Không sửa được!";
+    }
 }
+ 
