@@ -39,7 +39,7 @@ public class PhieuMuonDAO {
             ResultSet rset= connectDB.sqlQuery(qry);
            if(rset!=null){
                while(rset.next()){
-                   PhieuMuon phieuMuon= new PhieuMuon(rset.getNString("MAPHIEUMUON"), rset.getNString("MADG"), rset.getNString("MASA"),rset.getNString("MANV"), rset.getInt("SOLUONG"), rset.getDate("NGAYMUON").toLocalDate(), rset.getDate("HANTRA").toLocalDate(), rset.getInt("TONTAI"));
+                   PhieuMuon phieuMuon= new PhieuMuon(rset.getNString("MAPHIEUMUON"), rset.getNString("MADG"), rset.getNString("MASA"),rset.getNString("MANV"), rset.getInt("SOLUONG"), rset.getDate("NGAYMUON").toLocalDate(), rset.getDate("HANTRA").toLocalDate(), rset.getBoolean("TONTAI"));
                    dsPhieuMuon.add(phieuMuon);
                    System.out.println(phieuMuon.toString());
                }
@@ -88,29 +88,29 @@ public class PhieuMuonDAO {
         connectDB = new ConnectDB();
         ArrayList<PhieuMuon> ketqua =new ArrayList<PhieuMuon>();
         String qry="SELECT *FROM PHIEUMUON WHERE TONTAI= 1";
-        if(maPhieu!=null) 
+        if(maPhieu.equals("") == false) 
             qry+=(" AND MAPHIEUMUON= '"+maPhieu+ "'");
-        if(maDocGia!=null) 
+        if(maDocGia.equals("") == false) 
             qry+=(" AND MADG= '"+maDocGia+ "'");
-        if(maSach!=null) 
+        if(maSach.equals("") == false) 
             qry+=(" AND MASA= '"+maSach+ "'");
-        if(maNhanVien!=null) 
+        if(maNhanVien.equals("") == false) 
             qry+=(" AND MANV= '"+maNhanVien+ "'");
-        if(ngayMuon!=null) 
+        if(ngayMuon.equals("") == false) 
             qry+=(" AND NGAYMUON= '"+java.sql.Date.valueOf(ngayMuon)+"'");
-        if(ngayTra!=null) 
+        if(ngayTra.equals("") == false) 
             qry+=(" AND NGAYMUON= '"+java.sql.Date.valueOf(ngayTra)+"'");
         System.out.println(qry);
         ResultSet rset= connectDB.sqlQuery(qry);
         try {
             if (rset!=null) {
-                  while(rset.next()){
-                  PhieuMuon pm= new PhieuMuon(rset.getNString("MAPHIEUMUON"), rset.getNString("MADG"), rset.getNString("MASA"),rset.getNString("MANV"), rset.getInt("SOLUONG"), rset.getDate("NGAYMUON").toLocalDate(), rset.getDate("HANTRA").toLocalDate(), 1);
-                   ketqua.add(pm);
-               }
+                while(rset.next()){
+                    PhieuMuon phieuMuon= new PhieuMuon(rset.getNString("MAPHIEUMUON"), rset.getNString("MADG"), rset.getNString("MASA"),rset.getNString("MANV"), rset.getInt("SOLUONG"), rset.getDate("NGAYMUON").toLocalDate(), rset.getDate("HANTRA").toLocalDate(), rset.getBoolean("TONTAI"));
+                    ketqua.add(phieuMuon);
+                }
             }
         } catch (SQLException e) {
-             JOptionPane.showMessageDialog(null,"Không có đối tượng cần tìm");
+            System.out.print(e);
         }
         connectDB.closeConnect();
         return ketqua;
