@@ -182,7 +182,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnTim.setText("Tim");
+        btnTim.setText("Tìm");
 
         javax.swing.GroupLayout panelRootLayout = new javax.swing.GroupLayout(panelRoot);
         panelRoot.setLayout(panelRootLayout);
