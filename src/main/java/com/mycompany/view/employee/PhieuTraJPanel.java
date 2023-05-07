@@ -56,7 +56,6 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
                 int i = 0;
                 while (i <= list.size() - 1) {
                         PhieuTra nv = list.get(i);
-                        if (nv.getTonTai() == 1) {
                                 model.addRow(new Object[] {
                                                 ++i, nv.getMaPhieu(), nv.getMaPhieuMuon(), nv.getMaDocGia(),
                                                 nv.getMaSach(), nv.getMaNhanVien(),
@@ -65,7 +64,7 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
                                                 nv.getTinhTrang(), nv.getSoNgayQuaHan()
                                 });
                                 jTablePhieuTra.setModel(model);
-                        }
+                        
 
                 }
 
@@ -578,7 +577,7 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
                 if (reply == JOptionPane.YES_OPTION) {
                         for (PhieuTra nxb : arr) {
                                 if (nxb.getMaPhieu().equals(tfMaPhieu.getText().trim())) {
-                                        phieuTraBUS.deletedNhanVien(nxb);
+                                        phieuTraBUS.deleted(nxb);
                                         break;
                                 }
                         }
@@ -665,16 +664,8 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
 
                                 }
                         }
-                        list = phieuTraBUS.getDSPhieuTra();
-                        PhieuTra phieu = new PhieuTra();
-
-                        if (list.size() - 1 < 0) {
-                                phieu.setMaPhieu("0000");
-                        } else {
-                                phieu = list.get(list.size() - 1);
-                        }
-
-                        tfMaPhieu.setText(Menu.MenuHand.FormatString(phieu.getMaPhieu()));
+                        
+                        tfMaPhieu.setText(Menu.MenuHand.FormatString(phieuTraBUS.getMaphieutra()));
 
                 }
 

@@ -57,7 +57,7 @@ public class PhieuMuonDAO {
     }
 
     public Boolean add(PhieuMuon sa) {
-
+        connectDB = new ConnectDB();
         boolean success = connectDB
                 .sqlUpdate("insert into PHIEUMUON(MAPHIEUMUON,MADG,MASA,MANV,NGAYMUON,HANTRA,SOLUONG,TONTAI) values('"
                         + sa.getMaPhieu() + "','"
