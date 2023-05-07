@@ -74,6 +74,12 @@ public class PhieuMuonDAO {
         connectDB.closeConnect();
         return success;
     }
+    public boolean update(PhieuMuon pm){
+        connectDB = new ConnectDB();
+        boolean success= connectDB.sqlUpdate("UPDATE ");
+        connectDB.closeConnect();
+        return success;
+    }
     public ArrayList<PhieuMuon> timPhieuMuons(String maPhieu, String maDocGia, String maSach, String maNhanVien, LocalDate ngayMuon,
             LocalDate ngayTra, int tonTai){
         connectDB = new ConnectDB();
