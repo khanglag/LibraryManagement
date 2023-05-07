@@ -436,6 +436,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
     }
 
     public void refreshData() {
+        setPathFile(null);
         sachBUS = new SachBUS();
         loadData();
     }
@@ -482,7 +483,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
                     sach.setLanXuatBan(Integer.parseInt(tfLanXuatBan.getText()));
                     sach.setSoLuong(Integer.parseInt(tfSoLuong.getText()));
                     sach.setGia(Float.parseFloat(tfGia.getText()));
-                    sach.setAnh(pathFile);
+                    sach.setAnh(getPathFile());
                     sach.setTonTai(1);
                     JOptionPane.showMessageDialog(this, sachBUS.add(sach));
                     model.setRowCount(0);
@@ -552,7 +553,6 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
             BufferedImage b;
             try {
                 URL url = getClass().getResource(getPathFile());
-
                 // File file = new File(url);
                 System.out.println(getPathFile());
                 b = ImageIO.read(url);
@@ -576,6 +576,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         tfSoTrang.setText("");
         tfTenSach.setText("");
         tfTinhTrang.setText("");
+        setPathFile(null);
     }// GEN-LAST:event_btnClearActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
