@@ -26,7 +26,7 @@ public class PhieuTraDAO {
     public ArrayList<PhieuTra> readDB() {
         connectDB = new ConnectDB();
         try {
-            String qry = "SELECT *FROM NHANVIEN ";
+            String qry = "SELECT *FROM PHIEUTRA ";
             ResultSet rset = connectDB.sqlQuery(qry);
             if (rset != null) {
                 while (rset.next()) {
@@ -64,18 +64,19 @@ public class PhieuTraDAO {
         connectDB = new ConnectDB();
         boolean success = connectDB
                 .sqlUpdate(
-                        "insert into NHANVIEN(MAPHIEUTRA,MAPHIEUMUON,MADG,MASA,MANV,HANTRA,NGAYTRA,SOLUONG,TINHTRANG,SONGAYQUAHAN,TONTAI	) values('"
+                        "insert into PHIEUTRA(MAPHIEUTRA,MAPHIEUMUON,MADG,MASA,MANV,HANTRA,NGAYTRA,SOLUONG,TINHTRANG,SONGAYQUAHAN,TONTAI	) values('"
                                 + phieuTra.getMaPhieu() + "','"
                                 + phieuTra.getMaPhieuMuon() + "','"
                                 + phieuTra.getMaDocGia() + "','"
                                 + phieuTra.getMaSach() + "','"
                                 + phieuTra.getMaNhanVien() + "','"
                                 + java.sql.Date.valueOf(phieuTra.getHanTra()) + "','"
-                                + java.sql.Date.valueOf(phieuTra.getNgayTra()) + "','"
-                                + phieuTra.getSoLuong() + "','"
-                                + phieuTra.getTinhTrang() + "','"
-                                + phieuTra.getSoNgayQuaHan() + "',"
-                                + 1 + "')");
+                                + java.sql.Date.valueOf(phieuTra.getNgayTra()) + "',"
+                                + phieuTra.getSoLuong() + ",'"
+                                + phieuTra.getTinhTrang() + "',"
+                                + phieuTra.getSoNgayQuaHan() + ","
+                                + 1 + ")");
+        String s="INSERT into phieutra (MAPHIEUTRA,MAPHIEUMUON,MADG,MASA,MANV,HANTRA,NGAYTRA,SOLUONG,TINHTRANG,SONGAYQUAHAN,TONTAI) VALUES ( '000001','2','000001','DNT001',null,null,null,2,null,null,1 );";
         connectDB.closeConnect();
         return success;
     }
@@ -84,7 +85,7 @@ public class PhieuTraDAO {
         connectDB = new ConnectDB();
         boolean success = connectDB
                 .sqlUpdate("UPDATE PHIEUTRA SET TONTAI = 0 WHERE MANV ='" + phieuTra.getMaPhieu() + "'");
-        System.out.println("UPDATE NHANVIEN SET TONTAI = 0 WHERE MANHANVIEN ='" + phieuTra.getMaPhieu() + "'");
+        System.out.println("UPDATE PHIEUTRA SET TONTAI = 0 WHERE MANHANVIEN ='" + phieuTra.getMaPhieu() + "'");
         connectDB.closeConnect();
         return success;
     }
