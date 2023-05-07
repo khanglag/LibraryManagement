@@ -31,7 +31,7 @@ public class PhieuMuonDAO {
     }
     
     ConnectDB connectDB;
-    ArrayList<PhieuMuon> dsPhieuMuon= new ArrayList<>();
+    ArrayList<PhieuMuon> dsDG= new ArrayList<>();
     public ArrayList<PhieuMuon> readDB(){
         connectDB= new ConnectDB();
         try {
@@ -39,52 +39,49 @@ public class PhieuMuonDAO {
             ResultSet rset= connectDB.sqlQuery(qry);
            if(rset!=null){
                while(rset.next()){
-                   PhieuMuon phieuMuon= new PhieuMuon(rset.getNString("MAPHIEUMUON"), rset.getNString("MADG"), rset.getNString("MASA"),rset.getNString("MANV"), rset.getInt("SOLUONG"), rset.getDate("NGAYMUON").toLocalDate(), rset.getDate("HANTRA").toLocalDate(), rset.getInt("TONTAI"));
-                   dsPhieuMuon.add(phieuMuon);
-                   System.out.println(phieuMuon.toString());
+                   PhieuMuon pm= new PhieuMuon(rset.getNString("MAPHIEUMUON"), rset.getNString("MADG"), rset.getNString("MASA"),rset.getNString("MANV"), rset.getInt("SOLUONG"), rset.getDate("NGAYMUON").toLocalDate(), rset.getDate("HANTRA").toLocalDate(), rset.getInt("TONTAI"));
+                   dsDG.add(pm);
+                   System.out.println(pm.toString());
                }
            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         connectDB.closeConnect();
-        return dsPhieuMuon;
+        return dsDG;
     }
-    public int getSoPhieu(){
+    public int getsophieumuon(){
         return readDB().size();
     }
-    public Boolean add(PhieuMuon phieuMuon){
+    public Boolean add(PhieuMuon sa){
         connectDB= new ConnectDB();
         boolean success= connectDB.sqlUpdate("insert into PHIEUMUON(MAPHIEUMUON,MADG,MASA,MANV,NGAYMUON,HANTRA,SOLUONG,TONTAI) values('"
-                +phieuMuon.getMaPhieu()+"','"
-                +phieuMuon.getMaDocGia()+"','"
-                +phieuMuon.getMaSach()+"','"
-                +phieuMuon.getMaNhanVien()+"','"
-                +java.sql.Date.valueOf(phieuMuon.getNgayMuon())+"','"
-                +java.sql.Date.valueOf(phieuMuon.getNgayTra())+"',"
-                +phieuMuon.getSoLuong()+","
-                +1+")");
+                +sa.getMaPhieu()+"','"
+                +sa.getMaDocGia()+"','"
+                +sa.getMaSach()+"','"
+                +sa.getMaNhanVien()+"','"
+                +java.sql.Date.valueOf(sa.getNgayMuon())+"','"
+                +java.sql.Date.valueOf(sa.getNgayTra())+"','"
+                +sa.getSoLuong()+"','"
+                +sa.isTonTai()+"')");
         connectDB.closeConnect();
         return success;
     }
-    public boolean delete(PhieuMuon phieuMuon){
+    public boolean delete(PhieuMuon sa){
         connectDB = new ConnectDB();
-        boolean success= connectDB.sqlUpdate("UPDATE PHIEUMUON SET TONTAI = 'FALSE' WHERE MAPHIEUMUON ='"+phieuMuon.getMaPhieu()+"'");
-                System.out.println("UPDATE PHIEUMUON SET TONTAI = 'FALSE' WHERE MAPHIEUMUON ='"+phieuMuon.getMaPhieu()+"'");
+        boolean success= connectDB.sqlUpdate("UPDATE PHIEUMUON SET TONTAI = 'FALSE' WHERE MAPHIEUMUON ='"+sa.getMaPhieu()+"'");
+                System.out.println("UPDATE PHIEUMUON SET TONTAI = 'FALSE' WHERE MAPHIEUMUON ='"+sa.getMaPhieu()+"'");
         connectDB.closeConnect();
         return success;
     }
-    public boolean update(PhieuMuon phieuMuon) {
+    public boolean update(PhieuMuon pm){
         connectDB = new ConnectDB();
-        boolean success = connectDB.sqlUpdate("UPDATE PHIEUMUON SET SOLUONG=" + phieuMuon.getSoLuong()               
-                + ", NGAYMUON='" + java.sql.Date.valueOf(phieuMuon.getNgayMuon())
-                + ", HANTRA='" + java.sql.Date.valueOf(phieuMuon.getNgayTra())               
-                + "' WHERE MAPHIEUMUON ='" + phieuMuon.getMaPhieu() + "'");
+        boolean success= connectDB.sqlUpdate("UPDATE ");
         connectDB.closeConnect();
         return success;
     }
-    public ArrayList<PhieuMuon> search(String maPhieu, String maDocGia, String maSach, String maNhanVien, String ngayMuon,
-            String ngayTra){
+    public ArrayList<PhieuMuon> timPhieuMuons(String maPhieu, String maDocGia, String maSach, String maNhanVien, LocalDate ngayMuon,
+            LocalDate ngayTra, int tonTai){
         connectDB = new ConnectDB();
         ArrayList<PhieuMuon> ketqua =new ArrayList<PhieuMuon>();
         String qry="SELECT *FROM PHIEUMUON WHERE TONTAI= 1";
