@@ -30,12 +30,6 @@ public class PhieuMuonBUS {
         else System.out.println("Không mượn được");
     }
 
-    public String delete(PhieuMuon phieuMuon) {
-        if (phieuMuonDAO.delete(phieuMuon))
-            return "Đã xoá";
-        return "Không thể xoá";
-    }
-
     public String update(PhieuMuon phieuMuon) {
         if(phieuMuonDAO.update(phieuMuon)) {
             return "Đã sửa!";

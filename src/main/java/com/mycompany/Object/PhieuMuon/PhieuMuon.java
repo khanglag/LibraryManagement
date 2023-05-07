@@ -14,11 +14,11 @@ public class PhieuMuon {
     private String maPhieu, maDocGia, maSach, maNhanVien;
     private int soLuong;
     private LocalDate ngayMuon, ngayTra;
-    private boolean tonTai;
+    private int tonTai;
 
     //Constructor
     public PhieuMuon(String maPhieu, String maDocGia, String maSach, String maNhanVien, int soLuong, LocalDate ngayMuon,
-            LocalDate ngayTra, boolean tonTai) {
+            LocalDate ngayTra, int tonTai) {
         this.maPhieu = maPhieu;
         this.maDocGia = maDocGia;
         this.maSach = maSach;
@@ -75,10 +75,10 @@ public class PhieuMuon {
     public void setNgayTra(LocalDate ngayTra) {
         this.ngayTra = ngayTra;
     }
-    public boolean isTonTai() {
+    public int isTonTai() {
         return tonTai;
     }
-    public void setTonTai(boolean tonTai) {
+    public void setTonTai(int tonTai) {
         this.tonTai = tonTai;
     }
      public String toString() {
