@@ -10,10 +10,11 @@
       <SubComponents>
         <MenuItem class="javax.swing.JMenuItem" name="jMenuItemThemTaiKhoan">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jMenuItem1"/>
+            <Property name="text" type="java.lang.String" value="Th&#xea;m t&#xe0;i kho&#x1ea3;n"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenuItemThemTaiKhoanMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemThemTaiKhoanActionPerformed"/>
           </Events>
         </MenuItem>
       </SubComponents>

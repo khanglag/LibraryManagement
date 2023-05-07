@@ -26,7 +26,7 @@ public class MenuHand {
         } catch (DateTimeParseException e) {
             // Xử lý ngoại lệ nếu chuỗi không hợp lệ
             JOptionPane.showMessageDialog(null, "Không thể chuyển đổi chuổi thành LoacalDate" + e.getMessage()
-                    + "\n Chuỗi phải ở dạng: yyyy-MM-dd");
+                    + "\n Chuỗi phải ở dạng: dd/MM/yyyy");
         }
         return localDate;
     }

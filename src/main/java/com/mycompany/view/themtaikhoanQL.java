@@ -46,7 +46,7 @@ public class themtaikhoanQL extends javax.swing.JFrame {
         rbtnTTKQL = new javax.swing.JRadioButton();
         btnTTKThem = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
