@@ -166,4 +166,15 @@ public class SachDAO {
         }
         return false;
     }
+
+    public boolean TraSach(Sach sa) {
+        connectDB = new ConnectDB();
+        int n = sa.getSoLuong() + sa.getSoLuongSau();
+        boolean success = true;
+        connectDB.sqlUpdate("UPDATE SACH SET SOLUONG=" + n
+                + " WHERE MASA ='" + sa.getMaSach() + "'");
+        connectDB.closeConnect();
+
+        return success;
+    }
 }
