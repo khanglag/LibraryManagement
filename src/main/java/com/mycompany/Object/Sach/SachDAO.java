@@ -150,20 +150,27 @@ public class SachDAO {
     }
 
     public boolean Muon(String msach, int soluong) {
-        ArrayList<Sach> sa = search(msach, null, null, null, null, null, null, null, null, null, null);
-
-        for (Sach itemSach : sa) {
-            System.out.println(sa.toString());
-            if (itemSach.isTonTai() == 1) {
-                if (itemSach.getSoLuong() < soluong)
-                    return false;
-                else {
-                    update(itemSach.getMaSach(), itemSach.getSoLuong() - soluong);
-                    return true;
+        connectDB=new  ConnectDB();
+        try {
+             String qry = "SELECT *FROM SACH WHERE TONTAI=1  AND MASA= '" + msach + "'";
+            ResultSet rset = connectDB.sqlQuery(qry);
+            if (rset != null) {
+                while (rset.next()) {
+                    int soluongcon= rset.getInt("SOLUONG");
+                    if(soluongcon<soluong){
+                        JOptionPane.showMessageDialog(null,"Hết sách");
+                        return false;
+                    }
+                    else{
+                        update(msach,soluongcon- soluong);
+                        return true;
+                    }
                 }
-            } else
-                return false;
+            }
+        } catch (SQLException e) {
+            System.out.println("Loi");
         }
+        connectDB.closeConnect();
         return false;
     }
 }

@@ -41,6 +41,7 @@ public class PhieuMuonDAO {
                while(rset.next()){
                    PhieuMuon pm= new PhieuMuon(rset.getNString("MAPHIEUMUON"), rset.getNString("MADG"), rset.getNString("MASA"),rset.getNString("MANV"), rset.getInt("SOLUONG"), rset.getDate("NGAYMUON").toLocalDate(), rset.getDate("HANTRA").toLocalDate(), rset.getInt("TONTAI"));
                    dsDG.add(pm);
+                   System.out.println(pm.toString());
                }
            }
         } catch (SQLException e) {

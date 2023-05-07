@@ -345,7 +345,6 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         PhieuMuon pm= new PhieuMuon();
         PhieuMuonBUS pmbus=new PhieuMuonBUS();
-        
         pm.setMaPhieu(pmbus.getMaphieumuon());
         pm.setMaDocGia(jComboBoxMaDocGia. getSelectedItem().toString());
         pm.setMaNhanVien(jComboBoxMaNhanVien.getSelectedItem().toString());
@@ -356,6 +355,8 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         pm.setTonTai(1);
         System.out.println(pm.toString());
         pmbus.them(pm);
+        showtable();
+        tfMaPhieu.setText(MenuHand.FormatString(pmbus.getMaphieumuon()));
         //Mã phiếu tạo tự động, lấy mã phiếu mượn của phiếu mượn cuối cùng đưa vào
         //tfMaPhieu.setText(Menu.MenuHand.FormatString(Mượn));
     }//GEN-LAST:event_btnThemActionPerformed
@@ -416,7 +417,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
     public void showcombodataDT(){
         PhieuMuonBUS pm= new PhieuMuonBUS();
-        tfMaPhieu.setText(pm.getMaphieumuon());
+        tfMaPhieu.setText(MenuHand.FormatString(pm.getMaphieumuon()));
         DocGiaBUS dgbus = new DocGiaBUS();
                 
                 for(DocGia itempDocGia: dgbus.loadData()){
@@ -433,8 +434,9 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     }
     public void showtable(){
         PhieuMuonBUS pmbus= new PhieuMuonBUS();
+        model.setRowCount(0);
         for(PhieuMuon itMuon:pmbus.loadData()){
-            Object[] rowData={itMuon.getMaPhieu(),itMuon.getMaSach(),itMuon.getMaDocGia(),itMuon.getMaNhanVien(),itMuon.getNgayMuon(),itMuon.getNgayTra(),itMuon.getSoLuong(),itMuon.isTonTai()};
+            Object[] rowData={itMuon.getMaPhieu(),MenuHand.FormatString(itMuon.getMaPhieu()),itMuon.getMaSach(),itMuon.getMaDocGia(),itMuon.getMaNhanVien(),itMuon.getNgayMuon(),itMuon.getNgayTra(),itMuon.getSoLuong(),itMuon.isTonTai()};
             model.addRow(rowData);
         }
     }
