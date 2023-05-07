@@ -25,7 +25,7 @@ public class SachDAO {
     public ArrayList<Sach> readDB() {
         connectDB = new ConnectDB();
         try {
-            String qry = "SELECT *FROM SACH";
+            String qry = "SELECT *FROM SACH WHERE TONTAI = 1 ";
             ResultSet rset = connectDB.sqlQuery(qry);
             if (rset != null) {
                 while (rset.next()) {

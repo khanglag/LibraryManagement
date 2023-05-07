@@ -4,8 +4,10 @@
  */
 package com.mycompany.view.employee;
 
+import Menu.MenuHand;
 import com.mycompany.view.themtaikhoanKH;
 import com.mycompany.Object.DocGia.*;
+import java.text.Format;
 import java.util.ArrayList;
 import javax.swing.table.*;
 import javax.swing.*;
@@ -410,7 +412,7 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
                 docGia.setTonTai(true);
                 docGia.setCCCD(tfCCCD.getText());
                 docGia.setDiaChi(tfDiaChi.getText());
-                docGia.setNgaySinh(LocalDate.parse(tfNgaySinh.getText()));
+                docGia.setNgaySinh(MenuHand.convert(tfNgaySinh.getText()));
                 docGia.setSoDienThoai(tfSoDienThoai.getText());
                 docGia.setMaPQ(null);
                

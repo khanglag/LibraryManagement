@@ -35,7 +35,7 @@ public class PhieuMuonDAO {
     public ArrayList<PhieuMuon> readDB(){
         connectDB= new ConnectDB();
         try {
-            String qry="SELECT *FROM PHIEUMUON";
+            String qry="SELECT *FROM PHIEUMUON WHERE TONTAI= 1 ";
             ResultSet rset= connectDB.sqlQuery(qry);
            if(rset!=null){
                while(rset.next()){

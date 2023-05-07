@@ -15,6 +15,7 @@ import com.mycompany.Object.Sach.Sach;
 import com.mycompany.Object.Sach.SachBUS;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -211,6 +212,11 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tablePhieuMuon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablePhieuMuonMouseClicked(evt);
+            }
+        });
         jScrollPane8.setViewportView(tablePhieuMuon);
         if (tablePhieuMuon.getColumnModel().getColumnCount() > 0) {
             tablePhieuMuon.getColumnModel().getColumn(0).setResizable(false);
@@ -298,26 +304,32 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_tfNgayTraActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        PhieuMuon pm= new PhieuMuon();
-        PhieuMuonBUS pmbus=new PhieuMuonBUS();
-        pm.setMaPhieu(pmbus.getMaphieumuon());
-        pm.setMaDocGia(jComboBoxMaDocGia. getSelectedItem().toString());
-        pm.setMaNhanVien(jComboBoxMaNhanVien.getSelectedItem().toString());
-        pm.setMaSach(jComboBoxMaSach.getSelectedItem().toString());
-        pm.setNgayMuon(MenuHand.convert((tfNgayMuon.getText())));
-        pm.setNgayTra(MenuHand.convert(tfNgayTra.getText()));
-        pm.setSoLuong(Integer.parseInt(tfSoLuong.getText()));
-        pm.setTonTai(1);
-        System.out.println(pm.toString());
+        try {
+             PhieuMuon pm= new PhieuMuon();
+             PhieuMuonBUS pmbus=new PhieuMuonBUS();
+             pm.setMaPhieu(pmbus.getMaphieumuon());
+                pm.setMaDocGia(jComboBoxMaDocGia. getSelectedItem().toString());
+                pm.setMaNhanVien(jComboBoxMaNhanVien.getSelectedItem().toString());
+                pm.setMaSach(jComboBoxMaSach.getSelectedItem().toString());
+                pm.setNgayMuon(LocalDate.now());
+                pm.setNgayTra(MenuHand.convert(tfNgayTra.getText()));
+                pm.setSoLuong(Integer.parseInt(tfSoLuong.getText()));
+                pm.setTonTai(1);
         pmbus.them(pm);
-        showtable();
         tfMaPhieu.setText(MenuHand.FormatString(pmbus.getMaphieumuon()));
+        System.out.println(pm.toString());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Không được để trống trường");
+        }
+        showtable();
+        
         //Mã phiếu tạo tự động, lấy mã phiếu mượn của phiếu mượn cuối cùng đưa vào
         //tfMaPhieu.setText(Menu.MenuHand.FormatString(Mượn));
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
-        // TODO add your handling code here:
+        int xoa =tablePhieuMuon.getSelectedColumn();
+        PhieuMuonBUS pmbus= new PhieuMuonBUS();
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void jComboBoxMaSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxMaSachActionPerformed
@@ -343,6 +355,13 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
 //            );
 //        }
     }//GEN-LAST:event_jComboBoxMaNhanVienActionPerformed
+
+    private void tablePhieuMuonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePhieuMuonMouseClicked
+        int select=tablePhieuMuon.getSelectedRow();
+        if (select>0) {
+            
+        }
+    }//GEN-LAST:event_tablePhieuMuonMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
