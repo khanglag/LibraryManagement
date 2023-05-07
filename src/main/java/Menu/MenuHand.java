@@ -31,6 +31,12 @@ public class MenuHand {
         return localDate;
     }
 
+    public static String convert(LocalDate date){
+        String str = null;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        str= date.format(formatter);
+        return str;
+    }
     public static String FormatString(String str) {
         if (str.equals(""))
             str = "0";
@@ -46,14 +52,15 @@ public class MenuHand {
 
     public static LocalDate convert(java.sql.Date date) {
         LocalDate d;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         ZoneId defaultZoneId = ZoneId.systemDefault();
         if (date == null)
-            return LocalDate.parse("1970-01-01", formatter);
+            return LocalDate.parse("01-01-1970", formatter);
         else
             d = date.toInstant().atZone(defaultZoneId).toLocalDate();
         return d;
     }
+
     public static int TruDate(LocalDate date1, LocalDate date2) {
         long diffDays = ChronoUnit.DAYS.between(date1, date2);
         int diffDaysInt = (int) diffDays;
