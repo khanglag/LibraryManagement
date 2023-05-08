@@ -250,7 +250,7 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         while (i <= arr.size() - 1) {
             TacGia tacGia = arr.get(i);
             model.addRow(new Object[] {
-                    ++i, tacGia.getMaTacGia(), tacGia.getTenTacGia(), tacGia.getGioiTinh(), tacGia.getNgaySinh()
+                    ++i, tacGia.getMaTacGia(), tacGia.getTenTacGia(), tacGia.getGioiTinh(), Menu.MenuHand.convert(tacGia.getNgaySinh())
             });
             tableTG.setModel(model);
         }

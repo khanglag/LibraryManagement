@@ -49,4 +49,17 @@ public class DocGiaBUS {
         dsDocGia = docGiaDAO.search(maDocGia, tenDocGia, CCCD, gioiTinh, ngaySinh, SDT, diaChi);
         return dsDocGia;
     }
+
+    public String addTaiKhoan(DocGia nhanVien) {
+        if (docGiaDAO.hasTenDN(nhanVien.getTendn())) {
+            return "Tên đăng nhập đã tồn tại";
+        } else {
+            if (docGiaDAO.addPhanQuyen(nhanVien) & docGiaDAO.addTaiKhoan(nhanVien) & docGiaDAO.editMaPQ(nhanVien)) {
+                return "Thêm thành công";
+            }
+        }
+        
+        return "Thất bại";
+    }
+
 }

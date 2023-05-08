@@ -58,7 +58,7 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
             PhieuTra nv = list.get(i);
             model.addRow(new Object[] {
                     ++i, nv.getMaPhieu(), nv.getMaPhieuMuon(), nv.getMaDocGia(), nv.getMaSach(), nv.getMaNhanVien(),
-                    nv.getHanTra(), nv.getNgayTra(), nv.getSoLuong(), nv.getTinhTrang(), nv.getSoNgayQuaHan()
+                    Menu.MenuHand.convert(nv.getHanTra()), Menu.MenuHand.convert(nv.getNgayTra()), nv.getSoLuong(), nv.getTinhTrang(), nv.getSoNgayQuaHan()
             });
             jTablePhieuTra.setModel(model);
 
