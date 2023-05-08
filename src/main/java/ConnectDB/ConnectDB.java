@@ -66,6 +66,7 @@ public class ConnectDB {
             System.out.println("**\n" + countConection + ": Success! Đã kết nối tới '" + DB + "'");
 
         } catch (SQLException e) {
+            System.out.println(e);
             System.err.println("-- ERROR! Không thể kết nối tới '" + DB + "'");
             JOptionPane.showMessageDialog(null, "-- ERROR! Không thể kết nối tới '" + DB + "'");
         }

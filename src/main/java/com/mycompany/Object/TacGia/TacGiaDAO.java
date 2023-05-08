@@ -26,10 +26,17 @@ public class TacGiaDAO {
             ResultSet rset= connectDB.sqlQuery(qry);
            if(rset!=null){
                while(rset.next()){
-                   TacGia tacGia= new TacGia(rset.getNString("MATG"),
-                           rset.getNString("TENTG"),rset.getNString("PHAI"),
-                           rset.getDate("NGAYSINH").toLocalDate(),rset.getBoolean("TONTAI"));
-                   dsTacGia.add(tacGia);
+                    TacGia tacGia;
+                    if(rset.getDate("NGAYSINH") == null && rset.getNString("PHAI") == null) {
+                        tacGia= new TacGia(rset.getNString("MATG"),
+                        rset.getNString("TENTG"),null,
+                        null,rset.getBoolean("TONTAI"));
+                    } else {
+                        tacGia= new TacGia(rset.getNString("MATG"),
+                        rset.getNString("TENTG"),rset.getNString("PHAI"),
+                        rset.getDate("NGAYSINH").toLocalDate(),rset.getBoolean("TONTAI"));
+                    }
+                    dsTacGia.add(tacGia);
                }
            }
         } catch (SQLException e) {
