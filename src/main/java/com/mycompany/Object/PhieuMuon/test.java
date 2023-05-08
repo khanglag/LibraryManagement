@@ -4,6 +4,8 @@
  */
 package com.mycompany.Object.PhieuMuon;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author pc
@@ -16,8 +18,9 @@ public class test {
     public static void main(String args[]) {
        PhieuMuonDAO pmd= new PhieuMuonDAO();
        PhieuMuonBUS pmbus=new PhieuMuonBUS();
-       System.out.println(pmbus.MUONSACH("000001","DNT001"));
-//        System.out.println(pmbus.getMaphieumuon());
-       
+       for(PhieuMuon iMuon:pmbus.loadData()){
+           System.out.println(iMuon.toString());
+       }
+        
     }
 }

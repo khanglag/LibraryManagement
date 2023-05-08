@@ -153,6 +153,11 @@ public class QuanLyTraKHJPanel extends javax.swing.JPanel {
                 "STT", "Mã sách", "Tên sách", "Nhà xuất bản", "Tác giả"
             }
         ));
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable2MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTable2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -199,6 +204,10 @@ public class QuanLyTraKHJPanel extends javax.swing.JPanel {
         tfMaTacGia.setText("");
 
     }//GEN-LAST:event_btnXoaHetActionPerformed
+
+    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable2MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

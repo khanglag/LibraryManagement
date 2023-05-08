@@ -10,13 +10,13 @@ package com.mycompany.Object.Sach;
  */
 public class Sach {
     private String maSach, tenSach, tinhTrang, maTheLoai, maTacGia, maNXB,anh;
-    private int soTrang, lanXuatBan, soLuong;
+    private int soTrang, lanXuatBan, soLuong,soLuongSau;
     private float gia;
     private int tonTai;
 
     //Constructor
-    public Sach(String maSach, String tenSach, String tinhTrang, String maTheLoai, String maTacGia, String maNXB,
-            int soTrang, int lanXuatBan, int soLuong, float gia, int tonTai,String anh) {
+    public Sach(String maSach, String tenSach, String tinhTrang,int soTrang,int soLuong, float gia, String maTheLoai, String maTacGia, String maNXB,
+             int lanXuatBan,  int tonTai,String anh) {
         this.maSach = maSach;
         this.tenSach = tenSach;
         this.tinhTrang = tinhTrang;
@@ -43,6 +43,21 @@ public class Sach {
         this.soLuong = soLuong;
         this.gia = gia;
         this.anh = anh;
+    }
+
+    public Sach(String maSach, int soLuong, int soLuongSau) {
+        this.maSach = maSach;
+        this.soLuong = soLuong;
+        this.soLuongSau = soLuongSau;
+    }
+
+    
+    public int getSoLuongSau() {
+        return soLuongSau;
+    }
+
+    public void setSoLuongSau(int soLuongSau) {
+        this.soLuongSau = soLuongSau;
     }
 
     

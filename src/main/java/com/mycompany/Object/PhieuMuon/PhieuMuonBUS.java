@@ -7,6 +7,8 @@ package com.mycompany.Object.PhieuMuon;
 import com.mycompany.Object.DocGia.DocGiaBUS;
 import com.mycompany.Object.Sach.SachBUS;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,24 +18,20 @@ public class PhieuMuonBUS {
    public PhieuMuonBUS(){ 
    }
    PhieuMuonDAO pmdao= new PhieuMuonDAO();
-   public String getMaphieumuon(){
-       return pmdao.getsophieumuon()+"";
+   int sophieumuon=pmdao.getsophieumuon();
+   public ArrayList<PhieuMuon> loadData(){
+       return pmdao.dsDG;
    }
-   public String MUONSACH(String maDocGia,String maSach){
-       if(pmdao.timPhieuMuons(getMaphieumuon(), null, null, null, null, null, 1).isEmpty()){       
-           PhieuMuon pm= new PhieuMuon();
-           pm.setMaPhieu(getMaphieumuon());
-           DocGiaBUS gdbs= new DocGiaBUS();
-           if(gdbs.search(maDocGia, null, null, null, null, null,null).isEmpty())
-                return "Chua ton tai doc gia";
-           else pm.setMaDocGia(maDocGia);
-           SachBUS sa =new SachBUS();
-           if(sa.search(maSach, null, null, null, null, null,null,null,null,null,null).isEmpty())
-               return "Khong ton tai sach ";
-           else pm.setMaSach(maSach);
-           System.out.println("MPM"+pm.getMaPhieu()+" MDG"+pm.getMaDocGia()+" MS"+ pm.getMaSach());
+   public String getMaphieumuon(){
+       return sophieumuon+"";
+   }
+   
+   public void them(PhieuMuon pm){
+       SachBUS sbus= new SachBUS();
+       if (sbus.Muon(pm.getMaSach(),pm.getSoLuong())) {
+           pmdao.add(pm);
+           JOptionPane.showMessageDialog(null,"Mượn thành công");
        }
-       else return "Ma phieu muon trung";
-       return "ThemDuoc ";
+       else JOptionPane.showMessageDialog(null,"Không mượn được");
    }
 }
