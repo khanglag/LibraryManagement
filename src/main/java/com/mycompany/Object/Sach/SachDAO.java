@@ -64,9 +64,9 @@ public class SachDAO {
         return success;
     }
 
-    public boolean delete(Sach sa) {
+    public boolean delete(Sach sach) {
         connectDB = new ConnectDB();
-        boolean success = connectDB.sqlUpdate("UPDATE SACH SET TONTAI = '1' WHERE MASA ='" + sa.getMaSach() + "'");
+        boolean success = connectDB.sqlUpdate("UPDATE SACH SET TONTAI = 0 WHERE MASA ='" + sach.getMaSach() + "'");
         connectDB.closeConnect();
         return success;
     }

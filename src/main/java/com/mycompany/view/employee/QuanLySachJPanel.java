@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane;
 
 import com.mycompany.Object.Sach.*;
 import java.net.URL;
@@ -181,7 +182,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnTim.setText("Tim");
+        btnTim.setText("Tìm");
 
         javax.swing.GroupLayout panelRootLayout = new javax.swing.GroupLayout(panelRoot);
         panelRoot.setLayout(panelRootLayout);
@@ -434,6 +435,12 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         }
     }
 
+    public void refreshData() {
+        setPathFile(null);
+        sachBUS = new SachBUS();
+        loadData();
+    }
+
     private void btnChonAnhSachActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonAnhSachActionPerformed
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
@@ -449,38 +456,63 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
                 lableAnhSach.setIcon(new ImageIcon(b));
 
             } catch (Exception e) {
-
+                System.out.println(e);
             }
         }
     }// GEN-LAST:event_btnChonAnhSachActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
-        ArrayList<Sach> SachList = new ArrayList<Sach>();
-        SachList = sachBUS.loadData();
-        Sach a = new Sach(tfMaSach.getText(), tfTenSach.getText(), tfTinhTrang.getText(), tfMaTheLoai.getText(),
-                tfMaTacGia.getText(), tfMaNhaXuatBan.getText(), Integer.parseInt(tfSoTrang.getText()),
-                Integer.parseInt(tfLanXuatBan.getText()),
-                Integer.parseInt(tfSoLuong.getText()), Float.parseFloat(tfGia.getText()), getPathFile());
-        SachList.add(a);
-        int i = SachList.size() - 1;
-        Sach sach = SachList.get(i);
-        model.addRow(new Object[] {
-                ++i, sach.getMaSach(), sach.getTenSach(), sach.getTinhTrang(),
-                sach.getMaTheLoai(), sach.getMaTacGia(), sach.getMaNXB(), sach.getSoTrang(), sach.getLanXuatBan(),
-                sach.getSoLuong(), sach.getGia(), sach.getAnh()
-        });
-        tableSach.setModel(model);
+        try{
+                if(tfMaSach.getText().trim().equals("")||tfTenSach.getText().trim().equals("")||
+                tfTinhTrang.getText().trim().equals("")||tfMaTheLoai.getText().trim().equals("")||
+                tfMaTacGia.getText().trim().equals("")||tfMaNhaXuatBan.getText().trim().equals("")||
+                tfSoTrang.getText().trim().equals("")||tfLanXuatBan.getText().trim().equals("")||
+                tfSoLuong.getText().trim().equals("")||tfGia.getText().trim().equals("")||pathFile.equals("")){
+                    JOptionPane.showMessageDialog(this, "Vui lòng nhập đủ thông tin");
+                }
+                else{
+                    Sach sach= new Sach();
+                    sach.setMaSach(tfMaSach.getText());
+                    sach.setTenSach(tfTenSach.getText());
+                    sach.setTinhTrang(tfTinhTrang.getText());
+                    sach.setMaTheLoai(tfMaTheLoai.getText());
+                    sach.setMaTacGia(tfMaTacGia.getText());
+                    sach.setMaNXB(tfMaNhaXuatBan.getText());
+                    sach.setSoTrang(Integer.parseInt(tfSoTrang.getText()));
+                    sach.setLanXuatBan(Integer.parseInt(tfLanXuatBan.getText()));
+                    sach.setSoLuong(Integer.parseInt(tfSoLuong.getText()));
+                    sach.setGia(Float.parseFloat(tfGia.getText()));
+                    sach.setAnh(getPathFile());
+                    sach.setTonTai(1);
+                    JOptionPane.showMessageDialog(this, sachBUS.add(sach));
+                    model.setRowCount(0);
+                    refreshData();
+                }
+            }catch(Exception ex){
+                System.out.println(ex);
+            }
 
     }// GEN-LAST:event_btnThemActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnXoaActionPerformed
         // TODO add your handling code here:
-        int i = tableSach.getSelectedRow();
-        if (i >= 0) {
-            model.removeRow(i);
-            tableSach.setModel(model);
+        ArrayList<Sach> arr = new ArrayList<Sach>();
+        arr = sachBUS.loadData();
+        int reply = JOptionPane.showConfirmDialog(getRootPane(),
+        "Bạn có chắc muốn xoá "+tfTenSach.getText()+" không ?" , "Chú ý",
+        JOptionPane.YES_NO_OPTION);
+
+        if (reply == JOptionPane.YES_OPTION) {
+                for(Sach sach : arr){
+                        if(sach.getMaSach().equals(tfMaSach.getText().trim())){
+                                JOptionPane.showMessageDialog(this, sachBUS.delete(sach));
+                                break;
+                        }
+                }  
         }
+        model.setRowCount(0);
+        refreshData();
     }// GEN-LAST:event_btnXoaActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSuaActionPerformed
@@ -521,13 +553,12 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
             BufferedImage b;
             try {
                 URL url = getClass().getResource(getPathFile());
-
                 // File file = new File(url);
                 System.out.println(getPathFile());
                 b = ImageIO.read(url);
                 lableAnhSach.setIcon(new ImageIcon(b));
             } catch (Exception e) {
-
+                System.out.print(e);
             }
 
         }
@@ -545,6 +576,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         tfSoTrang.setText("");
         tfTenSach.setText("");
         tfTinhTrang.setText("");
+        setPathFile(null);
     }// GEN-LAST:event_btnClearActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

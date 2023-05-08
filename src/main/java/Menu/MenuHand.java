@@ -19,9 +19,6 @@ import javax.swing.JOptionPane;
  */
 public class MenuHand {
     public static LocalDate convert(String dateString) {
-        if(dateString == null){
-            dateString = "01-01-1970";
-        }
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         LocalDate localDate = null;
         try {
@@ -37,11 +34,9 @@ public class MenuHand {
     public static String convert(LocalDate date){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         if(date==null){
-            date = LocalDate.parse("01-01-1970");
+             date = LocalDate.ofEpochDay(0);
         }
         String str= date.format(formatter);
-        
-        
         return str;
     }
    
@@ -51,7 +46,7 @@ public class MenuHand {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         ZoneId defaultZoneId = ZoneId.systemDefault();
         if (date == null)
-            return LocalDate.parse("01-01-1970", formatter);
+            return LocalDate.ofEpochDay(0);
         else
             d = date.toInstant().atZone(defaultZoneId).toLocalDate();
         return d;

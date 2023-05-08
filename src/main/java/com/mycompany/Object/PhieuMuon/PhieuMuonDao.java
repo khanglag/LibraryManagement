@@ -12,16 +12,18 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Random;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author pc
  */
 
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt
+ * to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit
+ * this template
  */
-
 
 public class PhieuMuonDAO {
 
@@ -35,24 +37,24 @@ public class PhieuMuonDAO {
         connectDB = new ConnectDB();
         try {
 
-            String qry="SELECT *FROM PHIEUMUON WHERE TONTAI= 1 ";
-            ResultSet rset= connectDB.sqlQuery(qry);
-           if(rset!=null){
-               while(rset.next()){
-                   PhieuMuon pm= new PhieuMuon(rset.getNString("MAPHIEUMUON"), rset.getNString("MADG"), rset.getNString("MASA"),rset.getNString("MANV"), rset.getInt("SOLUONG"), rset.getDate("NGAYMUON").toLocalDate(), rset.getDate("HANTRA").toLocalDate(), rset.getInt("TONTAI"));
-                   dsDG.add(pm);
-                   System.out.println(pm.toString());
-               }
-           }
+            String qry = "SELECT *FROM PHIEUMUON WHERE TONTAI = 1";
+            ResultSet rset = connectDB.sqlQuery(qry);
+            if (rset != null) {
+                while (rset.next()) {
+                    PhieuMuon pm = new PhieuMuon(rset.getNString("MAPHIEUMUON"), rset.getNString("MADG"),
+                            rset.getNString("MASA"), rset.getNString("MANV"), rset.getInt("SOLUONG"),
+                            rset.getDate("NGAYMUON").toLocalDate(), rset.getDate("HANTRA").toLocalDate(),
+                            rset.getInt("TONTAI"));
+                    dsDG.add(pm);
+                    System.out.println(pm.toString());
+                }
+            }
         } catch (SQLException e) {
+
             e.printStackTrace();
         }
         connectDB.closeConnect();
         return dsDG;
-    }
-
-    public int getsophieumuon() {
-        return readDB().size();
     }
 
     public Boolean add(PhieuMuon sa) {
@@ -121,6 +123,10 @@ public class PhieuMuonDAO {
         }
         connectDB.closeConnect();
         return ketqua;
+    }
+
+    public int getsophieumuon() {
+        return readDB().size();
     }
 
 }

@@ -13,7 +13,8 @@ import java.util.ArrayList;
 public class PhieuTraBUS {
     ArrayList<PhieuTra> dsPhieuTra = new ArrayList<PhieuTra>();
     PhieuTraDAO phieuTraDAO = new PhieuTraDAO();
-
+    int sophieutra=phieuTraDAO.getsophieutra();
+    
     public PhieuTraBUS() {
         dsPhieuTra = phieuTraDAO.readDB();
     }
@@ -29,10 +30,13 @@ public class PhieuTraBUS {
         return "Thêm thất bại";
     }
 
-    public String deletedNhanVien(PhieuTra nv) {
+    public String deleted(PhieuTra nv) {
         if (phieuTraDAO.delete(nv))
             return "Đã xoá";
         return "Không thể xoá";
     }
 
+    public String getMaphieutra(){
+       return sophieutra+"";
+   }
 }
