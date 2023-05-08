@@ -16,7 +16,7 @@ public class Sach {
 
     //Constructor
     public Sach(String maSach, String tenSach, String tinhTrang,int soTrang,int soLuong, float gia, String maTheLoai, String maTacGia, String maNXB,
-             int lanXuatBan,  int tonTai,String anh) {
+             int lanXuatBan, int tonTai, String anh) {
         this.maSach = maSach;
         this.tenSach = tenSach;
         this.tinhTrang = tinhTrang;
@@ -31,7 +31,7 @@ public class Sach {
         this.anh=anh;
     }
 
-    public Sach(String maSach, String tenSach, String tinhTrang, String maTheLoai, String maTacGia, String maNXB, int soTrang, int lanXuatBan, int soLuong, float gia, String anh) {
+    /*public Sach(String maSach, String tenSach, String tinhTrang, String maTheLoai, String maTacGia, String maNXB, int soTrang, int lanXuatBan, int soLuong, float gia, String anh) {
         this.maSach = maSach;
         this.tenSach = tenSach;
         this.tinhTrang = tinhTrang;
@@ -43,7 +43,7 @@ public class Sach {
         this.soLuong = soLuong;
         this.gia = gia;
         this.anh = anh;
-    }
+    }*/
 
     public Sach(String maSach, int soLuong, int soLuongSau) {
         this.maSach = maSach;
