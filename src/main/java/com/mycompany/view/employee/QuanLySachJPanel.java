@@ -183,6 +183,11 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         });
 
         btnTim.setText("Tìm");
+        btnTim.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    btnTimActionPerformed(evt);
+                }
+            });
 
         javax.swing.GroupLayout panelRootLayout = new javax.swing.GroupLayout(panelRoot);
         panelRoot.setLayout(panelRootLayout);
@@ -440,6 +445,40 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         sachBUS = new SachBUS();
         loadData();
     }
+
+    private void btnTimActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonAnhSachActionPerformed
+        // TODO add your handling code here:
+        try {
+                ArrayList<Sach> arr = new ArrayList<Sach>();
+                String maSach = tfMaSach.getText();
+                String tenSach = tfTenSach.getText();
+                String tinhTrang = tfTinhTrang.getText();
+                String maTacGia = tfMaTacGia.getText();
+                String maNXB = tfMaNhaXuatBan.getText();
+                String maTheLoai = tfMaTheLoai.getText();
+                String soTrang = tfSoTrang.getText();
+                String soLuong = tfSoLuong.getText();
+                String lanXuatBan = tfLanXuatBan.getText();
+                String gia = tfGia.getText();
+    
+                arr = sachBUS.search(maSach, tenSach, tinhTrang, maTheLoai, maTacGia, maNXB, soTrang, lanXuatBan, soLuong, gia);
+                if (arr.size() != 0) {
+                    JOptionPane.showMessageDialog(this, "Hoàn tất tìm kiếm!");
+                    model.setRowCount(0);
+                    int i = 0;
+                    while (i <= arr.size() - 1) {
+                        Sach sach = arr.get(i);
+                        model.addRow(new Object[] {
+                                ++i, sach.getMaSach(), sach.getTenSach(), sach.getTinhTrang(), sach.getMaTheLoai(),
+                                sach.getMaTacGia(), sach.getMaNXB(), sach.getSoTrang(), sach.getLanXuatBan(), sach.getSoLuong(), sach.getGia(), sach.getAnh()
+                        });
+                    }
+                } else
+                    JOptionPane.showMessageDialog(this, "Không có dữ liệu cần tìm!");
+            } catch (Exception ex) {
+                System.out.print(ex);
+            }
+    }// GEN-LAST:event_btnTimActionPerformed
 
     private void btnChonAnhSachActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnChonAnhSachActionPerformed
         // TODO add your handling code here:

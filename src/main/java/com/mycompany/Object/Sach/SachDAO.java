@@ -112,22 +112,30 @@ public class SachDAO {
     }
 
     public ArrayList<Sach> search(String maSach, String tenSach, String tinhTrang, String maTheLoai, String maTacGia,
-            String maNXB, String anh, String soTrang, String lanXuatBan, String soLuong, String gia) {
+            String maNXB, String soTrang, String lanXuatBan, String soLuong, String gia) {
         connectDB = new ConnectDB();
         ArrayList<Sach> ketqua = new ArrayList<Sach>();
         String qry = "SELECT *FROM SACH WHERE TONTAI=1 ";
-        if (maSach != null)
+        if (maSach.equals("") == false)
             qry += (" AND MASA= '" + maSach + "'");
-        if (tenSach != null)
+        if (tenSach.equals("") == false)
             qry += (" AND TENSA= '" + tenSach + "'");
-        if (tinhTrang != null)
+        if (tinhTrang.equals("") == false)
             qry += (" AND TT= '" + tinhTrang + "'");
-        if (maTheLoai != null)
+        if (maTheLoai.equals("") == false)
             qry += (" AND SA_MALOAI= '" + maTheLoai + "'");
-        if (maNXB != null)
+        if (maNXB.equals("") == false)
             qry += (" AND MANXB= '" + maNXB + "'");
-        if (maTacGia != null)
+        if (maTacGia.equals("") == false)
             qry += (" AND MATG= '" + maTacGia + "'");
+        if (soTrang.equals("") == false)
+            qry += (" AND SOTRANG= " + Integer.parseInt(soTrang) );
+        if (soLuong.equals("") == false)
+            qry += (" AND SOLUONG= " + Integer.parseInt(soLuong) );
+        if (lanXuatBan.equals("") == false)
+            qry += (" AND LXB= " + Integer.parseInt(lanXuatBan) );
+        if (gia.equals("") == false)
+            qry += (" AND gia= " + Float.parseFloat(gia) );
         System.out.println(qry);
         ResultSet rset = connectDB.sqlQuery(qry);
         try {
