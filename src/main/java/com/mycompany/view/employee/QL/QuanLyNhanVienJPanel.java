@@ -366,7 +366,7 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
                 XSSFRow row = null;
                 Cell cell = null;
 
-                String dateFormat = "dd-MM-yyyy";
+                String dateFormat = "yyyy-MM-dd";
                 CellStyle style = workbook.createCellStyle();
                 DataFormat dataFormat = workbook.createDataFormat();
                 style.setDataFormat(dataFormat.getFormat(dateFormat));
