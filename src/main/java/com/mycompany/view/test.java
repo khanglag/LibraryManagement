@@ -79,7 +79,7 @@ public class test extends javax.swing.JFrame {
                 a.setVisible(true);
                 a.setLayout(new BorderLayout());
                 //a.add(new QuanLyTacGiaJPanel(),BorderLayout.CENTER);
-                a.add(new QuanLySachJPanel(),BorderLayout.CENTER);
+                a.add(new NhaXuatBanJPanel(),BorderLayout.CENTER);
             }
         });
     }
