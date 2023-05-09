@@ -37,7 +37,7 @@ public class PhieuMuonDAO {
         connectDB = new ConnectDB();
         try {
 
-            String qry = "SELECT *FROM PHIEUMUON WHERE TONTAI = 1";
+            String qry = "SELECT *FROM PHIEUMUON ";
             ResultSet rset = connectDB.sqlQuery(qry);
             if (rset != null) {
                 while (rset.next()) {
@@ -95,17 +95,17 @@ public class PhieuMuonDAO {
         connectDB = new ConnectDB();
         ArrayList<PhieuMuon> ketqua = new ArrayList<PhieuMuon>();
         String qry = "SELECT *FROM PHIEUMUON WHERE TONTAI= 1";
-        if (maPhieu != null)
+        if (maPhieu.equals("") != true)
             qry += (" AND MAPHIEUMUON= '" + maPhieu + "'");
-        if (maDocGia != null)
+        if (maDocGia .equals("") != true)
             qry += (" AND MADG= '" + maDocGia + "'");
-        if (maSach != null)
+        if (maSach .equals("") != true)
             qry += (" AND MASA= '" + maSach + "'");
-        if (maNhanVien != null)
+        if (maNhanVien .equals("") != true)
             qry += (" AND MANV= '" + maNhanVien + "'");
-        if (ngayMuon != null)
+        if (ngayMuon .equals("") != true)
             qry += (" AND NGAYMUON= '" + java.sql.Date.valueOf(ngayMuon) + "'");
-        if (ngayTra != null)
+        if (ngayTra .equals("") != true)
             qry += (" AND NGAYMUON= '" + java.sql.Date.valueOf(ngayTra) + "'");
         System.out.println(qry);
         ResultSet rset = connectDB.sqlQuery(qry);

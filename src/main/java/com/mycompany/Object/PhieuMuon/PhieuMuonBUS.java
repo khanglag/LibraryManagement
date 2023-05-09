@@ -25,7 +25,10 @@ public class PhieuMuonBUS {
    public String getMaphieumuon(){
        return sophieumuon+"";
    }
-   
+   public ArrayList<PhieuMuon> timMuons(String maPhieu, String maDocGia, String maSach, String maNhanVien, LocalDate ngayMuon,
+            LocalDate ngayTra, int tonTai){
+       return pmdao.timPhieuMuons(maPhieu, maDocGia, maSach, maNhanVien, ngayMuon, ngayTra, tonTai);
+   }
    public void them(PhieuMuon pm){
        SachBUS sbus= new SachBUS();
        if (sbus.Muon(pm.getMaSach(),pm.getSoLuong())) {

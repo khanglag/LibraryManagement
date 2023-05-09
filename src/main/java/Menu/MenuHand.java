@@ -65,7 +65,10 @@ public class MenuHand {
         str = String.format("%06d", n);
         return str;
     }
-
+      public static String DatetoString(LocalDate d){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        return  d.format(formatter);
+      }
     public static void main(String[] args) {
         System.out.println(FormatString(""));
     }
