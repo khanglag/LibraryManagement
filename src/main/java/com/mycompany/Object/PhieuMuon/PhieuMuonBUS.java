@@ -37,4 +37,16 @@ public class PhieuMuonBUS {
        }
        else JOptionPane.showMessageDialog(null,"Không mượn được");
    }
+   public void update(PhieuMuon pm){
+       if (pmdao.update(pm)) {
+          JOptionPane.showMessageDialog(null,"Sửa thành công");
+       }
+       else JOptionPane.showMessageDialog(null,"Sửa thất bại");
+       
+   }
+   public void xoa(PhieuMuon pm){
+       if(pmdao.delete(pm))
+           JOptionPane.showMessageDialog(null,"Xoá thành công");
+       else JOptionPane.showMessageDialog(null,"Xoá thất bại");
+   }
 }

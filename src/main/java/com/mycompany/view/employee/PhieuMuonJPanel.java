@@ -354,15 +354,34 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-        
+        try {
+             PhieuMuon pm= new PhieuMuon();
+             PhieuMuonBUS pmbus=new PhieuMuonBUS();
+             pm.setMaPhieu((Integer.parseInt(tfMaPhieu.getText())-1)+"");
+             pm.setMaDocGia(jComboBoxMaDocGia. getSelectedItem().toString());
+             pm.setMaNhanVien(jComboBoxMaNhanVien.getSelectedItem().toString());
+             pm.setMaSach(jComboBoxMaSach.getSelectedItem().toString());
+             pm.setNgayMuon(LocalDate.now());
+             pm.setNgayTra(MenuHand.convert(tfNgayTra.getText()));
+             pm.setSoLuong(Integer.parseInt(tfSoLuong.getText()));
+             pm.setTonTai(1);
+             pmbus.update(pm);
+        System.out.println(pm.toString());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Không được để trống trường");
+        }
+        showtable();
     }//GEN-LAST:event_btnSuaActionPerformed
 
     private void jComboBoxMaDocGiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxMaDocGiaActionPerformed
-        String ten=jComboBoxMaDocGia.getSelectedItem().toString();
+        if (jComboBoxMaDocGia.getSelectedItem()!=null) {
+             String ten=jComboBoxMaDocGia.getSelectedItem().toString();
         DocGiaBUS dgbus=new DocGiaBUS();
         for(DocGia itemDocGia:dgbus.search(ten, "", "", "", "", "", "")){
             TfTenDG.setText(itemDocGia.getTenDocGia());
         }
+        }
+       
             
         
     }//GEN-LAST:event_jComboBoxMaDocGiaActionPerformed
@@ -396,16 +415,34 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
-        int xoa =tablePhieuMuon.getSelectedColumn();
-        PhieuMuonBUS pmbus= new PhieuMuonBUS();
+        try {
+             PhieuMuon pm= new PhieuMuon();
+             PhieuMuonBUS pmbus=new PhieuMuonBUS();
+             pm.setMaPhieu((Integer.parseInt(tfMaPhieu.getText())-1)+"");
+             pm.setMaDocGia(jComboBoxMaDocGia. getSelectedItem().toString());
+             pm.setMaNhanVien(jComboBoxMaNhanVien.getSelectedItem().toString());
+             pm.setMaSach(jComboBoxMaSach.getSelectedItem().toString());
+             pm.setNgayMuon(LocalDate.now());
+             pm.setNgayTra(MenuHand.convert(tfNgayTra.getText()));
+             pm.setSoLuong(Integer.parseInt(tfSoLuong.getText()));
+             pm.setTonTai(1);
+             pmbus.xoa(pm);
+        System.out.println(pm.toString());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Không được để trống trường");
+        }
+        showtable();
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void jComboBoxMaSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxMaSachActionPerformed
-        String maphieu=jComboBoxMaSach.getSelectedItem().toString();
+        if (jComboBoxMaSach.getSelectedItem()!=null) {
+            String maphieu=jComboBoxMaSach.getSelectedItem().toString();
         SachBUS sbus= new SachBUS();
         for(Sach iSach:sbus.search(maphieu, "", "", "", "", "", "", "", "", "")){
             TfTensach.setText(iSach.getTenSach());
         }
+        }
+        
     }//GEN-LAST:event_jComboBoxMaSachActionPerformed
 
     private void tfMaPhieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfMaPhieuActionPerformed
@@ -423,21 +460,32 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     private void tablePhieuMuonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePhieuMuonMouseClicked
         int select=tablePhieuMuon.getSelectedRow();
         if (select>=0) {
+            jComboBoxMaSach.removeAllItems();
+            jComboBoxMaDocGia.removeAllItems();   
             DocGiaBUS gdBUS =new DocGiaBUS();
             SachBUS sabus=new SachBUS();
             String tendg = "", tensach="";
-            for(DocGia itemDocGia:gdBUS.search(tablePhieuMuon.getModel().getValueAt(select, 3).toString(), "", "","", "", "", "")){
+            for(DocGia itemDocGia:gdBUS.search(tablePhieuMuon.getModel().getValueAt(select, 2).toString(), "", "","", "", "", "")){
                  tendg=itemDocGia.getTenDocGia();
-                 System.out.println("Tendg"+tablePhieuMuon.getModel().getValueAt(select, 3).toString());
+                 System.out.println("Tendg"+tablePhieuMuon.getModel().getValueAt(select, 2).toString());
                  System.out.println(tendg);
             }
-            for(Sach itemSach:sabus.search(tablePhieuMuon.getModel().getValueAt(select, 4).toString(), "", "", "", "","", "", "", "", "")){
+            for(Sach itemSach:sabus.search(tablePhieuMuon.getModel().getValueAt(select, 3).toString(), "", "", "", "","", "", "", "", "")){
                  tensach=itemSach.getTenSach();
                  System.out.println(tensach);
             }
             tfMaPhieu.setText(tablePhieuMuon.getModel().getValueAt(select, 1).toString());
             TfTenDG.setText(tendg);
             TfTensach.setText(tensach);
+            tfNgayMuon.setText(tablePhieuMuon.getModel().getValueAt(select, 5).toString());
+            tfNgayTra.setText(tablePhieuMuon.getModel().getValueAt(select, 6).toString());
+            tfSoLuong.setText(tablePhieuMuon.getModel().getValueAt(select, 7).toString());
+                for(DocGia itempDocGia: gdBUS.search("",tendg, "", "", "", "", "")){
+                     jComboBoxMaDocGia.addItem(itempDocGia.getMaDocGia());
+                }
+                for(Sach itemsa: sabus.search("", tensach, "", "", "", "", "", "", "", "")){
+                    jComboBoxMaSach.addItem(itemsa.getMaSach());
+                }
         }
     }//GEN-LAST:event_tablePhieuMuonMouseClicked
 
@@ -510,8 +558,10 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         PhieuMuonBUS pmbus= new PhieuMuonBUS();
         model.setRowCount(0);
         for(PhieuMuon itMuon:pmbus.loadData()){
-            Object[] rowData={itMuon.getMaPhieu(),MenuHand.FormatString(itMuon.getMaPhieu()),itMuon.getMaSach(),itMuon.getMaDocGia(),itMuon.getMaNhanVien(),itMuon.getNgayMuon(),itMuon.getNgayTra(),itMuon.getSoLuong(),itMuon.isTonTai()};
-            model.addRow(rowData);
+            if (itMuon.isTonTai()==1) {
+               Object[] rowData={itMuon.getMaPhieu(),MenuHand.FormatString(itMuon.getMaPhieu()),itMuon.getMaDocGia(),itMuon.getMaSach(),itMuon.getMaNhanVien(),MenuHand.convert(itMuon.getNgayMuon()),MenuHand.convert(itMuon.getNgayTra()),itMuon.getSoLuong(),itMuon.isTonTai()};
+            model.addRow(rowData); 
+            }      
         }
     }
 }
