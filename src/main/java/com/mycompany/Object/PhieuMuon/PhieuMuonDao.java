@@ -76,15 +76,23 @@ public class PhieuMuonDAO {
     public boolean delete(PhieuMuon sa) {
         connectDB = new ConnectDB();
         boolean success = connectDB
-                .sqlUpdate("UPDATE PHIEUMUON SET TONTAI = 'FALSE' WHERE MAPHIEUMUON ='" + sa.getMaPhieu() + "'");
-        System.out.println("UPDATE PHIEUMUON SET TONTAI = 'FALSE' WHERE MAPHIEUMUON ='" + sa.getMaPhieu() + "'");
+                .sqlUpdate("UPDATE PHIEUMUON SET TONTAI = 0 WHERE MAPHIEUMUON ='" + sa.getMaPhieu() + "'");
+        System.out.println("UPDATE PHIEUMUON SET TONTAI = 0 WHERE MAPHIEUMUON ='" + sa.getMaPhieu() + "'");
         connectDB.closeConnect();
         return success;
     }
 
     public boolean update(PhieuMuon pm) {
         connectDB = new ConnectDB();
-        boolean success = connectDB.sqlUpdate("UPDATE ");
+        
+        boolean success = connectDB.sqlUpdate("UPDATE PHIEUMUON SET "
+                + "MADG= '" + pm.getMaDocGia() + "'"
+                +", MASA= '" +pm.getMaSach()  + "'"
+                +", MANV= '" + pm.getMaNhanVien() + "'"
+                +", SOLUONG= '" + pm.getSoLuong() + "'"
+                +", NGAYMUON= '" + java.sql.Date.valueOf(pm.getNgayMuon()) + "'"
+                +", HANTRA= '" + java.sql.Date.valueOf(pm.getNgayTra()) + "'"
+                + " WHERE MAPHIEUMUON ='" + pm.getMaPhieu() + "'");
         connectDB.closeConnect();
         return success;
     }
@@ -106,7 +114,7 @@ public class PhieuMuonDAO {
         if (ngayMuon .equals("") != true)
             qry += (" AND NGAYMUON= '" + java.sql.Date.valueOf(ngayMuon) + "'");
         if (ngayTra .equals("") != true)
-            qry += (" AND NGAYMUON= '" + java.sql.Date.valueOf(ngayTra) + "'");
+            qry += (" AND HANTRA= '" + java.sql.Date.valueOf(ngayTra) + "'");
         System.out.println(qry);
         ResultSet rset = connectDB.sqlQuery(qry);
         try {
