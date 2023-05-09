@@ -185,6 +185,11 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tableNXB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableNXBMouseClicked(evt);
+            }
+        });
         jScrollPane7.setViewportView(tableNXB);
         if (tableNXB.getColumnModel().getColumnCount() > 0) {
             tableNXB.getColumnModel().getColumn(0).setPreferredWidth(15);
@@ -262,6 +267,15 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         refreshData();
     }//GEN-LAST:event_btnSuaActionPerformed
+
+    private void tableNXBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableNXBMouseClicked
+        // TODO add your handling code here:
+        int i = tableNXB.getSelectedRow();
+        if (i >= 0) {
+            tfMaNXB.setText(tableNXB.getModel().getValueAt(i, 1).toString());
+            tfTenNXB.setText(tableNXB.getModel().getValueAt(i, 2).toString());
+        }
+    }//GEN-LAST:event_tableNXBMouseClicked
 
     public void loadData() {
         ArrayList<NhaXuatBan> arr = new ArrayList<NhaXuatBan>();
