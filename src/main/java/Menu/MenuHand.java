@@ -19,7 +19,8 @@ import javax.swing.JOptionPane;
  */
 public class MenuHand {
     public static LocalDate convert(String dateString) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        if (dateString!="") {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         LocalDate localDate = null;
         try {
             localDate = LocalDate.parse(dateString, formatter);
@@ -29,6 +30,8 @@ public class MenuHand {
                     + "\n Chuỗi phải ở dạng: dd-MM-yyyy");
         }
         return localDate;
+        }
+        return null;
     }
 
     public static String convert(LocalDate date){
@@ -66,8 +69,11 @@ public class MenuHand {
         return str;
     }
       public static String DatetoString(LocalDate d){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+          if (d!=null) {
+              DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         return  d.format(formatter);
+          }
+        return null;
       }
     public static void main(String[] args) {
         System.out.println(FormatString(""));

@@ -71,7 +71,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         btnXoa = new javax.swing.JButton();
         btnSua = new javax.swing.JButton();
         btnThem = new javax.swing.JButton();
-        btTim = new javax.swing.JButton();
+        Lammoi = new javax.swing.JButton();
 
         jPanel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel15.setToolTipText("Phiếu mượn");
@@ -306,13 +306,13 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
             }
         });
 
-        btTim.setText("Tìm");
-        btTim.setMaximumSize(new java.awt.Dimension(99, 57));
-        btTim.setMinimumSize(new java.awt.Dimension(99, 57));
-        btTim.setPreferredSize(new java.awt.Dimension(99, 57));
-        btTim.addActionListener(new java.awt.event.ActionListener() {
+        Lammoi.setText("Làm sạch");
+        Lammoi.setMaximumSize(new java.awt.Dimension(99, 57));
+        Lammoi.setMinimumSize(new java.awt.Dimension(99, 57));
+        Lammoi.setPreferredSize(new java.awt.Dimension(99, 57));
+        Lammoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btTimActionPerformed(evt);
+                LammoiActionPerformed(evt);
             }
         });
 
@@ -332,7 +332,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btTim, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Lammoi, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -346,7 +346,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
                     .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btTim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Lammoi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9))
@@ -493,10 +493,6 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfSoLuongActionPerformed
 
-    private void btTimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTimActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btTimActionPerformed
-
     private void TimDgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TimDgActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TimDgActionPerformed
@@ -505,13 +501,17 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_TimsaActionPerformed
 
+    private void LammoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LammoiActionPerformed
+        clear();
+    }//GEN-LAST:event_LammoiActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Lammoi;
     private javax.swing.JTextField TfTenDG;
     private javax.swing.JTextField TfTensach;
     private javax.swing.JButton TimDg;
     private javax.swing.JButton Timsa;
-    private javax.swing.JButton btTim;
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnThem;
     private javax.swing.JButton btnXoa;
@@ -563,5 +563,15 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
             model.addRow(rowData); 
             }      
         }
+    }
+    public void clear(){
+        TfTenDG.setText("");
+        TfTensach.setText("");
+        tfNgayMuon.setText("");
+        tfNgayTra.setText("");
+        tfSoLuong.setText("");
+        tfMaPhieu.setText("");
+        jComboBoxMaDocGia.removeAllItems();
+        jComboBoxMaSach.removeAllItems();
     }
 }
