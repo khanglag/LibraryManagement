@@ -91,7 +91,6 @@ create table THETHUVIEN(
 	NGAYCAP date,
 	HSD date,
 	MADG char (6),
-	MANV char(6),
 	foreign key(MADG) references DOCGIA(MADG),
 	foreign key (MANV) references NHANVIEN(MANV),
 	TONTAI boolean
@@ -197,16 +196,8 @@ insert into TAIKHOAN(TENDN,MATKHAU,MAPQ,TONTAI) values
 ('mk14042003','14042003','TT000002',1),
 ('mt000000','000000','TT000003',1),
 ('ldk2003','04102003','DG000000',1);
-/*insert into TK_DG(TENDN,MADG,TONTAI)values
-('ldk2003','000001',1);
-insert into TK_NV (TENDN,MANV,TONTAI) values
-('nguyenanhthu03','NV0027',1),
-('dk20031004','NV0011',1),
-('kc07010512','NV0003',1),
-('mk14042003','NV0010',1),
-('mt000000','NV0001',1);*/
-insert into THETHUVIEN(MATHE,NGAYCAP,HSD,MADG,MANV,TONTAI) values
-('000001','2023-04-06','2025-04-06','000001','NV0011',1);
+insert into THETHUVIEN(MATHE,NGAYCAP,HSD,MADG,TONTAI) values
+('000001','2023-04-06','2025-04-06','000001',1);
 
 
 insert into ANH_DG(ma_anh,madg) values
