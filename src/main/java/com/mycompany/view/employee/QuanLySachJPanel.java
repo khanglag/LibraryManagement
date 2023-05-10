@@ -6,11 +6,20 @@ package com.mycompany.view.employee;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import javax.swing.JOptionPane;
 
 import com.mycompany.Object.Sach.*;
@@ -87,6 +96,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         btnClear = new javax.swing.JButton();
         btnTim = new javax.swing.JButton();
         btnLamMoi = new javax.swing.JButton();
+        btnInExcel = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableSach = new javax.swing.JTable();
 
@@ -153,17 +163,19 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnTim.setText("Tìm");
-        btnTim.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTimActionPerformed(evt);
-            }
-        });
+        btnTim.setText("Tim");
 
         btnLamMoi.setText("Làm mới");
         btnLamMoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLamMoiActionPerformed(evt);
+            }
+        });
+
+        btnInExcel.setText("In Excel");
+        btnInExcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInExcelActionPerformed(evt);
             }
         });
 
@@ -182,6 +194,8 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
                 .addComponent(btnClear)
                 .addGap(39, 39, 39)
                 .addComponent(btnTim)
+                .addGap(18, 18, 18)
+                .addComponent(btnInExcel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(panelRootLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
@@ -297,7 +311,9 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
                     .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnInExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
         tableSach.setModel(new javax.swing.table.DefaultTableModel(
@@ -354,6 +370,112 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         refreshData();
     }//GEN-LAST:event_btnLamMoiActionPerformed
+
+    private void btnInExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInExcelActionPerformed
+        // TODO add your handling code here:
+        try{
+            JFileChooser fChooser = new JFileChooser();
+            int choose = fChooser.showSaveDialog(null);
+            if(choose == JFileChooser.APPROVE_OPTION) {
+                XSSFWorkbook workbook = new XSSFWorkbook();
+                XSSFSheet sheet = workbook.createSheet("Sách");
+                XSSFRow row = null;
+                Cell cell = null;
+                row = sheet.createRow(3);
+
+                cell = row.createCell(0, CellType.STRING);
+                cell.setCellValue("STT");
+
+                cell = row.createCell(1, CellType.STRING);
+                cell.setCellValue("Mã sách");
+
+                cell = row.createCell(2, CellType.STRING);
+                cell.setCellValue("Tên sách");
+
+                cell = row.createCell(3, CellType.STRING);
+                cell.setCellValue("Tình trạng");
+
+                cell = row.createCell(4, CellType.STRING);
+                cell.setCellValue("Mã thể loại");
+
+                cell = row.createCell(5, CellType.STRING);
+                cell.setCellValue("Mã tác giả");
+
+                cell = row.createCell(6, CellType.STRING);
+                cell.setCellValue("Mã NXB");
+
+                cell = row.createCell(7, CellType.STRING);
+                cell.setCellValue("Số trang");
+
+                cell = row.createCell(8, CellType.STRING);
+                cell.setCellValue("Lần xuất bản");
+
+                cell = row.createCell(9, CellType.STRING);
+                cell.setCellValue("Số lượng");
+
+                cell = row.createCell(10, CellType.STRING);
+                cell.setCellValue("Giá");
+
+                cell = row.createCell(11, CellType.STRING);
+                cell.setCellValue("Ảnh");
+
+                ArrayList<Sach> arr = sachBUS.loadData();
+
+                for(int i = 0; i < arr.size(); i++) {
+                    row = sheet.createRow(4 + i);
+
+                    cell = row.createCell(0, CellType.NUMERIC);
+                    cell.setCellValue(i + 1);
+
+                    cell = row.createCell(1, CellType.STRING);
+                    cell.setCellValue(arr.get(i).getMaSach());
+
+                    cell = row.createCell(2, CellType.STRING);
+                    cell.setCellValue(arr.get(i).getTenSach());
+
+                    cell = row.createCell(3, CellType.STRING);
+                    cell.setCellValue(arr.get(i).getTinhTrang());
+
+                    cell = row.createCell(4, CellType.STRING);
+                    cell.setCellValue(arr.get(i).getMaTheLoai());
+
+                    cell = row.createCell(5, CellType.STRING);
+                    cell.setCellValue(arr.get(i).getMaTacGia());
+                    
+                    cell = row.createCell(6, CellType.STRING);
+                    cell.setCellValue(arr.get(i).getMaNXB());
+
+                    cell = row.createCell(7, CellType.NUMERIC);
+                    cell.setCellValue(arr.get(i).getSoTrang());
+
+                    cell = row.createCell(8, CellType.NUMERIC);
+                    cell.setCellValue(arr.get(i).getLanXuatBan());
+
+                    cell = row.createCell(9, CellType.NUMERIC);
+                    cell.setCellValue(arr.get(i).getSoLuong());
+
+                    cell = row.createCell(10, CellType.NUMERIC);
+                    cell.setCellValue(arr.get(i).getGia());
+
+                    cell = row.createCell(11, CellType.STRING);
+                    cell.setCellValue(arr.get(i).getAnh());
+                }
+
+                File file = new File(fChooser.getSelectedFile().toString() + ".xlsx");
+                try {
+                    FileOutputStream fo = new FileOutputStream(file);
+                    workbook.write(fo);
+                    JOptionPane.showMessageDialog(this, "Đã in!");
+                    fo.close();
+                } catch(FileNotFoundException e) {
+                    System.out.println(e);
+                }
+            }
+            
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_btnInExcelActionPerformed
 
     public void loadData() {
         ArrayList<Sach> arr = new ArrayList<Sach>();
@@ -551,6 +673,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChonAnhSach;
     private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnInExcel;
     private javax.swing.JButton btnLamMoi;
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnThem;
