@@ -27,24 +27,27 @@ public class NhanVienBUS {
     public String addNhanVien(NhanVien nv) {
         if (nhanVienDAO.hasEmployeeID(nv.getMaNhanVien()))
             return "Mã NV đã tồn tại";
-        if (nhanVienDAO.add(nv))
+        else if (nhanVienDAO.add(nv))
             return "Thêm thành công";
         return "Thêm thất bại";
     }
-    public String deletedNhanVien(NhanVien nv){
-        if(nhanVienDAO.delete(nv))
+
+    public String deletedNhanVien(NhanVien nv) {
+        if (nhanVienDAO.delete(nv))
             return "Đã xoá";
         return "Không thể xoá";
     }
-    public String updateNhanVien(NhanVien nv){
-        if(nhanVienDAO.update(nv)){
-            return "Sửa thành công";  
+
+    public String updateNhanVien(NhanVien nv) {
+        if (nhanVienDAO.update(nv)) {
+            return "Sửa thành công";
         }
         return "Thất bại";
     }
-    public String addTaiKhoan(NhanVien nhanVien){
-        if(nhanVienDAO.addPhanQuyen(nhanVien)& nhanVienDAO.addTaiKhoan(nhanVien) & nhanVienDAO.editMaPQ(nhanVien)){
-            return "Thêm thành công";  
+
+    public String addTaiKhoan(NhanVien nhanVien) {
+        if (nhanVienDAO.addPhanQuyen(nhanVien) & nhanVienDAO.addTaiKhoan(nhanVien) & nhanVienDAO.editMaPQ(nhanVien)) {
+            return "Thêm thành công";
         }
         return "Thất bại";
     }

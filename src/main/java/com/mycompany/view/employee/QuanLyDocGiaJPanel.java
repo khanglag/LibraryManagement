@@ -10,6 +10,7 @@ import com.mycompany.view.themtaikhoanKH;
 import ConnectDB.ConnectDB;
 
 import com.mycompany.Object.DocGia.*;
+import com.mycompany.view.thethuvien;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -63,6 +64,7 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
 
         jPopupMenuDocGia = new javax.swing.JPopupMenu();
         jMenuItemThemTaiKhoan = new javax.swing.JMenuItem();
+        jMenuItemThemTheThuVien = new javax.swing.JMenuItem();
         buttonGroupTTTK = new javax.swing.ButtonGroup();
         buttonGroupPhai = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
@@ -103,6 +105,14 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
             }
         });
         jPopupMenuDocGia.add(jMenuItemThemTaiKhoan);
+
+        jMenuItemThemTheThuVien.setText("Thêm thẻ thư viện");
+        jMenuItemThemTheThuVien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemThemTheThuVienActionPerformed(evt);
+            }
+        });
+        jPopupMenuDocGia.add(jMenuItemThemTheThuVien);
 
         jLabel1.setText("CCCD");
 
@@ -427,6 +437,17 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnInExcelActionPerformed
 
+    private void jMenuItemThemTheThuVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemThemTheThuVienActionPerformed
+        // TODO add your handling code here:
+        int i = tableTTDG.getSelectedRow();
+        String str1=null,str2 = null;
+        if (i >= 0) {
+            str1 = tableTTDG.getModel().getValueAt(i, 2).toString();
+            str2 = tableTTDG.getModel().getValueAt(i, 3).toString();
+        }
+        new thethuvien(str1,str2).setVisible(true);
+    }//GEN-LAST:event_jMenuItemThemTheThuVienActionPerformed
+
     public void refreshData() {
         docGiaBUS = new DocGiaBUS();
         loadData();
@@ -649,6 +670,7 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JMenuItem jMenuItemThemTaiKhoan;
+    private javax.swing.JMenuItem jMenuItemThemTheThuVien;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenuDocGia;
     private javax.swing.JRadioButton jRadioButtonNam;
