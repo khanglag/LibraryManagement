@@ -92,7 +92,6 @@ create table THETHUVIEN(
 	HSD date,
 	MADG char (6),
 	foreign key(MADG) references DOCGIA(MADG),
-	foreign key (MANV) references NHANVIEN(MANV),
 	TONTAI boolean
 );
 create table PHIEUTRA(
