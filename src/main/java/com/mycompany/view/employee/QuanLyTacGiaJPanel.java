@@ -4,17 +4,27 @@
  */
 package com.mycompany.view.employee;
 
+import com.mycompany.Object.TacGia.*;
+import javax.swing.table.*;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import java.time.LocalDate;
+
 /**
  *
  * @author khang
  */
 public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
+    TacGiaBUS tacGiaBUS = new TacGiaBUS();
+    DefaultTableModel model;
 
     /**
      * Creates new form QuanLyTacGiaJPanel
      */
     public QuanLyTacGiaJPanel() {
         initComponents();
+        model = (DefaultTableModel) tableTG.getModel();
+        loadData();
     }
 
     /**
@@ -26,28 +36,30 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroupPhai = new javax.swing.ButtonGroup();
         jPanel12 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         tfMa = new javax.swing.JTextField();
         tfTen = new javax.swing.JTextField();
-        tfPhai = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         tfNgaySinh = new javax.swing.JTextField();
-        btnThem2 = new javax.swing.JButton();
-        btnXoa2 = new javax.swing.JButton();
-        btnSua2 = new javax.swing.JButton();
-        btnLoad2 = new javax.swing.JButton();
+        btnThem = new javax.swing.JButton();
+        btnXoa = new javax.swing.JButton();
+        btnSua = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
         btnTim = new javax.swing.JButton();
+        jRadioButtonNam = new javax.swing.JRadioButton();
+        jRadioButtonNu = new javax.swing.JRadioButton();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        tableTG = new javax.swing.JTable();
 
         jLabel25.setText("Mã");
 
         jLabel26.setText("Tên");
 
-        jLabel27.setText("Phai");
+        jLabel27.setText("Phái");
 
         tfMa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,13 +73,7 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
             }
         });
 
-        tfPhai.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfPhaiActionPerformed(evt);
-            }
-        });
-
-        jLabel28.setText("Ngay sinh");
+        jLabel28.setText("Ngày sinh");
 
         tfNgaySinh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,32 +81,58 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnThem2.setText("Thêm");
-
-        btnXoa2.setText("Xoá");
-        btnXoa2.setMaximumSize(new java.awt.Dimension(99, 57));
-        btnXoa2.setMinimumSize(new java.awt.Dimension(99, 57));
-        btnXoa2.setPreferredSize(new java.awt.Dimension(99, 57));
-        btnXoa2.addActionListener(new java.awt.event.ActionListener() {
+        btnThem.setText("Thêm");
+        btnThem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnXoa2ActionPerformed(evt);
+                btnThemActionPerformed(evt);
             }
         });
 
-        btnSua2.setText("Sửa");
-        btnSua2.setMaximumSize(new java.awt.Dimension(89, 55));
-        btnSua2.setMinimumSize(new java.awt.Dimension(89, 55));
-        btnSua2.setPreferredSize(new java.awt.Dimension(99, 57));
-
-        btnLoad2.setText("Clear");
-        btnLoad2.setPreferredSize(new java.awt.Dimension(99, 57));
-        btnLoad2.addActionListener(new java.awt.event.ActionListener() {
+        btnXoa.setText("Xoá");
+        btnXoa.setMaximumSize(new java.awt.Dimension(99, 57));
+        btnXoa.setMinimumSize(new java.awt.Dimension(99, 57));
+        btnXoa.setPreferredSize(new java.awt.Dimension(99, 57));
+        btnXoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoad2ActionPerformed(evt);
+                btnXoaActionPerformed(evt);
             }
         });
 
-        btnTim.setText("Tim");
+        btnSua.setText("Sửa");
+        btnSua.setMaximumSize(new java.awt.Dimension(89, 55));
+        btnSua.setMinimumSize(new java.awt.Dimension(89, 55));
+        btnSua.setPreferredSize(new java.awt.Dimension(99, 57));
+        btnSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuaActionPerformed(evt);
+            }
+        });
+
+        btnClear.setText("Clear");
+        btnClear.setPreferredSize(new java.awt.Dimension(99, 57));
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+
+        btnTim.setText("Tìm");
+        btnTim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTimActionPerformed(evt);
+            }
+        });
+
+        buttonGroupPhai.add(jRadioButtonNam);
+        jRadioButtonNam.setText("Nam");
+        jRadioButtonNam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonNamActionPerformed(evt);
+            }
+        });
+
+        buttonGroupPhai.add(jRadioButtonNu);
+        jRadioButtonNu.setText("Nữ");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -113,26 +145,30 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel25)
                     .addComponent(jLabel27)
                     .addComponent(jLabel28)
-                    .addComponent(btnThem2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tfNgaySinh)
                             .addComponent(tfTen)
-                            .addComponent(tfPhai)
                             .addComponent(tfMa))
                         .addGap(284, 284, 284))
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
-                        .addComponent(btnXoa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
-                        .addComponent(btnSua2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
-                        .addComponent(btnLoad2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)
                         .addComponent(btnTim)
-                        .addGap(0, 40, Short.MAX_VALUE))))
+                        .addGap(0, 40, Short.MAX_VALUE))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(jRadioButtonNam)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioButtonNu)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,44 +181,47 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfTen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26))
-                .addGap(13, 13, 13)
+                .addGap(14, 14, 14)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel27)
-                    .addComponent(tfPhai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jRadioButtonNam)
+                    .addComponent(jRadioButtonNu))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel28))
                 .addGap(39, 39, 39)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnThem2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnXoa2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSua2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLoad2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTim))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        tableTG.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
-                "STT", "Mã", "Tên", "Phai", "Ngay sinh"
+                "STT", "Mã", "Tên", "Phái", "Ngày sinh"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, true
+                false, false, false, true, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane6.setViewportView(jTable4);
+        tableTG.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableTGMouseClicked(evt);
+            }
+        });
+        jScrollPane6.setViewportView(tableTG);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -204,6 +243,24 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public void loadData() {
+        ArrayList<TacGia> arr = new ArrayList<TacGia>();
+        arr = tacGiaBUS.loadData();
+        int i = 0;
+        while (i <= arr.size() - 1) {
+            TacGia tacGia = arr.get(i);
+            model.addRow(new Object[] {
+                    ++i, tacGia.getMaTacGia(), tacGia.getTenTacGia(), tacGia.getGioiTinh(), Menu.MenuHand.convert(tacGia.getNgaySinh())
+            });
+            tableTG.setModel(model);
+        }
+    }
+    
+    public void refreshData() {
+        tacGiaBUS = new TacGiaBUS();
+        loadData();
+    }
+    
     private void tfMaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfMaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfMaActionPerformed
@@ -212,43 +269,156 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfTenActionPerformed
 
-    private void tfPhaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPhaiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfPhaiActionPerformed
-
     private void tfNgaySinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNgaySinhActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfNgaySinhActionPerformed
 
-    private void btnXoa2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoa2ActionPerformed
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnXoa2ActionPerformed
+        int reply = JOptionPane.showConfirmDialog(getRootPane(),
+                "Bạn có chắc muốn xoá " + tfTen.getText() + " không ?", "Chú ý",
+                JOptionPane.YES_NO_OPTION);
+        
+        ArrayList<TacGia> arr = new ArrayList<TacGia>();
+        arr = tacGiaBUS.loadData();
 
-    private void btnLoad2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoad2ActionPerformed
+        if (reply == JOptionPane.YES_OPTION) {
+            for (TacGia tacGia : arr) {
+                if (tacGia.getMaTacGia().equals(tfMa.getText().trim())) {
+                    JOptionPane.showMessageDialog(this, tacGiaBUS.delete(tacGia));                  
+                    break;
+                }
+            }
+        }
+        model.setRowCount(0);
+        refreshData();
+    }//GEN-LAST:event_btnXoaActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
         tfMa.setText("");
-        tfNgaySinh.setText("");
-        tfPhai.setText("");
         tfTen.setText("");
-    }//GEN-LAST:event_btnLoad2ActionPerformed
+        tfNgaySinh.setText("");
+        buttonGroupPhai.clearSelection();
+    }//GEN-LAST:event_btnClearActionPerformed
+
+    private void tableTGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableTGMouseClicked
+        // TODO add your handling code here:
+        int i = tableTG.getSelectedRow();
+        if (i >= 0) {
+            
+            tfMa.setText(tableTG.getModel().getValueAt(i, 1).toString());
+            tfTen.setText(tableTG.getModel().getValueAt(i, 2).toString());
+            if (tableTG.getModel().getValueAt(i, 3).toString().toUpperCase().equals("NAM")) {
+                jRadioButtonNam.setSelected(true);
+            } else {
+                jRadioButtonNu.setSelected(true);
+            }
+            tfNgaySinh.setText(tableTG.getModel().getValueAt(i, 4).toString());
+        }
+    }//GEN-LAST:event_tableTGMouseClicked
+
+    private void jRadioButtonNamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonNamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButtonNamActionPerformed
+
+    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+        // TODO add your handling code here:
+        try {
+            if (tfMa.getText().trim().equals("") || 
+                tfTen.getText().trim().equals("")|| 
+                tfNgaySinh.getText().trim().equals("")||
+                jRadioButtonNam.isSelected() == false && jRadioButtonNu.isSelected() == false) {
+                JOptionPane.showMessageDialog(this, "Vui lòng nhập đủ thông tin");
+                
+            } else {
+                TacGia tacGia = new TacGia();
+                tacGia.setMaTacGia(tfMa.getText());
+                tacGia.setTenTacGia(tfTen.getText());
+                tacGia.setNgaySinh(LocalDate.parse(tfNgaySinh.getText()));
+                if(jRadioButtonNam.isSelected())
+                    tacGia.setGioiTinh("NAM");
+                else tacGia.setGioiTinh("NỮ");
+                tacGia.setTonTai(true);
+   
+                JOptionPane.showMessageDialog(this, tacGiaBUS.add(tacGia));
+                model.setRowCount(0);
+                refreshData();
+            }
+        } catch (Exception ex) {
+            System.out.print(ex);
+        }
+        
+    }//GEN-LAST:event_btnThemActionPerformed
+
+    private void btnTimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimActionPerformed
+        // TODO add your handling code here:
+        try{
+            ArrayList<TacGia> arr = new ArrayList<TacGia>();
+            String maTacGia = tfMa.getText();
+            String tenTacGia = tfTen.getText();
+            String ngaySinh = tfNgaySinh.getText();
+            String gioiTinh = "";
+            if(jRadioButtonNam.isSelected())
+                gioiTinh += "NAM";
+            else gioiTinh += "NỮ";
+
+            arr = tacGiaBUS.search(maTacGia, tenTacGia, gioiTinh, ngaySinh);
+            if (arr.size() != 0) {
+                JOptionPane.showMessageDialog(this, "Hoàn tất tìm kiếm!");
+                model.setRowCount(0);
+                int i = 0;
+                while (i <= arr.size() - 1) {
+                    TacGia tacGia = arr.get(i);
+                    model.addRow(new Object[] {
+                            ++i,tacGia.getMaTacGia(), tacGia.getTenTacGia(), tacGia.getGioiTinh(), tacGia.getNgaySinh()
+                    });
+                }
+            } else JOptionPane.showMessageDialog(this, "Không có dữ liệu cần tìm!");
+        } catch(Exception ex) {
+            System.out.print(ex);
+        } 
+    }//GEN-LAST:event_btnTimActionPerformed
+
+    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+        // TODO add your handling code here:
+        ArrayList<TacGia> arr = new ArrayList<TacGia>();
+        arr = tacGiaBUS.loadData();
+        for (TacGia tacGia : arr) {
+            if (tacGia.getMaTacGia().equals(tfMa.getText().trim())) {
+                tacGia.setTenTacGia(tfTen.getText());               
+                if(jRadioButtonNam.isSelected())
+                    tacGia.setGioiTinh("NAM");
+                else tacGia.setGioiTinh("NỮ");
+                tacGia.setNgaySinh(LocalDate.parse(tfNgaySinh.getText()));
+                
+                JOptionPane.showMessageDialog(this, tacGiaBUS.update(tacGia));
+                break;
+            }
+        }
+        model.setRowCount(0);
+        refreshData();
+    }//GEN-LAST:event_btnSuaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnLoad2;
-    private javax.swing.JButton btnSua2;
-    private javax.swing.JButton btnThem2;
+    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnSua;
+    private javax.swing.JButton btnThem;
     private javax.swing.JButton btnTim;
-    private javax.swing.JButton btnXoa2;
+    private javax.swing.JButton btnXoa;
+    private javax.swing.ButtonGroup buttonGroupPhai;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JRadioButton jRadioButtonNam;
+    private javax.swing.JRadioButton jRadioButtonNu;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTable jTable4;
+    private javax.swing.JTable tableTG;
     private javax.swing.JTextField tfMa;
     private javax.swing.JTextField tfNgaySinh;
-    private javax.swing.JTextField tfPhai;
     private javax.swing.JTextField tfTen;
     // End of variables declaration//GEN-END:variables
 }

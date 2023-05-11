@@ -38,8 +38,13 @@ public class NhanVienBUS {
     }
     public String updateNhanVien(NhanVien nv){
         if(nhanVienDAO.update(nv)){
-            return "Sửa thành công";
-            
+            return "Sửa thành công";  
+        }
+        return "Thất bại";
+    }
+    public String addTaiKhoan(NhanVien nhanVien){
+        if(nhanVienDAO.addPhanQuyen(nhanVien)& nhanVienDAO.addTaiKhoan(nhanVien) & nhanVienDAO.editMaPQ(nhanVien)){
+            return "Thêm thành công";  
         }
         return "Thất bại";
     }

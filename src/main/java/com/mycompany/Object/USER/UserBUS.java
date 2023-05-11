@@ -11,13 +11,31 @@ import java.util.ArrayList;
  * @author khang
  */
 public class UserBUS {
-   ArrayList<User> dsUser =new ArrayList<>();
-    UserDAO userDAO=new UserDAO();
-    public UserBUS(){
-        dsUser=userDAO.readDB();
+    ArrayList<User> dsUser = new ArrayList<>();
+    UserDAO userDAO = new UserDAO();
+
+    public UserBUS() {
+        dsUser = userDAO.readDB();
     }
-    public ArrayList<User> getDSTacGia(){
+
+    public ArrayList<User> getUsers() {
         return dsUser;
     }
-    
+
+    public String updateUser(User user) {
+        if (userDAO.updateUser(user)) {
+            return "Sửa thành công";
+
+        }
+        return "Thất bại";
+    }
+
+    public String changePasswordUser(User user) {
+        if (userDAO.changePassword(user)) {
+            return "Sửa thành công";
+
+        }
+        return "Thất bại";
+    }
+
 }

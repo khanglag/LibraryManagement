@@ -53,9 +53,8 @@ public class NhanVienDAO {
                         + nhanVien.getChungMinhThu() + "','"
                         + nhanVien.getSoDienThoai() + "','"
                         + nhanVien.getDiaChi() + "',"
-                        
                         + nhanVien.getMaPQ() + ",'"
-                        
+
                         + 1 + "')");
         connectDB.closeConnect();
         return success;
@@ -77,7 +76,7 @@ public class NhanVienDAO {
                 + "', PHAI='" + nhanVien.getGioiTinh()
                 + "', NGAYSINH='" + java.sql.Date.valueOf(nhanVien.getNgaySinh())
                 + "', SDT='" + nhanVien.getSoDienThoai()
-                //+ "', TONTAI='" + nhanVien.isTonTai()
+                // + "', TONTAI='" + nhanVien.isTonTai()
                 + "' WHERE MANV ='" + nhanVien.getMaNhanVien() + "'");
         connectDB.closeConnect();
         return success;
@@ -97,5 +96,37 @@ public class NhanVienDAO {
 
         return result;
 
+    }
+
+    public boolean addPhanQuyen(NhanVien nhanVien) {
+        connectDB = new ConnectDB();
+        boolean success = connectDB
+                .sqlUpdate("insert into PHANQUYEN(MAPQ,TENQUYEN,TONTAI) values('"
+                        + nhanVien.getMaPQ() + "','"
+                        + nhanVien.getTenpq() + "','"
+                        + 1 + "')");
+        connectDB.closeConnect();
+        return success;
+    }
+
+    public boolean editMaPQ(NhanVien nhanVien) {
+        connectDB = new ConnectDB();
+        boolean success = true;
+        connectDB.sqlUpdate("UPDATE NHANVIEN SET MAPQ='" + nhanVien.getMaPQ()
+                + "' WHERE MANV ='" + nhanVien.getMaNhanVien() + "'");
+        connectDB.closeConnect();
+        return success;
+    }
+
+    public boolean addTaiKhoan(NhanVien nhanVien) {
+        connectDB = new ConnectDB();
+        boolean success = connectDB
+                .sqlUpdate("insert into taikhoan(tendn,matkhau,mapq,TONTAI) values('"
+                        + nhanVien.getTendn() + "','"
+                        + nhanVien.getMatkhau() + "','"
+                        + nhanVien.getMaPQ() + "','"
+                        + 1 + "')");
+        connectDB.closeConnect();
+        return success;
     }
 }

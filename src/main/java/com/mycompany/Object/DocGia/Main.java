@@ -17,7 +17,14 @@ public class Main {
         public static void main(String[] args) {
                 LocalDate localDate = LocalDate.of(2003, 04, 10); // Tạo 1 cái LocalDate
                 DocGiaDAO dgdao = new DocGiaDAO();
-                for (DocGia itemDocGia : dgdao.timDocGias(null, null, null, null, null, null, localDate, true))
-                        System.out.println(itemDocGia);
+                DocGiaBUS dgbus = new DocGiaBUS();
+                ArrayList<String> str= new ArrayList<>();
+                for(DocGia itempDocGia: dgbus.loadData()){
+                    str.add(itempDocGia.getMaDocGia());
+                }
+                for(String string:str)
+                {
+                    System.out.println(string);
+                }
         }
 }

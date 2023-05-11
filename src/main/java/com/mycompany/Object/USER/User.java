@@ -4,6 +4,7 @@
  */
 package com.mycompany.Object.USER;
 
+import com.mycompany.controller.TaiKhoanController;
 import java.time.LocalDate;
 
 /*
@@ -12,10 +13,34 @@ import java.time.LocalDate;
  */
 public class User {
 
-    private String maUser, tenUser, gioiTinh, chungMinhThu, diaChi, soDienThoai;
+    private String maUser, tenUser, gioiTinh, chungMinhThu, diaChi, soDienThoai, tendn, matkhau;
+
+    public String getMatkhau() {
+        return matkhau;
+    }
+
+    public void setMatkhau(String matkhau) {
+        this.matkhau = matkhau;
+    }
+
     private LocalDate ngaySinh;
 
-    public User(String maUser, String tenUser, String gioiTinh, LocalDate ngaySinh, String chungMinhThu, String diaChi, String soDienThoai) {
+    public String getTendn() {
+        return tendn;
+    }
+
+    public void setTendn(String tendn) {
+        this.tendn = tendn;
+    }
+
+    public User(String tendn) {
+        this.tendn = tendn;
+    }
+
+    public User(String matkhau, String maUser, String tenUser, String gioiTinh, LocalDate ngaySinh,
+            String chungMinhThu, String soDienThoai, String diaChi) {
+        this.tendn = TaiKhoanController.getTendnString();
+        this.matkhau = matkhau;
         this.maUser = maUser;
         this.tenUser = tenUser;
         this.gioiTinh = gioiTinh;
@@ -23,11 +48,8 @@ public class User {
         this.chungMinhThu = chungMinhThu;
         this.soDienThoai = soDienThoai;
         this.diaChi = diaChi;
-        
-        
-    }
 
-    
+    }
 
     public String getMaUser() {
         return maUser;
@@ -77,8 +99,6 @@ public class User {
         this.soDienThoai = soDienThoai;
     }
 
-
-
     public LocalDate getNgaySinh() {
         return ngaySinh;
     }
@@ -86,6 +106,5 @@ public class User {
     public void setNgaySinh(LocalDate ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
-    
 
 }

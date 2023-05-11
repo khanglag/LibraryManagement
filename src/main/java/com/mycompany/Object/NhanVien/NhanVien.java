@@ -11,7 +11,7 @@ package com.mycompany.Object.NhanVien;
 import java.time.LocalDate;
 
 public class NhanVien {
-    private String maNhanVien, tenNhanVien, gioiTinh, chungMinhThu, diaChi, soDienThoai, maPQ;
+    private String maNhanVien, tenNhanVien, gioiTinh, chungMinhThu, diaChi, soDienThoai, maPQ,tenpq,tendn,matkhau;
     private LocalDate ngaySinh;
     private boolean tonTai;
 
@@ -32,6 +32,43 @@ public class NhanVien {
     public NhanVien() {
     }
 
+    public NhanVien(String maNhanVien,String maPQ, String tenqp, String tendn, String matkhau) {
+        this.maNhanVien = maNhanVien;
+        this.maPQ = maPQ;
+        this.tenpq = tenqp;
+        this.tendn = tendn;
+        this.matkhau = matkhau;
+    }
+
+    
+    public String getTenpq() {
+        return tenpq;
+    }
+
+    public void setTenpq(String tenqp) {
+        this.tenpq = tenpq;
+    }
+
+    public String getTendn() {
+        return tendn;
+    }
+
+    public void setTendn(String tendn) {
+        this.tendn = tendn;
+    }
+
+    
+    
+
+    public String getMatkhau() {
+        return matkhau;
+    }
+
+    public void setMatkhau(String matkhau) {
+        this.matkhau = matkhau;
+    }
+
+    
     //Setter & getter
     public String getMaNhanVien() {
         return maNhanVien;

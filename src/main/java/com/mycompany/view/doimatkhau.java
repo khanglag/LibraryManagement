@@ -4,6 +4,11 @@
  */
 package com.mycompany.view;
 
+import com.mycompany.Object.USER.User;
+import com.mycompany.Object.USER.UserBUS;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author khang
@@ -13,8 +18,19 @@ public class doimatkhau extends javax.swing.JFrame {
     /**
      * Creates new form doimatkhau
      */
+    UserBUS userBUS = new UserBUS();
+    ArrayList<User> listusers = new ArrayList<User>();
+    User user = null;
+
     public doimatkhau() {
         initComponents();
+        LoadData();
+    }
+
+    public void LoadData() {
+        listusers = userBUS.getUsers();
+        user = listusers.get(0);
+
     }
 
     /**
@@ -31,10 +47,10 @@ public class doimatkhau extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        tfMatKhauCu = new javax.swing.JTextField();
-        tfMatKhauMoi = new javax.swing.JTextField();
-        tfNhapLai = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        tfMatKhauCu = new javax.swing.JPasswordField();
+        tfMatKhauMoi = new javax.swing.JPasswordField();
+        tfNhapLai = new javax.swing.JPasswordField();
+        btnDoiMatKhau = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -58,7 +74,7 @@ public class doimatkhau extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 6, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(18, 6, 0, 0);
         jPanel1.add(jLabel2, gridBagConstraints);
 
         jLabel3.setText("Nhập lại");
@@ -67,49 +83,60 @@ public class doimatkhau extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.ipadx = 20;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 6, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(18, 6, 0, 0);
         jPanel1.add(jLabel3, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 97;
+        gridBagConstraints.ipadx = 82;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 30, 0, 43);
+        gridBagConstraints.insets = new java.awt.Insets(6, 28, 0, 0);
         jPanel1.add(tfMatKhauCu, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 97;
+        gridBagConstraints.ipadx = 82;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 30, 0, 43);
+        gridBagConstraints.insets = new java.awt.Insets(15, 28, 0, 0);
         jPanel1.add(tfMatKhauMoi, gridBagConstraints);
+
+        tfNhapLai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNhapLaiActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 97;
+        gridBagConstraints.ipadx = 82;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 30, 19, 43);
+        gridBagConstraints.insets = new java.awt.Insets(15, 28, 0, 0);
         jPanel1.add(tfNhapLai, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(42, 36, 0, 49);
+        gridBagConstraints.insets = new java.awt.Insets(42, 83, 0, 0);
         getContentPane().add(jPanel1, gridBagConstraints);
 
-        jButton1.setText("Đổi mật khẩu");
+        btnDoiMatKhau.setText("Đổi mật khẩu");
+        btnDoiMatKhau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDoiMatKhauActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 205, 48, 0);
-        getContentPane().add(jButton1, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(18, 252, 59, 47);
+        getContentPane().add(btnDoiMatKhau, gridBagConstraints);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 0, 51));
@@ -118,26 +145,54 @@ public class doimatkhau extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(17, 127, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(31, 174, 0, 0);
         getContentPane().add(jLabel4, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnDoiMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoiMatKhauActionPerformed
+        // TODO add your handling code here:
+        if (tfMatKhauCu.getText().trim().equals("") || tfMatKhauMoi.getText().trim().equals("") || tfNhapLai.getText().trim().equals("")) {
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập đủ thông tin!");
+        } else if (tfMatKhauMoi.getText().trim().equals(tfNhapLai.getText().trim())) {
+            if (user.getMatkhau().equals(tfMatKhauCu.getText().trim())) {
+                int reply = JOptionPane.showConfirmDialog(getRootPane(),
+                        "Bạn có chắc muốn đổi mật khẩu không ?", "Chú ý",
+                        JOptionPane.YES_NO_OPTION);
+
+                if (reply == JOptionPane.YES_OPTION) {
+                    user.setMatkhau(tfMatKhauMoi.getText());
+                    
+                    JOptionPane.showMessageDialog(null, userBUS.changePasswordUser(user));
+                }
+                this.dispose();
+            }else{
+                JOptionPane.showMessageDialog(null, "Mật khẩu không khớp!");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Mật khẩu mới và nhập lại không khớp!");
+        }
+
+    }//GEN-LAST:event_btnDoiMatKhauActionPerformed
+
+    private void tfNhapLaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNhapLaiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNhapLaiActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnDoiMatKhau;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField tfMatKhauCu;
-    private javax.swing.JTextField tfMatKhauMoi;
-    private javax.swing.JTextField tfNhapLai;
+    private javax.swing.JPasswordField tfMatKhauCu;
+    private javax.swing.JPasswordField tfMatKhauMoi;
+    private javax.swing.JPasswordField tfNhapLai;
     // End of variables declaration//GEN-END:variables
 }

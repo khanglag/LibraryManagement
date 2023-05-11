@@ -1,32 +1,65 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.Object.DocGia; 
-import java.time.LocalDate;
+package com.mycompany.Object.DocGia;
+
 import java.util.ArrayList;
-import java.sql.SQLException;
+
 /**
  *
  * @author pc
  */
-public class DocGiaBus {
-    ArrayList<DocGia> dsdg =new ArrayList<>();
-    DocGiaDAO dgaoAO=new DocGiaDAO();
-    public DocGiaBus(){
-        dsdg=dgaoAO.readDB();
+public class DocGiaBUS {
+    ArrayList<DocGia> dsDocGia = new ArrayList<DocGia>();
+    DocGiaDAO docGiaDAO = new DocGiaDAO();
+
+    public DocGiaBUS() {
+        dsDocGia = docGiaDAO.readDB();
     }
-    //Lay danh sach doc gia con ton tai
-    public ArrayList<DocGia> getDocGiads(){
-        ArrayList<DocGia> dgtempArrayList=new ArrayList<DocGia>();
-        for(DocGia itemDocGia:dsdg)
-        {
-            if(itemDocGia.isTonTai()) dgtempArrayList.add(itemDocGia);
+
+    public ArrayList<DocGia> loadData() {
+        return dsDocGia;
+    }
+
+    public String delete(DocGia docGia) {
+        if (docGiaDAO.delete(docGia))
+            return "Đã xoá";
+        return "Không thể xoá";
+    }
+
+    public String add(DocGia docGia) {
+        if (docGiaDAO.hasID(docGia.getMaDocGia()))
+            return "Mã đọc giả đã tồn tại";
+        if (docGiaDAO.add(docGia))
+            return "Thêm thành công";
+        return "Thêm thất bại";
+    }
+
+    public String update(DocGia docGia) {
+        if (docGiaDAO.update(docGia)) {
+            return "Sửa thành công";
         }
-        return dgtempArrayList;
+        return "Thất bại";
     }
-    public void add(String maDG)
-    {
+
+    public ArrayList<DocGia> search(String maDocGia, String tenDocGia, String CCCD, String gioiTinh, String ngaySinh,
+            String SDT, String diaChi) {
+        dsDocGia = docGiaDAO.search(maDocGia, tenDocGia, CCCD, gioiTinh, ngaySinh, SDT, diaChi);
+        return dsDocGia;
+    }
+
+    public String addTaiKhoan(DocGia nhanVien) {
+        if (docGiaDAO.hasTenDN(nhanVien.getTendn())) {
+            return "Tên đăng nhập đã tồn tại";
+        } else {
+            if (docGiaDAO.addPhanQuyen(nhanVien) & docGiaDAO.addTaiKhoan(nhanVien) & docGiaDAO.editMaPQ(nhanVien)) {
+                return "Thêm thành công";
+            }
+        }
         
+        return "Thất bại";
     }
+
 }
