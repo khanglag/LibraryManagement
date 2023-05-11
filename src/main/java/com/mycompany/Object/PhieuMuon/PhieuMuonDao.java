@@ -36,7 +36,8 @@ public class PhieuMuonDAO {
     public ArrayList<PhieuMuon> readDB() {
         connectDB = new ConnectDB();
         try {
-            String qry = "SELECT *FROM PHIEUMUON WHERE TONTAI = 1";
+
+            String qry = "SELECT *FROM PHIEUMUON ";
             ResultSet rset = connectDB.sqlQuery(qry);
             if (rset != null) {
                 while (rset.next()) {
@@ -75,15 +76,23 @@ public class PhieuMuonDAO {
     public boolean delete(PhieuMuon sa) {
         connectDB = new ConnectDB();
         boolean success = connectDB
-                .sqlUpdate("UPDATE PHIEUMUON SET TONTAI = 'FALSE' WHERE MAPHIEUMUON ='" + sa.getMaPhieu() + "'");
-        System.out.println("UPDATE PHIEUMUON SET TONTAI = 'FALSE' WHERE MAPHIEUMUON ='" + sa.getMaPhieu() + "'");
+                .sqlUpdate("UPDATE PHIEUMUON SET TONTAI = 0 WHERE MAPHIEUMUON ='" + sa.getMaPhieu() + "'");
+        System.out.println("UPDATE PHIEUMUON SET TONTAI = 0 WHERE MAPHIEUMUON ='" + sa.getMaPhieu() + "'");
         connectDB.closeConnect();
         return success;
     }
 
     public boolean update(PhieuMuon pm) {
         connectDB = new ConnectDB();
-        boolean success = connectDB.sqlUpdate("UPDATE ");
+        
+        boolean success = connectDB.sqlUpdate("UPDATE PHIEUMUON SET "
+                + "MADG= '" + pm.getMaDocGia() + "'"
+                +", MASA= '" +pm.getMaSach()  + "'"
+                +", MANV= '" + pm.getMaNhanVien() + "'"
+                +", SOLUONG= '" + pm.getSoLuong() + "'"
+                +", NGAYMUON= '" + java.sql.Date.valueOf(pm.getNgayMuon()) + "'"
+                +", HANTRA= '" + java.sql.Date.valueOf(pm.getNgayTra()) + "'"
+                + " WHERE MAPHIEUMUON ='" + pm.getMaPhieu() + "'");
         connectDB.closeConnect();
         return success;
     }
@@ -94,18 +103,18 @@ public class PhieuMuonDAO {
         connectDB = new ConnectDB();
         ArrayList<PhieuMuon> ketqua = new ArrayList<PhieuMuon>();
         String qry = "SELECT *FROM PHIEUMUON WHERE TONTAI= 1";
-        if (maPhieu != null)
+        if (maPhieu.equals("") != true)
             qry += (" AND MAPHIEUMUON= '" + maPhieu + "'");
-        if (maDocGia != null)
+        if (maDocGia .equals("") != true)
             qry += (" AND MADG= '" + maDocGia + "'");
-        if (maSach != null)
+        if (maSach .equals("") != true)
             qry += (" AND MASA= '" + maSach + "'");
-        if (maNhanVien != null)
+        if (maNhanVien .equals("") != true)
             qry += (" AND MANV= '" + maNhanVien + "'");
-        if (ngayMuon != null)
+        if (ngayMuon .equals("") != true)
             qry += (" AND NGAYMUON= '" + java.sql.Date.valueOf(ngayMuon) + "'");
-        if (ngayTra != null)
-            qry += (" AND NGAYMUON= '" + java.sql.Date.valueOf(ngayTra) + "'");
+        if (ngayTra .equals("") != true)
+            qry += (" AND HANTRA= '" + java.sql.Date.valueOf(ngayTra) + "'");
         System.out.println(qry);
         ResultSet rset = connectDB.sqlQuery(qry);
         try {

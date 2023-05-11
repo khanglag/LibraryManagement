@@ -49,8 +49,8 @@ public class SachBUS {
     }
 
     public ArrayList<Sach> search(String maSach, String tenSach, String tinhTrang, String theLoai, String maTacGia,
-            String maNXB, String anh, String soTrang, String lanXuatBan, String soLuong, String gia) {
-        dsSach = sachDAO.search(maSach, tenSach, tinhTrang, theLoai, maTacGia, maNXB, anh, soTrang, lanXuatBan, soLuong,
+            String maNXB, String soTrang, String lanXuatBan, String soLuong, String gia) {
+        dsSach = sachDAO.search(maSach, tenSach, tinhTrang, theLoai, maTacGia, maNXB, soTrang, lanXuatBan, soLuong,
                 gia);
         return dsSach;
     }

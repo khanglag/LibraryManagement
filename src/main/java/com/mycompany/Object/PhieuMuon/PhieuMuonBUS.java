@@ -25,7 +25,10 @@ public class PhieuMuonBUS {
    public String getMaphieumuon(){
        return sophieumuon+"";
    }
-   
+   public ArrayList<PhieuMuon> timMuons(String maPhieu, String maDocGia, String maSach, String maNhanVien, LocalDate ngayMuon,
+            LocalDate ngayTra, int tonTai){
+       return pmdao.timPhieuMuons(maPhieu, maDocGia, maSach, maNhanVien, ngayMuon, ngayTra, tonTai);
+   }
    public void them(PhieuMuon pm){
        SachBUS sbus= new SachBUS();
        if (sbus.Muon(pm.getMaSach(),pm.getSoLuong())) {
@@ -33,5 +36,17 @@ public class PhieuMuonBUS {
            JOptionPane.showMessageDialog(null,"Mượn thành công");
        }
        else JOptionPane.showMessageDialog(null,"Không mượn được");
+   }
+   public void update(PhieuMuon pm){
+       if (pmdao.update(pm)) {
+          JOptionPane.showMessageDialog(null,"Sửa thành công");
+       }
+       else JOptionPane.showMessageDialog(null,"Sửa thất bại");
+       
+   }
+   public void xoa(PhieuMuon pm){
+       if(pmdao.delete(pm))
+           JOptionPane.showMessageDialog(null,"Xoá thành công");
+       else JOptionPane.showMessageDialog(null,"Xoá thất bại");
    }
 }

@@ -5,8 +5,20 @@
 package com.mycompany.view.employee;
 
 import com.mycompany.Object.NhaXuatBan.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import javax.swing.table.*;
+
+import org.apache.commons.math3.stat.descriptive.summary.Product;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import javax.swing.*;
 
 
@@ -48,6 +60,7 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
         btnLoad = new javax.swing.JButton();
         btnTim = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
+        btnInExcel = new javax.swing.JButton();
         jPanel19 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         tableNXB = new javax.swing.JTable();
@@ -117,6 +130,13 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnInExcel.setText("In Excel");
+        btnInExcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInExcelActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -145,7 +165,9 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
                         .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(177, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnInExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,7 +187,8 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
                     .addComponent(btnThem, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSua, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnInExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(81, Short.MAX_VALUE))
         );
 
@@ -183,6 +206,11 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        tableNXB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableNXBMouseClicked(evt);
             }
         });
         jScrollPane7.setViewportView(tableNXB);
@@ -263,6 +291,67 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
         refreshData();
     }//GEN-LAST:event_btnSuaActionPerformed
 
+    private void tableNXBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableNXBMouseClicked
+        // TODO add your handling code here:
+        int i = tableNXB.getSelectedRow();
+        if (i >= 0) {
+            tfMaNXB.setText(tableNXB.getModel().getValueAt(i, 1).toString());
+            tfTenNXB.setText(tableNXB.getModel().getValueAt(i, 2).toString());
+        }
+    }//GEN-LAST:event_tableNXBMouseClicked
+
+    private void btnInExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInExcelActionPerformed
+        // TODO add your handling code here:
+        try{
+            JFileChooser fChooser = new JFileChooser();
+            int choose = fChooser.showSaveDialog(null);
+            if(choose == JFileChooser.APPROVE_OPTION) {
+                XSSFWorkbook workbook = new XSSFWorkbook();
+                XSSFSheet sheet = workbook.createSheet("Product");
+                XSSFRow row = null;
+                Cell cell = null;
+                row = sheet.createRow(3);
+
+                cell = row.createCell(0, CellType.STRING);
+                cell.setCellValue("STT");
+
+                cell = row.createCell(1, CellType.STRING);
+                cell.setCellValue("Mã nhà xuất bản");
+
+                cell = row.createCell(2, CellType.STRING);
+                cell.setCellValue("Tên nhà xuất bản");
+
+                ArrayList<NhaXuatBan> arr = NXBBUS.LoadData();
+
+                for(int i = 0; i < arr.size(); i++) {
+                    row = sheet.createRow(4 + i);
+
+                    cell = row.createCell(0, CellType.NUMERIC);
+                    cell.setCellValue(i + 1);
+
+                    cell = row.createCell(1, CellType.STRING);
+                    cell.setCellValue(arr.get(i).getMaNXB());
+
+                    cell = row.createCell(2, CellType.STRING);
+                    cell.setCellValue(arr.get(i).getTenNXB());
+                }
+
+                File file = new File(fChooser.getSelectedFile().toString() + ".xlsx");
+                try {
+                    FileOutputStream fo = new FileOutputStream(file);
+                    workbook.write(fo);
+                    JOptionPane.showMessageDialog(this, "Đã in!");
+                    fo.close();
+                } catch(FileNotFoundException e) {
+                    System.out.println(e);
+                }
+            }
+            
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_btnInExcelActionPerformed
+
     public void loadData() {
         ArrayList<NhaXuatBan> arr = new ArrayList<NhaXuatBan>();
         arr = NXBBUS.LoadData();
@@ -341,6 +430,7 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnInExcel;
     private javax.swing.JButton btnLoad;
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnThem;

@@ -55,6 +55,8 @@
                   <Component id="btnClear" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="39" pref="39" max="-2" attributes="0"/>
                   <Component id="btnTim" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btnInExcel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" attributes="0">
@@ -89,7 +91,7 @@
                       </Group>
                   </Group>
                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="tfMaNhaXuatBan" min="-2" pref="205" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
@@ -110,6 +112,8 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
                           <Component id="btnChonAnhSach" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="btnLamMoi" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -172,7 +176,10 @@
                                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                                   <Component id="tfGia" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
-                                  <Component id="btnChonAnhSach" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="btnChonAnhSach" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnLamMoi" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
@@ -188,7 +195,10 @@
                       <Component id="btnXoa" min="-2" pref="76" max="-2" attributes="0"/>
                       <Component id="btnSua" min="-2" pref="82" max="-2" attributes="0"/>
                       <Component id="btnClear" min="-2" pref="76" max="-2" attributes="0"/>
-                      <Component id="btnTim" min="-2" pref="76" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnTim" alignment="3" min="-2" pref="76" max="-2" attributes="0"/>
+                          <Component id="btnInExcel" alignment="3" min="-2" pref="76" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
           </Group>
@@ -346,6 +356,22 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Tim"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnLamMoi">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="L&#xe0;m m&#x1edb;i"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLamMoiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnInExcel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="In Excel"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInExcelActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

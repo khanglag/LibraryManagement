@@ -66,6 +66,7 @@ public class ConnectDB {
             System.out.println("**\n" + countConection + ": Success! Đã kết nối tới '" + DB + "'");
 
         } catch (SQLException e) {
+            System.out.println(e);
             System.err.println("-- ERROR! Không thể kết nối tới '" + DB + "'");
             JOptionPane.showMessageDialog(null, "-- ERROR! Không thể kết nối tới '" + DB + "'");
         }
@@ -121,7 +122,7 @@ public class ConnectDB {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String url ="jdbc:mysql://localhost:3306/qltv";
-            //cons = DriverManager.getConnection(url, "root", "200303410");
+         //  cons = DriverManager.getConnection(url, "root", "200303410");
             cons = DriverManager.getConnection(url, "root", "");
         } catch (Exception e) {
             e.printStackTrace();

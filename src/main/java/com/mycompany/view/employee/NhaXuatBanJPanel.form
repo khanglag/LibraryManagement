@@ -79,7 +79,9 @@
                           <Component id="btnLoad" min="-2" pref="79" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="177" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnInExcel" min="-2" pref="85" max="-2" attributes="0"/>
+                  <EmptySpace pref="86" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -104,6 +106,7 @@
                       <Component id="btnXoa" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnSua" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
                       <Component id="btnLoad" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnInExcel" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="81" max="32767" attributes="0"/>
               </Group>
@@ -200,6 +203,14 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JButton" name="btnInExcel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="In Excel"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInExcelActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel19">
@@ -263,6 +274,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tableNXBMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

@@ -4,6 +4,8 @@
  */
 package com.mycompany.view;
 import com.mycompany.view.employee.*;
+import com.mycompany.view.employee.QL.QuanLyNhanVienJPanel;
+
 import java.awt.BorderLayout;
 
 /**
@@ -78,8 +80,8 @@ public class test extends javax.swing.JFrame {
                 test a = new test();
                 a.setVisible(true);
                 a.setLayout(new BorderLayout());
-                a.add(new QuanLyTacGiaJPanel(),BorderLayout.CENTER);
-                //a.add(new QuanLySachJPanel(),BorderLayout.CENTER);
+                a.add(new QuanLyNhanVienJPanel(),BorderLayout.CENTER);
+                //a.add(new QuanLyDocGiaJPanel(),BorderLayout.CENTER);
             }
         });
     }
