@@ -62,7 +62,7 @@ public class MainJFrameQL extends javax.swing.JFrame {
 
         jpnRoot = new javax.swing.JPanel();
         jpnView = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPaneMenu = new javax.swing.JScrollPane();
         jpnMenu = new javax.swing.JPanel();
         jpnTrangChu = new javax.swing.JPanel();
         jlbTrangChu = new javax.swing.JLabel();
@@ -104,7 +104,7 @@ public class MainJFrameQL extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
+        jScrollPaneMenu.setBackground(new java.awt.Color(0, 0, 0));
 
         jpnMenu.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -159,7 +159,7 @@ public class MainJFrameQL extends javax.swing.JFrame {
 
         jlbDocGia.setForeground(new java.awt.Color(255, 255, 255));
         jlbDocGia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/icons8-reader-64.png"))); // NOI18N
-        jlbDocGia.setText("Đọc giả");
+        jlbDocGia.setText("Độc giả");
 
         javax.swing.GroupLayout jpnDocGiaLayout = new javax.swing.GroupLayout(jpnDocGia);
         jpnDocGia.setLayout(jpnDocGiaLayout);
@@ -406,21 +406,21 @@ public class MainJFrameQL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jScrollPane1.setViewportView(jpnMenu);
+        jScrollPaneMenu.setViewportView(jpnMenu);
 
         javax.swing.GroupLayout jpnRootLayout = new javax.swing.GroupLayout(jpnRoot);
         jpnRoot.setLayout(jpnRootLayout);
         jpnRootLayout.setHorizontalGroup(
             jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnRootLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPaneMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnRootLayout.setVerticalGroup(
             jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
+            .addComponent(jScrollPaneMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -464,7 +464,7 @@ public class MainJFrameQL extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDangXuat;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPaneMenu;
     private javax.swing.JLabel jlbDocGia;
     private javax.swing.JLabel jlbNhaXuaBan;
     private javax.swing.JLabel jlbNhanVien;
