@@ -158,7 +158,7 @@ public class MainJFrameTT extends javax.swing.JFrame {
 
         jlbDocGia.setForeground(new java.awt.Color(255, 255, 255));
         jlbDocGia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/icons8-reader-64.png"))); // NOI18N
-        jlbDocGia.setText("Đọc giả");
+        jlbDocGia.setText("Độc giả");
 
         javax.swing.GroupLayout jpnDocGiaLayout = new javax.swing.GroupLayout(jpnDocGia);
         jpnDocGia.setLayout(jpnDocGiaLayout);

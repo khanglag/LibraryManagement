@@ -394,7 +394,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         try {
              PhieuMuon pm= new PhieuMuon();
              PhieuMuonBUS pmbus=new PhieuMuonBUS();
-             pm.setMaPhieu(pmbus.getMaphieumuon());
+             pm.setMaPhieu(Menu.MenuHand.FormatString(pmbus.getMaphieumuon()));
              pm.setMaDocGia(jComboBoxMaDocGia. getSelectedItem().toString());
              pm.setMaNhanVien(jComboBoxMaNhanVien.getSelectedItem().toString());
              pm.setMaSach(jComboBoxMaSach.getSelectedItem().toString());
@@ -557,9 +557,10 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     public void showtable(){
         PhieuMuonBUS pmbus= new PhieuMuonBUS();
         model.setRowCount(0);
+        int i =0;
         for(PhieuMuon itMuon:pmbus.loadData()){
             if (itMuon.isTonTai()==1) {
-               Object[] rowData={itMuon.getMaPhieu(),MenuHand.FormatString(itMuon.getMaPhieu()),itMuon.getMaDocGia(),itMuon.getMaSach(),itMuon.getMaNhanVien(),MenuHand.convert(itMuon.getNgayMuon()),MenuHand.convert(itMuon.getNgayTra()),itMuon.getSoLuong(),itMuon.isTonTai()};
+               Object[] rowData={++i,MenuHand.FormatString(itMuon.getMaPhieu()),itMuon.getMaDocGia(),itMuon.getMaSach(),itMuon.getMaNhanVien(),MenuHand.convert(itMuon.getNgayMuon()),MenuHand.convert(itMuon.getNgayTra()),itMuon.getSoLuong(),itMuon.isTonTai()};
             model.addRow(rowData); 
             }      
         }

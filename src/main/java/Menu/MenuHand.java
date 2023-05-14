@@ -54,6 +54,7 @@ public class MenuHand {
             d = date.toInstant().atZone(defaultZoneId).toLocalDate();
         return d;
     }
+  
 
     public static int TruDate(LocalDate date1, LocalDate date2) {
         long diffDays = ChronoUnit.DAYS.between(date1, date2);

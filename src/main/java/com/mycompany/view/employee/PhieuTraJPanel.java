@@ -494,8 +494,6 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
                         for (PhieuMuon pm : pmbus.loadData()) {
                                 System.out.println(pm.getMaPhieu());
                                 if (tfMaPhieuMuon.getText().equals(pm.getMaPhieu())) {
-                                        System.out.println(
-                                                        "com.mycompany.view.employee.PhieuTraJPanel.btnLoadActionPerformed()");
                                         tfMaDG.setText(pm.getMaDocGia());
                                         tfMaSach.setText(pm.getMaSach());
                                         tfHanTra.setText(Menu.MenuHand.convert(pm.getNgayTra()));
