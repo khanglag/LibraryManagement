@@ -88,9 +88,13 @@ create table TAIKHOAN(
 );
 create table THETHUVIEN(
 	MATHE char(10) primary key not null,
-	NGAYCAP date,
-	HSD date,
 	MADG char (6),
+	TENDG varchar(20),
+	NGAYCAP date,
+
+
+	HSD date,
+	
 	foreign key(MADG) references DOCGIA(MADG),
 	TONTAI boolean
 );

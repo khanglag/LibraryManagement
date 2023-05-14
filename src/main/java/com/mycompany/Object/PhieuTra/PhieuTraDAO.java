@@ -44,7 +44,6 @@ public class PhieuTraDAO {
                             rset.getNString("TINHTRANG"),
                             rset.getInt("SONGAYQUAHAN"),
                             rset.getInt("TONTAI")
-
                     );
 
                     dsPhieuTra.add(phieuTra);
@@ -77,7 +76,6 @@ public class PhieuTraDAO {
                             rset.getNString("TINHTRANG"),
                             rset.getInt("SONGAYQUAHAN"),
                             rset.getInt("TONTAI")
-
                     );
 
                     ds.add(phieuTra);
@@ -89,6 +87,7 @@ public class PhieuTraDAO {
         connectDB.closeConnect();
         return ds;
     }
+
     public int getsophieutra() {
         return gets().size();
     }
@@ -98,17 +97,17 @@ public class PhieuTraDAO {
         boolean success = connectDB
                 .sqlUpdate(
                         "insert into PHIEUTRA(MAPHIEUTRA,MAPHIEUMUON,MADG,MASA,MANV,HANTRA,NGAYTRA,SOLUONG,TINHTRANG,SONGAYQUAHAN,TONTAI	) values('"
-                                + phieuTra.getMaPhieu() + "','"
-                                + phieuTra.getMaPhieuMuon() + "','"
-                                + phieuTra.getMaDocGia() + "','"
-                                + phieuTra.getMaSach() + "','"
-                                + phieuTra.getMaNhanVien() + "','"
-                                + java.sql.Date.valueOf(phieuTra.getHanTra()) + "','"
-                                + java.sql.Date.valueOf(phieuTra.getNgayTra()) + "',"
-                                + phieuTra.getSoLuong() + ",'"
-                                + phieuTra.getTinhTrang() + "',"
-                                + phieuTra.getSoNgayQuaHan() + ","
-                                + 1 + ")");
+                        + phieuTra.getMaPhieu() + "','"
+                        + phieuTra.getMaPhieuMuon() + "','"
+                        + phieuTra.getMaDocGia() + "','"
+                        + phieuTra.getMaSach() + "','"
+                        + phieuTra.getMaNhanVien() + "','"
+                        + java.sql.Date.valueOf(phieuTra.getHanTra()) + "','"
+                        + java.sql.Date.valueOf(phieuTra.getNgayTra()) + "',"
+                        + phieuTra.getSoLuong() + ",'"
+                        + phieuTra.getTinhTrang() + "',"
+                        + phieuTra.getSoNgayQuaHan() + ","
+                        + 1 + ")");
         String s = "INSERT into phieutra (MAPHIEUTRA,MAPHIEUMUON,MADG,MASA,MANV,HANTRA,NGAYTRA,SOLUONG,TINHTRANG,SONGAYQUAHAN,TONTAI) VALUES ( '000001','2','000001','DNT001',null,null,null,2,null,null,1 );";
         connectDB.closeConnect();
         return success;
@@ -123,20 +122,20 @@ public class PhieuTraDAO {
         return success;
     }
 
-    // public boolean update(PhieuTra phieuTra) {
-    // connectDB = new ConnectDB();
-    // boolean success = true;
-    // connectDB.sqlUpdate("UPDATE PHIEUTRA SET MANV='" + phieuTra.getMaNhanVien()
-    // + "', MADG='" + phieuTra.getMaDocGia()
-    // + "', MASA='" + phieuTra.getMaSach()
-    // +
-    // java.sql.Date.valueOf(nhanVien.getNgaySinh())
-    // + "', SDT='" + nhanVien.getSoDienThoai()
-    // //+ "', TONTAI='" + nhanVien.isTonTai()
-    // + "' WHERE MANV ='" + phieuTra.getMaPhieu() + "'");
-    // connectDB.closeConnect();
-    // return success;
-    // }
+//    public boolean update(PhieuTra phieuTra) {
+//        connectDB = new ConnectDB();
+//        boolean success = true;
+//        connectDB.sqlUpdate("UPDATE PHIEUTRA SET MANV='" + phieuTra.getMaNhanVien()
+//                + "', MADG='" + phieuTra.getMaDocGia()
+//                + "', MASA='" + phieuTra.getMaSach()
+//                + java.sql.Date.valueOf(nhanVien.getNgaySinh())
+//                + "', SDT='" + nhanVien.getSoDienThoai()
+//                //+ "', TONTAI='" + nhanVien.isTonTai()
+//                + "' WHERE MAPHIEUTRA ='" + phieuTra.getMaPhieu() + "'");
+//        connectDB.closeConnect();
+//        return success;
+//    }
+
     public boolean loadDatafromPhieuMuon(String maphieumuon) {
         connectDB = new ConnectDB();
         boolean success = false;
