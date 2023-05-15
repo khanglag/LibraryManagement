@@ -49,7 +49,7 @@ public class MainJFrameKH extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jpnRoot = new javax.swing.JPanel();
@@ -80,18 +80,19 @@ public class MainJFrameKH extends javax.swing.JFrame {
         javax.swing.GroupLayout jpnTrangChuLayout = new javax.swing.GroupLayout(jpnTrangChu);
         jpnTrangChu.setLayout(jpnTrangChuLayout);
         jpnTrangChuLayout.setHorizontalGroup(
-                jpnTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jpnTrangChuLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jlbTrangChu, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addContainerGap()));
+            jpnTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnTrangChuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbTrangChu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
         jpnTrangChuLayout.setVerticalGroup(
-                jpnTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jpnTrangChuLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jlbTrangChu, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                                .addContainerGap()));
+            jpnTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnTrangChuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbTrangChu, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         jpnQuanLyMuon.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -102,18 +103,19 @@ public class MainJFrameKH extends javax.swing.JFrame {
         javax.swing.GroupLayout jpnQuanLyMuonLayout = new javax.swing.GroupLayout(jpnQuanLyMuon);
         jpnQuanLyMuon.setLayout(jpnQuanLyMuonLayout);
         jpnQuanLyMuonLayout.setHorizontalGroup(
-                jpnQuanLyMuonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jpnQuanLyMuonLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jlbQuanLyMuon, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addContainerGap()));
+            jpnQuanLyMuonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnQuanLyMuonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbQuanLyMuon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
         jpnQuanLyMuonLayout.setVerticalGroup(
-                jpnQuanLyMuonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jpnQuanLyMuonLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jlbQuanLyMuon, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                                .addContainerGap()));
+            jpnQuanLyMuonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnQuanLyMuonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbQuanLyMuon, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         jpnQuanLyTra.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -123,18 +125,19 @@ public class MainJFrameKH extends javax.swing.JFrame {
         javax.swing.GroupLayout jpnQuanLyTraLayout = new javax.swing.GroupLayout(jpnQuanLyTra);
         jpnQuanLyTra.setLayout(jpnQuanLyTraLayout);
         jpnQuanLyTraLayout.setHorizontalGroup(
-                jpnQuanLyTraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jpnQuanLyTraLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jlbQuanLyTra, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addContainerGap()));
+            jpnQuanLyTraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnQuanLyTraLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbQuanLyTra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
         jpnQuanLyTraLayout.setVerticalGroup(
-                jpnQuanLyTraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jpnQuanLyTraLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jlbQuanLyTra, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                                .addContainerGap()));
+            jpnQuanLyTraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnQuanLyTraLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbQuanLyTra, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         jpnThongTinTaiKhoan.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -144,19 +147,19 @@ public class MainJFrameKH extends javax.swing.JFrame {
         javax.swing.GroupLayout jpnThongTinTaiKhoanLayout = new javax.swing.GroupLayout(jpnThongTinTaiKhoan);
         jpnThongTinTaiKhoan.setLayout(jpnThongTinTaiKhoanLayout);
         jpnThongTinTaiKhoanLayout.setHorizontalGroup(
-                jpnThongTinTaiKhoanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jpnThongTinTaiKhoanLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jlbThongTinTaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 165,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+            jpnThongTinTaiKhoanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnThongTinTaiKhoanLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbThongTinTaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
         jpnThongTinTaiKhoanLayout.setVerticalGroup(
-                jpnThongTinTaiKhoanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jpnThongTinTaiKhoanLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jlbThongTinTaiKhoan, javax.swing.GroupLayout.DEFAULT_SIZE, 48,
-                                        Short.MAX_VALUE)
-                                .addContainerGap()));
+            jpnThongTinTaiKhoanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnThongTinTaiKhoanLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jlbThongTinTaiKhoan, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -174,94 +177,80 @@ public class MainJFrameKH extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnDangXuat, javax.swing.GroupLayout.PREFERRED_SIZE, 162,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)));
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnDangXuat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+        );
         jPanel1Layout.setVerticalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnDangXuat, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE));
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnDangXuat, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jpnMenuLayout = new javax.swing.GroupLayout(jpnMenu);
         jpnMenu.setLayout(jpnMenuLayout);
         jpnMenuLayout.setHorizontalGroup(
-                jpnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jpnMenuLayout.createSequentialGroup()
-                                .addGroup(jpnMenuLayout
-                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jpnTrangChu, javax.swing.GroupLayout.Alignment.LEADING,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jpnQuanLyMuon, javax.swing.GroupLayout.Alignment.LEADING,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jpnQuanLyTra, javax.swing.GroupLayout.Alignment.LEADING,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jpnThongTinTaiKhoan, javax.swing.GroupLayout.Alignment.LEADING,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                        .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+            jpnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnMenuLayout.createSequentialGroup()
+                .addGroup(jpnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jpnTrangChu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jpnQuanLyMuon, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jpnQuanLyTra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jpnThongTinTaiKhoan, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
         jpnMenuLayout.setVerticalGroup(
-                jpnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jpnMenuLayout.createSequentialGroup()
-                                .addComponent(jpnTrangChu, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jpnQuanLyMuon, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jpnQuanLyTra, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jpnThongTinTaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 232, Short.MAX_VALUE)));
+            jpnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnMenuLayout.createSequentialGroup()
+                .addComponent(jpnTrangChu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpnQuanLyMuon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpnQuanLyTra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpnThongTinTaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 232, Short.MAX_VALUE))
+        );
 
         jpnView.setBackground(new java.awt.Color(51, 51, 51));
 
         javax.swing.GroupLayout jpnViewLayout = new javax.swing.GroupLayout(jpnView);
         jpnView.setLayout(jpnViewLayout);
         jpnViewLayout.setHorizontalGroup(
-                jpnViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 741, Short.MAX_VALUE));
+            jpnViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 741, Short.MAX_VALUE)
+        );
         jpnViewLayout.setVerticalGroup(
-                jpnViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 0, Short.MAX_VALUE));
+            jpnViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jpnRootLayout = new javax.swing.GroupLayout(jpnRoot);
         jpnRoot.setLayout(jpnRootLayout);
         jpnRootLayout.setHorizontalGroup(
-                jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jpnRootLayout.createSequentialGroup()
-                                .addComponent(jpnMenu, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jpnView, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+            jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnRootLayout.createSequentialGroup()
+                .addComponent(jpnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jpnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
         jpnRootLayout.setVerticalGroup(
-                jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jpnMenu, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jpnView, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jpnMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jpnRoot, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jpnRoot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jpnRoot, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jpnRoot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

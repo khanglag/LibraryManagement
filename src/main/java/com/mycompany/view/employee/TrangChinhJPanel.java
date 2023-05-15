@@ -47,27 +47,12 @@ public class TrangChinhJPanel extends javax.swing.JPanel {
         jLabelTen = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(51, 51, 51));
+        setLayout(new java.awt.GridLayout());
 
         jLabelTen.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabelTen.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTen.setText("jLabel1");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabelTen, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE)
-                .addGap(19, 19, 19))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(119, 119, 119)
-                .addComponent(jLabelTen, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(138, Short.MAX_VALUE))
-        );
+        add(jLabelTen);
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -86,35 +86,40 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPopupMenuNV = new javax.swing.JPopupMenu();
         jMenuItemNV = new javax.swing.JMenuItem();
         Phai = new javax.swing.ButtonGroup();
         jPanel7 = new javax.swing.JPanel();
-        jLabel39 = new javax.swing.JLabel();
-        tfMaNV = new javax.swing.JTextField();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        tfSDT = new javax.swing.JTextField();
-        tfTenNV = new javax.swing.JTextField();
-        tfDiaChi = new javax.swing.JTextField();
-        tfNgaySinh = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jRadioButtonNam = new javax.swing.JRadioButton();
-        jRadioButtonNu = new javax.swing.JRadioButton();
-        jLabel2 = new javax.swing.JLabel();
-        tfCCCD = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        btnInExcel = new javax.swing.JButton();
-        btnTim = new javax.swing.JButton();
-        btnClear = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btnThem = new javax.swing.JButton();
         btnXoa = new javax.swing.JButton();
         btnSua = new javax.swing.JButton();
         btnLoad = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        btnInExcel = new javax.swing.JButton();
+        btnTim = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        tfMaNV = new javax.swing.JTextField();
+        tfTenNV = new javax.swing.JTextField();
+        jPanel6 = new javax.swing.JPanel();
+        jRadioButtonNam = new javax.swing.JRadioButton();
+        jRadioButtonNu = new javax.swing.JRadioButton();
+        tfNgaySinh = new javax.swing.JTextField();
+        tfCCCD = new javax.swing.JTextField();
+        tfSDT = new javax.swing.JTextField();
+        tfDiaChi = new javax.swing.JTextField();
         jScrollPane10 = new javax.swing.JScrollPane();
         jTableNhanVien = new javax.swing.JTable();
 
@@ -137,58 +142,15 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
         });
         jPopupMenuNV.add(jMenuItemNV);
 
-        jLabel39.setText("Mã NV");
-
-        jLabel40.setText("Tên");
-
-        jLabel41.setText("Số điện thoại");
-
-        jLabel42.setText("Địa chỉ");
-
-        jLabel43.setText("Ngày sinh");
-
-        jLabel1.setText("Phai");
-
-        Phai.add(jRadioButtonNam);
-        jRadioButtonNam.setText("Nam");
-        jRadioButtonNam.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonNamActionPerformed(evt);
-            }
-        });
-
-        Phai.add(jRadioButtonNu);
-        jRadioButtonNu.setText("Nữ");
-        jRadioButtonNu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonNuActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setText("CCCD");
+        jPanel7.setLayout(new java.awt.GridBagLayout());
 
         jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.Y_AXIS));
-
-        btnInExcel.setText("In Excel");
-        btnInExcel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInExcelActionPerformed(evt);
-            }
-        });
-
-        btnTim.setText("Tìm");
-        btnTim.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTimActionPerformed(evt);
-            }
-        });
-
-        btnClear.setText("Clear");
-        btnClear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClearActionPerformed(evt);
-            }
-        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 76);
+        jPanel7.add(jPanel1, gridBagConstraints);
 
         jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.LINE_AXIS));
 
@@ -236,95 +198,120 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(btnLoad);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel39)
-                                    .addComponent(jLabel40)
-                                    .addComponent(jLabel42))
-                                .addGap(93, 93, 93)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tfMaNV)
-                                    .addComponent(tfTenNV)
-                                    .addComponent(tfDiaChi)
-                                    .addComponent(tfSDT)
-                                    .addComponent(tfNgaySinh)
-                                    .addGroup(jPanel7Layout.createSequentialGroup()
-                                        .addComponent(jRadioButtonNam)
-                                        .addGap(31, 31, 31)
-                                        .addComponent(jRadioButtonNu))
-                                    .addComponent(tfCCCD, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel43)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel41))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnInExcel)
-                            .addComponent(btnTim)
-                            .addComponent(btnClear))
-                        .addGap(125, 125, 125)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(76, 76, 76))))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel39)
-                            .addComponent(tfMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfTenNV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel40))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jRadioButtonNam)
-                            .addComponent(jRadioButtonNu))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel43)
-                            .addComponent(tfNgaySinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(tfCCCD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel41)
-                            .addComponent(tfSDT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel42)
-                            .addComponent(tfDiaChi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(btnInExcel)
-                        .addGap(0, 0, 0)
-                        .addComponent(btnTim)
-                        .addGap(0, 0, 0)
-                        .addComponent(btnClear)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = 25;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 6, 6, 0);
+        jPanel7.add(jPanel2, gridBagConstraints);
+
+        jPanel3.setLayout(new java.awt.GridLayout(3, 0, 0, 2));
+
+        btnInExcel.setText("In Excel");
+        btnInExcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInExcelActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnInExcel);
+
+        btnTim.setText("Tìm");
+        btnTim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTimActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnTim);
+
+        btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnClear);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 12, 0, 0);
+        jPanel7.add(jPanel3, gridBagConstraints);
+
+        jPanel4.setLayout(new java.awt.GridLayout(7, 0, 0, 10));
+
+        jLabel39.setText("Mã NV");
+        jPanel4.add(jLabel39);
+
+        jLabel40.setText("Tên");
+        jPanel4.add(jLabel40);
+
+        jLabel1.setText("Phai");
+        jPanel4.add(jLabel1);
+
+        jLabel43.setText("Ngày sinh");
+        jPanel4.add(jLabel43);
+
+        jLabel2.setText("CCCD");
+        jPanel4.add(jLabel2);
+
+        jLabel41.setText("Số điện thoại");
+        jPanel4.add(jLabel41);
+
+        jLabel42.setText("Địa chỉ");
+        jPanel4.add(jLabel42);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipady = 38;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        jPanel7.add(jPanel4, gridBagConstraints);
+
+        jPanel5.setLayout(new java.awt.GridLayout(7, 0, 0, 10));
+        jPanel5.add(tfMaNV);
+        jPanel5.add(tfTenNV);
+
+        jPanel6.setLayout(new java.awt.GridLayout());
+
+        Phai.add(jRadioButtonNam);
+        jRadioButtonNam.setText("Nam");
+        jRadioButtonNam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonNamActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jRadioButtonNam);
+
+        Phai.add(jRadioButtonNu);
+        jRadioButtonNu.setText("Nữ");
+        jRadioButtonNu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonNuActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jRadioButtonNu);
+
+        jPanel5.add(jPanel6);
+        jPanel5.add(tfNgaySinh);
+        jPanel5.add(tfCCCD);
+        jPanel5.add(tfSDT);
+        jPanel5.add(tfDiaChi);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 170;
+        gridBagConstraints.ipady = -4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        jPanel7.add(jPanel5, gridBagConstraints);
 
         jTableNhanVien.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -354,10 +341,12 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 676, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane10))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 651, Short.MAX_VALUE))
                 .addContainerGap())
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,7 +355,7 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -639,6 +628,10 @@ public class QuanLyNhanVienJPanel extends javax.swing.JPanel {
     private javax.swing.JMenuItem jMenuItemNV;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPopupMenu jPopupMenuNV;
     private javax.swing.JRadioButton jRadioButtonNam;

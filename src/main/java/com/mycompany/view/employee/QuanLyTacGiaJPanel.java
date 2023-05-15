@@ -56,24 +56,27 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
 
         buttonGroupPhai = new javax.swing.ButtonGroup();
         jPanel12 = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        tfMa = new javax.swing.JTextField();
-        tfTen = new javax.swing.JTextField();
-        jLabel28 = new javax.swing.JLabel();
-        tfNgaySinh = new javax.swing.JTextField();
-        jRadioButtonNam = new javax.swing.JRadioButton();
-        jRadioButtonNu = new javax.swing.JRadioButton();
-        jPanel1 = new javax.swing.JPanel();
-        btnInExcel = new javax.swing.JButton();
-        btnTim = new javax.swing.JButton();
-        btnClear = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btnThem = new javax.swing.JButton();
         btnXoa = new javax.swing.JButton();
         btnSua = new javax.swing.JButton();
         btnLoad = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        tfMa = new javax.swing.JTextField();
+        tfTen = new javax.swing.JTextField();
+        jPanel5 = new javax.swing.JPanel();
+        jRadioButtonNam = new javax.swing.JRadioButton();
+        jRadioButtonNu = new javax.swing.JRadioButton();
+        tfNgaySinh = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        btnInExcel = new javax.swing.JButton();
+        btnTim = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         tableTG = new javax.swing.JTable();
 
@@ -81,149 +84,7 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
 
         jPanel12.setLayout(new java.awt.GridBagLayout());
 
-        jLabel25.setText("Mã");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(22, 28, 0, 0);
-        jPanel12.add(jLabel25, gridBagConstraints);
-
-        jLabel26.setText("Tên");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(9, 28, 0, 0);
-        jPanel12.add(jLabel26, gridBagConstraints);
-
-        jLabel27.setText("Phái");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(16, 28, 0, 0);
-        jPanel12.add(jLabel27, gridBagConstraints);
-
-        tfMa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfMaActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 132;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(19, 57, 0, 0);
-        jPanel12.add(tfMa, gridBagConstraints);
-
-        tfTen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfTenActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 132;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 57, 0, 0);
-        jPanel12.add(tfTen, gridBagConstraints);
-
-        jLabel28.setText("Ngày sinh");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(9, 28, 0, 0);
-        jPanel12.add(jLabel28, gridBagConstraints);
-
-        tfNgaySinh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfNgaySinhActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 132;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 57, 0, 0);
-        jPanel12.add(tfNgaySinh, gridBagConstraints);
-
-        buttonGroupPhai.add(jRadioButtonNam);
-        jRadioButtonNam.setText("Nam");
-        jRadioButtonNam.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonNamActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(14, 57, 0, 0);
-        jPanel12.add(jRadioButtonNam, gridBagConstraints);
-
-        buttonGroupPhai.add(jRadioButtonNu);
-        jRadioButtonNu.setText("Nữ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(14, 18, 0, 0);
-        jPanel12.add(jRadioButtonNu, gridBagConstraints);
-
-        jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.Y_AXIS));
-
-        btnInExcel.setText("In Excel");
-        btnInExcel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInExcelActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnInExcel);
-
-        btnTim.setText("Tìm");
-        btnTim.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTimActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnTim);
-
-        btnClear.setText("Clear");
-        btnClear.setPreferredSize(new java.awt.Dimension(99, 57));
-        btnClear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClearActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnClear);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 7;
-        gridBagConstraints.ipadx = 27;
-        gridBagConstraints.ipady = 34;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(19, 75, 0, 6);
-        jPanel12.add(jPanel1, gridBagConstraints);
-
-        jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.LINE_AXIS));
+        jPanel2.setLayout(new java.awt.GridLayout());
 
         btnThem.setText("Thêm");
         btnThem.setMaximumSize(new java.awt.Dimension(72, 33));
@@ -238,7 +99,6 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         btnXoa.setText("Xoá");
         btnXoa.setMaximumSize(new java.awt.Dimension(99, 57));
         btnXoa.setMinimumSize(new java.awt.Dimension(72, 33));
-        btnXoa.setPreferredSize(new java.awt.Dimension(72, 33));
         btnXoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnXoaActionPerformed(evt);
@@ -268,20 +128,130 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         jPanel2.add(btnLoad);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 9;
-        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(62, 26, 36, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
         jPanel12.add(jPanel2, gridBagConstraints);
+
+        jPanel3.setLayout(new java.awt.GridLayout(4, 0, 0, 10));
+
+        jLabel25.setText("Mã");
+        jPanel3.add(jLabel25);
+
+        jLabel26.setText("Tên");
+        jPanel3.add(jLabel26);
+
+        jLabel27.setText("Phái");
+        jPanel3.add(jLabel27);
+
+        jLabel28.setText("Ngày sinh");
+        jPanel3.add(jLabel28);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 132;
-        gridBagConstraints.ipady = 56;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 48;
+        gridBagConstraints.ipady = 34;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        jPanel12.add(jPanel3, gridBagConstraints);
+
+        jPanel4.setLayout(new java.awt.GridLayout(4, 0, 0, 10));
+
+        tfMa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfMaActionPerformed(evt);
+            }
+        });
+        jPanel4.add(tfMa);
+
+        tfTen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfTenActionPerformed(evt);
+            }
+        });
+        jPanel4.add(tfTen);
+
+        jPanel5.setLayout(new javax.swing.BoxLayout(jPanel5, javax.swing.BoxLayout.LINE_AXIS));
+
+        buttonGroupPhai.add(jRadioButtonNam);
+        jRadioButtonNam.setText("Nam");
+        jRadioButtonNam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonNamActionPerformed(evt);
+            }
+        });
+        jPanel5.add(jRadioButtonNam);
+
+        buttonGroupPhai.add(jRadioButtonNu);
+        jRadioButtonNu.setText("Nữ");
+        jPanel5.add(jRadioButtonNu);
+
+        jPanel4.add(jPanel5);
+
+        tfNgaySinh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNgaySinhActionPerformed(evt);
+            }
+        });
+        jPanel4.add(tfNgaySinh);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 186;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
+        jPanel12.add(jPanel4, gridBagConstraints);
+
+        jPanel1.setLayout(new java.awt.GridLayout(3, 0, 0, 10));
+
+        btnInExcel.setText("In Excel");
+        btnInExcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInExcelActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnInExcel);
+
+        btnTim.setText("Tìm");
+        btnTim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTimActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnTim);
+
+        btnClear.setText("Clear");
+        btnClear.setPreferredSize(new java.awt.Dimension(99, 57));
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnClear);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 91;
+        gridBagConstraints.ipady = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 63, 0, 0);
+        jPanel12.add(jPanel1, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 27;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 6);
         add(jPanel12, gridBagConstraints);
 
         tableTG.setModel(new javax.swing.table.DefaultTableModel(
@@ -310,14 +280,13 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 540;
+        gridBagConstraints.ipadx = 623;
         gridBagConstraints.ipady = 220;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(6, 0, 6, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 6, 6);
         add(jScrollPane6, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -571,6 +540,9 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JRadioButton jRadioButtonNam;
     private javax.swing.JRadioButton jRadioButtonNu;
     private javax.swing.JScrollPane jScrollPane6;
