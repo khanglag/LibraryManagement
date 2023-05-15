@@ -114,15 +114,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
 
         panelRoot.setLayout(new java.awt.GridBagLayout());
 
-        lableAnhSach.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                lableAnhSachAncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
+        
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
@@ -196,6 +188,11 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         jPanel1.add(btnInExcel);
 
         btnNhapExcel.setText("Nhập Excel");
+        btnNhapExcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNhapExcelActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnNhapExcel);
 
         btnLamMoi.setText("Làm mới");
@@ -244,19 +241,11 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         jPanel3.setLayout(new java.awt.GridLayout(5, 0, 0, 10));
         jPanel3.add(tfMaSach);
 
-        tfTenSach.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfTenSachActionPerformed(evt);
-            }
-        });
+       
         jPanel3.add(tfTenSach);
         jPanel3.add(tfTinhTrang);
 
-        tfMaTheLoai.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfMaTheLoaiActionPerformed(evt);
-            }
-        });
+        
         jPanel3.add(tfMaTheLoai);
         jPanel3.add(tfMaTacGia);
 
@@ -299,11 +288,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
 
         jPanel5.setLayout(new java.awt.GridLayout(6, 0, 0, 10));
 
-        tfMaNhaXuatBan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfMaNhaXuatBanActionPerformed(evt);
-            }
-        });
+       
         jPanel5.add(tfMaNhaXuatBan);
         jPanel5.add(tfSoTrang);
         jPanel5.add(tfLanXuatBan);
@@ -355,14 +340,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
                 tableSachMouseClicked(evt);
             }
         });
-        tableSach.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentHidden(java.awt.event.ComponentEvent evt) {
-                tableSachComponentHidden(evt);
-            }
-            public void componentShown(java.awt.event.ComponentEvent evt) {
-                tableSachComponentShown(evt);
-            }
-        });
+     
         jScrollPane1.setViewportView(tableSach);
         if (tableSach.getColumnModel().getColumnCount() > 0) {
             tableSach.getColumnModel().getColumn(0).setPreferredWidth(25);
@@ -380,6 +358,109 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 6, 6);
         add(jScrollPane1, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnNhapExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNhapExcelActionPerformed
+        // TODO add your handling code here:
+        try {
+            JFileChooser fChooser = new JFileChooser();
+            int choose = fChooser.showOpenDialog(null);
+            if (choose == JFileChooser.APPROVE_OPTION) {
+                XSSFWorkbook workbook = new XSSFWorkbook(fChooser.getSelectedFile());
+                XSSFSheet sheet = workbook.getSheetAt(0);
+                XSSFRow row = null;
+                Cell cell = null;
+                row = sheet.getRow(0);
+
+                cell = row.createCell(0, CellType.STRING);
+                cell.setCellValue("STT");
+
+                cell = row.createCell(1, CellType.STRING);
+                cell.setCellValue("Mã sách");
+
+                cell = row.createCell(2, CellType.STRING);
+                cell.setCellValue("Tên sách");
+
+                cell = row.createCell(3, CellType.STRING);
+                cell.setCellValue("Tình trạng");
+
+                cell = row.createCell(4, CellType.STRING);
+                cell.setCellValue("Mã thể loại");
+
+                cell = row.createCell(5, CellType.STRING);
+                cell.setCellValue("Mã tác giả");
+
+                cell = row.createCell(6, CellType.STRING);
+                cell.setCellValue("Mã NXB");
+
+                cell = row.createCell(7, CellType.STRING);
+                cell.setCellValue("Số trang");
+
+                cell = row.createCell(8, CellType.STRING);
+                cell.setCellValue("Lần xuất bản");
+
+                cell = row.createCell(9, CellType.STRING);
+                cell.setCellValue("Số lượng");
+
+                cell = row.createCell(10, CellType.STRING);
+                cell.setCellValue("Giá");
+
+                cell = row.createCell(11, CellType.STRING);
+                cell.setCellValue("Ảnh");
+
+                ArrayList<Sach> arr = sachBUS.loadData();
+
+                for (int i = 0; i < sheet.getLastRowNum(); i++) {
+                    row = sheet.getRow(1 + i);
+
+                    cell = row.getCell(1);
+                    String maSach = cell.getStringCellValue();
+
+                    cell = row.getCell(2);
+                    String tenSach = cell.getStringCellValue();
+
+                    cell = row.getCell(3);
+                    String tinhTrang = cell.getStringCellValue();
+
+                    cell = row.getCell(4);
+                    String maTheLoai = cell.getStringCellValue();
+
+                    cell = row.getCell(5);
+                    cell.getStringCellValue();
+
+                    cell = row.getCell(6);
+                    String maNXB = cell.getStringCellValue();
+
+                    cell = row.getCell(7);
+                    int soTrang = (int)cell.getNumericCellValue();
+
+                    cell = row.getCell(8);
+                    int soLanXuatBan = (int)cell.getNumericCellValue();
+
+                    cell = row.createCell(9, CellType.NUMERIC);
+                    cell.setCellValue(arr.get(i).getSoLuong());
+
+                    cell = row.createCell(10, CellType.NUMERIC);
+                    cell.setCellValue(arr.get(i).getGia());
+
+                    cell = row.createCell(11, CellType.STRING);
+                    cell.setCellValue(arr.get(i).getAnh());
+                }
+
+                File file = new File(fChooser.getSelectedFile().toString() + ".xlsx");
+                try {
+                    FileOutputStream fo = new FileOutputStream(file);
+                    workbook.write(fo);
+                    JOptionPane.showMessageDialog(this, "Đã in!");
+                    fo.close();
+                } catch (FileNotFoundException e) {
+                    System.out.println(e);
+                }
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_btnNhapExcelActionPerformed
 
     private void btnLamMoiActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnLamMoiActionPerformed
         // TODO add your handling code here:
