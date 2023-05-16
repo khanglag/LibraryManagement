@@ -84,14 +84,14 @@ public class PhieuMuonDAO {
 
     public boolean update(PhieuMuon pm) {
         connectDB = new ConnectDB();
-        
+
         boolean success = connectDB.sqlUpdate("UPDATE PHIEUMUON SET "
                 + "MADG= '" + pm.getMaDocGia() + "'"
-                +", MASA= '" +pm.getMaSach()  + "'"
-                +", MANV= '" + pm.getMaNhanVien() + "'"
-                +", SOLUONG= '" + pm.getSoLuong() + "'"
-                +", NGAYMUON= '" + java.sql.Date.valueOf(pm.getNgayMuon()) + "'"
-                +", HANTRA= '" + java.sql.Date.valueOf(pm.getNgayTra()) + "'"
+                + ", MASA= '" + pm.getMaSach() + "'"
+                + ", MANV= '" + pm.getMaNhanVien() + "'"
+                + ", SOLUONG= '" + pm.getSoLuong() + "'"
+                + ", NGAYMUON= '" + java.sql.Date.valueOf(pm.getNgayMuon()) + "'"
+                + ", HANTRA= '" + java.sql.Date.valueOf(pm.getNgayTra()) + "'"
                 + " WHERE MAPHIEUMUON ='" + pm.getMaPhieu() + "'");
         connectDB.closeConnect();
         return success;
@@ -105,15 +105,15 @@ public class PhieuMuonDAO {
         String qry = "SELECT *FROM PHIEUMUON WHERE TONTAI= 1";
         if (maPhieu.equals("") != true)
             qry += (" AND MAPHIEUMUON= '" + maPhieu + "'");
-        if (maDocGia .equals("") != true)
+        if (maDocGia.equals("") != true)
             qry += (" AND MADG= '" + maDocGia + "'");
-        if (maSach .equals("") != true)
+        if (maSach.equals("") != true)
             qry += (" AND MASA= '" + maSach + "'");
-        if (maNhanVien .equals("") != true)
+        if (maNhanVien.equals("") != true)
             qry += (" AND MANV= '" + maNhanVien + "'");
-        if (ngayMuon .equals("") != true)
+        if (ngayMuon.equals("") != true)
             qry += (" AND NGAYMUON= '" + java.sql.Date.valueOf(ngayMuon) + "'");
-        if (ngayTra .equals("") != true)
+        if (ngayTra.equals("") != true)
             qry += (" AND HANTRA= '" + java.sql.Date.valueOf(ngayTra) + "'");
         System.out.println(qry);
         ResultSet rset = connectDB.sqlQuery(qry);
