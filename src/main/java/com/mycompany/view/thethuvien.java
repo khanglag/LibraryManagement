@@ -40,141 +40,117 @@ public class thethuvien extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         tfMaThe = new javax.swing.JTextField();
         tfMaDocGia = new javax.swing.JTextField();
         tfTenDocGia = new javax.swing.JTextField();
         tfNgayCap = new javax.swing.JTextField();
         tfHan = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
         btnThem = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("THẺ THƯ VIỆN");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel1, java.awt.BorderLayout.PAGE_START);
+
+        jPanel3.setLayout(new java.awt.GridBagLayout());
+
+        jPanel2.setLayout(new java.awt.GridLayout(5, 1, 0, 10));
+
+        jLabel2.setText("Mã thẻ");
+        jPanel2.add(jLabel2);
+
+        jLabel3.setText("Mã đọc giả");
+        jPanel2.add(jLabel3);
+
+        jLabel4.setText("Tên đọc giả");
+        jPanel2.add(jLabel4);
+
+        jLabel5.setText("Ngày cấp");
+        jPanel2.add(jLabel5);
+
+        jLabel6.setText("Hạn");
+        jPanel2.add(jLabel6);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 56;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 17, 0, 0);
+        jPanel3.add(jPanel2, gridBagConstraints);
+
+        jPanel1.setLayout(new java.awt.GridLayout(5, 1, 0, 5));
+
+        tfMaThe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfMaTheActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tfMaThe);
+        jPanel1.add(tfMaDocGia);
+        jPanel1.add(tfTenDocGia);
+        jPanel1.add(tfNgayCap);
+
+        tfHan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfHanActionPerformed(evt);
+            }
+        });
+        jPanel1.add(tfHan);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(28, 51, 0, 0);
-        getContentPane().add(jLabel1, gridBagConstraints);
-
-        jLabel2.setText("Mã thẻ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 25;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(15, 23, 0, 0);
-        getContentPane().add(jLabel2, gridBagConstraints);
-
-        jLabel3.setText("Mã đọc giả");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.ipadx = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 23, 0, 0);
-        getContentPane().add(jLabel3, gridBagConstraints);
-
-        jLabel4.setText("Tên đọc giả");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 23, 0, 0);
-        getContentPane().add(jLabel4, gridBagConstraints);
-
-        jLabel5.setText("Ngày cấp");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 23, 0, 0);
-        getContentPane().add(jLabel5, gridBagConstraints);
-
-        jLabel6.setText("Hạn");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 9;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(21, 23, 0, 0);
-        getContentPane().add(jLabel6, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 119;
+        gridBagConstraints.ipadx = 185;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 51, 0, 81);
-        getContentPane().add(tfMaThe, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 119;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 51, 0, 81);
-        getContentPane().add(tfMaDocGia, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 119;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 51, 0, 81);
-        getContentPane().add(tfTenDocGia, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 119;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 51, 0, 81);
-        getContentPane().add(tfNgayCap, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 9;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 119;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 51, 0, 81);
-        getContentPane().add(tfHan, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 24);
+        jPanel3.add(jPanel1, gridBagConstraints);
+
+        getContentPane().add(jPanel3, java.awt.BorderLayout.CENTER);
+
+        jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT, 20, 5));
 
         btnThem.setText("Thêm");
+        btnThem.setBorderPainted(false);
+        btnThem.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnThem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThemActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 11;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(12, 162, 18, 81);
-        getContentPane().add(btnThem, gridBagConstraints);
+        jPanel4.add(btnThem);
+
+        getContentPane().add(jPanel4, java.awt.BorderLayout.PAGE_END);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tfMaTheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfMaTheActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfMaTheActionPerformed
+
+    private void tfHanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfHanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfHanActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
@@ -199,6 +175,10 @@ public class thethuvien extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField tfHan;
     private javax.swing.JTextField tfMaDocGia;
     private javax.swing.JTextField tfMaThe;
