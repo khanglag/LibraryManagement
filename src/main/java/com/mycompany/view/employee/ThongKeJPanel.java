@@ -4,17 +4,31 @@
  */
 package com.mycompany.view.employee;
 
+import com.mycompany.Object.DocGia.DocGia;
+import com.mycompany.Object.DocGia.DocGiaBUS;
+import com.mycompany.Object.Sach.Sach;
+import com.mycompany.Object.Sach.SachBUS;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author khang
  */
 public class ThongKeJPanel extends javax.swing.JPanel {
-
+    DocGiaBUS docGiaBUS = new DocGiaBUS();
+    DefaultTableModel model;
+    SachBUS sachBUS = new SachBUS();
+    DefaultTableModel model1;
     /**
      * Creates new form ThongKeJPanel
      */
     public ThongKeJPanel() {
         initComponents();
+        model = (DefaultTableModel) tableTTDG.getModel();
+        model1=(DefaultTableModel) tableSach.getModel();
+        showdata();
+        showdatasach();
     }
 
     /**
@@ -27,32 +41,100 @@ public class ThongKeJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tableTTDG = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableSach = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
+
+        tableTTDG.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "STT", "CCCD", "Mã ĐG", "Tên", "Phái", "Ngày sinh", "Số điện thoại", "Địa chỉ"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableTTDG.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableTTDGMouseClicked(evt);
+            }
+        });
+        jScrollPane5.setViewportView(tableTTDG);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 671, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 613, Short.MAX_VALUE)
+                .addGap(38, 38, 38))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 143, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         jLabel1.setText("Thống kê đọc giả");
+
+        tableSach.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "STT", "Mã Sách", "Tên Sách", "Tình Trạng", "Mã Thể Loại", "Mã Tác Giả", "Mã NXB", "Số Trang", "Lần Xuất Bản", "Số Lượng", "Giá", "Ảnh"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableSach.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableSachMouseClicked(evt);
+            }
+        });
+        tableSach.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                tableSachComponentHidden(evt);
+            }
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                tableSachComponentShown(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tableSach);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 619, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 825, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 174, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 6, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jLabel2.setText("Thống kê sách");
@@ -68,7 +150,7 @@ public class ThongKeJPanel extends javax.swing.JPanel {
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,7 +159,7 @@ public class ThongKeJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -85,11 +167,58 @@ public class ThongKeJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tableTTDGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableTTDGMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tableTTDGMouseClicked
+
+    private void tableSachMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableSachMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tableSachMouseClicked
+
+    private void tableSachComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_tableSachComponentHidden
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tableSachComponentHidden
+
+    private void tableSachComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_tableSachComponentShown
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tableSachComponentShown
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTable tableSach;
+    private javax.swing.JTable tableTTDG;
     // End of variables declaration//GEN-END:variables
+public void showdata(){
+    ArrayList<DocGia> arr = new ArrayList<DocGia>();
+        arr = docGiaBUS.loadData();
+        int i = 0;
+        while (i <= arr.size() - 1) {
+            DocGia docGia = arr.get(i);
+            model.addRow(new Object[] {
+                    ++i, docGia.getCCCD(), docGia.getMaDocGia(), docGia.getTenDocGia(), docGia.getGioiTinh(),
+                    docGia.getNgaySinh(), docGia.getSoDienThoai(), docGia.getDiaChi()
+            });
+            tableTTDG.setModel(model);
+        }
+    }
+public void showdatasach(){
+    ArrayList<Sach> arr = new ArrayList<Sach>();
+        arr = sachBUS.loadData();
+        int i = 0;
+        while (i <= arr.size() - 1) {
+            Sach sach = arr.get(i);
+            model1.addRow(new Object[] {
+                    ++i, sach.getMaSach(), sach.getTenSach(), sach.getTinhTrang(), sach.getMaTheLoai(),
+                    sach.getMaTacGia(), sach.getMaNXB(), sach.getSoTrang(), sach.getLanXuatBan(),
+                    sach.getSoLuong(), sach.getGia(), sach.getAnh()
+            });
+            tableSach.setModel(model1);
+        }
+}
 }
