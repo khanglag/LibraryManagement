@@ -10,7 +10,7 @@ import com.mycompany.Object.Sach.Sach;
 import com.mycompany.Object.Sach.SachBUS;
 import java.util.ArrayList;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.table.AbstractTableModel;
 
 /**
  *
@@ -18,17 +18,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ThongKeJPanel extends javax.swing.JPanel {
     DocGiaBUS docGiaBUS = new DocGiaBUS();
-    DefaultTableModel model;
+    AbstractTableModel model;
     SachBUS sachBUS = new SachBUS();
     /**
      * Creates new form ThongKeJPanel
      */
     public ThongKeJPanel() {
         initComponents();
-        table.setVisible(false);
-        showdata();
-        model = (DefaultTableModel) table.getModel();
-        
+        showdata();  
+        showdataDocGia();
     }
 
     /**
@@ -166,21 +164,6 @@ public class ThongKeJPanel extends javax.swing.JPanel {
             .addGap(0, 317, Short.MAX_VALUE)
         );
 
-        table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
         table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableMouseClicked(evt);
@@ -192,15 +175,15 @@ public class ThongKeJPanel extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 642, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 27, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 13, Short.MAX_VALUE))
+                .addGap(0, 154, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -221,7 +204,7 @@ public class ThongKeJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(174, 174, 174)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -236,19 +219,7 @@ public class ThongKeJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_ObjectItemStateChanged
 
     private void ObjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ObjectActionPerformed
-        String selectString="";
-        ArrayList<DocGia> dsdgArrayList=docGiaBUS.loadData();
-        selectString=Object.getSelectedItem().toString();
-        switch (selectString) {
-            case "Đọc giả":
-            String[] columnNames={"STT", "CCCD", "Mã ĐG", "Tên", "Phái", "Ngày sinh", "Số điện thoại", "Địa chỉ"};
-            Object[][] data= new Object[dsdgArrayList.size()][8];
-            for(DocGia itemDocGia:dsdgArrayList)
-            {
-                
-            }
-                break;
-        }
+       
     }//GEN-LAST:event_ObjectActionPerformed
 
     private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
@@ -280,9 +251,54 @@ public class ThongKeJPanel extends javax.swing.JPanel {
         Object.addItem("Đọc giả");
         Object.addItem("Sách");
         Object.addItem("Chi tiêu");
-        
     }
-    public void TK(String[] columnNames,Object[][] data  ){
-        table = new JTable(data, columnNames);
+    public void showdataDocGia(){
+        ArrayList<DocGia> docGias=docGiaBUS.loadData();
+        AbstractTableModel tableModel = new AbstractTableModel() {
+            private String[] columnNames = {"STT", "Mã ĐG", "Tên", "Giới tính", "Ngày sinh", "Số điện thoại", "Địa chỉ"};
+
+            @Override
+            public int getRowCount() {
+                return docGias.size();
+            }
+
+            @Override
+            public int getColumnCount() {
+                return columnNames.length;
+            }
+
+            @Override
+            public Object getValueAt(int row, int column) {
+                DocGia docGia = docGias.get(row);
+                switch (column) {
+                    case 0:
+                        System.out.println("Hàng"+row);
+                        return row + 1;
+                    case 1:
+                        return docGia.getMaDocGia();
+                    case 2:
+                        return docGia.getTenDocGia();
+                    case 3:
+                        return docGia.getGioiTinh();
+                    case 4:
+                        return docGia.getNgaySinh();
+                    case 5:
+                        return docGia.getSoDienThoai();
+                    case 6:
+                        return docGia.getDiaChi();
+                    default:
+                        return null;
+                }
+            }
+
+            @Override
+            public String getColumnName(int column) {
+                return columnNames[column];
+            }
+        };
+
+        JTable table = new JTable(tableModel);
+        table.setVisible(true);
+        System.out.println("Hien bang");
     }
 }

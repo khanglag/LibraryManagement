@@ -70,8 +70,6 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         TfTensach = new javax.swing.JTextField();
         tfNgayTra = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
-        Timsa = new javax.swing.JButton();
-        TimDg = new javax.swing.JButton();
         jScrollPane8 = new javax.swing.JScrollPane();
         tablePhieuMuon = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
@@ -167,7 +165,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
 
         jPanel3.setLayout(new java.awt.GridLayout(4, 0, 0, 10));
 
-        jLabel37.setText("Ngày trả");
+        jLabel37.setText("Số lượng");
         jPanel3.add(jLabel37);
 
         jLabel3.setText("Tên sách");
@@ -176,7 +174,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         jLabel2.setText("Tên đọc giả");
         jPanel3.add(jLabel2);
 
-        jLabel1.setText("Số lượng");
+        jLabel1.setText("Ngày trả");
         jPanel3.add(jLabel1);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -216,23 +214,6 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         jPanel15.add(jPanel4, gridBagConstraints);
 
         jPanel5.setLayout(new java.awt.GridLayout(2, 0, 0, 10));
-
-        Timsa.setText("Tìm");
-        Timsa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TimsaActionPerformed(evt);
-            }
-        });
-        jPanel5.add(Timsa);
-
-        TimDg.setText("Tìm");
-        TimDg.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TimDgActionPerformed(evt);
-            }
-        });
-        jPanel5.add(TimDg);
-
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
@@ -290,7 +271,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(23, 6, 6, 6);
         add(jScrollPane8, gridBagConstraints);
 
-        jPanel6.setLayout(new java.awt.GridLayout());
+        jPanel6.setLayout(new java.awt.GridLayout(1, 0));
 
         btnThem.setText("Thêm");
         btnThem.addActionListener(new java.awt.event.ActionListener() {
@@ -380,6 +361,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         try {
+             boolean muonduoc=true;
              PhieuMuon pm= new PhieuMuon();
              PhieuMuonBUS pmbus=new PhieuMuonBUS();
              pm.setMaPhieu(Menu.MenuHand.FormatString(pmbus.getMaphieumuon()));
@@ -388,9 +370,19 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
              pm.setMaSach(jComboBoxMaSach.getSelectedItem().toString());
              pm.setNgayMuon(LocalDate.now());
              pm.setNgayTra(MenuHand.convert(tfNgayTra.getText()));
-             pm.setSoLuong(Integer.parseInt(tfSoLuong.getText()));
+             if(pm.getNgayMuon().isAfter(pm.getNgayTra())){
+                 JOptionPane.showMessageDialog(null,"Số ngày mượn phải lớn hơn 0");
+                 muonduoc=false;
+             }
              pm.setTonTai(1);
-        pmbus.them(pm);
+             if (Integer.parseInt(tfSoLuong.getText())<=0) {
+                JOptionPane.showMessageDialog(null,"Số lượng phải lớn hơn 0");
+            }else{
+                 pm.setSoLuong(Integer.parseInt(tfSoLuong.getText()));
+             }
+             if (muonduoc) {
+                pmbus.them(pm);
+            }else JOptionPane.showMessageDialog(null,"Không mượn được");
         tfMaPhieu.setText(MenuHand.FormatString(pmbus.getMaphieumuon()));
         System.out.println(pm.toString());
         } catch (Exception e) {
@@ -481,16 +473,9 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfSoLuongActionPerformed
 
-    private void TimDgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TimDgActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TimDgActionPerformed
-
-    private void TimsaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TimsaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TimsaActionPerformed
-
     private void LammoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LammoiActionPerformed
         clear();
+        showcombodataDT();
     }//GEN-LAST:event_LammoiActionPerformed
 
 
@@ -498,8 +483,6 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
     private javax.swing.JButton Lammoi;
     private javax.swing.JTextField TfTenDG;
     private javax.swing.JTextField TfTensach;
-    private javax.swing.JButton TimDg;
-    private javax.swing.JButton Timsa;
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnThem;
     private javax.swing.JButton btnXoa;
