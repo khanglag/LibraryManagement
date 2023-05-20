@@ -35,6 +35,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  * @author khang
  */
 public class PhieuMuonJPanel extends javax.swing.JPanel {
+    PhieuMuonBUS phieuMuonBUS = new PhieuMuonBUS();
     DefaultTableModel model;
     /**
      * Creates new form PhieuMuonJPanel
@@ -538,9 +539,12 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
                 cell.setCellValue("Hạn trả");
 
                 cell = row.createCell(7, CellType.STRING);
+                cell.setCellValue("Số lượng");
+
+                cell = row.createCell(8, CellType.STRING);
                 cell.setCellValue("Tình trạng");
 
-                ArrayList<NhaXuatBan> arr = NXBBUS.LoadData();
+                ArrayList<PhieuMuon> arr = phieuMuonBUS.loadData();
 
                 for(int i = 0; i < arr.size(); i++) {
                     row = sheet.createRow(4 + i);
@@ -549,10 +553,30 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
                     cell.setCellValue(i + 1);
 
                     cell = row.createCell(1, CellType.STRING);
-                    cell.setCellValue(arr.get(i).getMaNXB());
+                    cell.setCellValue(arr.get(i).getMaPhieu());
 
                     cell = row.createCell(2, CellType.STRING);
-                    cell.setCellValue(arr.get(i).getTenNXB());
+                    cell.setCellValue(arr.get(i).getMaDocGia());
+
+                    cell = row.createCell(3, CellType.STRING);
+                    cell.setCellValue(arr.get(i).getMaSach());
+
+                    cell = row.createCell(4, CellType.STRING);
+                    cell.setCellValue(arr.get(i).getMaNhanVien());
+
+                    cell = row.createCell(5);
+                    cell.setCellValue(arr.get(i).getNgayMuon());
+                    cell.setCellStyle(style);    
+                    
+                    cell = row.createCell(6);
+                    cell.setCellValue(arr.get(i).getNgayTra());
+                    cell.setCellStyle(style);    
+
+                    cell = row.createCell(7, CellType.NUMERIC);
+                    cell.setCellValue(arr.get(i).getSoLuong());
+
+                    cell = row.createCell(8, CellType.NUMERIC);
+                    cell.setCellValue(arr.get(i).isTonTai());
                 }
 
                 File file = new File(fChooser.getSelectedFile().toString() + ".xlsx");
