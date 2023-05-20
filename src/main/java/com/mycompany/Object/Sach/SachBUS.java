@@ -42,6 +42,12 @@ public class SachBUS {
         return "Thất bại";
     }
 
+    public String update(String maSach, int soLuong) {
+        if (sachDAO.update(maSach, soLuong))
+            return "Sửa thành công";
+        return "Thất bại";
+    }
+
     public String TraSach(Sach sach) {
         if (sachDAO.TraSach(sach))
             return "Sửa thành công";
