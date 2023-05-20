@@ -8,8 +8,17 @@ import com.mycompany.Object.PhieuMuon.PhieuMuon;
 import com.mycompany.Object.PhieuMuon.PhieuMuonBUS;
 import java.util.ArrayList;
 
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.DataFormat;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.mycompany.Object.PhieuTra.PhieuTra;
 import com.mycompany.Object.PhieuTra.PhieuTraBUS;
@@ -19,6 +28,9 @@ import com.mycompany.Object.USER.User;
 import com.mycompany.Object.USER.UserBUS;
 import com.mycompany.controller.TaiKhoanController;
 import java.awt.event.ActionEvent;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.time.LocalDate;
 
 /**
@@ -112,6 +124,7 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
         jPanel6 = new javax.swing.JPanel();
         btnThem = new javax.swing.JButton();
         btnXoa = new javax.swing.JButton();
+        btnInExcel = new javax.swing.JButton();
         btnLoad = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -232,7 +245,7 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(24, 6, 0, 5);
         jPanel1.add(jPanel5, gridBagConstraints);
 
-        jPanel6.setLayout(new java.awt.GridLayout());
+        jPanel6.setLayout(new java.awt.GridLayout(1, 0));
 
         btnThem.setText("Thêm");
         btnThem.addActionListener(new java.awt.event.ActionListener() {
@@ -249,6 +262,14 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
             }
         });
         jPanel6.add(btnXoa);
+
+        btnInExcel.setText("In Excel");
+        btnInExcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInExcelActionPerformed(evt);
+            }
+        });
+        jPanel6.add(btnInExcel);
 
         btnLoad.setText("Load thông tin");
         btnLoad.addActionListener(new java.awt.event.ActionListener() {
@@ -319,6 +340,114 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(12, 6, 6, 6);
         add(jScrollPane1, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnInExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInExcelActionPerformed
+        // TODO add your handling code here:
+        try{
+                JFileChooser fChooser = new JFileChooser();
+                int choose = fChooser.showSaveDialog(null);
+                if(choose == JFileChooser.APPROVE_OPTION) {
+                    XSSFWorkbook workbook = new XSSFWorkbook();
+                    XSSFSheet sheet = workbook.createSheet("Phiếu trả");
+                    XSSFRow row = null;
+                    Cell cell = null;
+                    row = sheet.createRow(3);
+    
+                    String dateFormat = "yyyy-MM-dd";
+                    CellStyle style = workbook.createCellStyle();
+                    DataFormat dataFormat = workbook.createDataFormat();
+                    style.setDataFormat(dataFormat.getFormat(dateFormat));
+    
+                    cell = row.createCell(0, CellType.STRING);
+                    cell.setCellValue("STT");
+    
+                    cell = row.createCell(1, CellType.STRING);
+                    cell.setCellValue("Mã phiếu");
+    
+                    cell = row.createCell(2, CellType.STRING);
+                    cell.setCellValue("Mã phiếu mượn");
+    
+                    cell = row.createCell(3, CellType.STRING);
+                    cell.setCellValue("Mã độc giả");
+    
+                    cell = row.createCell(4, CellType.STRING);
+                    cell.setCellValue("Mã sách");
+    
+                    cell = row.createCell(5, CellType.STRING);
+                    cell.setCellValue("Mã nhân viên");
+    
+                    cell = row.createCell(6, CellType.STRING);
+                    cell.setCellValue("Hạn trả");
+    
+                    cell = row.createCell(7, CellType.STRING);
+                    cell.setCellValue("Ngày trả");
+    
+                    cell = row.createCell(8, CellType.STRING);
+                    cell.setCellValue("Số lượng");
+
+                    cell = row.createCell(9, CellType.STRING);
+                    cell.setCellValue("Tình trạng");
+
+                    cell = row.createCell(10, CellType.STRING);
+                    cell.setCellValue("Số ngày quá hạn");
+    
+                    ArrayList<PhieuTra> arr = phieuTraBUS.getDSPhieuTra();
+    
+                    for(int i = 0; i < arr.size(); i++) {
+                        row = sheet.createRow(4 + i);
+    
+                        cell = row.createCell(0, CellType.NUMERIC);
+                        cell.setCellValue(i + 1);
+    
+                        cell = row.createCell(1, CellType.STRING);
+                        cell.setCellValue(arr.get(i).getMaPhieu());
+    
+                        cell = row.createCell(2, CellType.STRING);
+                        cell.setCellValue(arr.get(i).getMaPhieuMuon());
+    
+                        cell = row.createCell(3, CellType.STRING);
+                        cell.setCellValue(arr.get(i).getMaDocGia());
+    
+                        cell = row.createCell(4, CellType.STRING);
+                        cell.setCellValue(arr.get(i).getMaSach());
+    
+                        cell = row.createCell(5, CellType.STRING);
+                        cell.setCellValue(arr.get(i).getMaNhanVien());
+
+                        cell = row.createCell(6);
+                        cell.setCellValue(arr.get(i).getHanTra());
+                        cell.setCellStyle(style);    
+                        
+                        cell = row.createCell(7);
+                        cell.setCellValue(arr.get(i).getNgayTra());
+                        cell.setCellStyle(style);    
+    
+                        cell = row.createCell(8, CellType.NUMERIC);
+                        cell.setCellValue(arr.get(i).getSoLuong());
+
+                        cell = row.createCell(9, CellType.STRING);
+                        cell.setCellValue(arr.get(i).getTinhTrang());
+    
+                        cell = row.createCell(10, CellType.NUMERIC);
+                        cell.setCellValue(arr.get(i).getSoNgayQuaHan());
+                    }
+    
+                    File file = new File(fChooser.getSelectedFile().toString() + ".xlsx");
+                    try {
+                        FileOutputStream fo = new FileOutputStream(file);
+                        workbook.write(fo);
+                        JOptionPane.showMessageDialog(this, "Đã in!");
+                        fo.close();
+                        workbook.close();
+                    } catch(FileNotFoundException e) {
+                        System.out.println(e);
+                    }
+                }
+                
+            } catch(Exception e) {
+                System.out.println(e);
+            }
+    }//GEN-LAST:event_btnInExcelActionPerformed
 
         private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemActionPerformed
                 // TODO add your handling code here:
@@ -497,6 +626,7 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnInExcel;
     private javax.swing.JButton btnLoad;
     private javax.swing.JButton btnThem;
     private javax.swing.JButton btnXoa;
