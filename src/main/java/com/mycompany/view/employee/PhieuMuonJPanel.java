@@ -76,6 +76,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         btnThem = new javax.swing.JButton();
         btnSua = new javax.swing.JButton();
         btnXoa = new javax.swing.JButton();
+        btnInExcel = new javax.swing.JButton();
         Lammoi = new javax.swing.JButton();
 
         setLayout(new java.awt.GridBagLayout());
@@ -303,6 +304,14 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         });
         jPanel6.add(btnXoa);
 
+        btnInExcel.setText("In Excel");
+        btnInExcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInExcelActionPerformed(evt);
+            }
+        });
+        jPanel6.add(btnInExcel);
+
         Lammoi.setText("Làm sạch");
         Lammoi.setMaximumSize(new java.awt.Dimension(99, 57));
         Lammoi.setMinimumSize(new java.awt.Dimension(99, 57));
@@ -478,11 +487,85 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         showcombodataDT();
     }//GEN-LAST:event_LammoiActionPerformed
 
+    private void btnInExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInExcelActionPerformed
+        // TODO add your handling code here:
+        try{
+            JFileChooser fChooser = new JFileChooser();
+            int choose = fChooser.showSaveDialog(null);
+            if(choose == JFileChooser.APPROVE_OPTION) {
+                XSSFWorkbook workbook = new XSSFWorkbook();
+                XSSFSheet sheet = workbook.createSheet("Phiếu mượn");
+                XSSFRow row = null;
+                Cell cell = null;
+                row = sheet.createRow(3);
+
+                String dateFormat = "yyyy-MM-dd";
+                CellStyle style = workbook.createCellStyle();
+                DataFormat dataFormat = workbook.createDataFormat();
+                style.setDataFormat(dataFormat.getFormat(dateFormat));
+
+                cell = row.createCell(0, CellType.STRING);
+                cell.setCellValue("STT");
+
+                cell = row.createCell(1, CellType.STRING);
+                cell.setCellValue("Mã phiếu mượn");
+
+                cell = row.createCell(2, CellType.STRING);
+                cell.setCellValue("Mã độc giả");
+
+                cell = row.createCell(3, CellType.STRING);
+                cell.setCellValue("Mã sách");
+
+                cell = row.createCell(4, CellType.STRING);
+                cell.setCellValue("Mã nhân viên");
+
+                cell = row.createCell(5, CellType.STRING);
+                cell.setCellValue("Ngày mượn");
+
+                cell = row.createCell(6, CellType.STRING);
+                cell.setCellValue("Hạn trả");
+
+                cell = row.createCell(7, CellType.STRING);
+                cell.setCellValue("Tình trạng");
+
+                ArrayList<NhaXuatBan> arr = NXBBUS.LoadData();
+
+                for(int i = 0; i < arr.size(); i++) {
+                    row = sheet.createRow(4 + i);
+
+                    cell = row.createCell(0, CellType.NUMERIC);
+                    cell.setCellValue(i + 1);
+
+                    cell = row.createCell(1, CellType.STRING);
+                    cell.setCellValue(arr.get(i).getMaNXB());
+
+                    cell = row.createCell(2, CellType.STRING);
+                    cell.setCellValue(arr.get(i).getTenNXB());
+                }
+
+                File file = new File(fChooser.getSelectedFile().toString() + ".xlsx");
+                try {
+                    FileOutputStream fo = new FileOutputStream(file);
+                    workbook.write(fo);
+                    JOptionPane.showMessageDialog(this, "Đã in!");
+                    fo.close();
+                    workbook.close();
+                } catch(FileNotFoundException e) {
+                    System.out.println(e);
+                }
+            }
+            
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_btnInExcelActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Lammoi;
     private javax.swing.JTextField TfTenDG;
     private javax.swing.JTextField TfTensach;
+    private javax.swing.JButton btnInExcel;
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnThem;
     private javax.swing.JButton btnXoa;

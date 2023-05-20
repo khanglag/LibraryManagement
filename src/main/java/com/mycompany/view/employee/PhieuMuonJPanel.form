@@ -370,6 +370,14 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXoaActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JButton" name="btnInExcel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="In Excel"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInExcelActionPerformed"/>
+          </Events>
+        </Component>
         <Component class="javax.swing.JButton" name="Lammoi">
           <Properties>
             <Property name="text" type="java.lang.String" value="L&#xe0;m s&#x1ea1;ch"/>
