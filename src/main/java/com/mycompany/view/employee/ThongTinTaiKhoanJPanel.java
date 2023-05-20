@@ -56,11 +56,13 @@ public class ThongTinTaiKhoanJPanel extends javax.swing.JPanel {
         btnSua = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         tfMaNV = new javax.swing.JTextField();
         tfTenNhanVien = new javax.swing.JTextField();
         tfNamSinh = new javax.swing.JTextField();
         tfSDT = new javax.swing.JTextField();
         tfDiaChi = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
         jLabel51 = new javax.swing.JLabel();
         jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
@@ -108,91 +110,46 @@ public class ThongTinTaiKhoanJPanel extends javax.swing.JPanel {
         jPanel28.add(jLabel7, gridBagConstraints);
 
         jPanel1.setLayout(new java.awt.GridBagLayout());
+
+        jPanel2.setLayout(new java.awt.GridLayout(5, 0, 0, 10));
+        jPanel2.add(tfMaNV);
+        jPanel2.add(tfTenNhanVien);
+        jPanel2.add(tfNamSinh);
+        jPanel2.add(tfSDT);
+        jPanel2.add(tfDiaChi);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 191;
+        gridBagConstraints.ipadx = 159;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 41, 0, 6);
-        jPanel1.add(tfMaNV, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 191;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 41, 0, 6);
-        jPanel1.add(tfTenNhanVien, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 191;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 41, 0, 6);
-        jPanel1.add(tfNamSinh, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 191;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 41, 0, 6);
-        jPanel1.add(tfSDT, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 191;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 41, 6, 6);
-        jPanel1.add(tfDiaChi, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(6, 20, 6, 6);
+        jPanel1.add(jPanel2, gridBagConstraints);
+
+        jPanel3.setLayout(new java.awt.GridLayout(5, 0, 0, 10));
 
         jLabel51.setText("Mã nhân viên");
+        jPanel3.add(jLabel51);
+
+        jLabel52.setText("Tên nhân viên");
+        jPanel3.add(jLabel52);
+
+        jLabel53.setText("Năm sinh");
+        jPanel3.add(jLabel53);
+
+        jLabel55.setText("Số điện thoại");
+        jPanel3.add(jLabel55);
+
+        jLabel54.setText("Địa chỉ");
+        jPanel3.add(jLabel54);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 4;
+        gridBagConstraints.ipady = 30;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 16, 0, 0);
-        jPanel1.add(jLabel51, gridBagConstraints);
-
-        jLabel52.setText("Tên nhân viên");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipadx = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 16, 0, 0);
-        jPanel1.add(jLabel52, gridBagConstraints);
-
-        jLabel53.setText("Năm sinh");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 24;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 16, 0, 0);
-        jPanel1.add(jLabel53, gridBagConstraints);
-
-        jLabel55.setText("Số điện thoại");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.ipadx = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 16, 0, 0);
-        jPanel1.add(jLabel55, gridBagConstraints);
-
-        jLabel54.setText("Địa chỉ");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.ipadx = 37;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 16, 0, 0);
-        jPanel1.add(jLabel54, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 6, 0);
+        jPanel1.add(jPanel3, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -251,7 +208,9 @@ public class ThongTinTaiKhoanJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField tfDiaChi;
     private javax.swing.JTextField tfMaNV;
     private javax.swing.JTextField tfNamSinh;
