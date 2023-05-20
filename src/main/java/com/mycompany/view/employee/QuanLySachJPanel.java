@@ -373,50 +373,57 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
 
                 ArrayList<Sach> arr = sachBUS.loadData();
 
+                boolean daTonTai = false;
+
                 for (int i = 0; i < sheet.getLastRowNum() - 3; i++) {
                     row = sheet.getRow(4 + i);
 
                     cell = row.getCell(1);
                     String maSach = cell.getStringCellValue();
 
-                    cell = row.getCell(2);
-                    String tenSach = cell.getStringCellValue();
-
-                    cell = row.getCell(3);
-                    String tinhTrang = cell.getStringCellValue();
-
-                    cell = row.getCell(4);
-                    String maTheLoai = cell.getStringCellValue();
-
-                    cell = row.getCell(5);
-                    String maTacGia = cell.getStringCellValue();
-
-                    cell = row.getCell(6);
-                    String maNXB = cell.getStringCellValue();
-
-                    cell = row.getCell(7);
-                    int soTrang = (int)cell.getNumericCellValue();
-
-                    cell = row.getCell(8);
-                    int soLanXuatBan = (int)cell.getNumericCellValue();
-
                     cell = row.getCell(9);
                     int soLuong = (int)cell.getNumericCellValue();
-
-                    cell = row.getCell(10);
-                    float gia = (float)cell.getNumericCellValue();
-
-                    cell = row.getCell(11);
-                    String anh = cell.getStringCellValue();
 
                     for(int j = 0; j < arr.size(); j++) {
                         if(maSach.equals(arr.get(j).getMaSach())) {
                             sachBUS.update(maSach, arr.get(j).getSoLuong() + soLuong);
+                            daTonTai = true;
+                            break;
                         }
                     }
-                    Sach sach = new Sach(maSach, tenSach, tinhTrang, soTrang, soLuong, gia, maTheLoai, maTacGia, maNXB, soLanXuatBan, 1, anh);
 
-                    sachBUS.add(sach);
+                    if(daTonTai == false) {
+                        cell = row.getCell(2);
+                        String tenSach = cell.getStringCellValue();
+
+                        cell = row.getCell(3);
+                        String tinhTrang = cell.getStringCellValue();
+
+                        cell = row.getCell(4);
+                        String maTheLoai = cell.getStringCellValue();
+
+                        cell = row.getCell(5);
+                        String maTacGia = cell.getStringCellValue();
+
+                        cell = row.getCell(6);
+                        String maNXB = cell.getStringCellValue();
+
+                        cell = row.getCell(7);
+                        int soTrang = (int)cell.getNumericCellValue();
+
+                        cell = row.getCell(8);
+                        int soLanXuatBan = (int)cell.getNumericCellValue();
+
+                        cell = row.getCell(10);
+                        float gia = (float)cell.getNumericCellValue();
+
+                        cell = row.getCell(11);
+                        String anh = cell.getStringCellValue();
+
+                        Sach sach = new Sach(maSach, tenSach, tinhTrang, soTrang, soLuong, gia, maTheLoai, maTacGia, maNXB, soLanXuatBan, 1, anh);
+
+                        sachBUS.add(sach);
+                    }
                 }
             }
             JOptionPane.showMessageDialog(this, "Đã nhập từ Excel!");
