@@ -122,8 +122,8 @@ public class ConnectDB {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String url ="jdbc:mysql://localhost:3306/qltv";
-         //  cons = DriverManager.getConnection(url, "root", "200303410");
-            cons = DriverManager.getConnection(url, "root", "");
+           cons = DriverManager.getConnection(url, "root", "200303410");
+//            cons = DriverManager.getConnection(url, "root", "");
         } catch (Exception e) {
             e.printStackTrace();
         }

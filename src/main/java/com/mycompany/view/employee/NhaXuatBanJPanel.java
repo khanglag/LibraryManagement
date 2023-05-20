@@ -345,6 +345,7 @@ public class NhaXuatBanJPanel extends javax.swing.JPanel {
                     workbook.write(fo);
                     JOptionPane.showMessageDialog(this, "Đã in!");
                     fo.close();
+                    workbook.close();
                 } catch(FileNotFoundException e) {
                     System.out.println(e);
                 }

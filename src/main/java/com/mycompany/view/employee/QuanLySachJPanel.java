@@ -369,48 +369,12 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
                 XSSFSheet sheet = workbook.getSheetAt(0);
                 XSSFRow row = null;
                 Cell cell = null;
-                row = sheet.getRow(0);
-
-                cell = row.createCell(0, CellType.STRING);
-                cell.setCellValue("STT");
-
-                cell = row.createCell(1, CellType.STRING);
-                cell.setCellValue("Mã sách");
-
-                cell = row.createCell(2, CellType.STRING);
-                cell.setCellValue("Tên sách");
-
-                cell = row.createCell(3, CellType.STRING);
-                cell.setCellValue("Tình trạng");
-
-                cell = row.createCell(4, CellType.STRING);
-                cell.setCellValue("Mã thể loại");
-
-                cell = row.createCell(5, CellType.STRING);
-                cell.setCellValue("Mã tác giả");
-
-                cell = row.createCell(6, CellType.STRING);
-                cell.setCellValue("Mã NXB");
-
-                cell = row.createCell(7, CellType.STRING);
-                cell.setCellValue("Số trang");
-
-                cell = row.createCell(8, CellType.STRING);
-                cell.setCellValue("Lần xuất bản");
-
-                cell = row.createCell(9, CellType.STRING);
-                cell.setCellValue("Số lượng");
-
-                cell = row.createCell(10, CellType.STRING);
-                cell.setCellValue("Giá");
-
-                cell = row.createCell(11, CellType.STRING);
-                cell.setCellValue("Ảnh");
+                row = sheet.getRow(3);
 
                 ArrayList<Sach> arr = sachBUS.loadData();
 
-                for (int i = 0; i < sheet.getLastRowNum(); i++) {
-                    row = sheet.getRow(1 + i);
+                for (int i = 0; i < sheet.getLastRowNum() - 3; i++) {
+                    row = sheet.getRow(4 + i);
 
                     cell = row.getCell(1);
                     String maSach = cell.getStringCellValue();
@@ -425,7 +389,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
                     String maTheLoai = cell.getStringCellValue();
 
                     cell = row.getCell(5);
-                    cell.getStringCellValue();
+                    String maTacGia = cell.getStringCellValue();
 
                     cell = row.getCell(6);
                     String maNXB = cell.getStringCellValue();
@@ -436,27 +400,28 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
                     cell = row.getCell(8);
                     int soLanXuatBan = (int)cell.getNumericCellValue();
 
-                    cell = row.createCell(9, CellType.NUMERIC);
-                    cell.setCellValue(arr.get(i).getSoLuong());
+                    cell = row.getCell(9);
+                    int soLuong = (int)cell.getNumericCellValue();
 
-                    cell = row.createCell(10, CellType.NUMERIC);
-                    cell.setCellValue(arr.get(i).getGia());
+                    cell = row.getCell(10);
+                    float gia = (float)cell.getNumericCellValue();
 
-                    cell = row.createCell(11, CellType.STRING);
-                    cell.setCellValue(arr.get(i).getAnh());
-                }
+                    cell = row.getCell(11);
+                    String anh = cell.getStringCellValue();
 
-                File file = new File(fChooser.getSelectedFile().toString() + ".xlsx");
-                try {
-                    FileOutputStream fo = new FileOutputStream(file);
-                    workbook.write(fo);
-                    JOptionPane.showMessageDialog(this, "Đã in!");
-                    fo.close();
-                } catch (FileNotFoundException e) {
-                    System.out.println(e);
+                    for(int j = 0; j < arr.size(); j++) {
+                        if(maSach.equals(arr.get(j).getMaSach())) {
+                            sachBUS.update(maSach, arr.get(j).getSoLuong() + soLuong);
+                        }
+                    }
+                    Sach sach = new Sach(maSach, tenSach, tinhTrang, soTrang, soLuong, gia, maTheLoai, maTacGia, maNXB, soLanXuatBan, 1, anh);
+
+                    sachBUS.add(sach);
                 }
             }
-
+            JOptionPane.showMessageDialog(this, "Đã nhập từ Excel!");
+            model.setRowCount(0);
+            refreshData();
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -564,6 +529,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
                     workbook.write(fo);
                     JOptionPane.showMessageDialog(this, "Đã in!");
                     fo.close();
+                    workbook.close();
                 } catch (FileNotFoundException e) {
                     System.out.println(e);
                 }
