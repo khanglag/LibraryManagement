@@ -4,6 +4,8 @@
  */
 package com.mycompany.view.employee;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ComponentEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -21,6 +23,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import javax.swing.JOptionPane;
+import javax.swing.event.AncestorEvent;
 
 import com.mycompany.Object.Sach.*;
 import java.net.URL;
@@ -66,7 +69,9 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
@@ -112,19 +117,20 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.GridBagLayout());
 
-        panelRoot.setLayout(new java.awt.GridBagLayout());
+        lableAnhSach.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                lableAnhSachAncestorAdded(evt);
+            }
 
-        
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 6;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.ipadx = 228;
-        gridBagConstraints.ipady = 264;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 12, 0, 0);
-        panelRoot.add(lableAnhSach, gridBagConstraints);
+            private void lableAnhSachAncestorAdded(AncestorEvent evt) {
+            }
+
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
         jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.LINE_AXIS));
 
@@ -204,15 +210,6 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnLamMoi);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.ipadx = 38;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        panelRoot.add(jPanel1, gridBagConstraints);
-
         jPanel2.setLayout(new java.awt.GridLayout(5, 0, 0, 10));
 
         jLabel3.setText("Mã sách");
@@ -230,32 +227,30 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         jLabel5.setText("Mã tác giả");
         jPanel2.add(jLabel5);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipady = 30;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        panelRoot.add(jPanel2, gridBagConstraints);
-
         jPanel3.setLayout(new java.awt.GridLayout(5, 0, 0, 10));
         jPanel3.add(tfMaSach);
 
-       
+        tfTenSach.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfTenSachActionPerformed(evt);
+            }
+
+            private void tfTenSachActionPerformed(ActionEvent evt) {
+            }
+        });
         jPanel3.add(tfTenSach);
         jPanel3.add(tfTinhTrang);
 
-        
+        tfMaTheLoai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfMaTheLoaiActionPerformed(evt);
+            }
+
+            private void tfMaTheLoaiActionPerformed(ActionEvent evt) {
+            }
+        });
         jPanel3.add(tfMaTheLoai);
         jPanel3.add(tfMaTacGia);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 130;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 12, 0, 0);
-        panelRoot.add(jPanel3, gridBagConstraints);
 
         jPanel4.setLayout(new java.awt.GridLayout(6, 0, 0, 10));
 
@@ -277,18 +272,16 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         jLabel6.setText("Chọn ảnh");
         jPanel4.add(jLabel6);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipady = 42;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 24, 0, 0);
-        panelRoot.add(jPanel4, gridBagConstraints);
-
         jPanel5.setLayout(new java.awt.GridLayout(6, 0, 0, 10));
 
-       
+        tfMaNhaXuatBan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfMaNhaXuatBanActionPerformed(evt);
+            }
+
+            private void tfMaNhaXuatBanActionPerformed(ActionEvent evt) {
+            }
+        });
         jPanel5.add(tfMaNhaXuatBan);
         jPanel5.add(tfSoTrang);
         jPanel5.add(tfLanXuatBan);
@@ -303,14 +296,53 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         });
         jPanel5.add(btnChonAnhSach);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 118;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 27, 0, 0);
-        panelRoot.add(jPanel5, gridBagConstraints);
+        javax.swing.GroupLayout panelRootLayout = new javax.swing.GroupLayout(panelRoot);
+        panelRoot.setLayout(panelRootLayout);
+        panelRootLayout.setHorizontalGroup(
+                panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelRootLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 687,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(panelRootLayout.createSequentialGroup()
+                                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(12, 12, 12)
+                                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 194,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(24, 24, 24)
+                                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(27, 27, 27)
+                                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 190,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(12, 12, 12)
+                                                .addComponent(lableAnhSach, javax.swing.GroupLayout.PREFERRED_SIZE, 206,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(22, 22, 22)));
+        panelRootLayout.setVerticalGroup(
+                panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelRootLayout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addGroup(panelRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 150,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 188,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lableAnhSach, javax.swing.GroupLayout.PREFERRED_SIZE, 205,
+                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(65, 65, 65)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)));
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -320,19 +352,19 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         add(panelRoot, gridBagConstraints);
 
         tableSach.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+                new Object[][] {
 
-            },
-            new String [] {
-                "STT", "Mã Sách", "Tên Sách", "Tình Trạng", "Mã Thể Loại", "Mã Tác Giả", "Mã NXB", "Số Trang", "Lần Xuất Bản", "Số Lượng", "Giá", "Ảnh"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false
+                },
+                new String[] {
+                        "STT", "Mã Sách", "Tên Sách", "Tình Trạng", "Mã Thể Loại", "Mã Tác Giả", "Mã NXB", "Số Trang",
+                        "Lần Xuất Bản", "Số Lượng", "Giá", "Ảnh"
+                }) {
+            boolean[] canEdit = new boolean[] {
+                    false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+                return canEdit[columnIndex];
             }
         });
         tableSach.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -340,7 +372,21 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
                 tableSachMouseClicked(evt);
             }
         });
-     
+        tableSach.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                tableSachComponentHidden(evt);
+            }
+
+            private void tableSachComponentHidden(ComponentEvent evt) {
+            }
+
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                tableSachComponentShown(evt);
+            }
+
+            private void tableSachComponentShown(ComponentEvent evt) {
+            }
+        });
         jScrollPane1.setViewportView(tableSach);
         if (tableSach.getColumnModel().getColumnCount() > 0) {
             tableSach.getColumnModel().getColumn(0).setPreferredWidth(25);
@@ -359,7 +405,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         add(jScrollPane1, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnNhapExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNhapExcelActionPerformed
+    private void btnNhapExcelActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNhapExcelActionPerformed
         // TODO add your handling code here:
         try {
             JFileChooser fChooser = new JFileChooser();
@@ -382,17 +428,17 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
                     String maSach = cell.getStringCellValue();
 
                     cell = row.getCell(9);
-                    int soLuong = (int)cell.getNumericCellValue();
+                    int soLuong = (int) cell.getNumericCellValue();
 
-                    for(int j = 0; j < arr.size(); j++) {
-                        if(maSach.equals(arr.get(j).getMaSach())) {
+                    for (int j = 0; j < arr.size(); j++) {
+                        if (maSach.equals(arr.get(j).getMaSach())) {
                             sachBUS.update(maSach, arr.get(j).getSoLuong() + soLuong);
                             daTonTai = true;
                             break;
                         }
                     }
 
-                    if(daTonTai == false) {
+                    if (daTonTai == false) {
                         cell = row.getCell(2);
                         String tenSach = cell.getStringCellValue();
 
@@ -409,18 +455,19 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
                         String maNXB = cell.getStringCellValue();
 
                         cell = row.getCell(7);
-                        int soTrang = (int)cell.getNumericCellValue();
+                        int soTrang = (int) cell.getNumericCellValue();
 
                         cell = row.getCell(8);
-                        int soLanXuatBan = (int)cell.getNumericCellValue();
+                        int soLanXuatBan = (int) cell.getNumericCellValue();
 
                         cell = row.getCell(10);
-                        float gia = (float)cell.getNumericCellValue();
+                        float gia = (float) cell.getNumericCellValue();
 
                         cell = row.getCell(11);
                         String anh = cell.getStringCellValue();
 
-                        Sach sach = new Sach(maSach, tenSach, tinhTrang, soTrang, soLuong, gia, maTheLoai, maTacGia, maNXB, soLanXuatBan, 1, anh);
+                        Sach sach = new Sach(maSach, tenSach, tinhTrang, soTrang, soLuong, gia, maTheLoai, maTacGia,
+                                maNXB, soLanXuatBan, 1, anh);
 
                         sachBUS.add(sach);
                     }
@@ -432,7 +479,7 @@ public class QuanLySachJPanel extends javax.swing.JPanel {
         } catch (Exception e) {
             System.out.println(e);
         }
-    }//GEN-LAST:event_btnNhapExcelActionPerformed
+    }// GEN-LAST:event_btnNhapExcelActionPerformed
 
     private void btnLamMoiActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnLamMoiActionPerformed
         // TODO add your handling code here:

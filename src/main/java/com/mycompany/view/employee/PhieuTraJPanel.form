@@ -191,6 +191,9 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="btnThem">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/com/mycompany/icons/Add.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Th&#xea;m"/>
               </Properties>
               <Events>
@@ -199,6 +202,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnXoa">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/com/mycompany/icons/Delete.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Xo&#xe1;"/>
               </Properties>
               <Events>
@@ -207,6 +213,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnInExcel">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/com/mycompany/icons/Export Excel.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="In Excel"/>
               </Properties>
               <Events>
@@ -215,6 +224,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnLoad">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/com/mycompany/icons/Refresh.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Load th&#xf4;ng tin"/>
               </Properties>
               <Events>
@@ -223,6 +235,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnClear">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/com/mycompany/icons/cleaning.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Clear"/>
               </Properties>
               <Events>

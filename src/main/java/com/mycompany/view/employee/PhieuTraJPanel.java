@@ -247,6 +247,7 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
 
         jPanel6.setLayout(new java.awt.GridLayout(1, 0));
 
+        btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Add.png"))); // NOI18N
         btnThem.setText("Thêm");
         btnThem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -255,6 +256,7 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
         });
         jPanel6.add(btnThem);
 
+        btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Delete.png"))); // NOI18N
         btnXoa.setText("Xoá");
         btnXoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -263,6 +265,7 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
         });
         jPanel6.add(btnXoa);
 
+        btnInExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Export Excel.png"))); // NOI18N
         btnInExcel.setText("In Excel");
         btnInExcel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -271,6 +274,7 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
         });
         jPanel6.add(btnInExcel);
 
+        btnLoad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Refresh.png"))); // NOI18N
         btnLoad.setText("Load thông tin");
         btnLoad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -279,6 +283,7 @@ public class PhieuTraJPanel extends javax.swing.JPanel {
         });
         jPanel6.add(btnLoad);
 
+        btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/cleaning.png"))); // NOI18N
         btnClear.setText("Clear");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

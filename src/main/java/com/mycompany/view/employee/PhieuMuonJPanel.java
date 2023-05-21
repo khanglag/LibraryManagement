@@ -97,7 +97,6 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder("Phiếu mượn"));
         jPanel15.setToolTipText("Phiếu mượn");
         jPanel15.setName("Phiếu mượn"); // NOI18N
-        jPanel15.setLayout(new java.awt.GridBagLayout());
 
         jPanel1.setLayout(new java.awt.GridLayout(5, 0, 0, 10));
 
@@ -116,16 +115,6 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
 
         jLabel33.setText("Mã nhân viên");
         jPanel1.add(jLabel33);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.ipadx = 13;
-        gridBagConstraints.ipady = 30;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(27, 17, 11, 0);
-        jPanel15.add(jPanel1, gridBagConstraints);
 
         jPanel2.setLayout(new java.awt.GridLayout(5, 0, 0, 10));
 
@@ -168,15 +157,6 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(jComboBoxMaNhanVien);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.ipadx = 133;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(27, 6, 11, 0);
-        jPanel15.add(jPanel2, gridBagConstraints);
-
         jPanel3.setLayout(new java.awt.GridLayout(4, 0, 0, 10));
 
         jLabel37.setText("Số lượng");
@@ -190,15 +170,6 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
 
         jLabel1.setText("Ngày trả");
         jPanel3.add(jLabel1);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipady = 24;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(27, 6, 0, 0);
-        jPanel15.add(jPanel3, gridBagConstraints);
 
         jPanel4.setLayout(new java.awt.GridLayout(4, 0, 0, 10));
 
@@ -218,30 +189,40 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         });
         jPanel4.add(tfNgayTra);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 151;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(27, 18, 0, 0);
-        jPanel15.add(jPanel4, gridBagConstraints);
-
         jPanel5.setLayout(new java.awt.GridLayout(2, 0, 0, 10));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(59, 18, 0, 11);
-        jPanel15.add(jPanel5, gridBagConstraints);
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = -13;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 6);
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
         add(jPanel15, gridBagConstraints);
 
         tablePhieuMuon.setModel(new javax.swing.table.DefaultTableModel(
@@ -277,16 +258,17 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 721;
-        gridBagConstraints.ipady = 222;
+        gridBagConstraints.ipadx = 744;
+        gridBagConstraints.ipady = 145;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(23, 6, 6, 6);
+        gridBagConstraints.insets = new java.awt.Insets(35, 6, 0, 6);
         add(jScrollPane8, gridBagConstraints);
 
         jPanel6.setLayout(new java.awt.GridLayout(1, 0));
 
+        btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Add.png"))); // NOI18N
         btnThem.setText("Thêm");
         btnThem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -295,6 +277,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         });
         jPanel6.add(btnThem);
 
+        btnSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/pen (1).png"))); // NOI18N
         btnSua.setText("Sửa");
         btnSua.setMaximumSize(new java.awt.Dimension(89, 55));
         btnSua.setMinimumSize(new java.awt.Dimension(89, 55));
@@ -306,6 +289,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         });
         jPanel6.add(btnSua);
 
+        btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Delete.png"))); // NOI18N
         btnXoa.setText("Xoá");
         btnXoa.setMaximumSize(new java.awt.Dimension(99, 57));
         btnXoa.setMinimumSize(new java.awt.Dimension(99, 57));
@@ -317,6 +301,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         });
         jPanel6.add(btnXoa);
 
+        btnInExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Export Excel.png"))); // NOI18N
         btnInExcel.setText("In Excel");
         btnInExcel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -325,6 +310,7 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         });
         jPanel6.add(btnInExcel);
 
+        Lammoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/cleaning.png"))); // NOI18N
         Lammoi.setText("Làm sạch");
         Lammoi.setMaximumSize(new java.awt.Dimension(99, 57));
         Lammoi.setMinimumSize(new java.awt.Dimension(99, 57));
@@ -339,8 +325,9 @@ public class PhieuMuonJPanel extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 83;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 140, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
         add(jPanel6, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 

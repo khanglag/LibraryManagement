@@ -82,10 +82,9 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
 
         setLayout(new java.awt.GridBagLayout());
 
-        jPanel12.setLayout(new java.awt.GridBagLayout());
+        jPanel2.setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel2.setLayout(new java.awt.GridLayout());
-
+        btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Add.png"))); // NOI18N
         btnThem.setText("Thêm");
         btnThem.setMaximumSize(new java.awt.Dimension(72, 33));
         btnThem.setMinimumSize(new java.awt.Dimension(72, 33));
@@ -96,6 +95,7 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(btnThem);
 
+        btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Delete.png"))); // NOI18N
         btnXoa.setText("Xoá");
         btnXoa.setMaximumSize(new java.awt.Dimension(99, 57));
         btnXoa.setMinimumSize(new java.awt.Dimension(72, 33));
@@ -106,6 +106,7 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(btnXoa);
 
+        btnSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/pen (1).png"))); // NOI18N
         btnSua.setText("Sửa");
         btnSua.setMaximumSize(new java.awt.Dimension(89, 55));
         btnSua.setMinimumSize(new java.awt.Dimension(72, 33));
@@ -117,6 +118,7 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(btnSua);
 
+        btnLoad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Refresh.png"))); // NOI18N
         btnLoad.setText("Load");
         btnLoad.setMaximumSize(new java.awt.Dimension(72, 33));
         btnLoad.setPreferredSize(new java.awt.Dimension(72, 33));
@@ -126,14 +128,6 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
             }
         });
         jPanel2.add(btnLoad);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        jPanel12.add(jPanel2, gridBagConstraints);
 
         jPanel3.setLayout(new java.awt.GridLayout(4, 0, 0, 10));
 
@@ -148,16 +142,6 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
 
         jLabel28.setText("Ngày sinh");
         jPanel3.add(jLabel28);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 48;
-        gridBagConstraints.ipady = 34;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        jPanel12.add(jPanel3, gridBagConstraints);
 
         jPanel4.setLayout(new java.awt.GridLayout(4, 0, 0, 10));
 
@@ -199,19 +183,9 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         });
         jPanel4.add(tfNgaySinh);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 186;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
-        jPanel12.add(jPanel4, gridBagConstraints);
-
         jPanel1.setLayout(new java.awt.GridLayout(3, 0, 0, 10));
 
+        btnInExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Export Excel.png"))); // NOI18N
         btnInExcel.setText("In Excel");
         btnInExcel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,6 +194,7 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnInExcel);
 
+        btnTim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/search.png"))); // NOI18N
         btnTim.setText("Tìm");
         btnTim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,6 +203,7 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnTim);
 
+        btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/cleaning.png"))); // NOI18N
         btnClear.setText("Clear");
         btnClear.setPreferredSize(new java.awt.Dimension(99, 57));
         btnClear.addActionListener(new java.awt.event.ActionListener() {
@@ -237,14 +213,34 @@ public class QuanLyTacGiaJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnClear);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 91;
-        gridBagConstraints.ipady = 6;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 63, 0, 0);
-        jPanel12.add(jPanel1, gridBagConstraints);
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(63, 63, 63)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;

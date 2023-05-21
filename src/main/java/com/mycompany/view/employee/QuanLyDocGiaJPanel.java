@@ -71,8 +71,8 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         btnTim = new javax.swing.JButton();
-        btnClear = new javax.swing.JButton();
         btnInExcel = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -127,6 +127,7 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
 
         jPanel2.setLayout(new java.awt.GridLayout(3, 1));
 
+        btnTim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/search.png"))); // NOI18N
         btnTim.setText("Tìm");
         btnTim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,14 +136,7 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
         });
         jPanel2.add(btnTim);
 
-        btnClear.setText("Clear");
-        btnClear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClearActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnClear);
-
+        btnInExcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Export Excel.png"))); // NOI18N
         btnInExcel.setText("In Excel");
         btnInExcel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,6 +144,15 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
             }
         });
         jPanel2.add(btnInExcel);
+
+        btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/cleaning.png"))); // NOI18N
+        btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnClear);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -165,10 +168,10 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
         jLabel1.setText("CCCD");
         jPanel6.add(jLabel1);
 
-        jLabel10.setText("Mã đọc giả");
+        jLabel10.setText("Mã độc giả");
         jPanel6.add(jLabel10);
 
-        jLabel11.setText("Tên đọc giả");
+        jLabel11.setText("Tên độc giả");
         jPanel6.add(jLabel11);
 
         jLabel2.setText("Phái");
@@ -237,8 +240,8 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 139;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipadx = 102;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(6, 6, 0, 0);
         add(jPanel1, gridBagConstraints);
@@ -271,16 +274,17 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 616;
-        gridBagConstraints.ipady = 177;
+        gridBagConstraints.ipadx = 626;
+        gridBagConstraints.ipady = 207;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(33, 6, 6, 0);
+        gridBagConstraints.insets = new java.awt.Insets(33, 6, 0, 0);
         add(jScrollPane5, gridBagConstraints);
 
-        jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.LINE_AXIS));
+        jPanel3.setLayout(new java.awt.GridLayout());
 
+        btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Add.png"))); // NOI18N
         btnThem.setText("Thêm");
         btnThem.setMaximumSize(new java.awt.Dimension(99, 57));
         btnThem.setMinimumSize(new java.awt.Dimension(99, 57));
@@ -292,6 +296,7 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
         });
         jPanel3.add(btnThem);
 
+        btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Delete.png"))); // NOI18N
         btnXoa.setText("Xoá");
         btnXoa.setMaximumSize(new java.awt.Dimension(99, 57));
         btnXoa.setMinimumSize(new java.awt.Dimension(99, 57));
@@ -303,6 +308,7 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
         });
         jPanel3.add(btnXoa);
 
+        btnSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/pen (1).png"))); // NOI18N
         btnSua.setText("Sửa");
         btnSua.setMaximumSize(new java.awt.Dimension(89, 55));
         btnSua.setMinimumSize(new java.awt.Dimension(89, 55));
@@ -314,6 +320,7 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
         });
         jPanel3.add(btnSua);
 
+        btnLoad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/icons/Refresh.png"))); // NOI18N
         btnLoad.setText("Làm mới");
         btnLoad.setMaximumSize(new java.awt.Dimension(99, 57));
         btnLoad.setMinimumSize(new java.awt.Dimension(99, 57));
@@ -328,9 +335,9 @@ public class QuanLyDocGiaJPanel extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipadx = 59;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 134, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(18, 75, 0, 0);
         add(jPanel3, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
